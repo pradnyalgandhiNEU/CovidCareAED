@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package business;
+package Business;
 
 /**
  *
  * @author shreya.ghate
  */
-public class Ecosystem {
+public class EcoSystem {
     
 }
