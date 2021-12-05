@@ -163,7 +163,7 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreateVaccinationCenter)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageVaccinationCenter)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(263, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
