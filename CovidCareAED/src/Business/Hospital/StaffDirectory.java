@@ -5,10 +5,25 @@
  */
 package Business.Hospital;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ayushgupta
  */
 public class StaffDirectory {
+    ArrayList<Staff> staffList;
+    
+    public StaffDirectory(){
+        staffList = new ArrayList<Staff>();
+    }
+
+    public ArrayList<Staff> getStaffList() {
+        return staffList;
+    }
+
+    public void setStaffList(ArrayList<Staff> staffList) {
+        this.staffList = staffList;
+    }
     
 }

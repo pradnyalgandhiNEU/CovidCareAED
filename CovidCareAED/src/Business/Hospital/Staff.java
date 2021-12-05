@@ -5,10 +5,22 @@
  */
 package Business.Hospital;
 
+import Business.Person.Person;
+
 /**
  *
  * @author ayushgupta
  */
-public class Staff {
+public class Staff extends Person{
+    private int staffId;
+    private String staffRole;
+
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
+    }
     
 }

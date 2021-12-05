@@ -9,16 +9,15 @@ package Business.Hospital;
  *
  * @author ayushgupta
  */
-public class Beds {
-    private int totalBeds;
+public class Encounter {
+    VitalSigns vitalSigns;
 
-    public int getTotalBeds() {
-        return totalBeds;
+    public VitalSigns getVitalSigns() {
+        return vitalSigns;
     }
 
-    public void setTotalBeds(int totalBeds) {
-        this.totalBeds = totalBeds;
+    public void setVitalSigns(VitalSigns vitalSigns) {
+        this.vitalSigns = vitalSigns;
     }
-    
     
 }
