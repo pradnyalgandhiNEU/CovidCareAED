@@ -5,6 +5,8 @@
  */
 package Business;
 
+import Business.Employee.Employee;
+
 /**
  *
  * @author shreya.ghate
