@@ -24,7 +24,7 @@ public class EcoSystem {
     }
     
     private EcoSystem(){
-        super(null, null, null, null, null, parseInt(null), null, null);
+//        super(null, null, null, null, null, parseInt(null), null, null);
         cityList=new ArrayList<City>();
     }
     
@@ -54,7 +54,7 @@ public class EcoSystem {
     
     public City getCity(String name){
         for (City n: cityList){
-            if(n.getName().equalsIgnoreCase(name)){
+            if(n.getCityName().equalsIgnoreCase(name)){
                 return n;
             }
         }
