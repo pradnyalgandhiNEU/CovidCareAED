@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.City;
+package Business.Enterprise;
 
 /**
  *
  * @author ayushgupta
  */
-public class Home {
+public class Hospital {
     
 }

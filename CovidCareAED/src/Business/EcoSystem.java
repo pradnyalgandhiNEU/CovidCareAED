@@ -5,6 +5,7 @@
  */
 package Business;
 
+import Business.City.City;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 
