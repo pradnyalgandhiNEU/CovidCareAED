@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package Business.Hospital;
 
+import Business.TestingCenter.TestReport;
 import java.time.LocalDateTime;
 
 
@@ -16,7 +17,7 @@ public class VitalSigns {
     private double temperature;
     private double bloodPressure;
     private int pulse;
-    private LocalDateTime date;
+    TestReport report;
 
     public double getTemperature() {
         return temperature;
@@ -40,14 +41,6 @@ public class VitalSigns {
 
     public void setPulse(int pulse) {
         this.pulse = pulse;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
     }
     @Override
     public String toString(){
