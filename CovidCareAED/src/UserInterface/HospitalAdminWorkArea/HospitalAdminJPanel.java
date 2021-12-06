@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.HospitalAdmin;
+package UserInterface.HospitalAdminWorkArea;
 
 /**
  *
@@ -119,8 +119,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageCapacity;
     private javax.swing.JButton btnManageDoctor;
-    private javax.swing.JButton btnManageHospital;
-    private javax.swing.JButton btnManageHospital1;
     private javax.swing.JButton btnManagePatient;
     private javax.swing.JButton btnManageStaff;
     private javax.swing.JLabel jLabel1;
