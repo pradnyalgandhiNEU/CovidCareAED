@@ -5,6 +5,7 @@
  */
 package Business.Hospital;
 
+import Business.Enterprise.Hospital;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +14,16 @@ import java.util.ArrayList;
  */
 public class StaffDirectory {
     ArrayList<Staff> staffList;
+    Hospital hospital;
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+    
     
     public StaffDirectory(){
         staffList = new ArrayList<Staff>();
