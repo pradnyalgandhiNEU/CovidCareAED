@@ -5,6 +5,7 @@
  */
 package Business.Role;
 
+import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
@@ -15,9 +16,9 @@ import javax.swing.JPanel;
  *
  * @author shreya.ghate
  */
-public class PatientRole {
+public class VaccinationCenterAdminRole {
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PatientWorkAreaJPanel(userProcessContainer, account, organization, enterprise);
-    }
+    public JPanel createWorkArea(JPanel userProcessContainer,City city, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new VaccinationCenterWorkAreaJPanel(userProcessContainer, account, organization, enterprise);
+    } 
 }
