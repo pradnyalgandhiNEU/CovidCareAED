@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/Business/Hospital/Beds.java</file>
             <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/Business/Organization/Organization.java</file>
@@ -20,5 +21,8 @@
             <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/Business/Hospital/VitalSigns.java</file>
             <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/Business/Organization/CenterAdmin.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> 697843e05a7094b7946a0ceb6d5d0f747acbe7ea
     </open-files>
 </project-private>
