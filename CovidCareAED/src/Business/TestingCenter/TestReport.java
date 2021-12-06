@@ -5,6 +5,7 @@
  */
 package Business.TestingCenter;
 
+import Business.Enterprise.TestingLab;
 import Business.Hospital.Patient;
 
 /**
@@ -12,6 +13,7 @@ import Business.Hospital.Patient;
  * @author ayushgupta
  */
 public class TestReport {
+    TestingLab testingLab;
     private Boolean positive;
 
     public Boolean getPositive() {
