@@ -5,11 +5,14 @@
  */
 package Business.Hospital;
 
+import Business.Enterprise.Hospital;
+
 /**
  *
  * @author ayushgupta
  */
 public class Beds {
+    Hospital hospital;
     private int totalBeds;
 
     public int getTotalBeds() {
