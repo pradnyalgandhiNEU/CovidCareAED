@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.SystemAdminWorkArea;
+package UserInterface.VaccineManufacturerWorkArea;
 
 /**
  *
  * @author pradnyalgandhi
  */
-public class ManageAdminJPanel extends javax.swing.JPanel {
+public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageAdminJPanel
+     * Creates new form ManageDeliveryManagerJPanel
      */
-    public ManageAdminJPanel() {
+    public ManageDeliveryManagerJPanel() {
         initComponents();
     }
 
@@ -26,26 +26,19 @@ public class ManageAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblManageAdmin = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        lblName = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtUsername = new javax.swing.JTextField();
-        btnView = new javax.swing.JButton();
-        lblUsername = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
-        txtPassword = new javax.swing.JTextField();
-        btnCreate = new javax.swing.JButton();
-        lblPassword = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
-        lblRole = new javax.swing.JLabel();
-        comboRole = new javax.swing.JComboBox<>();
-
-        lblManageAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageAdmin.setForeground(new java.awt.Color(204, 204, 204));
-        lblManageAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageAdmin.setText("Manage Admin");
+        lblManageAdmin = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
+        btnCreate = new javax.swing.JButton();
+        txtPassword = new javax.swing.JTextField();
+        btnDelete = new javax.swing.JButton();
+        lblUsername = new javax.swing.JLabel();
+        btnView = new javax.swing.JButton();
+        txtUsername = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -60,23 +53,24 @@ public class ManageAdminJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        lblName.setText("Name:");
+        btnUpdate.setText("Update");
 
-        btnView.setText("View");
-
-        lblUsername.setText("Username:");
-
-        btnDelete.setText("Delete");
-
-        btnCreate.setText("Create");
+        lblManageAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageAdmin.setText("Manage Delivery Manager");
 
         lblPassword.setText("Password:");
 
-        btnUpdate.setText("Update");
+        btnCreate.setText("Create");
 
-        lblRole.setText("Role:");
+        btnDelete.setText("Delete");
 
-        comboRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Admin", "Testing Center Admin", "Vaccination Center Admin", "Manufacturer Admin" }));
+        lblUsername.setText("Username:");
+
+        btnView.setText("View");
+
+        lblName.setText("Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,17 +88,14 @@ public class ManageAdminJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPassword)
-                            .addComponent(lblRole))
+                        .addComponent(lblPassword)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnUpdate)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCreate))
-                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                            .addComponent(comboRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 370, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -144,13 +135,9 @@ public class ManageAdminJPanel extends javax.swing.JPanel {
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRole)
-                    .addComponent(comboRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreate)
                     .addComponent(btnUpdate))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(279, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -160,13 +147,11 @@ public class ManageAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
-    private javax.swing.JComboBox<String> comboRole;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblManageAdmin;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblRole;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
