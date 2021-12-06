@@ -18,6 +18,7 @@ public class VitalSigns {
     private double bloodPressure;
     private int pulse;
     TestReport report;
+    
 
     public double getTemperature() {
         return temperature;

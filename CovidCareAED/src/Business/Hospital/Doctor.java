@@ -16,6 +16,7 @@ public class Doctor {
     private int age;
     private String drSpecialization;
     private int drId;
+   
 
     public String getDrName() {
         return drName;
