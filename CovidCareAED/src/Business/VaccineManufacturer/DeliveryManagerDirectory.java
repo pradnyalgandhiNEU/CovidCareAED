@@ -5,6 +5,7 @@
  */
 package Business.VaccineManufacturer;
 
+import Business.Enterprise.VaccinationManufacturer;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +14,7 @@ import java.util.ArrayList;
  */
 public class DeliveryManagerDirectory {
     ArrayList<DeliveryManager> DeliveryManagerList;
+    VaccinationManufacturer vaccinationManufacturer;
     
     public DeliveryManagerDirectory(){
         DeliveryManagerList = new ArrayList<DeliveryManager>();

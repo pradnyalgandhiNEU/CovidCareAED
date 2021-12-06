@@ -14,7 +14,6 @@ import Business.Person.Person;
  */
 public class DeliveryManager extends Person{
     private int DeliveryManagerId;
-    VaccinationManufacturer vaccineManufacturer;
 
     public int getDeliveryManagerId() {
         return DeliveryManagerId;
@@ -22,14 +21,6 @@ public class DeliveryManager extends Person{
 
     public void setDeliveryManagerId(int DeliveryManagerId) {
         this.DeliveryManagerId = DeliveryManagerId;
-    }
-
-    public VaccinationManufacturer getVaccineManufacturer() {
-        return vaccineManufacturer;
-    }
-
-    public void setVaccineManufacturer(VaccinationManufacturer vaccineManufacturer) {
-        this.vaccineManufacturer = vaccineManufacturer;
     }
     
 }

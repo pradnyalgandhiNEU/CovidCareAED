@@ -5,6 +5,7 @@
  */
 package Business.VacinationCenter;
 
+import Business.Enterprise.VaccinationCenter;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +14,7 @@ import java.util.ArrayList;
  */
 public class OrderPlacedDirectory {
     ArrayList<OrderPlaced> orderList;
+    VaccinationCenter vaccinationCenter;
     
     public OrderPlacedDirectory(){
         orderList = new ArrayList<OrderPlaced>();

@@ -5,6 +5,8 @@
  */
 package Business.VacinationCenter;
 
+import Business.Enterprise.VaccinationCenter;
+
 /**
  *
  * @author ayushgupta
@@ -12,7 +14,7 @@ package Business.VacinationCenter;
 public class OrderPlaced {
     private int quantity;
     private int price;
-
+    
     public int getQuantity() {
         return quantity;
     }

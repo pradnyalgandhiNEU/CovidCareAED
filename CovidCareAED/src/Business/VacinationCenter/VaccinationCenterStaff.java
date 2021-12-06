@@ -15,7 +15,6 @@ import Business.Person.Person;
 public class VaccinationCenterStaff extends Person{
     private int staffId;
     private String staffRole;
-    VaccinationCenter vaccinationCenter;
 
     public int getStaffId() {
         return staffId;

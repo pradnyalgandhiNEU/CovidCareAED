@@ -5,6 +5,7 @@
  */
 package Business.VacinationCenter;
 
+import Business.Enterprise.VaccinationCenter;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +14,7 @@ import java.util.ArrayList;
  */
 public class VaccinationCenterStaffDirectory {
     ArrayList<VaccinationCenterStaff> VaccinationCenterstaffList;
+    VaccinationCenter vaccinationCenter;
     
     public VaccinationCenterStaffDirectory(){
         VaccinationCenterstaffList = new ArrayList<VaccinationCenterStaff>();

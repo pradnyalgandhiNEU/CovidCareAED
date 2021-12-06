@@ -5,12 +5,15 @@
  */
 package Business.VacinationCenter;
 
+import Business.Enterprise.VaccinationCenter;
+
 /**
  *
  * @author ayushgupta
  */
 public class Inventory {
     private int stock;
+    VaccinationCenter vaccinationCenter;
 
     public int getStock() {
         return stock;

@@ -5,10 +5,31 @@
  */
 package Business.VaccineManufacturer;
 
+import Business.Enterprise.VaccinationCenter;
+
 /**
  *
  * @author ayushgupta
  */
 public class OrderReceived {
     
+    private int orderQuantity;
+    VaccinationCenter vaccinationCenter;
+
+    public int getOrderQuantity() {
+        return orderQuantity;
+    }
+
+    public void setOrderQuantity(int orderQuantity) {
+        this.orderQuantity = orderQuantity;
+    }
+
+    public VaccinationCenter getVaccinationCenter() {
+        return vaccinationCenter;
+    }
+
+    public void setVaccinationCenter(VaccinationCenter vaccinationCenter) {
+        this.vaccinationCenter = vaccinationCenter;
+    }
+            
 }

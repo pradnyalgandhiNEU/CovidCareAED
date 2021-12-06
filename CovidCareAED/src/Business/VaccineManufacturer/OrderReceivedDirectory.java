@@ -5,10 +5,26 @@
  */
 package Business.VaccineManufacturer;
 
+import Business.Enterprise.VaccinationManufacturer;
+import java.util.ArrayList;
+
 /**
  *
  * @author ayushgupta
  */
 public class OrderReceivedDirectory {
+    ArrayList<OrderReceived> orderReceivedList;
+    VaccinationManufacturer vaccinationManufacturer;
     
+    public OrderReceivedDirectory(){
+        orderReceivedList = new ArrayList<OrderReceived>();
+    }
+
+    public ArrayList<OrderReceived> getOrderReceivedList() {
+        return orderReceivedList;
+    }
+
+    public void setOrderReceivedList(ArrayList<OrderReceived> orderReceivedList) {
+        this.orderReceivedList = orderReceivedList;
+    }
 }
