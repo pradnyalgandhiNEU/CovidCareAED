@@ -1,18 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.VacinationCenter;
+package Business.VaccineManufacturer;
 
 /**
  *
- * @author ayushgupta
+ * @author pradnyalgandhi
  */
-public class Inventory {
+public class Vaccine {
+    
+//    Covishield, Covaxin, Pfizer
+    
     private String name;
     private String batch;
-    private int quantity ;
+    private int quantity;
 
     public String getName() {
         return name;
@@ -37,10 +39,6 @@ public class Inventory {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
-    
-    
-
     
     
     
