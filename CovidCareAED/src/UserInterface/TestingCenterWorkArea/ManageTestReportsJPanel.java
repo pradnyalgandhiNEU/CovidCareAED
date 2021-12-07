@@ -43,6 +43,11 @@ public class ManageTestReportsJPanel extends javax.swing.JPanel {
         txtID = new javax.swing.JTextField();
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         lblName.setText("Name:");
 
@@ -155,6 +160,10 @@ public class ManageTestReportsJPanel extends javax.swing.JPanel {
                 .addGap(229, 229, 229))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
