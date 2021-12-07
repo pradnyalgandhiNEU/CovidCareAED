@@ -1,19 +1,20 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package UserInterface.VaccineManufacturerWorkArea;
+package UserInterface.VaccinationCenterStaffWorkArea;
 
 /**
  *
- * @author pradnyalgandhi
+ * @author shreya.ghate
  */
-public class ManageInventoryJPanel extends javax.swing.JPanel {
+public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageInventoryJPanel
+     * Creates new form ManagePatientVaccineJPanel
      */
-    public ManageInventoryJPanel() {
+    public ManagePatientVaccineJPanel() {
         initComponents();
     }
 
@@ -26,29 +27,32 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtQuantity = new javax.swing.JTextField();
         lblManageInventory = new javax.swing.JLabel();
-        lblAvailability = new javax.swing.JLabel();
-        txtAvailability = new javax.swing.JTextField();
+        lblQuantity = new javax.swing.JLabel();
+        lblVaccineName = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnView = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         lblBatch = new javax.swing.JLabel();
         txtBatchNo = new javax.swing.JTextField();
-        txtQuantity = new javax.swing.JTextField();
-        lblQuantity = new javax.swing.JLabel();
-        txtStatus = new javax.swing.JTextField();
-        lblStatus = new javax.swing.JLabel();
-        btnUpdate = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
+        cboxVaccineNames = new javax.swing.JComboBox<>();
+        cboxVaccineNames1 = new javax.swing.JComboBox<>();
 
         lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
         lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageInventory.setText("Manage Vaccine Inventory");
+        lblManageInventory.setText("Manage Patient Vaccination Details");
 
-        lblAvailability.setText("Available Vaccine Stock:");
+        lblQuantity.setText("Patient ID:");
+
+        lblVaccineName.setText(" Vaccine Name:");
+
+        lblStatus.setText("Vaccine Given:");
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -65,24 +69,22 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Batch Number", "Quantity", "Status"
+                "Staff ID", "Patient ID", "Vaccine Name"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        btnAdd.setText("Add");
+        btnView.setText("View");
+
+        btnAdd.setText("Create");
 
         btnDelete.setText("Delete");
 
-        lblBatch.setText("Batch No:");
+        lblBatch.setText("Staff ID:");
 
-        lblQuantity.setText("Quantity:");
+        cboxVaccineNames.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Covishield", "Covaxin", "Pfizer" }));
 
-        lblStatus.setText("Status:");
-
-        btnUpdate.setText("Update");
-
-        btnView.setText("View");
+        cboxVaccineNames1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Covishield", "Covaxin", "Pfizer" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,55 +96,56 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
                     .addComponent(lblManageInventory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 216, Short.MAX_VALUE)
-                        .addComponent(lblAvailability)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch)
-                        .addGap(300, 300, 300))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnDelete)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(339, 339, 339)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(287, 287, 287)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblBatch)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblVaccineName)
                         .addGap(18, 18, 18)
-                        .addComponent(txtBatchNo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addComponent(cboxVaccineNames, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearch)
+                        .addGap(280, 280, 280))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblQuantity)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
                                 .addComponent(lblStatus)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnUpdate)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnAdd))
-                                    .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(btnAdd)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(cboxVaccineNames1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblQuantity)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(14, 14, 14)
+                                    .addComponent(lblBatch)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtBatchNo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(348, 348, 348))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(lblManageInventory)
-                .addGap(49, 49, 49)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblAvailability)
-                        .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addComponent(lblVaccineName)
+                        .addComponent(cboxVaccineNames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -159,12 +162,10 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStatus)
-                    .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cboxVaccineNames1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -177,18 +178,17 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
+    private javax.swing.JComboBox<String> cboxVaccineNames;
+    private javax.swing.JComboBox<String> cboxVaccineNames1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblAvailability;
     private javax.swing.JLabel lblBatch;
     private javax.swing.JLabel lblManageInventory;
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JLabel lblStatus;
-    private javax.swing.JTextField txtAvailability;
+    private javax.swing.JLabel lblVaccineName;
     private javax.swing.JTextField txtBatchNo;
     private javax.swing.JTextField txtQuantity;
-    private javax.swing.JTextField txtStatus;
     // End of variables declaration//GEN-END:variables
 }
