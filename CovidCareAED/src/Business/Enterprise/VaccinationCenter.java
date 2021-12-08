@@ -5,10 +5,20 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author shreya.ghate
  */
-public class VaccinationCenter {
-    
+public class VaccinationCenter extends Enterprise {
+    public VaccinationCenter (String ID, String name, String address, int phonenumber, String email, int totalbeds){
+        super(EnterpriseType.VaccinationCenter, ID, name, address, phonenumber, email, totalbeds);
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }
