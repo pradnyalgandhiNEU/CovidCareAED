@@ -75,7 +75,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         lblManagePatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManagePatient.setText("Manage Patient");
 
-        lblSearch.setText("Search:");
+        lblSearch.setText("Patient Name:");
 
         btnSearch.setText("Search");
 
@@ -122,7 +122,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreate)
                 .addGap(443, 443, 443))
             .addGroup(layout.createSequentialGroup()
-                .addGap(292, 292, 292)
+                .addGap(283, 283, 283)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblName)
@@ -159,7 +159,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblID)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,7 +175,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblQuarantine)
                     .addComponent(cboxQuarantineLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
