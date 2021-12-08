@@ -24,38 +24,35 @@ public class OrganizationDirectory {
         return organizationList;
     }
     
-    public Organization createOrganization(Organization.Type type){
+    public Organization createOrganization(Type type, String ID, String name, String address, int phonenumber, String email, int totalbeds){
         Organization organization = null;
         if (type.getValue().equals(Organization.Type.DeliveryManager.getValue())){
-            organization = new DeliveryManager();
+            organization = new DeliveryManager(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Organization.Type.Doctor.getValue())){
-            organization = new Doctor();
+            organization = new Doctor(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Organization.Type.HospitalAdmin.getValue())){
-            organization = new HospitalAdmin();
+            organization = new HospitalAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.HospitalStaff.getValue())){
-            organization = new HospitalStaff();
+            organization = new HospitalStaff(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }
         
         else if (type.getValue().equals(Organization.Type.LabAdmin.getValue())) {
-            organization = new LabAdmin();
-            organizationList.add(organization);
-        }else if (type.getValue().equals(Organization.Type.TestingLabAdmin.getValue())) {
-            organization = new TestingLabAdmin();
+            organization = new LabAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.VaccinationCenterAdmin.getValue())) {
-            organization = new VaccinationCenterAdmin();
+            organization = new VaccinationCenterAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.VaccinationCenterStaff.getValue())) {
-            organization = new VaccinationCenterStaff();
+            organization = new VaccinationCenterStaff(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.VaccineManufacturerAdmin.getValue())) {
-            organization = new VaccineManufactureAdmin();
+            organization = new VaccineManufactureAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }
         return organization;

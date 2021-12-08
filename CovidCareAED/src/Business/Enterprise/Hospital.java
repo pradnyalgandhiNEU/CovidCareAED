@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Hospital extends Enterprise {
     public Hospital (String ID, String name, String address, int phonenumber, String email, int totalbeds){
-        super(ID, name, EnterpriseType.Hospital, address, phonenumber, email, totalbeds);
+        super( EnterpriseType.Hospital, ID, name, address, phonenumber, email, totalbeds);
     }
 
     @Override

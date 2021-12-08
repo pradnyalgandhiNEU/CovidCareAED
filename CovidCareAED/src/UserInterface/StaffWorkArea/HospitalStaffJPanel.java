@@ -4,6 +4,9 @@
  */
 package UserInterface.StaffWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -11,14 +14,21 @@ import javax.swing.JPanel;
  *
  * @author pradnyalgandhi
  */
-public class StaffJPanel extends javax.swing.JPanel {
+public class HospitalStaffJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form StaffJPanel
+     * Creates new form HospitalStaffJPanel
      */
     JPanel mainWorkArea;
-    public StaffJPanel() {
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public HospitalStaffJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
