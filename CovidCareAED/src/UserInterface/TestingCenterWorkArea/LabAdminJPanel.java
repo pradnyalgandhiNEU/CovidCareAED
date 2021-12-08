@@ -4,6 +4,9 @@
  */
 package UserInterface.TestingCenterWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -17,8 +20,15 @@ public class LabAdminJPanel extends javax.swing.JPanel {
      * Creates new form LabAdminJPanel
      */
     JPanel mainWorkArea;
-    public LabAdminJPanel() {
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public LabAdminJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
