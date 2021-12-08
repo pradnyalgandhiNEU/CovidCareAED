@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class LabAdmin extends Organization {
     public LabAdmin(String ID, String name, String address, int phonenumber, String email, int totalbeds) {
-        super(Type.Doctor.getValue(), ID, name, address, phonenumber, email, totalbeds);
+        super(Type.LabAdmin.getValue(), ID, name, address, phonenumber, email, totalbeds);
     }
     
     @Override

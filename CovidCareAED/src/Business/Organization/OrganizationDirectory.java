@@ -46,7 +46,7 @@ public class OrganizationDirectory {
             organization = new LabAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.TestingLabAdmin.getValue())) {
-            organization = new TestingLabAdmin();
+            organization = new TestingLabAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.VaccinationCenterAdmin.getValue())) {
             organization = new VaccinationCenterAdmin();
