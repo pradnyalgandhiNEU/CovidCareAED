@@ -4,6 +4,9 @@
  */
 package UserInterface.StaffWorkArea;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,6 +16,7 @@ public class StaffJPanel extends javax.swing.JPanel {
     /**
      * Creates new form StaffJPanel
      */
+    JPanel mainWorkArea;
     public StaffJPanel() {
         initComponents();
     }
@@ -67,6 +71,10 @@ public class StaffJPanel extends javax.swing.JPanel {
 
     private void btnManageVitalSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVitalSignActionPerformed
         // TODO add your handling code here:
+        ManageVitalSignsJPanel vitalSigns = new ManageVitalSignsJPanel();
+        mainWorkArea.add('vitalSigns', vitalSigns);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageVitalSignActionPerformed
 
 
