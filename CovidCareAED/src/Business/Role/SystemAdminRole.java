@@ -8,8 +8,11 @@ package Business.Role;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organization.LabAdmin;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import UserInterface.SystemAdminWorkArea.SystemAdminWorkJPanel;
+import UserInterface.TestingCenterWorkArea.LabAdminJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -17,8 +20,7 @@ import javax.swing.JPanel;
  * @author shreya.ghate
  */
 public class SystemAdminRole extends Role {
-     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer,City city ,UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
-    }
-}
+    @Override
+    public JPanel createWorkArea(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new SystemAdminWorkJPanel(mainWorkArea, account, organization,enterprise);
+    } }

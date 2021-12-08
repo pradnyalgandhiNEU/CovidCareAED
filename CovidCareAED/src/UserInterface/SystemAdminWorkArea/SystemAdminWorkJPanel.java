@@ -4,6 +4,9 @@
  */
 package UserInterface.SystemAdminWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -17,8 +20,15 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
      * Creates new form SystemAdminWorkJPanel
      */
     JPanel mainWorkArea;
-    public SystemAdminWorkJPanel() {
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public SystemAdminWorkJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise){
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**

@@ -8,17 +8,19 @@ package Business.Role;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organization.LabAdmin;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import UserInterface.TestingCenterWorkArea.LabAdminJPanel;
 import javax.swing.JPanel;
 
 /**
  *
  * @author shreya.ghate
  */
-public class PersonRole {
+public class PersonRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer,City city, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PersonWorkAreaJPanel(userProcessContainer, account, organization, enterprise);
-    } 
+    public JPanel createWorkArea(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new LabAdminJPanel(mainWorkArea, account, organization,enterprise);
+    }  
 }
