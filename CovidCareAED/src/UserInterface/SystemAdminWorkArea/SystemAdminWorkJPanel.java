@@ -5,6 +5,7 @@
 package UserInterface.SystemAdminWorkArea;
 
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,6 +16,7 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminWorkJPanel
      */
+    JPanel mainWorkArea;
     public SystemAdminWorkJPanel() {
         initComponents();
     }
@@ -126,6 +128,10 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
 
     private void btnManageHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageHospitalActionPerformed
         // TODO add your handling code here:
+        ManageHospitalJPanel hospitalPanel = new ManageHospitalJPanel();
+        mainWorkArea.add('hospitalPanel', hospitalPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageHospitalActionPerformed
 
     private void btnManageTestCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageTestCenterActionPerformed
@@ -137,6 +143,10 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
         // TODO add your handling code here:
+        ManagePersonJPanel personPanel = new ManagePersonJPanel();
+        mainWorkArea.add('personPanel', personPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
     private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
@@ -154,6 +164,12 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
+        // TODO add your handling code here:
+        ManageAdminJPanel adminPanel = new ManageAdminJPanel();
+        mainWorkArea.add('adminPanel', adminPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
+        
         
     }//GEN-LAST:event_btnManageAdminActionPerformed
 

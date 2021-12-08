@@ -4,6 +4,9 @@
  */
 package UserInterface.TestingCenterWorkArea;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,6 +16,7 @@ public class LabAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LabAdminJPanel
      */
+    JPanel mainWorkArea;
     public LabAdminJPanel() {
         initComponents();
     }
@@ -79,10 +83,18 @@ public class LabAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReportActionPerformed
         // TODO add your handling code here:
+        ManageTestReportsJPanel testReportPanel = new ManageTestReportsJPanel();
+        mainWorkArea.add('testReportPanel', testReportPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageReportActionPerformed
 
     private void btnNewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReportActionPerformed
         // TODO add your handling code here:
+        NewReportJPanel reportPanel = new NewReportJPanel();
+        mainWorkArea.add('reportPanel', reportPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnNewReportActionPerformed
 
 

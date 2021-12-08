@@ -62,7 +62,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnManageStaff">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mange Staff"/>
+        <Property name="text" type="java.lang.String" value="Manage Staff"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageStaffActionPerformed"/>
