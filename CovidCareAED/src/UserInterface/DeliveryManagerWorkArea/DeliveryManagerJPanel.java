@@ -4,6 +4,9 @@
  */
 package UserInterface.DeliveryManagerWorkArea;
 
+import Business.Enterprise.Enterprise;
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,8 +16,12 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DeliveryManagerJPanel
      */
-    public DeliveryManagerJPanel() {
+    private JPanel mainWorkArea;
+    private Enterprise enterprise;
+    public DeliveryManagerJPanel(JPanel mainWorkArea, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea=mainWorkArea;
+        this.enterprise=enterprise;
     }
 
     /**
