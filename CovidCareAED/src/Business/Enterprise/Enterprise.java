@@ -5,11 +5,14 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+
 /**
  *
  * @author shreya.ghate
  */
-public class Enterprise {
+public abstract class Enterprise extends Organization {
     private EnterpriseType enterpriseType;
     private String enterpriseId;
 
@@ -27,10 +30,10 @@ public class Enterprise {
     }
     
     public enum EnterpriseType{
-        VaccinationManufacturer("Vaccination Manufacturer"),
-        TestingCenter("Testing Center"),
-        VaccinationCenter("Vaccination Center"),
-        Hospital("Hospital");
+        Hospital("Hospital"),
+        TestingLab("Testing Lab"),
+        VaccinationCenter("Vaccination Center"), 
+        VaccineManufacturer("Vaccine Manufacturer");  
         
         private String value;
         

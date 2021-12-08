@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Role;
 
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
-public class HospitalAdmin extends Organization {
+public class DeliveryManagerRole {
     
 }

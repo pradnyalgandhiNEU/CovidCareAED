@@ -8,13 +8,16 @@ package Business.Organization;
 import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
+import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author ayushgupta
  */
 public abstract class Organization {
+ 
     private String name;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
@@ -23,10 +26,15 @@ public abstract class Organization {
     private static int counter=1;
     
     public enum Type{
-        CenterAdmin("Center Admin"), 
-        HospitalAdmin("Hospital Admin"), 
+        DeliveryManager("Delivery Manager"),
+        Doctor("Doctor"),
+        HospitalAdmin("Hospital Admin"),
+        HospitalStaff("Hospital Staff"), 
         LabAdmin("Lab Admin"),
-        VaccineManufacturerAdmin("Vaccine Manufacturer Admin");
+        TestingLabAdmin("Testing Lab Admin"),
+        VaccinationCenterAdmin("Vaccination Center Admin"), 
+        VaccinationCenterStaff("Vaccination Center Staff"), 
+        VaccineManufacturerAdmin("Vaccine Manufacturer Admin");  
         
         private final String value;
         
@@ -45,7 +53,6 @@ public abstract class Organization {
         this.employeeDirectory = new EmployeeDirectory();
         this.userAccountDirectory = new UserAccountDirectory();
         this.organizationID = counter++;
-        //++counter
     }
 
     public abstract ArrayList<Role> getSupportedRole();

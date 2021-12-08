@@ -7,8 +7,8 @@ package Business.Organization;
 
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
-public class HospitalAdmin extends Organization {
+public class HospitalStaff extends Organization {
     
 }

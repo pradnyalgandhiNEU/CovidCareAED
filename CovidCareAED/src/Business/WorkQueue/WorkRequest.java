@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.WorkQueue;
 
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
-public class HospitalAdmin extends Organization {
+public class WorkRequest {
     
 }
