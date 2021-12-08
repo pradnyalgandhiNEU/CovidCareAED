@@ -5,6 +5,11 @@
  */
 package UserInterface.VaccinationCenterStaffWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shreya.ghate
@@ -14,8 +19,16 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManagePatientVaccineJPanel
      */
-    public ManagePatientVaccineJPanel() {
+    JPanel mainWorkArea;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public ManagePatientVaccineJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
