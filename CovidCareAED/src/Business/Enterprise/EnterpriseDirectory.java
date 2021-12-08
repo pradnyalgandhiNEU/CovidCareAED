@@ -6,7 +6,7 @@
 package Business.Enterprise;
 
 import java.util.ArrayList;
-import Business.Enterprise.Enterprise.Type;
+import Business.Enterprise.Enterprise;
 /**
  *
  * @author shreya.ghate
@@ -29,16 +29,26 @@ public class EnterpriseDirectory {
     //Create enterprise
     public Enterprise createAndAddEnterprise(Enterprise.EnterpriseType type, String ID, String name, String address, int phonenumber, String email, int totalbeds){
         Enterprise enterprise=null;
-        if(type==Enterprise.EnterpriseType.Hospital){
-            enterprise=new Hospital(ID, name, address, phonenumber, email, totalbeds);
-            enterpriseList.add(enterprise);
-        }else if(type==Enterprise.EnterpriseType.Distributor){
-            enterprise=new DistributorEnterprise(name);
-            enterpriseList.add(enterprise);
-        }else if(type==Enterprise.EnterpriseType.Hospital){
-            enterprise=new HospitalEnterprise(name);
-            enterpriseList.add(enterprise);
-        }
+        if( null!=type)switch (type) {
+                case Hospital:
+                    enterprise=new Hospital(ID, name, address, phonenumber, email, totalbeds);
+                    enterpriseList.add(enterprise);
+                    break;
+                case TestingLab:
+                    enterprise=new TestingLab(ID, name, address, phonenumber, email, totalbeds);
+                    enterpriseList.add(enterprise);
+                    break;
+                case VaccinationCenter:
+                    enterprise=new VaccinationCenter(ID, name, address, phonenumber, email, totalbeds);
+                    enterpriseList.add(enterprise);
+                    break;
+                case VaccineManufacturer:
+                    enterprise=new VaccinationManufacturer(ID, name, address, phonenumber, email, totalbeds);
+                    enterpriseList.add(enterprise);
+                    break;
+                default:
+                    break;
+            }
             return enterprise;
     }
 }

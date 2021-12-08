@@ -74,7 +74,6 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtName" min="-2" pref="212" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="comboRole" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="lblPhone2" min="-2" max="-2" attributes="0"/>
@@ -111,9 +110,9 @@
                   <Component id="btnView" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="lblID" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="lblStaffID" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="204" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
