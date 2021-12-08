@@ -81,30 +81,30 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
                 .addComponent(btnViewInventory)
                 .addGap(37, 37, 37)
                 .addComponent(btnManageStaff)
-                .addGap(48, 48, 48)
+                .addGap(27, 27, 27)
                 .addComponent(btnPlaceOrder)
-                .addContainerGap(455, Short.MAX_VALUE))
+                .addContainerGap(476, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed
        ViewVaccineInventoryJPanel viewVaccineInventoryJPanel = new ViewVaccineInventoryJPanel();
        mainWorkArea.add("viewVaccineInventoryJPanel", viewVaccineInventoryJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
        layout.next( mainWorkArea);
     }//GEN-LAST:event_btnViewInventoryActionPerformed
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
-       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageOrdersJPanel( );
-       mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
+       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageVaccinationCenterStaffJPanel( );
+       mainWorkArea.add("manageVaccinationCenterStaffJPanel", manageVaccinationCenterStaffJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
        layout.next( mainWorkArea);
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
-       ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel( mainWorkArea, enterprise);
-       mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
+       PlaceVaccineOrderJPanel placeVaccineOrderJPanel = new PlaceVaccineOrderJPanel( mainWorkArea, enterprise);
+       mainWorkArea.add("placeVaccineOrderJPanel", placeVaccineOrderJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
        layout.next( mainWorkArea);
     }//GEN-LAST:event_btnPlaceOrderActionPerformed
 

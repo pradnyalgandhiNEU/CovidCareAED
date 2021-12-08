@@ -4,6 +4,9 @@
  */
 package UserInterface.HospitalAdminWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -17,8 +20,15 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
      * Creates new form HospitalAdminJPanel
      */
     JPanel mainWorkArea;
-    public HospitalAdminJPanel() {
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public HospitalAdminJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise){
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
