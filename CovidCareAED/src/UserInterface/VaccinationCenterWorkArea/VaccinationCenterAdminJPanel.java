@@ -5,8 +5,12 @@
  */
 package UserInterface.VaccinationCenterWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import UserInterface.VaccineManufacturerWorkArea.ManageOrdersJPanel;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,8 +21,16 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form VaccinationCenterAdminJPanel
      */
-    public VaccinationCenterAdminJPanel() {
+    JPanel mainWorkArea;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public VaccinationCenterAdminJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
@@ -102,7 +114,7 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
-       PlaceVaccineOrderJPanel placeVaccineOrderJPanel = new PlaceVaccineOrderJPanel( mainWorkArea, enterprise);
+       PlaceVaccineOrderJPanel placeVaccineOrderJPanel = new PlaceVaccineOrderJPanel();
        mainWorkArea.add("placeVaccineOrderJPanel", placeVaccineOrderJPanel);
        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
        layout.next( mainWorkArea);

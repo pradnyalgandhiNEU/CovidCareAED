@@ -4,7 +4,11 @@
  */
 package UserInterface.VaccineManufacturerWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,8 +19,16 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form VaccineManufacturerAdminJPanel
      */
-    public VaccineManufacturerAdminJPanel() {
+    JPanel mainWorkArea;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    public VaccineManufacturerAdminJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
