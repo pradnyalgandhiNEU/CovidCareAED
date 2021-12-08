@@ -6,6 +6,7 @@
 package Business;
 
 import Business.City.City;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -40,8 +41,8 @@ public class EcoSystem extends Organization {
     }
     
     private EcoSystem(){
-        super(null);
-        cityList = new ArrayList<City>();
+        super(null, null, null, null, parseInt(null), null, parseInt(null));
+        cityList=new ArrayList<City>();
     }
 
     public ArrayList<City> getCityList() {

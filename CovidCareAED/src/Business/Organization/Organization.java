@@ -14,11 +14,17 @@ import java.util.Random;
 
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
 public abstract class Organization {
  
+    private String type;
+    private String ID;
     private String name;
+    private String address;
+    private int phonenumber;
+    private String email;
+    private int totalbeds;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
@@ -47,8 +53,14 @@ public abstract class Organization {
         }
     }
 
-    public Organization(String name) {
+    public Organization(String type, String ID, String name, String address, int phonenumber, String email, int totalbeds) {
         this.name = name;
+        this.ID = ID;
+        this.type = type;
+        this.address = address;
+        this.email = email;
+        this.phonenumber = phonenumber;
+        this.totalbeds = totalbeds;
         this.workQueue = new WorkQueue();
         this.employeeDirectory = new EmployeeDirectory();
         this.userAccountDirectory = new UserAccountDirectory();
@@ -82,6 +94,62 @@ public abstract class Organization {
 
     public void setWorkQueue(WorkQueue workQueue) {
         this.workQueue = workQueue;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(int phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getTotalbeds() {
+        return totalbeds;
+    }
+
+    public void setTotalbeds(int totalbeds) {
+        this.totalbeds = totalbeds;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Organization.counter = counter;
     }
 
     @Override
