@@ -5,6 +5,9 @@
  */
 package UserInterface.VaccinationCenterWorkArea;
 
+import UserInterface.VaccineManufacturerWorkArea.ManageOrdersJPanel;
+import java.awt.CardLayout;
+
 /**
  *
  * @author ayushgupta
@@ -28,17 +31,32 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnViewInventory = new javax.swing.JButton();
+        btnManageStaff = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
 
         jLabel1.setText("Manage Vaccination Center");
 
-        jButton1.setText("View Inventory");
+        btnViewInventory.setText("View Inventory");
+        btnViewInventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewInventoryActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Manage Staff");
+        btnManageStaff.setText("Manage Staff");
+        btnManageStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageStaffActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Place Order");
+        btnPlaceOrder.setText("Place Order");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlaceOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -49,9 +67,9 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnPlaceOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnManageStaff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnViewInventory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(408, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -60,20 +78,41 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
                 .addGap(53, 53, 53)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84)
-                .addComponent(jButton1)
+                .addComponent(btnViewInventory)
                 .addGap(37, 37, 37)
-                .addComponent(jButton2)
+                .addComponent(btnManageStaff)
                 .addGap(48, 48, 48)
-                .addComponent(jButton3)
+                .addComponent(btnPlaceOrder)
                 .addContainerGap(455, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed
+       ViewVaccineInventoryJPanel viewVaccineInventoryJPanel = new ViewVaccineInventoryJPanel();
+       mainWorkArea.add("viewVaccineInventoryJPanel", viewVaccineInventoryJPanel);
+       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
+       layout.next( mainWorkArea);
+    }//GEN-LAST:event_btnViewInventoryActionPerformed
+
+    private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
+       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageOrdersJPanel( );
+       mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
+       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
+       layout.next( mainWorkArea);
+    }//GEN-LAST:event_btnManageStaffActionPerformed
+
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+       ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel( mainWorkArea, enterprise);
+       mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
+       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
+       layout.next( mainWorkArea);
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnManageStaff;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnViewInventory;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
