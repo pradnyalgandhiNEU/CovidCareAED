@@ -9,12 +9,12 @@ package UserInterface.VaccinationCenterWorkArea;
  *
  * @author ayushgupta
  */
-public class ViewVaccineInventory extends javax.swing.JPanel {
+public class ViewVaccineInventoryJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageVaccineInventory
      */
-    public ViewVaccineInventory() {
+    public ViewVaccineInventoryJPanel() {
         initComponents();
     }
 

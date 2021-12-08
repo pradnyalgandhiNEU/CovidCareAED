@@ -4,6 +4,8 @@
  */
 package UserInterface.SystemAdminWorkArea;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author pradnyalgandhi
@@ -127,7 +129,10 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageHospitalActionPerformed
 
     private void btnManageTestCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageTestCenterActionPerformed
-        // TODO add your handling code here:
+        ManageTestCenterJPanel manageTestCenterJPanel = new ManageTestCenterJPanel(mainWorkArea, enterprise);
+        mainWorkArea.add("manageTestCenterJPanel", manageTestCenterJPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageTestCenterActionPerformed
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
@@ -135,15 +140,21 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
     private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
-        // TODO add your handling code here:
+        ManageManufacturerJPanel manageAVaccineManufacturerJPanel = new ManageManufacturerJPanel(mainWorkArea, enterprise);
+        mainWorkArea.add("manageAVaccineManufacturerJPanel", manageAVaccineManufacturerJPanel);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageVaccineManufacturerActionPerformed
 
     private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
-        // TODO add your handling code here:
+       ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel(mainWorkArea, enterprise);
+       mainWorkArea.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
 

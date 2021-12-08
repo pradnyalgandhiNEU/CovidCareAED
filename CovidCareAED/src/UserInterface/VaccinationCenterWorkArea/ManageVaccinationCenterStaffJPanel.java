@@ -9,12 +9,12 @@ package UserInterface.VaccinationCenterWorkArea;
  *
  * @author ayushgupta
  */
-public class ManageVacciantionCenterStaff extends javax.swing.JPanel {
+public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageVacciantionCenterStaff
      */
-    public ManageVacciantionCenterStaff() {
+    public ManageVaccinationCenterStaffJPanel() {
         initComponents();
     }
 
