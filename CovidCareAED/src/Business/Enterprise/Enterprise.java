@@ -31,9 +31,9 @@ public abstract class Enterprise extends Organization {
     
     public enum EnterpriseType{
         Hospital("Hospital"),
-        TestingLab("Testing Lab"),
-        VaccinationCenter("Vaccination Center"), 
-        VaccineManufacturer("Vaccine Manufacturer");  
+        TestingLab("TestingLab"),
+        VaccinationCenter("VaccinationCenter"), 
+        VaccineManufacturer("VaccineManufacturer");  
         
         private String value;
         
