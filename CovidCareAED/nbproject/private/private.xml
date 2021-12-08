@@ -3,42 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/UserInterface/DeliveryManagerWorkArea/DeliveryManagerJPanel.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/UserInterface/MainJFrame.java</file>
-            <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/UserInterface/VaccinationCenterWorkArea/VaccinationCenterAdminJPanel.java</file>
-            <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/UserInterface/VaccineManufacturerWorkArea/ManageOrdersJPanel.java</file>
-            <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/Business/TestingCenter/TestReport.java</file>
-            <file>file:/Users/ayushgupta/Desktop/Java%20assignment/Project/CovidCareAED/CovidCareAED/src/UserInterface/DeliveryManagerWorkArea/DeliveryManagerJPanel.java</file>
-=======
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/Role.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/Organization.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/VaccinationCenterAdminRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/LabAdmin.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/ConfigureASystem.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/EcoSystem.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/SystemAdminRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/VaccineManufactureAdmin.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/Enterprise.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/PersonRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/HospitalAdminRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/DoctorRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/LabAdminRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/PatientRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/HospitalAdmin.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/MainJFrame.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/UserAccount/UserAccount.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/CenterAdmin.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/HospitalStaffRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/VaccineManufacturerRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/City/City.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/VaccinationCenterStaffRole.java</file>
-            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/WorkQueue.java</file>
->>>>>>> 97f5657547b5f04a3c00aee58b31dc61fb743194
->>>>>>> 0fd4e9d17b37911cb1aa2b8e43a4ae4a3bb0d493
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/ConfigureASystem.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/EcoSystem.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Enterprise/TestingLab.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Enterprise/EnterpriseDirectory.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Organization/Organization.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Organization/DeliveryManager.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Enterprise/VaccinationCenter.java</file>
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Enterprise/Hospital.java</file>
         </group>
     </open-files>
 </project-private>
