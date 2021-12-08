@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Enterprise;
+package Business.WorkQueue;
 
 /**
  *
  * @author shreya.ghate
  */
-public class VaccinationManufacturer {
+public class VitalSignsWorkRequest {
     
 }

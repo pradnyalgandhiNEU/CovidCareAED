@@ -7,8 +7,8 @@ package Business.Organization;
 
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
-public class CenterAdmin {
+public class DeliveryManager extends Organization {
     
 }

@@ -5,11 +5,14 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+
 /**
  *
  * @author shreya.ghate
  */
-public class Enterprise {
+public abstract class Enterprise extends Organization {
     private EnterpriseType enterpriseType;
     private String enterpriseId;
 
@@ -27,10 +30,10 @@ public class Enterprise {
     }
     
     public enum EnterpriseType{
-        VaccinationManufacturer("Vaccination Manufacturer"),
-        TestingCenter("Testing Center"),
-        VaccinationCenter("Vaccination Center"),
-        Hospital("Hospital");
+        Hospital("Hospital"),
+        TestingLab("Testing Lab"),
+        VaccinationCenter("Vaccination Center"), 
+        VaccineManufacturer("Vaccine Manufacturer");  
         
         private String value;
         
@@ -54,8 +57,8 @@ public class Enterprise {
         this.enterpriseType = enterpriseType;
     }
     
-    public Enterprise(String name,EnterpriseType type){
-        super(name);
+    public Enterprise(EnterpriseType type, String ID, String name, String address, int phonenumber, String email, int totalbeds){
+        super(type.toString(),ID, name, address, phonenumber, email, totalbeds);
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
     }

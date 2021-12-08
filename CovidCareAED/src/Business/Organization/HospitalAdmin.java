@@ -9,6 +9,6 @@ package Business.Organization;
  *
  * @author ayushgupta
  */
-public class HospitalAdmin {
+public class HospitalAdmin extends Organization {
     
 }

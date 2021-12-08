@@ -5,14 +5,16 @@
  */
 package Business.City;
 
+import Business.Enterprise.EnterpriseDirectory;
 import java.util.ArrayList;
 
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
 public class City {
     private String cityName;
+    private EnterpriseDirectory enterpriseDirectory;
     private ArrayList<Community> communityList;
     
     public City(){
@@ -40,5 +42,9 @@ public class City {
         communityList.add(community);
         return community;
         
+    }
+    
+     public EnterpriseDirectory getEnterpriseDirectory() {
+        return enterpriseDirectory;
     }
 }

@@ -79,7 +79,6 @@ public class StaffJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageCapacity;
     private javax.swing.JButton btnManageVitalSign;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

@@ -34,9 +34,9 @@ public abstract class Role {
         }
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer,City city, UserAccount account, 
+   public abstract JPanel createWorkArea(JPanel userProcessContainer, 
+            UserAccount account, 
             Organization organization, 
             Enterprise enterprise, 
-            EcoSystem business
-    );
+            EcoSystem business);
 }
