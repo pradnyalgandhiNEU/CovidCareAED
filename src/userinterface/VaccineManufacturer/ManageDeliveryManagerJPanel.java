@@ -4,6 +4,9 @@
  */
 package userinterface.VaccineManufacturer;
 
+import Business.EcoSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,8 +16,12 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageDeliveryManagerJPanel
      */
-    public ManageDeliveryManagerJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    public ManageDeliveryManagerJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;
     }
 
     /**

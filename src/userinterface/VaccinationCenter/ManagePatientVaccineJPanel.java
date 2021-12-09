@@ -6,6 +6,7 @@
 package userinterface.VaccinationCenter;
 
 //import Business.Enterprise.Enterprise;
+import Business.EcoSystem;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -19,15 +20,15 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManagePatientVaccineJPanel
      */
-    JPanel mainWorkArea;
+    JPanel userProcessContainer;
     UserAccount account;
     Organization organization;
+    EcoSystem system;
     //Enterprise enterprise;
-    public ManagePatientVaccineJPanel(JPanel mainWorkArea, UserAccount account, Organization organization) {
+    public ManagePatientVaccineJPanel(JPanel userProcessConatiner, EcoSystem system) {
         initComponents();
-        this.mainWorkArea = mainWorkArea;
-        this.account=account;
-        this.organization=organization;
+        this.userProcessContainer = userProcessContainer;
+        this.system=system;
         //this.enterprise=enterprise;
     }
 

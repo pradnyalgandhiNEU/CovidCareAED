@@ -6,6 +6,7 @@
 package userinterface.VaccinationCenter;
 
 
+import Business.EcoSystem;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -23,12 +24,14 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     JPanel mainWorkArea;
     UserAccount account;
     Organization organization;
+    EcoSystem system;
     //Enterprise enterprise;
-    public VaccinationCenterAdminJPanel(JPanel mainWorkArea, UserAccount account, Organization organization) {
+    public VaccinationCenterAdminJPanel(JPanel mainWorkArea, EcoSystem system) {
         initComponents();
         this.mainWorkArea = mainWorkArea;
         this.account=account;
         this.organization=organization;
+        this.system=system;
         //this.enterprise=enterprise;
     }
 

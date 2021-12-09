@@ -5,6 +5,7 @@
  */
 package userinterface.VaccineManufacturer;
 
+import Business.EcoSystem;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -19,15 +20,15 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form VaccineManufacturerAdminJPanel
      */
-    JPanel mainWorkArea;
+    JPanel userProcessContainer;
     UserAccount account;
     Organization organization;
+    EcoSystem system;
     //Enterprise enterprise;
-    public VaccineManufacturerAdminJPanel(JPanel mainWorkArea, UserAccount account, Organization organization) {
+    public VaccineManufacturerAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
-        this.mainWorkArea = mainWorkArea;
-        this.account=account;
-        this.organization=organization;
+        this.userProcessContainer = userProcessContainer;
+        this.system=system;
         //this.enterprise=enterprise;
     }
 
@@ -92,23 +93,23 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrdersActionPerformed
        ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel();
-       mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
-       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-       layout.next(mainWorkArea);
+       userProcessContainer.add("manageOrdersJPanel", manageOrdersJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageOrdersActionPerformed
 
     private void btnManageInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageInventoryActionPerformed
        ManageInventoryJPanel manageInventoryJPanel = new ManageInventoryJPanel();
-       mainWorkArea.add("manageTestCenterJPanel", manageInventoryJPanel);
-       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-       layout.next(mainWorkArea);
+       userProcessContainer.add("manageTestCenterJPanel", manageInventoryJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageInventoryActionPerformed
 
     private void btnManageDeliveryMangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDeliveryMangerActionPerformed
-       ManageDeliveryManagerJPanel manageDeliveryJPanel = new ManageDeliveryManagerJPanel();
-       mainWorkArea.add("manageDeliveryJPanel", manageDeliveryJPanel);
-       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-       layout.next(mainWorkArea);
+       ManageDeliveryManagerJPanel manageDeliveryJPanel = new ManageDeliveryManagerJPanel(userProcessContainer, system);
+       userProcessContainer.add("manageDeliveryJPanel", manageDeliveryJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageDeliveryMangerActionPerformed
 
 
