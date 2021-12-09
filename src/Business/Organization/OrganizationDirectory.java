@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Customer;
+package Business.Organization;
 
 /**
  *
- * @author harold
+ * @author ayushgupta
  */
-public class Customer {
+public class OrganizationDirectory {
     
 }

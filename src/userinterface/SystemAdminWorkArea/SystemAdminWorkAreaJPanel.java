@@ -174,7 +174,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
-        ManagePersonJPanel managePerson = new ManagePersonJPanel();
+        ManagePersonJPanel managePerson = new ManagePersonJPanel(ecosystem);
         userProcessContainer.add("managePerson", managePerson);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
