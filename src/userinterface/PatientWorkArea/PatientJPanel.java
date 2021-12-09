@@ -4,6 +4,9 @@
  */
 package userinterface.PatientWorkArea;
 
+import Business.EcoSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,8 +16,12 @@ public class PatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PatientJPanel
      */
-    public PatientJPanel() {
+    JPanel userProcessInterface;
+    EcoSystem system;
+    public PatientJPanel(JPanel userProcessInterface, EcoSystem system) {
         initComponents();
+        this.userProcessInterface=userProcessInterface;
+        this.system=system;
     }
 
     /**
