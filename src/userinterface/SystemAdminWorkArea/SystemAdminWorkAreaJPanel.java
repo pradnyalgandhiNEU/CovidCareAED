@@ -179,6 +179,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add('manageAdmins', manageAdmins);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        
 
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
