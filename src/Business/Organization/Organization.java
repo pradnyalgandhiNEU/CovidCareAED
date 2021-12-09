@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business;
+package Business.Organization;
 
 import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;

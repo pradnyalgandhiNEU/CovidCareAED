@@ -5,10 +5,19 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shreya.ghate
  */
-public class PatientRole {
+public class PatientRole extends Role {
+    private EcoSystem system;
     
+    @Override
+    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+        return new PatientWorkAreaJPanel(mainWorkArea, system);
+    } 
 }

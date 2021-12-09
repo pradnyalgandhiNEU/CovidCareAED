@@ -5,10 +5,21 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
+
 /**
  *
  * @author shreya.ghate
  */
-public class DeliveryManagerRole {
+public class DeliveryManagerRole extends Role {
+    private EcoSystem system;
+    
+    @Override
+    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+        return new DeliveryManagerWorkAreaJPanel(mainWorkArea, system);
+    } 
     
 }

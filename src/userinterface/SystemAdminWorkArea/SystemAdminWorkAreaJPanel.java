@@ -7,7 +7,7 @@ package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
 
-import Business.Organization;
+import Business.Organization.Organization;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
@@ -167,7 +167,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jSplitPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
     private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
     ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
     userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);

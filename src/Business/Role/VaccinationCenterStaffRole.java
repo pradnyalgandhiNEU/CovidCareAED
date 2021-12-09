@@ -5,10 +5,19 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shreya.ghate
  */
-public class VaccinationCenterStaffRole {
+public class VaccinationCenterStaffRole extends Role {
+    private EcoSystem system;
     
+    @Override
+    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+        return new VaccinationCenterStaffWorkAreaJPanel(mainWorkArea, system);
+    } 
 }
