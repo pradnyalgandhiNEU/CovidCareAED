@@ -14,17 +14,21 @@ public class PersonDirectory {
     ArrayList<Person> personList;
     
     public PersonDirectory(){
-        personList = new ArrayList();
+        personList = new ArrayList<Person>();
     }
-    
-    public void setPersonlist(ArrayList<Person> personlist) {
-        this.personList = personlist;
+
+    public ArrayList<Person> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(ArrayList<Person> personList) {
+        this.personList = personList;
     }
       
 
-    public Person newPerson() {
+    public Person newPerson(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String username, String password) {
 
-        Person person = new Person();
+        Person person = new Person(personID, name, street, zipcode, age, Community, phoneNo, email, username, password );
         personList.add(person);
         return person;
     }
