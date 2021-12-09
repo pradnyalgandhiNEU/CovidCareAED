@@ -104,21 +104,21 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
-       ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel( mainWorkArea, enterprise);
+       ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel();
        mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
        CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
        layout.next( mainWorkArea);
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventoryActionPerformed
-       ManageInventoryJPanel manageInventoryJPanel = new ManageInventoryJPanel( mainWorkArea, enterprise);
+       ManageInventoryJPanel manageInventoryJPanel = new ManageInventoryJPanel();
        mainWorkArea.add("manageInventoryJPanel", manageInventoryJPanel);
        CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
        layout.next( mainWorkArea);
     }//GEN-LAST:event_btnInventoryActionPerformed
 
     private void btnDeliveryManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeliveryManagerActionPerformed
-       ManageDeliveryManagerJPanel manageDeliveryManagerJPanel = new ManageDeliveryManagerJPanel( mainWorkArea, enterprise);
+       ManageDeliveryManagerJPanel manageDeliveryManagerJPanel = new ManageDeliveryManagerJPanel();
        mainWorkArea.add("manageDeliveryManagerJPanel", manageDeliveryManagerJPanel);
        CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
        layout.next( mainWorkArea);

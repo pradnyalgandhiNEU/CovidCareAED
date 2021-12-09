@@ -21,6 +21,6 @@ import javax.swing.JPanel;
 public class PersonRole extends Role{
     @Override
     public JPanel createWorkArea(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new LabAdminJPanel(mainWorkArea, account, organization,enterprise);
+        return new (mainWorkArea, account, organization,enterprise);
     }  
 }
