@@ -27,59 +27,67 @@ public class ManageTestCenterJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
+        txtPhone = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JButton();
+        lblPhone = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        btnUpdate = new javax.swing.JButton();
+        lblPassword = new javax.swing.JLabel();
+        lblManageTesting = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
-        lblManageTestingCenter = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
-        lblID = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        lblID = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
+        btnView = new javax.swing.JButton();
         lblAddress = new javax.swing.JLabel();
-        btnCreate = new javax.swing.JButton();
-        txtPhone = new javax.swing.JTextField();
-        lblPhone = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
-        lblEmail = new javax.swing.JLabel();
-
-        btnUpdate.setText("Update");
 
         btnDelete.setText("Delete");
-
-        btnView.setText("View");
-
-        lblManageTestingCenter.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageTestingCenter.setForeground(new java.awt.Color(204, 204, 204));
-        lblManageTestingCenter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageTestingCenter.setText("Manage Testing Center");
-
-        lblName.setText("Name:");
-
-        lblID.setText("ID:");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Name", "Address", "Phone No", "Email"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        lblAddress.setText("Address:");
 
         btnCreate.setText("Create");
 
         lblPhone.setText("Phone No:");
 
+        lblUsername.setText("Username:");
+
         lblEmail.setText("Email:");
+
+        btnUpdate.setText("Update");
+
+        lblPassword.setText("Password:");
+
+        lblManageTesting.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageTesting.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageTesting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageTesting.setText("Manage Testing Center");
+
+        lblName.setText("Name:");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Address", "Phone No", "Email", "Username", "Password"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        lblID.setText("ID:");
+
+        btnView.setText("View");
+
+        lblAddress.setText("Address:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -112,28 +120,37 @@ public class ManageTestCenterJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnUpdate)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCreate))
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 369, Short.MAX_VALUE))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblUsername)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(lblPassword)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 366, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1)
-                    .addComponent(lblManageTestingCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblManageTesting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnView)
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete)
-                .addGap(42, 42, 42))
+                .addGap(68, 68, 68))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(lblManageTestingCenter)
+                .addComponent(lblManageTesting)
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -160,11 +177,19 @@ public class ManageTestCenterJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsername)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPassword)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
-                .addGap(191, 191, 191))
+                .addGap(100, 100, 100))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,13 +204,17 @@ public class ManageTestCenterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblManageTestingCenter;
+    private javax.swing.JLabel lblManageTesting;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

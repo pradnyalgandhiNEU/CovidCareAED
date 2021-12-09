@@ -4,6 +4,8 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.EcoSystem;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,8 +15,10 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageManufacturerJPanel
      */
-    public ManageManufacturerJPanel() {
+    EcoSystem ecosystem;
+    public ManageManufacturerJPanel(EcoSystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
     }
 
     /**
@@ -43,6 +47,10 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
         btnView = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
+        txtUsername = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
 
         lblID.setText("ID:");
 
@@ -63,13 +71,13 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Address", "Phone No", "Email"
+                "ID", "Name", "Address", "Phone No", "Email", "Username", "Password"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -79,6 +87,10 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
         btnDelete.setText("Delete");
 
         btnCreate.setText("Create");
+
+        lblUsername.setText("Username:");
+
+        lblPassword.setText("Password:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -113,8 +125,17 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
                                 .addComponent(btnUpdate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCreate))
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 373, Short.MAX_VALUE))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblUsername)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(lblPassword)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 370, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -159,11 +180,19 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsername)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPassword)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
-                .addGap(191, 191, 191))
+                .addGap(100, 100, 100))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -180,11 +209,15 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblManageManufacturer;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
