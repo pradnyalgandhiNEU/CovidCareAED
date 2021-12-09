@@ -104,10 +104,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
-       ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel( mainWorkArea, enterprise);
-       mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventoryActionPerformed
