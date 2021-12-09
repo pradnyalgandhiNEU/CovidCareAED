@@ -40,7 +40,10 @@ public abstract class Organization {
         TestingLabAdmin("Testing Lab Admin"),
         VaccinationCenterAdmin("Vaccination Center Admin"), 
         VaccinationCenterStaff("Vaccination Center Staff"), 
-        VaccineManufacturerAdmin("Vaccine Manufacturer Admin");  
+        VaccineManufacturerAdmin("Vaccine Manufacturer Admin"), 
+        Patient("Patient"),
+        Person("Person"),
+        SystemAdmin("System Admin");
         
         private final String value;
         

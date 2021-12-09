@@ -40,9 +40,16 @@ public class OrganizationDirectory {
         }else if (type.getValue().equals(Organization.Type.HospitalStaff.getValue())){
             organization = new HospitalStaff(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
-        }
-        
-        else if (type.getValue().equals(Organization.Type.LabAdmin.getValue())) {
+        }else if (type.getValue().equals(Organization.Type.Person.getValue())) {
+            organization = new Person(ID, name, address, phonenumber, email, totalbeds);
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Organization.Type.Patient.getValue())) {
+            organization = new Patient(ID, name, address, phonenumber, email, totalbeds);
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Organization.Type.SystemAdmin.getValue())) {
+            organization = new SystemAdmin(ID, name, address, phonenumber, email, totalbeds);
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Organization.Type.LabAdmin.getValue())) {
             organization = new LabAdmin(ID, name, address, phonenumber, email, totalbeds);
             organizationList.add(organization);
         }else if (type.getValue().equals(Organization.Type.VaccinationCenterAdmin.getValue())) {
