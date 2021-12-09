@@ -5,7 +5,9 @@
  */
 package userinterface.Hospital;
 
+import Business.EcoSystem;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,8 +18,13 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HospitalAdminJPanel
      */
-    public HospitalAdminJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem ecosystem;
+    public HospitalAdminJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.ecosystem=ecosystem;
+        
     }
 
     /**
@@ -105,33 +112,33 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     private void btnManageDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDoctorActionPerformed
         // TODO add your handling code here:
         ManageDoctorJPanel manageDoctorJPanel = new ManageDoctorJPanel();
-        mainWorkArea.add("manageDoctorJPanel", manageDoctorJPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+        userProcessContainer.add("manageDoctorJPanel", manageDoctorJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageDoctorActionPerformed
 
     private void btnManageCapacityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCapacityActionPerformed
         // TODO add your handling code here:
-        ManageCapacityJPanel manageCapacityJPanel = new ManageCapacityJPanel();
-        mainWorkArea.add("manageCapacityJPanel", manageCapacityJPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+        ManageBedCapacityJPanel manageCapacityJPanel = new ManageBedCapacityJPanel();
+        userProcessContainer.add("manageCapacityJPanel", manageCapacityJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageCapacityActionPerformed
 
     private void btnManagePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePatientActionPerformed
         // TODO add your handling code here:
         ManagePatientJPanel managePatientJPanel = new ManagePatientJPanel();
-        mainWorkArea.add("managePatientJPanel", managePatientJPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+        userProcessContainer.add("managePatientJPanel", managePatientJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManagePatientActionPerformed
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
         // TODO add your handling code here:
         ManageHospitalStaffJPanel manageStaffJPanel = new ManageHospitalStaffJPanel();
-        mainWorkArea.add("manageStaffJPanel", manageStaffJPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+        userProcessContainer.add("manageStaffJPanel", manageStaffJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
 

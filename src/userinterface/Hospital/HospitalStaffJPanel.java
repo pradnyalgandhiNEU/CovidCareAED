@@ -5,6 +5,10 @@
  */
 package userinterface.Hospital;
 
+import Business.EcoSystem;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shreya.ghate
@@ -14,8 +18,12 @@ public class HospitalStaffJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HospitalStaffJPanel
      */
-    public HospitalStaffJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem ecosystem;
+    public HospitalStaffJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.ecosystem=ecosystem;
     }
 
     /**
@@ -27,19 +35,56 @@ public class HospitalStaffJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnManageVitalSign = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        btnManageVitalSign.setText("Manage Vital Signs");
+        btnManageVitalSign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageVitalSignActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Welcome, Staff");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(379, 379, 379)
+                .addComponent(btnManageVitalSign, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 836, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1)
+                .addGap(98, 98, 98)
+                .addComponent(btnManageVitalSign)
+                .addContainerGap(631, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnManageVitalSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVitalSignActionPerformed
+        // TODO add your handling code here:
+        ManageVitalSignsReportJPanel manageVitalSignsJPanel = new ManageVitalSignsReportJPanel();
+        userProcessContainer.add("manageTestCenterJPanel", manageVitalSignsJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageVitalSignActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnManageVitalSign;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
