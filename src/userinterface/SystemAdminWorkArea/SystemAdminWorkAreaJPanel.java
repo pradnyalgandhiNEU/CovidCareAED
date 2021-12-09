@@ -176,7 +176,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
-
+        ManagePersonJPanel managePerson = new ManagePersonJPanel();
+        userProcessContainer.add("managePerson", managePerson);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
     private void btnManageTestCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageTestCenterActionPerformed
@@ -194,7 +198,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageHospitalActionPerformed
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-
+        ManageAdminsJPanel manageAdmins = new ManageAdminsJPanel();
+        userProcessContainer.add("manageAdmins", manageAdmins);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
     private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
