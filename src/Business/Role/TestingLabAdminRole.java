@@ -13,11 +13,11 @@ import javax.swing.JPanel;
  *
  * @author shreya.ghate
  */
-public class TestingLabAdminRole extends Role {
+public abstract class TestingLabAdminRole extends Role {
    private EcoSystem system;
-    
-    @Override
-    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-        return new TestingLabAdminWorkAreaJPanel(mainWorkArea, system);
-    }  
+//    
+//    @Override
+//    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+//        return new TestingLabAdminWorkAreaJPanel(mainWorkArea, system);
+//    }  
 }

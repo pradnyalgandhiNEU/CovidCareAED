@@ -14,12 +14,12 @@ import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
  *
  * @author shreya.ghate
  */
-public class DeliveryManagerRole extends Role {
-    private EcoSystem system;
-    
-    @Override
-    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-        return new DeliveryManagerWorkAreaJPanel(mainWorkArea, system);
-    } 
+public abstract class DeliveryManagerRole extends Role {
+//    private EcoSystem system;
+//    
+//    @Override
+//    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+//        return new DeliveryManagerWorkAreaJPanel(mainWorkArea, system);
+//    } 
     
 }

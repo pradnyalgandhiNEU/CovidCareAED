@@ -13,11 +13,11 @@ import javax.swing.JPanel;
  *
  * @author shreya.ghate
  */
-public class VaccineManufacturerRole extends Role {
+public abstract class VaccineManufacturerRole extends Role {
     private EcoSystem system;
     
-    @Override
-    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-        return new VaccineManufacturerWorkAreaJPanel(mainWorkArea, system);
-    } 
+//    @Override
+//    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+//        return new VaccineManufacturerWorkAreaJPanel(mainWorkArea, system);
+//    } 
 }
