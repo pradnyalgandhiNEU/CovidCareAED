@@ -21,7 +21,9 @@ public abstract class Role {
         Admin("Admin"),
         Doctor("Doctor"),
         Patient("Patient"),
-        LabAdmin("Lab Admin");
+        LabAdmin("Lab Admin"),
+        Person("Person"),
+        SystemAdmin("System Admin");
         
         private final String value;
         

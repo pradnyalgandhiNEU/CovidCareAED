@@ -23,7 +23,7 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
     UserAccount account;
     Organization organization;
     Enterprise enterprise;
-    public SystemAdminWorkJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise){
+    public SystemAdminWorkJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
         this.mainWorkArea = mainWorkArea;
         this.account=account;

@@ -10,17 +10,18 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.LabAdmin;
 import Business.Organization.Organization;
+import Business.Organization.Person;
 import Business.UserAccount.UserAccount;
-import UserInterface.TestingCenterWorkArea.LabAdminJPanel;
+import UserInterface.PersonWorkArea.PersonWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
  *
  * @author shreya.ghate
  */
-public class PersonRole extends Role{
+public class PersonRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new (mainWorkArea, account, organization,enterprise);
-    }  
+        return new PersonWorkAreaJPanel(mainWorkArea, account, (Person)organization, enterprise);
+    } 
 }
