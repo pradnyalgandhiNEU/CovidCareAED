@@ -12,10 +12,27 @@ public class Person {
     private int personID;
     private String name;
     private String street;
-    private String address;
+    private String zipcode;
+    private int age;
     private String Community;
     private String phoneNo;
     private String email;
+    private String username;
+    private String password;
+    
+    public Person(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String username, String password){
+        this.personID = personID;
+        this.name = name;
+        this.street = street;
+        this.zipcode = zipcode;
+        this.age = age;
+        this.Community = Community;
+        this.phoneNo = phoneNo;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        
+    }
 
     public int getPersonID() {
         return personID;
@@ -41,12 +58,38 @@ public class Person {
         this.street = street;
     }
 
-    public String getAddress() {
-        return address;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getCommunity() {
