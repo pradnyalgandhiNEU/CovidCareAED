@@ -5,23 +5,24 @@
  */
 package Business.Organization;
 
-import Business.Role.DeliveryManagerRole;
+import Business.Role.DoctorRole;
 import Business.Role.Role;
+import Business.Role.VaccinationCenterAdminRole;
 import java.util.ArrayList;
 
 /**
  *
  * @author ayushgupta
  */
-public class DeliveryManagerOrganization extends Organization{
-     public DeliveryManagerOrganization(String name) {
-        super(Type.DeliveryManager.getValue(), name);
+public class VaccinationCenterAdminOrganization extends Organization{
+     public VaccinationCenterAdminOrganization(String name) {
+        super(Organization.Type.VaccinationCenterAdmin.getValue(), name);
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new DeliveryManagerRole());
+        roles.add(new VaccinationCenterAdminRole());
         return roles;
     }
 }
