@@ -279,7 +279,21 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         
-//        for(Person person : ecosystem.getPersonDirectory())
+//        for(Person person : ecosystem.getPersonDirectory().getPersonList()){
+//            if(person.getEmail().equals(email)){
+//                JOptionPane.showMessageDialog(null, "Email ID already exists", "Warning", JOptionPane.ERROR);
+//            }
+//        }
+//        
+//        boolean flag = ecosystem.getPersonDirectory().getPersonList();
+//        if(flag == false){
+//            JOptionPane.showMessageDialog(null, "User name already exists");
+//        }
+//        else{
+//            ecosystem.getPersondirectory().newCustomer(ID, name, street, zipcode, age, community, phoneNo, email, username, password);
+//            ecosystem.getUserAccountDirectory().createUserAccount(username, password, employee, new CustomerRole());
+//            JOptionPane.showMessageDialog(null,"Customer Created");
+//        }
         
         
     }//GEN-LAST:event_btnCreateActionPerformed
