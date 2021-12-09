@@ -93,18 +93,18 @@ public class LabAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReportActionPerformed
         // TODO add your handling code here:
-        ManageTestReportsJPanel testReportPanel = new ManageTestReportsJPanel();
-        mainWorkArea.add('testReportPanel', testReportPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+       ManageTestReportsJPanel manageTestReportsJPanel = new ManageTestReportsJPanel();
+       mainWorkArea.add("manageTestReportsJPanel", manageTestReportsJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageReportActionPerformed
 
     private void btnNewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReportActionPerformed
         // TODO add your handling code here:
-        NewReportJPanel reportPanel = new NewReportJPanel();
-        mainWorkArea.add('reportPanel', reportPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+       NewReportJPanel newReportJPanel = new NewReportJPanel();
+       mainWorkArea.add("newReportJPanel", newReportJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnNewReportActionPerformed
 
 

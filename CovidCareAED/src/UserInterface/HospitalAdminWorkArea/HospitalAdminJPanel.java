@@ -115,34 +115,34 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
     private void btnManagePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePatientActionPerformed
         // TODO add your handling code here:
-        ManagePatientJPanel patientPanel = new ManagePatientJPanel();
-        mainWorkArea.add('patientPanel', patientPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+       ManagePatientJPanel managePatientJPanel = new ManagePatientJPanel();
+       mainWorkArea.add("managePatientJPanel", managePatientJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManagePatientActionPerformed
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
         // TODO add your handling code here:
-        ManageStaffJPanel staffPanel = new ManageStaffJPanel();
-        mainWorkArea.add('staffPanel', staffPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+       ManageStaffJPanel manageStaffJPanel = new ManageStaffJPanel();
+       mainWorkArea.add("manageStaffJPanel", manageStaffJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
     private void btnManageDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDoctorActionPerformed
         // TODO add your handling code here:
-        ManageDoctorJPanel doctorPanel = new ManageDoctorJPanel();
-        mainWorkArea.add('doctorPanel', doctorPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+       ManageDoctorJPanel manageDoctorJPanel = new ManageDoctorJPanel();
+       mainWorkArea.add("manageDoctorJPanel", manageDoctorJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageDoctorActionPerformed
 
     private void btnManageCapacityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCapacityActionPerformed
         // TODO add your handling code here:
-        ManageCapacityJPanel capacityPanel = new ManageCapacityJPanel();
-        mainWorkArea.add('capacityPanel', capactiyPanel);
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.next(mainWorkArea);
+       ManageCapacityJPanel manageCapacityJPanel = new ManageCapacityJPanel();
+       mainWorkArea.add("manageCapacityJPanel", manageCapacityJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageCapacityActionPerformed
 
 

@@ -7,6 +7,7 @@ package UserInterface.VaccineManufacturerWorkArea;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import UserInterface.SystemAdminWorkArea.ManageTestCenterJPanel;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -106,22 +107,22 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
        ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel();
        mainWorkArea.add("manageOrdersJPanel", manageOrdersJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventoryActionPerformed
        ManageInventoryJPanel manageInventoryJPanel = new ManageInventoryJPanel();
-       mainWorkArea.add("manageInventoryJPanel", manageInventoryJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       mainWorkArea.add("manageTestCenterJPanel", manageInventoryJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnInventoryActionPerformed
 
     private void btnDeliveryManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeliveryManagerActionPerformed
-       ManageDeliveryManagerJPanel manageDeliveryManagerJPanel = new ManageDeliveryManagerJPanel();
-       mainWorkArea.add("manageDeliveryManagerJPanel", manageDeliveryManagerJPanel);
-       CardLayout layout = (CardLayout)  mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       ManageDeliveryManagerJPanel manageDeliveryJPanel = new ManageDeliveryManagerJPanel();
+       mainWorkArea.add("manageDeliveryJPanel", manageDeliveryJPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
     }//GEN-LAST:event_btnDeliveryManagerActionPerformed
 
 
