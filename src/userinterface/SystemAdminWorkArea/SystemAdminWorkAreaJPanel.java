@@ -50,7 +50,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jTree = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
         btnManageVaccinationCenter = new javax.swing.JButton();
-        btnManageAdmin = new javax.swing.JButton();
         btnManageHospital = new javax.swing.JButton();
         btnManageTestCenter = new javax.swing.JButton();
         btnManagePerson = new javax.swing.JButton();
@@ -89,13 +88,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageAdmin.setText("Manage Admins");
-        btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageAdminActionPerformed(evt);
-            }
-        });
-
         btnManageHospital.setText("Manage Hospital");
         btnManageHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +120,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 534, Short.MAX_VALUE)
+            .addGap(0, 539, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(151, 151, 151)
@@ -138,18 +130,15 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(btnManageVaccineManufacturer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnManageHospital, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnManageTestCenter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnManageAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnManageTestCenter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(152, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 393, Short.MAX_VALUE)
+            .addGap(0, 397, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(64, 64, 64)
-                    .addComponent(btnManageAdmin)
-                    .addGap(18, 18, 18)
+                    .addGap(105, 105, 105)
                     .addComponent(btnManagePerson)
                     .addGap(18, 18, 18)
                     .addComponent(btnManageHospital)
@@ -166,6 +155,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jSplitPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+    
+    
     private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
     ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
     userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
@@ -189,18 +180,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageTestCenterActionPerformed
 
     private void btnManageHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageHospitalActionPerformed
-        ManageHospitalJPanel manageHospitalJPanel = new ManageHospitalJPanel();
+        ManageHospitalJPanel manageHospitalJPanel = new ManageHospitalJPanel(ecosystem);
         userProcessContainer.add("manageHospitalJPanel", manageHospitalJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageHospitalActionPerformed
-
-    private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-        ManageAdminsJPanel manageAdmins = new ManageAdminsJPanel();
-        userProcessContainer.add("manageAdmins", manageAdmins);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageAdminActionPerformed
 
     private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
        ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
@@ -211,7 +195,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageAdmin;
     private javax.swing.JButton btnManageHospital;
     private javax.swing.JButton btnManagePerson;
     private javax.swing.JButton btnManageTestCenter;
