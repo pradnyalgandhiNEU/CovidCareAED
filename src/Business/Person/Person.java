@@ -17,10 +17,9 @@ public class Person {
     private String Community;
     private String phoneNo;
     private String email;
-    private String username;
-    private String password;
     
-    public Person(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String username, String password){
+    
+    public Person(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email){
         this.personID = personID;
         this.name = name;
         this.street = street;
@@ -29,8 +28,7 @@ public class Person {
         this.Community = Community;
         this.phoneNo = phoneNo;
         this.email = email;
-        this.username = username;
-        this.password = password;
+        
         
     }
 
@@ -65,24 +63,6 @@ public class Person {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    
 
     public int getAge() {
         return age;

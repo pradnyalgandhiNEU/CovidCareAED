@@ -14,7 +14,7 @@ import userinterface.VaccineManufacturer.VaccineManufacturerAdminJPanel;
  *
  * @author shreya.ghate
  */
-public abstract class VaccineManufacturerRole extends Role {
+    public class VaccineManufacturerRole extends Role {
     private EcoSystem system;
     
     @Override
