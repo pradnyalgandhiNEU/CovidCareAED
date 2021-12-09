@@ -8,6 +8,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.Hospital.HospitalAdminJPanel;
 
 /**
  *
@@ -18,6 +19,6 @@ public class HospitalAdminRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-        return new HospitalAdminWorkAreaJPanel(mainWorkArea, system);
+        return new HospitalAdminJPanel(mainWorkArea, system);
     } 
 }
