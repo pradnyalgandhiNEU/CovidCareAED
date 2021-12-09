@@ -5,6 +5,7 @@
  */
 package Business.TestingCenter;
 
+import Business.Enterprise.TestingLab;
 import Business.Hospital.Patient;
 
 /**
@@ -12,7 +13,17 @@ import Business.Hospital.Patient;
  * @author ayushgupta
  */
 public class TestReport {
+    TestingLab testingLab;
     private Boolean positive;
+
+    public TestingLab getTestingLab() {
+        return testingLab;
+    }
+
+    public void setTestingLab(TestingLab testingLab) {
+        this.testingLab = testingLab;
+    }
+    
 
     public Boolean getPositive() {
         return positive;

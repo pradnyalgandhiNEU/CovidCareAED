@@ -5,10 +5,22 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
- * @author ayushgupta
+ * @author shreya.ghate
  */
-public class Hospital {
+
+public class Hospital extends Enterprise {
+    public Hospital (String ID, String name, String address, int phonenumber, String email, int totalbeds){
+        super( EnterpriseType.Hospital, ID, name, address, phonenumber, email, totalbeds);
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
     
 }
