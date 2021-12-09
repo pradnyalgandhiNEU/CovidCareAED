@@ -171,7 +171,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jTreeValueChanged
 
     private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
-        
+    ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
+    userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
+    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+    layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
@@ -192,7 +195,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
     private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
-        
+       ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
+       userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageVaccineManufacturerActionPerformed
 
 
