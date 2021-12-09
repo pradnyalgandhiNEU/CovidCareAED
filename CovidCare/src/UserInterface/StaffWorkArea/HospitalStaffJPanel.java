@@ -81,8 +81,8 @@ public class HospitalStaffJPanel extends javax.swing.JPanel {
 
     private void btnManageVitalSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVitalSignActionPerformed
         // TODO add your handling code here:
-        ManageVitalSignsJPanel vitalSigns = new ManageVitalSignsJPanel();
-        mainWorkArea.add('vitalSigns', vitalSigns);
+        ManageVitalSignsJPanel manageVitalSignsJPanel = new ManageVitalSignsJPanel();
+        mainWorkArea.add("manageVitalSignsJPanel", manageVitalSignsJPanel);
         CardLayout layout = (CardLayout) mainWorkArea.getLayout();
         layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManageVitalSignActionPerformed

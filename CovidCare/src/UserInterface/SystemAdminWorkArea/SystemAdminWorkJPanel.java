@@ -137,11 +137,11 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageHospitalActionPerformed
-        // TODO add your handling code here:
-        ManageHospitalJPanel hospitalPanel = new ManageHospitalJPanel();
-        mainWorkArea.add('hospitalPanel', hospitalPanel);
+        ManageHospitalJPanel managehospitalJPanel = new ManageHospitalJPanel();
+        mainWorkArea.add("managehospitalPanel", managehospitalJPanel);
         CardLayout layout = (CardLayout) mainWorkArea.getLayout();
         layout.next(mainWorkArea);
+       
     }//GEN-LAST:event_btnManageHospitalActionPerformed
 
     private void btnManageTestCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageTestCenterActionPerformed
@@ -153,8 +153,8 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
         // TODO add your handling code here:
-        ManagePersonJPanel personPanel = new ManagePersonJPanel();
-        mainWorkArea.add('personPanel', personPanel);
+        ManagePersonJPanel managePersonJPanel = new ManagePersonJPanel();
+        mainWorkArea.add("managePersonJPanel", managePersonJPanel);
         CardLayout layout = (CardLayout) mainWorkArea.getLayout();
         layout.next(mainWorkArea);
     }//GEN-LAST:event_btnManagePersonActionPerformed
@@ -175,8 +175,8 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
         // TODO add your handling code here:
-        ManageAdminJPanel adminPanel = new ManageAdminJPanel();
-        mainWorkArea.add('adminPanel', adminPanel);
+        ManageAdminJPanel manageAdminJPanel = new ManageAdminJPanel();
+        mainWorkArea.add("manageAdminJPanel", manageAdminJPanel);
         CardLayout layout = (CardLayout) mainWorkArea.getLayout();
         layout.next(mainWorkArea);
         
