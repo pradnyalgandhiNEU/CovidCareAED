@@ -164,9 +164,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jSplitPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
-
+                                                   
+    private void jTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {
+}
     private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
     ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
     userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
