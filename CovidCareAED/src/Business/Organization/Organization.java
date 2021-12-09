@@ -18,13 +18,13 @@ import java.util.Random;
  */
 public abstract class Organization {
  
-    private String type;
-    private String ID;
-    private String name;
-    private String address;
-    private int phonenumber;
-    private String email;
-    private int totalbeds;
+    public String type;
+    public String ID;
+    public String name;
+    public String address;
+    public int phonenumber;
+    public String email;
+    public int totalbeds;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;

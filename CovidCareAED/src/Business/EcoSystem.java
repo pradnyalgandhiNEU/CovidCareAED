@@ -6,6 +6,7 @@
 package Business;
 
 import Business.City.City;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 public class EcoSystem extends Organization {
     private static EcoSystem business;
     private ArrayList<City> cityList;
-    public static EcoSystem getInstance(){
+ public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
         }
@@ -31,14 +32,12 @@ public class EcoSystem extends Organization {
         cityList.add(city);
         return city;
     }
-    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<Role>();
         roleList.add(new SystemAdminRole());
         return roleList;
     }
-    
     private EcoSystem(){
         super(null, null, null, null, parseInt(null), null, parseInt(null));
         cityList=new ArrayList<City>();
