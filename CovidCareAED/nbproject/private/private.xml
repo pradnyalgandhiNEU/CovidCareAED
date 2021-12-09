@@ -11,6 +11,77 @@
             <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/Business/Role/DoctorRole.java</file>
             <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/UserInterface/DeliveryManagerWorkArea/DeliveryManagerJPanel.java</file>
             <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/CovidCareAED/CovidCareAED/src/UserInterface/HospitalAdminWorkArea/HospitalAdminJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/Organization.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/SystemAdmin.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/Doctor.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/ConfigureASystem.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/EcoSystem.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/StaffWorkArea/ManageVitalSignsJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/VaccineManufactureAdmin.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/VaccineManufacturerWorkArea/VaccineManufacturerAdminJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/ManageVaccinationCenterJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/TestingCenterWorkArea/NewReportJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/TestingLab.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/Enterprise.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/TestingCenter/TestReport.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/SystemAdminWorkJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/Hospital.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/ManageAdminJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/VaccinationManufacturer.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/VitalSignsWorkRequest.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/HospitalStaff.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/DeliveryManager.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/Role.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/TestingCenterWorkArea/ManageTestReportsJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/Person.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/VaccineOrderDeliveryWorkRequest.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/ManagePersonJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/TestingCenterWorkArea/LabAdminJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/LabAdminRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/PatientRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/HospitalAdmin.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/VaccineManufacturerWorkArea/ManageInventoryJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/HospitalStaffRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/DeliveryManagerWorkArea/DeliveryManagerJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/VaccineOrderWorkRequest.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/VaccineManufacturerWorkArea/ManageOrdersJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/ManageManufacturerJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/DeliveryManagerRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/VaccineManufacturerWorkArea/ManageDeliveryManagerJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/HospitalAdminWorkArea/ManageStaffJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/TestReportWorkRequest.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/VaccinationCenterAdmin.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/HospitalAdminRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/DoctorRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/UserAccount/UserAccountDirectory.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/HospitalAdminWorkArea/ManageDoctorJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/VaccinationCenterStaff.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/OrganizationDirectory.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/EnterpriseDirectory.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/VaccineManufacturerRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/VaccinationCenterStaffRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/StaffWorkArea/HospitalStaffJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/VaccinationCenterAdminRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/LabAdmin.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/ManageTestCenterJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/SystemAdminRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/SystemAdminWorkArea/ManageHospitalJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Role/PersonRole.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/HospitalAdminWorkArea/ManagePatientJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Organization/Patient.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/VaccinationCenterStaffWorkArea/ManagePatientVaccineJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/HospitalAdminWorkArea/ManageCapacityJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/MainJFrame/MainJFrame.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/HospitalAdminWorkArea/HospitalAdminJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/WorkRequest.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/DoctorWorkArea/DoctorWorkAreaJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/UserAccount/UserAccount.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/City/City.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/WorkQueue/WorkQueue.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/Business/Enterprise/VaccinationCenter.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/DoctorWorkArea/ManagePatientsDischargeJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/CovidCareAED/CovidCareAED/src/UserInterface/PersonWorkArea/PersonWorkAreaJPanel.java</file>
         </group>
     </open-files>
 </project-private>
