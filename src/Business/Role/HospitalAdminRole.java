@@ -18,7 +18,7 @@ public class HospitalAdminRole extends Role {
     private EcoSystem system;
     
     @Override
-    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-        return new HospitalAdminJPanel(mainWorkArea, system);
+    public JPanel createWorkArea(JPanel userProcessContainer,UserAccount account, EcoSystem system) {
+        return new HospitalAdminJPanel(userProcessContainer, system);
     } 
 }

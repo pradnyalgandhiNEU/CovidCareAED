@@ -8,16 +8,17 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.TestingCenter.TestingLabAdminJPanel;
 
 /**
  *
  * @author shreya.ghate
  */
-public abstract class TestingLabAdminRole extends Role {
+public class TestingLabAdminRole extends Role {
    private EcoSystem system;
-//    
-//    @Override
-//    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-//        return new TestingLabAdminWorkAreaJPanel(mainWorkArea, system);
-//    }  
+    
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer,UserAccount account, EcoSystem system) {
+        return new TestingLabAdminJPanel(userProcessContainer, system);
+    }  
 }
