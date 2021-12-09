@@ -167,7 +167,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
 
-    }//GEN-LAST:event_btnManageVaccineManufacturerActionPerformed
+    private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
+    ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
+    userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
+    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+    layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
 
@@ -191,13 +196,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
-    private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
-
-    }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
-
-    private void jTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_jTreeValueChanged
-
-    }//GEN-LAST:event_jTreeValueChanged
+    private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
+       ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
+       userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageVaccineManufacturerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
