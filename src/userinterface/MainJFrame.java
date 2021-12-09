@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lingfeng
+ * @author shreya.ghate
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -108,7 +108,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(logoutJButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginJLabel)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(549, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -120,31 +120,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        UserAccount userDetails = system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText());
-        try {
-        if(userDetails == null){
-
-        JOptionPane.showMessageDialog(null,"Check your username and password again");
-        userNameJTextField.setText("");
-        passwordField.setText("");
-        throw new Exception();
-        }
-
-        } catch (Exception e) {
-        return;
-        // JOptionPane.showMessageDialog(null,"Oops! Please try again");
-        }
-
-        CardLayout loginLayout = (CardLayout) container.getLayout();
-        container.add(userDetails.getRole().createWorkArea(container, userDetails, system));
-        loginLayout.next(container);
-        logoutJButton.setEnabled(true);
-        userNameJTextField.setEnabled(false);
-        passwordField.setEnabled(false);
-        loginJButton.setEnabled(false);   
-    }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
         logoutJButton.setEnabled(false);
@@ -162,6 +137,32 @@ public class MainJFrame extends javax.swing.JFrame {
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_logoutJButtonActionPerformed
+
+    private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
+        // Get user name
+        UserAccount userDetails = system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText());  
+         try {
+             if(userDetails == null){
+                 
+                 JOptionPane.showMessageDialog(null,"Check your username and password again");
+                 userNameJTextField.setText("");
+                 passwordField.setText("");
+                 throw new Exception();
+            }
+            
+        } catch (Exception e) {
+            return;
+//            JOptionPane.showMessageDialog(null,"Oops! Please try again");
+        }
+         
+        CardLayout loginLayout = (CardLayout) container.getLayout();
+        container.add(userDetails.getRole().createWorkArea(container, userDetails, system));
+        loginLayout.next(container);
+        logoutJButton.setEnabled(true);
+        userNameJTextField.setEnabled(false);
+        passwordField.setEnabled(false);
+        loginJButton.setEnabled(false);
+    }//GEN-LAST:event_loginJButtonActionPerformed
 
     /**
      * @param args the command line arguments
