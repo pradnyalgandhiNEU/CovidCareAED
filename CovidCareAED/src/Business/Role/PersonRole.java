@@ -8,6 +8,7 @@ package Business.Role;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organization.LabAdmin;
 import Business.Organization.Organization;
 import Business.Organization.Person;
 import Business.UserAccount.UserAccount;

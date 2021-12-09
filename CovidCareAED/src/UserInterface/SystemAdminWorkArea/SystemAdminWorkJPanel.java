@@ -20,8 +20,15 @@ public class SystemAdminWorkJPanel extends javax.swing.JPanel {
      * Creates new form SystemAdminWorkJPanel
      */
     JPanel mainWorkArea;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
     public SystemAdminWorkJPanel(JPanel mainWorkArea, UserAccount account, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.account=account;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
