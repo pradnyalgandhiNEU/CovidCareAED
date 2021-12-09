@@ -110,6 +110,28 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JTextField" name="txtUsername">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnView">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="View"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsername">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Username:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDelete">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPassword">
+    </Component>
+>>>>>>> c5e6d01622d923fddaa6e6dbc736eb99a3ab2541
     <Component class="javax.swing.JButton" name="btnCreate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Create"/>
@@ -187,6 +209,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtName">
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JTextField" name="txtUsername">
     </Component>
     <Component class="javax.swing.JButton" name="btnView">
@@ -206,5 +229,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtPassword">
     </Component>
+=======
+>>>>>>> c5e6d01622d923fddaa6e6dbc736eb99a3ab2541
   </SubComponents>
 </Form>

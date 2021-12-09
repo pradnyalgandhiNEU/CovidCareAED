@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/MainJFrame.java</file>
 =======
 <<<<<<< HEAD
@@ -23,6 +24,9 @@
             <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
             <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
 >>>>>>> ed2696bef10821f5e7eb9c6a48eb105de26bbc19
+=======
+            <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/Final/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
+>>>>>>> c5e6d01622d923fddaa6e6dbc736eb99a3ab2541
         </group>
     </open-files>
 </project-private>

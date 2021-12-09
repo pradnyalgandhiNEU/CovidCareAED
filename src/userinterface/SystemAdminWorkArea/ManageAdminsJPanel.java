@@ -4,8 +4,6 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import javax.swing.JPanel;
-
 /**
  *
  * @author pradnyalgandhi
@@ -15,10 +13,8 @@ public class ManageAdminsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageAdminsJPanel
      */
-    JPanel userProcessContainer;
-    public ManageAdminsJPanel(JPanel userProcessContainer) {
+    public ManageAdminsJPanel() {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
     }
 
     /**
@@ -30,6 +26,11 @@ public class ManageAdminsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtUsername = new javax.swing.JTextField();
+        btnView = new javax.swing.JButton();
+        lblUsername = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
+        txtPassword = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
         lblManageAdmin = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
@@ -40,11 +41,12 @@ public class ManageAdminsJPanel extends javax.swing.JPanel {
         lblName = new javax.swing.JLabel();
         comboRole = new javax.swing.JComboBox<>();
         txtName = new javax.swing.JTextField();
-        txtUsername = new javax.swing.JTextField();
-        btnView = new javax.swing.JButton();
-        lblUsername = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
-        txtPassword = new javax.swing.JTextField();
+
+        btnView.setText("View");
+
+        lblUsername.setText("Username:");
+
+        btnDelete.setText("Delete");
 
         btnCreate.setText("Create");
 
@@ -75,12 +77,6 @@ public class ManageAdminsJPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
 
         comboRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Admin", "Testing Center Admin", "Vaccination Center Admin", "Manufacturer Admin" }));
-
-        btnView.setText("View");
-
-        lblUsername.setText("Username:");
-
-        btnDelete.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

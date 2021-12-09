@@ -4,8 +4,6 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import javax.swing.JPanel;
-
 /**
  *
  * @author pradnyalgandhi
@@ -13,12 +11,10 @@ import javax.swing.JPanel;
 public class ManagePersonJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManagePersonJPanel
+     * Creates new form MainPersonJPanel
      */
-    JPanel userProcessContainer;
-    public ManagePersonJPanel(JPanel userProcessContainer) {
+    public ManagePersonJPanel() {
         initComponents();
-        this.userProcessContainer= userProcessContainer;
     }
 
     /**
@@ -30,12 +26,6 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtID = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        txtName = new javax.swing.JTextField();
-        lblID = new javax.swing.JLabel();
-        txtStreet = new javax.swing.JTextField();
         txtPhone = new javax.swing.JTextField();
         lblStreet = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
@@ -49,23 +39,14 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         btnView = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         lblManagePerson = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Name", "Street", "Apartment No", "Community", "Phone No", "Email"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        lblID.setText("ID:");
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        txtStreet = new javax.swing.JTextField();
+        btnDelete = new javax.swing.JButton();
+        txtID = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        lblID = new javax.swing.JLabel();
 
         lblStreet.setText("Street:");
 
@@ -82,15 +63,35 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         btnView.setText("View");
 
         btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         lblManagePerson.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManagePerson.setForeground(new java.awt.Color(204, 204, 204));
         lblManagePerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManagePerson.setText("Manage Person");
 
+        lblName.setText("Name:");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Street", "Apartment No", "Community", "Phone No", "Email"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         btnDelete.setText("Delete");
 
-        lblName.setText("Name:");
+        lblID.setText("ID:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -198,6 +199,17 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                 .addGap(109, 109, 109))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+        int ID = Integer.parseInt(txtID.getText());
+        String name = txtName.getText();
+        String street = txtStreet.getText();
+        String address = txtApartment.getText();
+        String community = txtCommunity.getText();
+        String phoneNo = txtPhone.getText();
+        String email = txtEmail.getText();
+    }//GEN-LAST:event_btnCreateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
