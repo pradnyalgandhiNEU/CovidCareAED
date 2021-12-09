@@ -45,6 +45,10 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         lblQuarantine = new javax.swing.JLabel();
         lblSearch = new javax.swing.JLabel();
         cboxQuarantineLocation = new javax.swing.JComboBox<>();
+        lblPassword = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
 
         btnSearch.setText("Search");
 
@@ -91,6 +95,16 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
         cboxQuarantineLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Quarantine", "Home Quarantine" }));
 
+        lblPassword.setText("Password:");
+
+        lblUsername.setText("Username:");
+
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,15 +129,21 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                                 .addComponent(btnSearch)
                                 .addGap(294, 294, 294)))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnUpdate)
-                .addGap(30, 30, 30)
-                .addComponent(btnCreate)
-                .addGap(443, 443, 443))
             .addGroup(layout.createSequentialGroup()
                 .addGap(283, 283, 283)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPassword)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblUsername)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnUpdate)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnCreate))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblName)
                         .addGap(18, 18, 18)
@@ -169,23 +189,35 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsername)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPassword)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStatus)
                     .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblQuarantine)
                     .addComponent(cboxQuarantineLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
-                .addGap(160, 160, 160))
+                .addGap(98, 98, 98))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -200,12 +232,16 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblManagePatient;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblQuarantine;
     private javax.swing.JLabel lblSearch;
     private javax.swing.JLabel lblStatus;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtStatus;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
