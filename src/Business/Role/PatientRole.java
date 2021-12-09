@@ -8,16 +8,17 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.PatientWorkArea.PatientJPanel;
 
 /**
  *
  * @author shreya.ghate
  */
-public abstract class PatientRole extends Role {
-//    private EcoSystem system;
-//    
-//    @Override
-//    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-//        return new PatientWorkAreaJPanel(mainWorkArea, system);
-//    } 
+public class PatientRole extends Role {
+    private EcoSystem system;
+    
+    @Override
+    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
+        return new PatientJPanel(mainWorkArea, system);
+    } 
 }
