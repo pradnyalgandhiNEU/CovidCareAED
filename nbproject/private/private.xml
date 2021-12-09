@@ -3,9 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/Final/CovidCareAED/src/userinterface/SystemAdminWorkArea/ManageAdminJPanel.java</file>
             <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/Final/CovidCareAED/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
             <file>file:/Users/pradnyalgandhi/Desktop/Masters/AED%20Final/Final/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
+=======
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/userinterface/SystemAdminWorkArea/ManageHospitalJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/Business/Customer/Customer.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/Business/Organization.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/Business/Customer/CustomerDirectory.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/Business/EcoSystem.java</file>
+            <file>file:/Users/shreya.ghate/Desktop/AED/CovidCareAED/src/userinterface/MainJFrame.java</file>
+            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/Business/DB4OUtil/DB4OUtil.java</file>
+            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
+>>>>>>> ed2696bef10821f5e7eb9c6a48eb105de26bbc19
         </group>
     </open-files>
 </project-private>
