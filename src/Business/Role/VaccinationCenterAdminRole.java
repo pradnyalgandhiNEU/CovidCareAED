@@ -8,16 +8,17 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.VaccinationCenter.VaccinationCenterAdminJPanel;
 
 /**
  *
  * @author shreya.ghate
  */
-public abstract class VaccinationCenterAdminRole extends Role {
+public class VaccinationCenterAdminRole extends Role {
     private EcoSystem system;
     
-//    @Override
-//    public JPanel createWorkArea(JPanel mainWorkArea,UserAccount account, EcoSystem system) {
-//        return new VaccinationCenterAdminWorkAreaJPanel(mainWorkArea, system);
-//    } 
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer,UserAccount account, EcoSystem system) {
+        return new VaccinationCenterAdminJPanel(userProcessContainer, system);
+   } 
 }
