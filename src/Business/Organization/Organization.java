@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public abstract class Organization {
 
     private String name;
+    private String type;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
@@ -24,21 +25,31 @@ public abstract class Organization {
     private static int counter=0;
     
     public enum Type{
-        RestaurantAdmin("RestaurantAdmin"),
-        Customer("Customer"),
-        DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
+        DeliveryManager("Delivery Manager"),
+        Doctor("Doctor"),
+        HospitalAdmin("Hospital Admin"),
+        HospitalStaff("Hospital Staff"),
+        TestingLabAdmin("Testing Lab Admin"),
+        VaccinationCenterAdmin("Vaccination Center Admin"), 
+        VaccinationCenterStaff("Vaccination Center Staff"), 
+        VaccineManufacturerAdmin("Vaccine Manufacturer Admin"), 
+        Patient("Patient"),
+        //Person("Person"),
+        SystemAdmin("System Admin");
         
-        private String value;
+        private final String value;
+        
         private Type(String value) {
             this.value = value;
         }
+        
         public String getValue() {
             return value;
         }
     }
 
-    public Organization(String name) {
+    public Organization(String type, String name) {
+        this.type = type;
         this.name = name;
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
@@ -54,6 +65,15 @@ public abstract class Organization {
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
 
     public int getOrganizationID() {
         return organizationID;
