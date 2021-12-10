@@ -4,6 +4,7 @@
  */
 package Business.Role;
 
+import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 
@@ -41,9 +42,12 @@ public abstract class Role {
         }
     }
     
-   public abstract JPanel createWorkArea(JPanel userProcessContainer, 
+   public abstract JPanel createWorkArea(JPanel userProcessContainer,
+            City city,
             UserAccount account,  
-            EcoSystem business);
+            Organization organization,
+            Enterprise enterprise,
+            EcoSystem system);
    
        @Override
     public String toString() {

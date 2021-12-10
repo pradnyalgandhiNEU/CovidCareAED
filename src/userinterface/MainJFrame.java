@@ -4,8 +4,10 @@
  */
 package userinterface;
 
+import Business.City.City;
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
+import Business.Enterprise.Enterprise;
 
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -140,28 +142,61 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         // Get user name
-        UserAccount userDetails = system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText());  
-         try {
-             if(userDetails == null){
-                 
-                 JOptionPane.showMessageDialog(null,"Check your username and password again");
-                 userNameJTextField.setText("");
-                 passwordField.setText("");
-                 throw new Exception();
+        String userName = userNameJTextField.getText();
+        char[] passwordCharArray = passwordField.getPassword();
+        String password = String.valueOf(passwordCharArray);
+        //Step1: Check in the system admin user account directory if you have the user
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+      
+        Enterprise enterprise = null;
+        Organization organization = null;
+        City city = null;
+        
+        if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
+            for(City cities : system.getCityList()){
+                //Step 2.a: check against each enterprise
+                for(Enterprise enterprises:cities.getEnterpriseDirectory().getEnterpriseList()){
+                    userAccount=enterprises.getUserAccountDirectory().authenticateUser(userName, password);
+                    if(userAccount==null){
+                       //Step 3:check against each organization for each enterprise
+                       for(Organization organizations:enterprises.getOrganizationDirectory().getOrganizationList()){
+                           userAccount=organizations.getUserAccountDirectory().authenticateUser(userName, password);
+                           if(userAccount!=null){
+                               enterprise=enterprises;
+                               organization=organizations;
+                               city=cities;
+                               break;
+                           }
+                       }
+                    }
+                    else{
+                       enterprise=enterprises;
+                       break;
+                    }
+                    if(organization!=null){
+                        break;
+                    }  
+                }
+                if(enterprise!=null){
+                    break;
+                }
             }
-            
-        } catch (Exception e) {
-            return;
-//            JOptionPane.showMessageDialog(null,"Oops! Please try again");
         }
-         
-        CardLayout loginLayout = (CardLayout) container.getLayout();
-        container.add(userDetails.getRole().createWorkArea(container, userDetails, system));
-        loginLayout.next(container);
+        if(userAccount==null){
+            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            return;
+        }
+        else{
+            CardLayout layout=(CardLayout)container.getLayout();
+            container.add("workArea",userAccount.getRole().createWorkArea(container ,city, userAccount, organization, enterprise, system));
+            layout.next(container);
+        }
+        
+        loginJButton.setEnabled(false);
         logoutJButton.setEnabled(true);
         userNameJTextField.setEnabled(false);
         passwordField.setEnabled(false);
-        loginJButton.setEnabled(false);
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     /**

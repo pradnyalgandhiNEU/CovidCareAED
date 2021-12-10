@@ -11,6 +11,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.MainAdminWorkArea.MainAdminJPanel;
+import userinterface.VaccineManufacturer.ManageDeliveryManagerJPanel;
 
 /**
  *
@@ -19,9 +20,10 @@ import userinterface.MainAdminWorkArea.MainAdminJPanel;
 public class MainAdmin extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem) {
-        return new MainAdminJPanel(userProcessContainer, account, ecosystem);
-    }
+    public JPanel createWorkArea(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
+        return new MainAdminJPanel(userProcessContainer,city, userAccount, organization, enterprise, system);
+    } 
 
     
 }

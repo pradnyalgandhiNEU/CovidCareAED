@@ -6,7 +6,9 @@
 package userinterface.VaccinationCenter;
 
 //import Business.Enterprise.Enterprise;
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -21,14 +23,21 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
      * Creates new form ManagePatientVaccineJPanel
      */
     JPanel userProcessContainer;
-    UserAccount account;
-    Organization organization;
     EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
     //Enterprise enterprise;
-    public ManagePatientVaccineJPanel(JPanel userProcessConatiner, EcoSystem system) {
+    public ManagePatientVaccineJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.system=system;
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
         //this.enterprise=enterprise;
     }
 
