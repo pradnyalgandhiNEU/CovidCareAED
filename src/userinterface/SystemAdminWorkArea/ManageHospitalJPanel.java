@@ -6,6 +6,9 @@
 package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
+import Business.Person.Person;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,7 +23,11 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
     public ManageHospitalJPanel(EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        
+        populateHospitalTable();
+
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +48,7 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        hospitalTbl = new javax.swing.JTable();
         txtName = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         lblAddress = new javax.swing.JLabel();
@@ -69,12 +76,17 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
         lblID.setText("ID:");
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
 
         btnCreate.setText("Create");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        hospitalTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -85,7 +97,7 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
                 "ID", "Name", "Address", "Phone No", "Email", "Username", "Password"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(hospitalTbl);
 
         lblAddress.setText("Address:");
 
@@ -210,14 +222,36 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = hospitalTbl.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a Row");
+        } else {
+            DefaultTableModel model = (DefaultTableModel) hospitalTbl.getModel();
+//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
+            Hospital selectedHospital = (Hospital) model.getValueAt(selectedRow, 0);
+            txtID.setText(String.valueOf(selectedHospital.getPersonID()));
+            txtName.setText(selectedHospital.getName());
+            txtStreet.setText(selectedHospital.getStreet());
+            txtZipcode.setText(selectedHospital.getZipcode());
+            txtAge.setText(String.valueOf(selectedHospital.getAge()));
+            txtPhone.setText(String.valueOf(selectedHospital.getPhoneNo()));
+            txtEmail.setText(selectedHospital.getEmail());
+            txtCommunity.setText(selectedHospital.getCommunity());
+
+        }
+    }//GEN-LAST:event_btnViewActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
+    private javax.swing.JTable hospitalTbl;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail1;
     private javax.swing.JLabel lblEmail2;
