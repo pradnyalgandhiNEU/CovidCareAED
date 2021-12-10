@@ -6,9 +6,11 @@ package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
 import Business.Person.Person;
+import Business.UserAccount.UserAccount;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +25,8 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     public ManagePersonJPanel(EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        
+        populatePersonTable();
     }
 
     /**
@@ -49,7 +53,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         lblManagePerson = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        personTable = new javax.swing.JTable();
         txtStreet = new javax.swing.JTextField();
         btnDelete = new javax.swing.JButton();
         txtID = new javax.swing.JTextField();
@@ -71,6 +75,11 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         lblCommunity.setText("Community:");
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -86,20 +95,25 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
         lblName.setText("Name:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        personTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Street", "Apartment No", "Community", "Phone No", "Email"
+                "Name", "ID", "Street", "Zipcode", "Age", "Community", "Phone No", "Email"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(personTable);
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         lblID.setText("ID:");
 
@@ -250,24 +264,49 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         
-//        for(Person person : ecosystem.getPersonDirectory().getPersonList()){
-//            if(person.getEmail().equals(email)){
-//                JOptionPane.showMessageDialog(null, "Email ID already exists", "Warning", JOptionPane.ERROR);
-//            }
-//        }
-//        
-//        boolean flag = ecosystem.getPersonDirectory().getPersonList();
-//        if(flag == false){
-//            JOptionPane.showMessageDialog(null, "User name already exists");
-//        }
-//        else{
-//            ecosystem.getPersondirectory().newCustomer(ID, name, street, zipcode, age, community, phoneNo, email, username, password);
-//            ecosystem.getUserAccountDirectory().createUserAccount(username, password, employee, new CustomerRole());
-//            JOptionPane.showMessageDialog(null,"Customer Created");
-//        }
+        ecosystem.getPersonDirectory().newPerson(ID, name, street, zipcode, age, community, phoneNo, email);
+        populatePersonTable();
+        JOptionPane.showMessageDialog(null,"Customer Created");
+//        System.out.println(ecosystem.getPersonDirectory().getPersonList());
         
+        txtID.setText("");
+        txtName.setText("");
+        txtStreet.setText("");
+        txtZipcode.setText("");
+        txtAge.setText("");
+        txtPhone.setText("");
+        txtEmail.setText("");
+        txtCommunity.setText("");
         
     }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = personTable.getSelectedRow();
+        
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select a Row");
+        }
+        else{
+            DefaultTableModel model = (DefaultTableModel) personTable.getModel();
+//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
+            Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
+            txtID.setText(String.valueOf(selectedPerson.getPersonID()));
+            txtName.setText(selectedPerson.getName());
+            txtStreet.setText(selectedPerson.getStreet());
+            txtZipcode.setText(selectedPerson.getZipcode());
+            txtAge.setText(String.valueOf(selectedPerson.getAge()));
+            txtPhone.setText(String.valueOf(selectedPerson.getPhoneNo()));
+            txtEmail.setText(selectedPerson.getEmail());
+            txtCommunity.setText(selectedPerson.getCommunity());
+            
+        }
+    }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     private boolean validateEmail(String email){
       Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
@@ -280,7 +319,6 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblApartment;
     private javax.swing.JLabel lblCommunity;
@@ -290,6 +328,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblStreet;
+    private javax.swing.JTable personTable;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCommunity;
     private javax.swing.JTextField txtEmail;
@@ -299,4 +338,27 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtStreet;
     private javax.swing.JTextField txtZipcode;
     // End of variables declaration//GEN-END:variables
+
+    private void populatePersonTable() {
+        
+        DefaultTableModel dtm = (DefaultTableModel) personTable.getModel();
+        dtm.setRowCount(0);
+        
+        for(Person person: ecosystem.getPersonDirectory().getPersonList()){
+            System.out.println(person);
+            Object [] row = new Object[8];
+            row[0] = person;
+            row[1] = person.getPersonID();
+            row[2] = person.getStreet();
+            row[3] = person.getZipcode();
+            row[4] = person.getAge();
+            row[5] = person.getCommunity();
+            row[6] = person.getPhoneNo();
+            row[7] = person.getEmail();
+            
+            dtm.addRow(row);
+            
+        }
+        
+    }
 }

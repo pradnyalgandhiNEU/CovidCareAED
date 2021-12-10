@@ -20,15 +20,22 @@ import Business.Organization.Organization;
 public class EcoSystem extends Organization{
     
     private static EcoSystem business;
-    private RestaurantDirectory restaurantDirectory;
     private PersonDirectory personDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
 
-    public EcoSystem(RestaurantDirectory restaurantDirectory, PersonDirectory personDirectory, DeliveryManDirectory deliveryManDirectory) {
+    public EcoSystem(PersonDirectory personDirectory) {
 
-        this.restaurantDirectory = restaurantDirectory;
         this.personDirectory = personDirectory;
-        this.deliveryManDirectory = deliveryManDirectory;
+    }
+    
+    public PersonDirectory getPersonDirectory(){
+        if(personDirectory==null){
+            personDirectory = new PersonDirectory();
+        }
+        return personDirectory;
+    }
+    
+    public void setPersonDirectory(PersonDirectory personDirectory) {
+        this.personDirectory = personDirectory;
     }
     
     public static EcoSystem getInstance(){
@@ -52,6 +59,9 @@ public class EcoSystem extends Organization{
     
     public boolean checkIfUserIsUnique(String userName){
        //
-       return false;
+       if(!this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
+           return false;
+       }
+       return true;
     }
 }
