@@ -53,6 +53,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
         btnManageOrders = new javax.swing.JButton();
         btnManageInventory = new javax.swing.JButton();
         btnManageDeliveryManger = new javax.swing.JButton();
+        lblManufacturereAdmin = new javax.swing.JLabel();
 
         btnManageOrders.setText("Manage Orders");
         btnManageOrders.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +76,11 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblManufacturereAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManufacturereAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManufacturereAdmin.setText("Welcome, Vaccine Manufacturer");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,11 +92,17 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
                     .addComponent(btnManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManageDeliveryManger, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(425, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblManufacturereAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
+                .addGap(44, 44, 44)
+                .addComponent(lblManufacturereAdmin)
+                .addGap(72, 72, 72)
                 .addComponent(btnManageOrders)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageInventory)
@@ -126,5 +138,6 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageDeliveryManger;
     private javax.swing.JButton btnManageInventory;
     private javax.swing.JButton btnManageOrders;
+    private javax.swing.JLabel lblManufacturereAdmin;
     // End of variables declaration//GEN-END:variables
 }

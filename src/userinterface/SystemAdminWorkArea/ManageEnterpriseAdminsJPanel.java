@@ -9,6 +9,10 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Role.HospitalAdminRole;
+import Business.Role.Role;
+import Business.Role.TestingLabAdminRole;
+import Business.Role.VaccinationCenterAdminRole;
+import Business.Role.VaccineManufacturerRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -254,7 +258,20 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
                         Employee employee = enterprise.getEmployeeDirectory().createEmployee(username);
                         System.out.println(employee);
-                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
+                        System.out.println("enterprise"+enterprise.getType());
+                        Role role = null;
+
+                        if (enterprise.getType() == "Hospital") {
+                            role = new HospitalAdminRole();
+                        } else if (enterprise.getType() == "TestingLab") {
+                            role = new TestingLabAdminRole();
+                        } else if (enterprise.getType() == "VaccinationCenter") {
+                            role = new VaccinationCenterAdminRole();
+                        } else if (enterprise.getType() == "VaccineManufacturer") {
+                            role = new VaccineManufacturerRole();
+                        }
+                            
+                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
                         System.out.println(account);
                         populateEnterpriseAdminTable();
 
