@@ -5,6 +5,8 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.City.City;
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -192,11 +194,11 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         cmbEnterpriseType.removeAllItems();
 
         for (City city : system.getCityList()) {
-            cmbCity.addItem(city);
+            cmbCity.addItem(city.toString());
         }
 
         for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
-            cmbEnterpriseType.addItem(type);
+            cmbEnterpriseType.addItem(type.toString());
         } //To change body of generated methods, choose Tools | Templates.
     }
 }

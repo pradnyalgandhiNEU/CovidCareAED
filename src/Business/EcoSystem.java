@@ -6,6 +6,7 @@
 package Business;
 
 
+import Business.City.City;
 import Business.Person.PersonDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Restaurant.RestaurantDirectory;
@@ -20,11 +21,19 @@ import Business.Organization.Organization;
 public class EcoSystem extends Organization{
     
     private static EcoSystem business;
+    private ArrayList<City> cityList;
     private PersonDirectory personDirectory;
 
     public EcoSystem(PersonDirectory personDirectory) {
 
         this.personDirectory = personDirectory;
+    }
+    
+    public City createCity(){
+        City city = new City();
+        cityList.add(city);
+        
+        return city;
     }
     
     public PersonDirectory getPersonDirectory(){
@@ -53,8 +62,19 @@ public class EcoSystem extends Organization{
     }
     private EcoSystem(){
         super(null,null);
+        cityList = new ArrayList<City>();
        // networkList=new ArrayList<Network>();
     }
+
+    public ArrayList<City> getCityList() {
+        return cityList;
+    }
+
+    public void setCityList(ArrayList<City> cityList) {
+        this.cityList = cityList;
+    }
+    
+    
 
     
     public boolean checkIfUserIsUnique(String userName){
