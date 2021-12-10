@@ -186,6 +186,8 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         Enterprise enterprise = city.getEnterpriseDirectory().createAndAddEnterprise(name , type, id);
 
         populateTable();
+        txtName.setText("");
+        txtID.setText("");
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void cmbEnterpriseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEnterpriseTypeActionPerformed
