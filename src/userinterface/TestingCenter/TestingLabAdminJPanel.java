@@ -5,7 +5,11 @@
  */
 package userinterface.TestingCenter;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -19,11 +23,20 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
      * Creates new form TestingLabAdminJPanel
      */
     JPanel userProcessContainer;
-    EcoSystem ecosystem;
-    public TestingLabAdminJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public TestingLabAdminJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
-        this.ecosystem=ecosystem;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
     }
 
     /**

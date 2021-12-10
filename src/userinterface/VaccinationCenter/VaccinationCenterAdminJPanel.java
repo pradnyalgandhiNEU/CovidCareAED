@@ -6,7 +6,9 @@
 package userinterface.VaccinationCenter;
 
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -21,17 +23,22 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form VaccinationCenterAdminJPanel
      */
-    JPanel mainWorkArea;
-    UserAccount account;
-    Organization organization;
+    JPanel userProcessContainer;
     EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
     //Enterprise enterprise;
-    public VaccinationCenterAdminJPanel(JPanel mainWorkArea, EcoSystem system) {
+    public VaccinationCenterAdminJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
-        this.mainWorkArea = mainWorkArea;
-        this.account=account;
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
         this.organization=organization;
-        this.system=system;
         //this.enterprise=enterprise;
     }
 
@@ -103,23 +110,23 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
 
     private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed
        ViewVaccineInventoryJPanel viewVaccineInventoryJPanel = new ViewVaccineInventoryJPanel();
-       mainWorkArea.add("viewVaccineInventoryJPanel", viewVaccineInventoryJPanel);
-       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       userProcessContainer.add("viewVaccineInventoryJPanel", viewVaccineInventoryJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next( userProcessContainer);
     }//GEN-LAST:event_btnViewInventoryActionPerformed
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
        ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageVaccinationCenterStaffJPanel( );
-       mainWorkArea.add("manageVaccinationCenterStaffJPanel", manageVaccinationCenterStaffJPanel);
-       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       userProcessContainer.add("manageVaccinationCenterStaffJPanel", manageVaccinationCenterStaffJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next( userProcessContainer);
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
        PlaceVaccineOrderJPanel placeVaccineOrderJPanel = new PlaceVaccineOrderJPanel();
-       mainWorkArea.add("placeVaccineOrderJPanel", placeVaccineOrderJPanel);
-       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-       layout.next( mainWorkArea);
+       userProcessContainer.add("placeVaccineOrderJPanel", placeVaccineOrderJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next( userProcessContainer);
     }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
 

@@ -4,7 +4,11 @@
  */
 package userinterface.PatientWorkArea;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**
@@ -16,12 +20,21 @@ public class PatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PatientJPanel
      */
-    JPanel userProcessInterface;
+    JPanel userProcessContainer;
     EcoSystem system;
-    public PatientJPanel(JPanel userProcessInterface, EcoSystem system) {
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public PatientJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
-        this.userProcessInterface=userProcessInterface;
-        this.system=system;
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
     }
 
     /**

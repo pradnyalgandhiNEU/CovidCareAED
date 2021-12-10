@@ -5,9 +5,12 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 
 import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
@@ -24,11 +27,20 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form SystemAdminWorkAreaJPanel
      */
     JPanel userProcessContainer;
-    EcoSystem ecosystem;
-    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
+    EcoSystem system;
+    UserAccount userAccount;
+    City city;
+    Organization organization;
+    Enterprise enterprise;
+    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
-        this.ecosystem=ecosystem;   
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
     }
     
     
@@ -146,7 +158,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     
     
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
-        ManagePersonJPanel managePerson = new ManagePersonJPanel(userProcessContainer, ecosystem);
+        ManagePersonJPanel managePerson = new ManagePersonJPanel(userProcessContainer, system);
         userProcessContainer.add("managePerson", managePerson);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -154,21 +166,21 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
     private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
-        ManageEnterprisesJPanel manageTestCenterJPanel = new ManageEnterprisesJPanel(userProcessContainer, ecosystem);
+        ManageEnterprisesJPanel manageTestCenterJPanel = new ManageEnterprisesJPanel(userProcessContainer, system);
         userProcessContainer.add("manageTestCenterJPanel", manageTestCenterJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageEnterpriseActionPerformed
 
     private void btnManageCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCityActionPerformed
-        ManageCityJPanel manageHospitalJPanel = new ManageCityJPanel(userProcessContainer, ecosystem);
+        ManageCityJPanel manageHospitalJPanel = new ManageCityJPanel(userProcessContainer, system);
         userProcessContainer.add("manageHospitalJPanel", manageHospitalJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageCityActionPerformed
 
     private void btnManageEnterpriseAdminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseAdminsActionPerformed
-       ManageEnterpriseAdminsJPanel manageVaccinationCenterJPanel = new ManageEnterpriseAdminsJPanel(userProcessContainer, ecosystem);
+       ManageEnterpriseAdminsJPanel manageVaccinationCenterJPanel = new ManageEnterpriseAdminsJPanel(userProcessContainer, system);
        userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next(userProcessContainer);

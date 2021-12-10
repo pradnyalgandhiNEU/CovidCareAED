@@ -4,7 +4,11 @@
  */
 package userinterface.VaccineManufacturer;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**
@@ -18,10 +22,18 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     EcoSystem system;
-    public ManageDeliveryManagerJPanel(JPanel userProcessContainer, EcoSystem system) {
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public ManageDeliveryManagerJPanel(JPanel userProcessContainer,City city,UserAccount userAccount,Organization organization,Enterprise enterprise,EcoSystem system) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system=system;
+        this.userAccount=userAccount;
+        this.city=city;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
