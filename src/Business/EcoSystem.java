@@ -63,7 +63,6 @@ public class EcoSystem extends Organization{
     private EcoSystem(){
         super(null,null);
         cityList = new ArrayList<City>();
-       // networkList=new ArrayList<Network>();
     }
 
     public ArrayList<City> getCityList() {
@@ -73,9 +72,6 @@ public class EcoSystem extends Organization{
     public void setCityList(ArrayList<City> cityList) {
         this.cityList = cityList;
     }
-    
-    
-
     
     public boolean checkIfUserIsUnique(String userName){
        //

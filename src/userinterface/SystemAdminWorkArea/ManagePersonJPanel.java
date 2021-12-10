@@ -7,9 +7,12 @@ package userinterface.SystemAdminWorkArea;
 import Business.EcoSystem;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import java.awt.Component;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,9 +24,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     /**
      * Creates new form MainPersonJPanel
      */
+    JPanel userProcessContainer;
     EcoSystem ecosystem;
-
-    public ManagePersonJPanel(EcoSystem ecosystem) {
+    public ManagePersonJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
 
@@ -62,6 +65,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         lblID = new javax.swing.JLabel();
         txtAge = new javax.swing.JTextField();
         lblAge = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         lblStreet.setText("Street:");
 
@@ -125,6 +129,13 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
         lblAge.setText("Age:");
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,7 +144,10 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                    .addComponent(lblManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,8 +208,10 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(lblManagePerson)
-                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblManagePerson)
+                    .addComponent(btnBack))
+                .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -376,6 +392,17 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        //        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     private boolean validateEmail(String email) {
         Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
@@ -383,6 +410,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         return m.matches();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
