@@ -22,10 +22,11 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
      * Creates new form MainPersonJPanel
      */
     EcoSystem ecosystem;
+
     public ManagePersonJPanel(EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
-        
+
         populatePersonTable();
     }
 
@@ -71,6 +72,11 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         lblEmail.setText("Email:");
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         lblCommunity.setText("Community:");
 
@@ -245,30 +251,29 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         String community = txtCommunity.getText();
         String phoneNo = txtPhone.getText();
         String email = txtEmail.getText();
-        
-        
-        if(txtID.getText().isEmpty()|| txtAge.getText().isEmpty()|| name.isEmpty()|| street.isEmpty()|| zipcode.isEmpty()|| community.isEmpty()|| phoneNo.isEmpty()|| email.isEmpty()){
+
+        if (txtID.getText().isEmpty() || txtAge.getText().isEmpty() || name.isEmpty() || street.isEmpty() || zipcode.isEmpty() || community.isEmpty() || phoneNo.isEmpty() || email.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Empty Fields", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if(phoneNo.length() != 10){
+        if (phoneNo.length() != 10) {
             JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if(zipcode.length() < 5 || zipcode.length() > 6){
+        if (zipcode.length() < 5 || zipcode.length() > 6) {
             JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        if(validateEmail(email)==false){
+
+        if (validateEmail(email) == false) {
             JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-        
+
         ecosystem.getPersonDirectory().newPerson(ID, name, street, zipcode, age, community, phoneNo, email);
         populatePersonTable();
-        JOptionPane.showMessageDialog(null,"Customer Created");
+        JOptionPane.showMessageDialog(null, "Customer Created");
 //        System.out.println(ecosystem.getPersonDirectory().getPersonList());
-        
+
         txtID.setText("");
         txtName.setText("");
         txtStreet.setText("");
@@ -277,17 +282,16 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         txtPhone.setText("");
         txtEmail.setText("");
         txtCommunity.setText("");
-        
+
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
         int selectedRow = personTable.getSelectedRow();
-        
-        if(selectedRow<0){
+
+        if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Row");
-        }
-        else{
+        } else {
             DefaultTableModel model = (DefaultTableModel) personTable.getModel();
 //            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
             Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
@@ -299,20 +303,85 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             txtPhone.setText(String.valueOf(selectedPerson.getPhoneNo()));
             txtEmail.setText(selectedPerson.getEmail());
             txtCommunity.setText(selectedPerson.getCommunity());
-            
+
         }
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnDeleteActionPerformed
+        int selectedRow = personTable.getSelectedRow();
 
-    private boolean validateEmail(String email){
-      Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
-      Matcher m = p.matcher(email);
-      return m.matches(); 
-     }
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a Row");
+        } else {
+            DefaultTableModel model = (DefaultTableModel) personTable.getModel();
+            Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
+
+            ecosystem.getPersonDirectory().deletePerson(selectedPerson);
+
+            populatePersonTable();
+            JOptionPane.showMessageDialog(this, "Customer deleted successfully");
+            txtID.setText("");
+            txtName.setText("");
+            txtStreet.setText("");
+            txtZipcode.setText("");
+            txtAge.setText("");
+            txtPhone.setText("");
+            txtEmail.setText("");
+            txtCommunity.setText("");
+    }//GEN-LAST:event_btnDeleteActionPerformed
+    }
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        txtID.setEnabled(false);
+        int ID = Integer.parseInt(txtID.getText());
+        String name = txtName.getText();
+        String street = txtStreet.getText();
+        String zipcode = txtZipcode.getText();
+        int age = Integer.parseInt(txtAge.getText());
+        String community = txtCommunity.getText();
+        String phoneNo = txtPhone.getText();
+        String email = txtEmail.getText();
+        
+        int selectedRow = personTable.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select a Row");
+            txtID.setEnabled(true);
+        }
+        else{
+            DefaultTableModel model = (DefaultTableModel) personTable.getModel();
+            Person person = (Person)model.getValueAt(selectedRow, 0);
+            
+            if(txtID.getText().isEmpty() || txtAge.getText().isEmpty() || name.isEmpty() || street.isEmpty() || zipcode.isEmpty() || community.isEmpty() || phoneNo.isEmpty() || email.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Invalid Input");
+                txtID.setEnabled(true);
+            }       
+        
+            else{
+            ecosystem.getPersonDirectory().updatePerson(person, name, street, zipcode, age, community, phoneNo, email);
+//            System.out.print(username);
+            populatePersonTable();
+            txtID.setText("");
+            txtName.setText("");
+            txtStreet.setText("");
+            txtZipcode.setText("");
+            txtAge.setText("");
+            txtPhone.setText("");
+            txtEmail.setText("");
+            txtCommunity.setText("");
+            txtID.setEnabled(true);
+        }
+            
+        }
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+
+    private boolean validateEmail(String email) {
+        Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Matcher m = p.matcher(email);
+        return m.matches();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
@@ -340,13 +409,13 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populatePersonTable() {
-        
+
         DefaultTableModel dtm = (DefaultTableModel) personTable.getModel();
         dtm.setRowCount(0);
-        
-        for(Person person: ecosystem.getPersonDirectory().getPersonList()){
+
+        for (Person person : ecosystem.getPersonDirectory().getPersonList()) {
             System.out.println(person);
-            Object [] row = new Object[8];
+            Object[] row = new Object[8];
             row[0] = person;
             row[1] = person.getPersonID();
             row[2] = person.getStreet();
@@ -355,10 +424,10 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             row[5] = person.getCommunity();
             row[6] = person.getPhoneNo();
             row[7] = person.getEmail();
-            
+
             dtm.addRow(row);
-            
+
         }
-        
+
     }
 }
