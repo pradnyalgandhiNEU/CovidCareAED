@@ -283,10 +283,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         for (City city : ecosystem.getCityList()) {
             if (city.getName().equals(cityName)) {
                 populateEnterpriseCombo(city);
-            } else {
-
-                JOptionPane.showMessageDialog(null, "No city found");
-            }
+            } 
         }
     }//GEN-LAST:event_btnSelectCityActionPerformed
 
