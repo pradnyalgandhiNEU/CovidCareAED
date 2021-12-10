@@ -32,6 +32,16 @@ public class PersonDirectory {
         personList.add(person);
         return person;
     }
+    
+    public void updatePerson(Person person, String name, String street, String zipcode, int age, String Community, String phoneNo, String email){
+        person.setName(name);
+        person.setStreet(street);
+        person.setZipcode(zipcode);
+        person.setAge(age);
+        person.setCommunity(Community);
+        person.setPhoneNo(phoneNo);
+        person.setEmail(email);
+    }
 
     public Person findPerson(int id) {
 
