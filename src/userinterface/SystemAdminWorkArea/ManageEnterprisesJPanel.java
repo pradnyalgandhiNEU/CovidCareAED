@@ -9,12 +9,12 @@ package userinterface.SystemAdminWorkArea;
  *
  * @author shreya.ghate
  */
-public class ManageTestCenterJPanel extends javax.swing.JPanel {
+public class ManageEnterprisesJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageTestCenterJPanel
      */
-    public ManageTestCenterJPanel() {
+    public ManageEnterprisesJPanel() {
         initComponents();
     }
 
@@ -52,6 +52,11 @@ public class ManageTestCenterJPanel extends javax.swing.JPanel {
         btnDelete.setText("Delete");
 
         btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         lblPhone.setText("Phone No:");
 
@@ -192,6 +197,10 @@ public class ManageTestCenterJPanel extends javax.swing.JPanel {
                 .addGap(100, 100, 100))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

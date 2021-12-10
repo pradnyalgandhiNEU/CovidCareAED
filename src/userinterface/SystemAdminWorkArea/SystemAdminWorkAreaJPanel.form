@@ -81,14 +81,11 @@
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnManageVaccinationCenter" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnManageVaccineManufacturer" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnManagePerson" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnManageHospital" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnManageTestCenter" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnManageEnterpriseAdmins" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnManagePerson" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnManageCity" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnManageEnterprise" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="152" max="32767" attributes="0"/>
                       </Group>
@@ -103,42 +100,32 @@
                           <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                           <Component id="btnManagePerson" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnManageHospital" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnManageCity" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnManageTestCenter" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnManageEnterprise" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnManageVaccineManufacturer" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnManageVaccinationCenter" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="65" max="32767" attributes="0"/>
+                          <Component id="btnManageEnterpriseAdmins" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="146" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnManageVaccinationCenter">
+            <Component class="javax.swing.JButton" name="btnManageCity">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Manage Vaccination Center"/>
+                <Property name="text" type="java.lang.String" value="Manage City"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageVaccinationCenterActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageCityActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnManageHospital">
+            <Component class="javax.swing.JButton" name="btnManageEnterprise">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Manage Hospital"/>
+                <Property name="text" type="java.lang.String" value="Manage Enterprises"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageHospitalActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnManageTestCenter">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Manage Test Center"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageTestCenterActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageEnterpriseActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnManagePerson">
@@ -149,12 +136,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManagePersonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnManageVaccineManufacturer">
+            <Component class="javax.swing.JButton" name="btnManageEnterpriseAdmins">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Manage Vaccine Manufacturer"/>
+                <Property name="text" type="java.lang.String" value="Manage Enterprise Admins"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageVaccineManufacturerActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageEnterpriseAdminsActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
