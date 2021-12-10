@@ -57,15 +57,11 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
-        lblEmail = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
         lblManageVaccinationCenter = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         enterpriseTable = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
@@ -95,8 +91,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
         lblUsername.setText("Username:");
 
-        lblEmail.setText("Email:");
-
         btnUpdate.setText("Update");
 
         lblPassword.setText("Password:");
@@ -106,17 +100,15 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         lblManageVaccinationCenter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageVaccinationCenter.setText("MANAGE ENTERPRISE ADMINS");
 
-        lblName.setText("Name:");
-
         enterpriseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "City", "Enterprise", "Name", "Email", "Username", "Password"
+                "City", "Enterprise", "Username", "Password"
             }
         ));
         jScrollPane1.setViewportView(enterpriseTable);
@@ -166,14 +158,10 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                 .addGap(333, 333, 333)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblEmail)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnUpdate)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnCreate))
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnUpdate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCreate)
+                        .addGap(28, 28, 28))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(lblUsername)
@@ -185,13 +173,11 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblName)
                             .addComponent(lblEnterprise)
                             .addComponent(lblCity))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(comboEnterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                             .addComponent(txtCityName, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addComponent(btnSelectCity)
@@ -221,14 +207,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                     .addComponent(lblEnterprise))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmail)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -239,7 +217,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
-                .addGap(117, 117, 117))
+                .addGap(205, 205, 205))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -251,8 +229,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
             if (cities.getName().equals(city)) {
                 for (Enterprise enterprise : cities.getEnterpriseDirectory().getEnterpriseList()) {
                     if (comboEnterprise.getSelectedItem().toString().equals(enterprise.getName())) {
-                        String name = txtName.getText();
-                        String email = txtEmail.getText();
                         String username = txtUsername.getText();
                         String password = txtPassword.getText();
 
@@ -265,12 +241,9 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                             JOptionPane.showMessageDialog(null, "Username and password can not be empty");
                             return;
                         }
-                        if (validateUsername(email) == false) {
-                            JOptionPane.showMessageDialog(null, "Insert Valid Email Id");
-                            return;
-                        }
 
-                        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+
+                        Employee employee = enterprise.getEmployeeDirectory().createEmployee(username);
                         System.out.println(employee);
                         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
                         System.out.println(account);
@@ -327,15 +300,11 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCity;
-    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblManageVaccinationCenter;
-    private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField txtCityName;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
@@ -347,13 +316,11 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         for (City city : ecosystem.getCityList()) {
             for (Enterprise enterprise : city.getEnterpriseDirectory().getEnterpriseList()) {
                 for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
-                    Object[] row = new Object[6];
+                    Object[] row = new Object[4];
                     row[0] = city.getName();
                     row[1] = enterprise.getName();
                     row[2] = userAccount.getUsername();
-                    row[3] = userAccount.getUsername();
-                    row[4] = userAccount.getPassword();
-                    row[5] = userAccount.getPassword();
+                    row[3] = userAccount.getPassword();
 
                     dtm.addRow(row);
                 }
