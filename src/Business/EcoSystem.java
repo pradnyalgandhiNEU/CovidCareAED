@@ -63,7 +63,6 @@ public class EcoSystem extends Organization{
     private EcoSystem(){
         super(null,null);
         cityList = new ArrayList<City>();
-       // networkList=new ArrayList<Network>();
     }
 
     public ArrayList<City> getCityList() {
