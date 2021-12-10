@@ -60,7 +60,7 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
         });
 
         lblManufacturereAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManufacturereAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManufacturereAdmin.setForeground(new java.awt.Color(51, 51, 51));
         lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManufacturereAdmin.setText("Welcome, Testing Lab Admin");
 
