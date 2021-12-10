@@ -4,21 +4,17 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import Business.EcoSystem;
-
 /**
  *
  * @author pradnyalgandhi
  */
-public class ManageManufacturerJPanel extends javax.swing.JPanel {
+public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageManufacturerJPanel
+     * Creates new form ManageVaccinationCenterJPanel
      */
-    EcoSystem ecosystem;
-    public ManageManufacturerJPanel(EcoSystem ecosystem) {
+    public ManageEnterpriseAdminsJPanel() {
         initComponents();
-        this.ecosystem = ecosystem;
     }
 
     /**
@@ -30,42 +26,46 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtID = new javax.swing.JTextField();
-        txtName = new javax.swing.JTextField();
-        lblID = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
-        lblAddress = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
         txtPhone = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JButton();
         lblPhone = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
+        lblUsername = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
-        lblManageManufacturer = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
+        lblManageVaccinationCenter = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        lblID = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
         btnView = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnCreate = new javax.swing.JButton();
-        txtUsername = new javax.swing.JTextField();
-        lblUsername = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
-        lblPassword = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
 
-        lblID.setText("ID:");
+        btnDelete.setText("Delete");
 
-        lblAddress.setText("Address:");
+        btnCreate.setText("Create");
 
         lblPhone.setText("Phone No:");
+
+        lblUsername.setText("Username:");
 
         lblEmail.setText("Email:");
 
         btnUpdate.setText("Update");
 
-        lblManageManufacturer.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageManufacturer.setForeground(new java.awt.Color(204, 204, 204));
-        lblManageManufacturer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageManufacturer.setText("Manage Manufacturer");
+        lblPassword.setText("Password:");
+
+        lblManageVaccinationCenter.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageVaccinationCenter.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageVaccinationCenter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageVaccinationCenter.setText("Manage Vaccination Center");
 
         lblName.setText("Name:");
 
@@ -82,15 +82,11 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        lblID.setText("ID:");
+
         btnView.setText("View");
 
-        btnDelete.setText("Delete");
-
-        btnCreate.setText("Create");
-
-        lblUsername.setText("Username:");
-
-        lblPassword.setText("Password:");
+        lblAddress.setText("Address:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -140,7 +136,7 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1)
-                    .addComponent(lblManageManufacturer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblManageVaccinationCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -153,7 +149,7 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(lblManageManufacturer)
+                .addComponent(lblManageVaccinationCenter)
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -207,7 +203,7 @@ public class ManageManufacturerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblManageManufacturer;
+    private javax.swing.JLabel lblManageVaccinationCenter;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPhone;

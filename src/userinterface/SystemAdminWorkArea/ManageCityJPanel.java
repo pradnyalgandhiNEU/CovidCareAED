@@ -11,13 +11,13 @@ import Business.EcoSystem;
  *
  * @author shreya.ghate
  */
-public class ManageHospitalJPanel extends javax.swing.JPanel {
+public class ManageCityJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageHospitalJPanel
      */
     EcoSystem ecosystem;
-    public ManageHospitalJPanel(EcoSystem ecosystem) {
+    public ManageCityJPanel(EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
     }
