@@ -7,6 +7,8 @@ package Business.Enterprise;
 
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.Role.Role;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,19 +16,24 @@ import Business.Organization.OrganizationDirectory;
  */
 public class Enterprise extends Organization {
     private EnterpriseType enterpriseType;
-    private String enterpriseId;
+    private int enterpriseId;
 
-    public String getEnterpriseId() {
+    public int getEnterpriseId() {
         return enterpriseId;
     }
 
-    public void setEnterpriseId(String enterpriseId) {
+    public void setEnterpriseId(int enterpriseId) {
         this.enterpriseId = enterpriseId;
     }
     private OrganizationDirectory organizationDirectory;
 
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public enum EnterpriseType{
@@ -62,4 +69,5 @@ public class Enterprise extends Organization {
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
     }
+    
 }

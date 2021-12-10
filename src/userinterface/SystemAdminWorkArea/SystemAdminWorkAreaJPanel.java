@@ -49,11 +49,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
-        btnManageVaccinationCenter = new javax.swing.JButton();
-        btnManageHospital = new javax.swing.JButton();
-        btnManageTestCenter = new javax.swing.JButton();
+        btnManageCity = new javax.swing.JButton();
+        btnManageEnterprise = new javax.swing.JButton();
         btnManagePerson = new javax.swing.JButton();
-        btnManageVaccineManufacturer = new javax.swing.JButton();
+        btnManageEnterpriseAdmins = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -81,24 +80,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        btnManageVaccinationCenter.setText("Manage Vaccination Center");
-        btnManageVaccinationCenter.addActionListener(new java.awt.event.ActionListener() {
+        btnManageCity.setText("Manage City");
+        btnManageCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageVaccinationCenterActionPerformed(evt);
+                btnManageCityActionPerformed(evt);
             }
         });
 
-        btnManageHospital.setText("Manage Hospital");
-        btnManageHospital.addActionListener(new java.awt.event.ActionListener() {
+        btnManageEnterprise.setText("Manage Enterprises");
+        btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageHospitalActionPerformed(evt);
-            }
-        });
-
-        btnManageTestCenter.setText("Manage Test Center");
-        btnManageTestCenter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageTestCenterActionPerformed(evt);
+                btnManageEnterpriseActionPerformed(evt);
             }
         });
 
@@ -109,10 +101,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageVaccineManufacturer.setText("Manage Vaccine Manufacturer");
-        btnManageVaccineManufacturer.addActionListener(new java.awt.event.ActionListener() {
+        btnManageEnterpriseAdmins.setText("Manage Enterprise Admins");
+        btnManageEnterpriseAdmins.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageVaccineManufacturerActionPerformed(evt);
+                btnManageEnterpriseAdminsActionPerformed(evt);
             }
         });
 
@@ -124,13 +116,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(151, 151, 151)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnManageVaccinationCenter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnManageVaccineManufacturer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnManageHospital, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnManageTestCenter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnManageEnterpriseAdmins, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnManageCity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnManageEnterprise, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(152, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
@@ -141,14 +131,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGap(105, 105, 105)
                     .addComponent(btnManagePerson)
                     .addGap(18, 18, 18)
-                    .addComponent(btnManageHospital)
+                    .addComponent(btnManageCity)
                     .addGap(18, 18, 18)
-                    .addComponent(btnManageTestCenter)
+                    .addComponent(btnManageEnterprise)
                     .addGap(18, 18, 18)
-                    .addComponent(btnManageVaccineManufacturer)
-                    .addGap(18, 18, 18)
-                    .addComponent(btnManageVaccinationCenter)
-                    .addContainerGap(65, Short.MAX_VALUE)))
+                    .addComponent(btnManageEnterpriseAdmins)
+                    .addContainerGap(146, Short.MAX_VALUE)))
         );
 
         jSplitPane.setRightComponent(jPanel2);
@@ -157,13 +145,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     
     
-    private void btnManageVaccinationCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationCenterActionPerformed
-    ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
-    userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
-    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-    layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageVaccinationCenterActionPerformed
-
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
         ManagePersonJPanel managePerson = new ManagePersonJPanel(ecosystem);
         userProcessContainer.add("managePerson", managePerson);
@@ -172,34 +153,33 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
-    private void btnManageTestCenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageTestCenterActionPerformed
-        ManageTestCenterJPanel manageTestCenterJPanel = new ManageTestCenterJPanel();
+    private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
+        ManageEnterprisesJPanel manageTestCenterJPanel = new ManageEnterprisesJPanel(userProcessContainer, ecosystem);
         userProcessContainer.add("manageTestCenterJPanel", manageTestCenterJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageTestCenterActionPerformed
+    }//GEN-LAST:event_btnManageEnterpriseActionPerformed
 
-    private void btnManageHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageHospitalActionPerformed
-        ManageHospitalJPanel manageHospitalJPanel = new ManageHospitalJPanel(ecosystem);
+    private void btnManageCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCityActionPerformed
+        ManageCityJPanel manageHospitalJPanel = new ManageCityJPanel(userProcessContainer, ecosystem);
         userProcessContainer.add("manageHospitalJPanel", manageHospitalJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageHospitalActionPerformed
+    }//GEN-LAST:event_btnManageCityActionPerformed
 
-    private void btnManageVaccineManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccineManufacturerActionPerformed
-       ManageVaccinationCenterJPanel manageVaccinationCenterJPanel = new ManageVaccinationCenterJPanel();
+    private void btnManageEnterpriseAdminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseAdminsActionPerformed
+       ManageEnterpriseAdminsJPanel manageVaccinationCenterJPanel = new ManageEnterpriseAdminsJPanel(userProcessContainer, ecosystem);
        userProcessContainer.add("manageVaccinationCenterJPanel", manageVaccinationCenterJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageVaccineManufacturerActionPerformed
+    }//GEN-LAST:event_btnManageEnterpriseAdminsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageHospital;
+    private javax.swing.JButton btnManageCity;
+    private javax.swing.JButton btnManageEnterprise;
+    private javax.swing.JButton btnManageEnterpriseAdmins;
     private javax.swing.JButton btnManagePerson;
-    private javax.swing.JButton btnManageTestCenter;
-    private javax.swing.JButton btnManageVaccinationCenter;
-    private javax.swing.JButton btnManageVaccineManufacturer;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
