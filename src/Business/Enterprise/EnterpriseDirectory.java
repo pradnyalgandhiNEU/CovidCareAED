@@ -27,24 +27,28 @@ public class EnterpriseDirectory {
     }
     
     //Create enterprise
-    public Enterprise createAndAddEnterprise(Enterprise.EnterpriseType type, String name){
+    public Enterprise createAndAddEnterprise(String name, Enterprise.EnterpriseType type, int id){
         Enterprise enterprise=null;
         if( null!=type)switch (type) {
                 case Hospital:
                     enterprise=new Hospital(name);
                     enterpriseList.add(enterprise);
+                    enterprise.setEnterpriseId(id);
                     break;
                 case TestingLab:
                     enterprise=new TestingLab(name);
                     enterpriseList.add(enterprise);
+                    enterprise.setEnterpriseId(id);
                     break;
                 case VaccinationCenter:
                     enterprise=new VaccinationCenter(name);
                     enterpriseList.add(enterprise);
+                    enterprise.setEnterpriseId(id);
                     break;
                 case VaccineManufacturer:
                     enterprise=new VaccineManufacturer(name);
                     enterpriseList.add(enterprise);
+                    enterprise.setEnterpriseId(id);
                     break;
                 default:
                     break;

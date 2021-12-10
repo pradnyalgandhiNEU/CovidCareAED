@@ -16,13 +16,13 @@ import java.util.ArrayList;
  */
 public class Enterprise extends Organization {
     private EnterpriseType enterpriseType;
-    private String enterpriseId;
+    private int enterpriseId;
 
-    public String getEnterpriseId() {
+    public int getEnterpriseId() {
         return enterpriseId;
     }
 
-    public void setEnterpriseId(String enterpriseId) {
+    public void setEnterpriseId(int enterpriseId) {
         this.enterpriseId = enterpriseId;
     }
     private OrganizationDirectory organizationDirectory;
@@ -69,4 +69,5 @@ public class Enterprise extends Organization {
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
     }
+    
 }
