@@ -4,7 +4,10 @@
  */
 package userinterface.MainAdminWorkArea;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,13 +21,20 @@ public class MainAdminJPanel extends javax.swing.JPanel {
      * Creates new form MainAdminJPanel
      */
     JPanel userProcessContainer;
-    EcoSystem ecosystem;
-    UserAccount account;
-    public MainAdminJPanel(JPanel userProcessContainer,  UserAccount account,EcoSystem ecosystem) {
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public MainAdminJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.account = account;
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
     }
 
     /**

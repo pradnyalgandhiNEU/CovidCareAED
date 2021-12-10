@@ -5,9 +5,13 @@
  */
 package Business.Role;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.VaccineManufacturer.ManageDeliveryManagerJPanel;
 import userinterface.VaccineManufacturer.VaccineManufacturerAdminJPanel;
 
 /**
@@ -18,7 +22,8 @@ import userinterface.VaccineManufacturer.VaccineManufacturerAdminJPanel;
     private EcoSystem system;
     
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer,UserAccount account, EcoSystem system) {
-        return new VaccineManufacturerAdminJPanel(userProcessContainer, system);
-    } 
+    public JPanel createWorkArea(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
+        return new VaccineManufacturerAdminJPanel(userProcessContainer,city, userAccount, organization, enterprise, system);
+    }  
 }

@@ -5,7 +5,9 @@
  */
 package userinterface.VaccineManufacturer;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -21,14 +23,21 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
      * Creates new form VaccineManufacturerAdminJPanel
      */
     JPanel userProcessContainer;
-    UserAccount account;
-    Organization organization;
     EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
     //Enterprise enterprise;
-    public VaccineManufacturerAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public VaccineManufacturerAdminJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+        this.userProcessContainer=userProcessContainer;
         this.system=system;
+        this.userAccount=userAccount;
+        this.city=city;
+        this.organization=organization;
+        this.enterprise=enterprise;
         //this.enterprise=enterprise;
     }
 
@@ -106,7 +115,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageInventoryActionPerformed
 
     private void btnManageDeliveryMangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDeliveryMangerActionPerformed
-       ManageDeliveryManagerJPanel manageDeliveryJPanel = new ManageDeliveryManagerJPanel(userProcessContainer, system);
+       ManageDeliveryManagerJPanel manageDeliveryJPanel = new ManageDeliveryManagerJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
        userProcessContainer.add("manageDeliveryJPanel", manageDeliveryJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next(userProcessContainer);

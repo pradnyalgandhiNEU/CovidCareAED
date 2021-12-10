@@ -5,10 +5,14 @@
  */
 package Business.Role;
 
+import Business.City.City;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.TestingCenter.TestingLabAdminJPanel;
+import userinterface.VaccineManufacturer.ManageDeliveryManagerJPanel;
 
 /**
  *
@@ -18,7 +22,8 @@ public class TestingLabAdminRole extends Role {
    private EcoSystem system;
     
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer,UserAccount account, EcoSystem system) {
-        return new TestingLabAdminJPanel(userProcessContainer, system);
+    public JPanel createWorkArea(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
+        return new TestingLabAdminJPanel(userProcessContainer,city, userAccount, organization, enterprise, system);
     }  
 }
