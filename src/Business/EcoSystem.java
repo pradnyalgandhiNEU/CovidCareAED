@@ -73,9 +73,6 @@ public class EcoSystem extends Organization{
         this.cityList = cityList;
     }
     
-    
-
-    
     public boolean checkIfUserIsUnique(String userName){
        //
        if(!this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){

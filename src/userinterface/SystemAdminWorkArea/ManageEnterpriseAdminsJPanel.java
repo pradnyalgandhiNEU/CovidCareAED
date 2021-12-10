@@ -34,15 +34,24 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         initComponents();
         this.ecosystem = ecosystem;
         this.userProcessContainer = userProcessContainer;
+        populateCityComboBox();
         populateEnterpriseAdminTable();
     }
 
+    private void populateCityComboBox(){
+        comboboxCity.removeAllItems();
+        
+        for (City city : ecosystem.getCityList()){
+            comboboxCity.addItem(city);
+        }
+    }
     private void populateEnterpriseCombo(City city) {
         comboEnterprise.removeAllItems();
         for (Enterprise enterprise : city.getEnterpriseDirectory().getEnterpriseList()) {
             comboEnterprise.addItem(enterprise.getName());
         }
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,9 +77,8 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         comboEnterprise = new javax.swing.JComboBox<>();
         lblEnterprise = new javax.swing.JLabel();
         lblCity = new javax.swing.JLabel();
-        txtCityName = new javax.swing.JTextField();
-        btnSelectCity = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        comboboxCity = new javax.swing.JComboBox();
 
         jLabel1.setText("jLabel1");
 
@@ -121,17 +129,18 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
         lblCity.setText("Select City:");
 
-        btnSelectCity.setText("Select");
-        btnSelectCity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSelectCityActionPerformed(evt);
-            }
-        });
-
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
+            }
+        });
+
+        comboboxCity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        comboboxCity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboboxCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxCityActionPerformed(evt);
             }
         });
 
@@ -176,13 +185,14 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                             .addComponent(lblEnterprise)
                             .addComponent(lblCity))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(comboEnterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtCityName, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addComponent(btnSelectCity)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboboxCity, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {comboEnterprise, comboboxCity});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -196,11 +206,10 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCity)
-                    .addComponent(txtCityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSelectCity))
+                    .addComponent(comboboxCity, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,14 +228,17 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                     .addComponent(btnCreate))
                 .addGap(205, 205, 205))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {comboEnterprise, comboboxCity});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
 //        Enterprise enterprise = (Enterprise) comboEnterprise.getSelectedItem();
-        String city = txtCityName.getText();
+//        String city = txtCityName.getText();
         for (City cities : ecosystem.getCityList()) {
-            if (cities.getName().equals(city)) {
+//            if (cities.getName().equals(city)) {
                 for (Enterprise enterprise : cities.getEnterpriseDirectory().getEnterpriseList()) {
                     if (comboEnterprise.getSelectedItem().toString().equals(enterprise.getName())) {
                         String username = txtUsername.getText();
@@ -251,20 +263,10 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
                     } 
                 }
-            }
+//            }
         }
 
     }//GEN-LAST:event_btnCreateActionPerformed
-
-    private void btnSelectCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCityActionPerformed
-        // TODO add your handling code here:
-        String cityName = txtCityName.getText();
-        for (City city : ecosystem.getCityList()) {
-            if (city.getName().equals(cityName)) {
-                populateEnterpriseCombo(city);
-            } 
-        }
-    }//GEN-LAST:event_btnSelectCityActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -282,6 +284,13 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
 
+    private void comboboxCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxCityActionPerformed
+        City city = (City) comboboxCity.getSelectedItem();
+        if (city != null){
+            populateEnterpriseCombo(city);
+        }
+    }//GEN-LAST:event_comboboxCityActionPerformed
+
     private boolean validateUsername(String email) {
         Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
         Matcher m = p.matcher(email);
@@ -292,10 +301,10 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnSelectCity;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> comboEnterprise;
+    private javax.swing.JComboBox comboboxCity;
     private javax.swing.JTable enterpriseTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -304,7 +313,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblManageVaccinationCenter;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JTextField txtCityName;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
