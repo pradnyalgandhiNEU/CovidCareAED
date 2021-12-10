@@ -43,7 +43,7 @@
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
@@ -69,9 +69,9 @@
                           <Component id="lblCity" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="comboEnterprise" linkSize="1" min="-2" pref="212" max="-2" attributes="0"/>
-                          <Component id="comboboxCity" linkSize="1" min="-2" pref="170" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="comboEnterprise" max="32767" attributes="0"/>
+                          <Component id="comboboxCity" pref="212" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -97,12 +97,12 @@
               <EmptySpace pref="41" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblCity" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboboxCity" linkSize="2" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  <Component id="comboboxCity" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="comboEnterprise" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblEnterprise" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboEnterprise" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">

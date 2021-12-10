@@ -130,6 +130,7 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         city.setName(name);
         
         populateCityTable();
+        txtName.setText("");
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
