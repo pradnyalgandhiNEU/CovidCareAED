@@ -24,7 +24,7 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
         initComponents();
         this.ecosystem = ecosystem;
         
-        populateHospitalTable();
+//        populateHospitalTable();
 
     }
     
@@ -224,24 +224,24 @@ public class ManageHospitalJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        int selectedRow = hospitalTbl.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a Row");
-        } else {
-            DefaultTableModel model = (DefaultTableModel) hospitalTbl.getModel();
-//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
-            Hospital selectedHospital = (Hospital) model.getValueAt(selectedRow, 0);
-            txtID.setText(String.valueOf(selectedHospital.getPersonID()));
-            txtName.setText(selectedHospital.getName());
-            txtStreet.setText(selectedHospital.getStreet());
-            txtZipcode.setText(selectedHospital.getZipcode());
-            txtAge.setText(String.valueOf(selectedHospital.getAge()));
-            txtPhone.setText(String.valueOf(selectedHospital.getPhoneNo()));
-            txtEmail.setText(selectedHospital.getEmail());
-            txtCommunity.setText(selectedHospital.getCommunity());
-
-        }
+//        int selectedRow = hospitalTbl.getSelectedRow();
+//
+//        if (selectedRow < 0) {
+//            JOptionPane.showMessageDialog(this, "Please select a Row");
+//        } else {
+//            DefaultTableModel model = (DefaultTableModel) hospitalTbl.getModel();
+////            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
+//            Hospital selectedHospital = (Hospital) model.getValueAt(selectedRow, 0);
+//            txtID.setText(String.valueOf(selectedHospital.getPersonID()));
+//            txtName.setText(selectedHospital.getName());
+//            txtStreet.setText(selectedHospital.getStreet());
+//            txtZipcode.setText(selectedHospital.getZipcode());
+//            txtAge.setText(String.valueOf(selectedHospital.getAge()));
+//            txtPhone.setText(String.valueOf(selectedHospital.getPhoneNo()));
+//            txtEmail.setText(selectedHospital.getEmail());
+//            txtCommunity.setText(selectedHospital.getCommunity());
+//
+//        }
     }//GEN-LAST:event_btnViewActionPerformed
 
 

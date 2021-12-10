@@ -89,6 +89,11 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         btnSearch.setText("Search");
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         comboSpecialization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General Physician", "Pulmonologist", "Neurologist", "Cardiologist" }));
 
@@ -244,6 +249,10 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
                 .addGap(17, 17, 17))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
