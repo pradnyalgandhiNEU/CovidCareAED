@@ -7,6 +7,9 @@ package userinterface.SystemAdminWorkArea;
 
 import Business.City.City;
 import Business.EcoSystem;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,10 +21,13 @@ public class ManageCityJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageHospitalJPanel
      */
+    JPanel userProcessContainer;
     EcoSystem ecosystem;
-    public ManageCityJPanel(EcoSystem ecosystem) {
+    public ManageCityJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        this.userProcessContainer = userProcessContainer;
+        populateCityTable();
     }
 
     /**
@@ -39,6 +45,7 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         btnCreate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
 
         lblNewVaccinationCenter.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblNewVaccinationCenter.setForeground(new java.awt.Color(204, 204, 204));
@@ -67,6 +74,13 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,7 +88,9 @@ public class ManageCityJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(16, 16, 16)
+                        .addComponent(btnBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNewVaccinationCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
@@ -91,8 +107,10 @@ public class ManageCityJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
-                .addComponent(lblNewVaccinationCenter)
-                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNewVaccinationCenter)
+                    .addComponent(btnBack))
+                .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -114,8 +132,21 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         populateCityTable();
     }//GEN-LAST:event_btnCreateActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        //        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

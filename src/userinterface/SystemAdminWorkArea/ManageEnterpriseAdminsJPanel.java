@@ -4,6 +4,20 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.City.City;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.Enterprise.Enterprise;
+import Business.Role.HospitalAdminRole;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,8 +27,21 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageVaccinationCenterJPanel
      */
-    public ManageEnterpriseAdminsJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem ecosystem;
+
+    public ManageEnterpriseAdminsJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
+        this.ecosystem = ecosystem;
+        this.userProcessContainer = userProcessContainer;
+        populateEnterpriseAdminTable();
+    }
+
+    private void populateEnterpriseCombo(City city) {
+        comboEnterprise.removeAllItems();
+        for (Enterprise enterprise : city.getEnterpriseDirectory().getEnterpriseList()) {
+            comboEnterprise.addItem(enterprise.getName());
+        }
     }
 
     /**
@@ -26,10 +53,9 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
-        txtPhone = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
-        lblPhone = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
@@ -38,21 +64,28 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         btnUpdate = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
         lblManageVaccinationCenter = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        lblID = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
+        enterpriseTable = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
-        lblAddress = new javax.swing.JLabel();
+        comboEnterprise = new javax.swing.JComboBox<>();
+        lblEnterprise = new javax.swing.JLabel();
+        lblCity = new javax.swing.JLabel();
+        txtCityName = new javax.swing.JTextField();
+        btnSelectCity = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+
+        jLabel1.setText("jLabel1");
 
         btnDelete.setText("Delete");
 
         btnCreate.setText("Create");
-
-        lblPhone.setText("Phone No:");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         lblUsername.setText("Username:");
 
@@ -65,55 +98,68 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         lblManageVaccinationCenter.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageVaccinationCenter.setForeground(new java.awt.Color(204, 204, 204));
         lblManageVaccinationCenter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageVaccinationCenter.setText("Manage Vaccination Center");
+        lblManageVaccinationCenter.setText("MANAGE ENTERPRISE ADMINS");
 
         lblName.setText("Name:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        enterpriseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Address", "Phone No", "Email", "Username", "Password"
+                "City", "Enterprise", "Name", "Email", "Username", "Password"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-
-        lblID.setText("ID:");
+        jScrollPane1.setViewportView(enterpriseTable);
 
         btnView.setText("View");
 
-        lblAddress.setText("Address:");
+        comboEnterprise.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblEnterprise.setText("Select Enterprise:");
+
+        lblCity.setText("Select City:");
+
+        btnSelectCity.setText("Select");
+        btnSelectCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectCityActionPerformed(evt);
+            }
+        });
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblManageVaccinationCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnView)
+                .addGap(18, 18, 18)
+                .addComponent(btnDelete)
+                .addGap(68, 68, 68))
             .addGroup(layout.createSequentialGroup()
-                .addGap(337, 337, 337)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblPhone)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblAddress)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblID)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblName)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(333, 333, 333)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblEmail)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +168,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCreate))
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(lblUsername)
                             .addGap(18, 18, 18)
@@ -130,48 +176,47 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(lblPassword)
                             .addGap(18, 18, 18)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 370, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(lblManageVaccinationCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblName)
+                            .addComponent(lblEnterprise)
+                            .addComponent(lblCity))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboEnterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtCityName, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addGap(68, 68, 68))
+                .addComponent(btnSelectCity)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(lblManageVaccinationCenter)
-                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblManageVaccinationCenter)
+                    .addComponent(btnBack))
+                .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCity)
+                    .addComponent(txtCityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSelectCity))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEnterprise))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAddress)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhone)
-                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
@@ -188,32 +233,124 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
-                .addGap(100, 100, 100))
+                .addGap(117, 117, 117))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+//        Enterprise enterprise = (Enterprise) comboEnterprise.getSelectedItem();
+        String city = txtCityName.getText();
+        for (City cities : ecosystem.getCityList()) {
+            if (cities.getName().equals(city)) {
+                for (Enterprise enterprise : cities.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (comboEnterprise.getSelectedItem().toString().equals(enterprise.getName())) {
+                        String name = txtName.getText();
+                        String email = txtEmail.getText();
+                        String username = txtUsername.getText();
+                        String password = txtPassword.getText();
+
+                        if (enterprise.getUserAccountDirectory().authenticateUser(username, password) != null) {
+                            JOptionPane.showMessageDialog(null, "Username Already exists");
+                            return;
+                        }
+
+                        if (username.equals("") || password.equals("")) {
+                            JOptionPane.showMessageDialog(null, "Username and password can not be empty");
+                            return;
+                        }
+                        if (validateUsername(email) == false) {
+                            JOptionPane.showMessageDialog(null, "Insert Valid Email Id");
+                            return;
+                        }
+
+                        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+                        System.out.println(employee);
+                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
+                        System.out.println(account);
+                        populateEnterpriseAdminTable();
+
+                    } 
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnSelectCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCityActionPerformed
+        // TODO add your handling code here:
+        String cityName = txtCityName.getText();
+        for (City city : ecosystem.getCityList()) {
+            if (city.getName().equals(cityName)) {
+                populateEnterpriseCombo(city);
+            } else {
+
+                JOptionPane.showMessageDialog(null, "No city found");
+            }
+        }
+    }//GEN-LAST:event_btnSelectCityActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+//        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private boolean validateUsername(String email) {
+        Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Matcher m = p.matcher(email);
+        return m.matches();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSelectCity;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
+    private javax.swing.JComboBox<String> comboEnterprise;
+    private javax.swing.JTable enterpriseTable;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblManageVaccinationCenter;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtCityName;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
+
+    private void populateEnterpriseAdminTable() {
+        DefaultTableModel dtm = (DefaultTableModel) enterpriseTable.getModel();
+        dtm.setRowCount(0);
+
+        for (City city : ecosystem.getCityList()) {
+            for (Enterprise enterprise : city.getEnterpriseDirectory().getEnterpriseList()) {
+                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    Object[] row = new Object[6];
+                    row[0] = city.getName();
+                    row[1] = enterprise.getName();
+                    row[2] = userAccount.getUsername();
+                    row[3] = userAccount.getUsername();
+                    row[4] = userAccount.getPassword();
+                    row[5] = userAccount.getPassword();
+
+                    dtm.addRow(row);
+                }
+            }
+        }
+    }
 }
