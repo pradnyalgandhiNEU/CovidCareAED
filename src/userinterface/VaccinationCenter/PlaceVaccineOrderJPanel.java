@@ -6,13 +6,14 @@
 package userinterface.VaccinationCenter;
 
 import Business.City.City;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.WorkQueue;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.Order;
+import Business.WorkQueue.WorkQueue;
 import javax.swing.JPanel;
+
 /**
  *
  * @author ayushgupta
@@ -23,21 +24,21 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
      * Creates new form PlaceVaccineOrder
      */
     JPanel userProcessContainer;
-EcoSystem system;
-UserAccount userAccount;
-Organization organization;
-Enterprise enterprise;
-City city;
-public PlaceVaccineOrderJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization,
-Enterprise enterprise, EcoSystem system) {
-initComponents();
-this.userProcessContainer=userProcessContainer;
-this.system=system;
-this.userAccount=userAccount;
-this.enterprise=enterprise;
-this.city=city;
-this.organization=organization;
-}
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public PlaceVaccineOrderJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
+        initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,9 +54,9 @@ this.organization=organization;
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtVaccineName = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        txtQty = new javax.swing.JTextField();
+        cmbVaccineManufacturer = new javax.swing.JComboBox<>();
+        btnSubmit = new javax.swing.JButton();
 
         jLabel1.setText("Place Vaccine Order");
 
@@ -71,12 +72,12 @@ this.organization=organization;
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sereum Institute", "Bharat BioTech", "Pfizer" }));
+        cmbVaccineManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sereum Institute", "Bharat BioTech", "Pfizer" }));
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
@@ -100,11 +101,11 @@ this.organization=organization;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtVaccineName)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbVaccineManufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(437, 437, 437)
-                        .addComponent(jButton1)))
+                        .addComponent(btnSubmit)))
                 .addContainerGap(271, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -119,13 +120,13 @@ this.organization=organization;
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbVaccineManufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit)
                 .addContainerGap(407, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -134,59 +135,57 @@ this.organization=organization;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVaccineNameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-String vaccineName;
-int qty;
-String vaccineManufacturer;
-String message = "Order placed";
-String status = "Active";
-vaccineName = txtVaccineName.getText();
-qty = Integer.parseInt(jTextField3.getText());
-int index = jComboBox1.getSelectedIndex();
-switch(index){
-case 0:
-vaccineManufacturer = "Sereum Institute";
-break;
-case 1:
-vaccineManufacturer = "Bharat BioTech";
-break;
-case 2:
-vaccineManufacturer = "Pfizer";
-break;
-}
-WorkQueue wq=organization.getWorkQueue();
-for(UserAccount user : system.getUserAccountDirectory().getUserAccountList()){
-if(user.getUsername().equals("Sereum Institute")){
-Order order = wq.addWorkRequestList(message, userAccount, user, status);
-order.setCity(city);
-order.setQuantity(qty);
-user.getWorkQueue().getWorkRequestList().add(order);
-}else if(user.getUsername().equals("Bharat Biotech")){
-Order order = wq.addWorkRequestList(message, userAccount, user, status);
-order.setCity(city);
-order.setQuantity(qty);
-user.getWorkQueue().getWorkRequestList().add(order);
-}else if(user.getUsername().equals("Pfizer")){
-Order order = wq.addWorkRequestList(message, userAccount, user, status);
-order.setCity(city);
-order.setQuantity(qty);
-user.getWorkQueue().getWorkRequestList().add(order);
-}
-}
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    String vaccineName;
+    int qty;
+    String vaccineManufacturer;
+    String message = "Order placed";
+    String status = "Active";
+    vaccineName = txtVaccineName.getText();
+    qty = Integer.parseInt(txtQty.getText());
+    int index = cmbVaccineManufacturer.getSelectedIndex();
+    switch(index){
+        case 0:
+            vaccineManufacturer = "Sereum Institute";
+                break;
+        case 1:
+            vaccineManufacturer = "Bharat BioTech";
+                break;
+        case 2:
+            vaccineManufacturer = "Pfizer";
+                break;
+    }
+    WorkQueue wq=organization.getWorkQueue();
+ 
+    for(UserAccount user : system.getUserAccountDirectory().getUserAccountList()){
+        if(user.getUsername().equals("Sereum Institute")){
+            Order order = wq.addWorkRequestList(message, userAccount, user, status);
+            order.setCity(city);
+            order.setQuantity(qty);
+            user.getWorkQueue().getWorkRequestList().add(order);
+        }else if(user.getUsername().equals("Bharat Biotech")){
+            Order order = wq.addWorkRequestList(message, userAccount, user, status);
+            order.setCity(city);
+            order.setQuantity(qty);
+            user.getWorkQueue().getWorkRequestList().add(order);
+        }else if(user.getUsername().equals("Pfizer")){
+           Order order = wq.addWorkRequestList(message, userAccount, user, status);
+           order.setCity(city);
+           order.setQuantity(qty);
+           user.getWorkQueue().getWorkRequestList().add(order);
+        }
+    }
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox<String> cmbVaccineManufacturer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtQty;
     private javax.swing.JTextField txtVaccineName;
     // End of variables declaration//GEN-END:variables
 }

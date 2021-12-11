@@ -13,23 +13,19 @@ import java.util.ArrayList;
  */
 public class WorkQueue {
     
-private ArrayList<WorkRequest> workRequestList;
+    private ArrayList<WorkRequest> workRequestList;
 
+    public WorkQueue() {
+        workRequestList = new ArrayList();
+    }
 
-
-public WorkQueue() {
-workRequestList = new ArrayList();
-}
-
-
-
-public ArrayList<WorkRequest> getWorkRequestList() {
-return workRequestList;
-}
-
-public Order addWorkRequestList(String message, UserAccount sender, UserAccount receiver, String status) {
-Order temp = new Order(message, sender, receiver, status);
-workRequestList.add(temp);
-return temp;
-}
+    public ArrayList<WorkRequest> getWorkRequestList() {
+        return workRequestList;
+    }
+    
+    public Order addWorkRequestList(String message, UserAccount sender, UserAccount receiver, String status) {
+        Order temp = new Order(message, sender, receiver, status);
+        workRequestList.add(temp);
+        return temp;
+    }
 }
