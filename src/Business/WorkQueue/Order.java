@@ -17,6 +17,7 @@ public class Order extends WorkRequest{
     //private City city;
     private int quantity;
     private String VaccineName;
+    private int id=0;
     //private VaccineManufacturerOrganization vaccineManufacturer;
 
     public String getVaccineName() {
@@ -29,6 +30,15 @@ public class Order extends WorkRequest{
 
     public Order(String message, UserAccount sender, UserAccount receiver, String status) {
         super(message, sender, receiver, status);
+        ++id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getQuantity() {

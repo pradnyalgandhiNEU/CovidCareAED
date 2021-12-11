@@ -9,8 +9,12 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.Order;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -36,6 +40,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         this.city=city;
         this.organization=organization;
         this.enterprise=enterprise;
+        populateTable();
     }
 
     /**
@@ -48,13 +53,13 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblOrder = new javax.swing.JTable();
         lblManageOrders = new javax.swing.JLabel();
-        viewOrderBtn = new javax.swing.JButton();
+        btnReadyToDeliver = new javax.swing.JButton();
         AssignBtn1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnDenyOrder = new javax.swing.JButton();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -65,18 +70,18 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 "Order ID", "Date", "Vaccine", "Batch No", "Quantity", "Vaccination Center", "Status"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblOrder);
 
         lblManageOrders.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageOrders.setForeground(new java.awt.Color(204, 204, 204));
         lblManageOrders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageOrders.setText("Manage Vaccine Orders");
 
-        viewOrderBtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        viewOrderBtn.setText("Ready to Deliver");
-        viewOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnReadyToDeliver.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnReadyToDeliver.setText("Ready to Deliver");
+        btnReadyToDeliver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewOrderBtnActionPerformed(evt);
+                btnReadyToDeliverActionPerformed(evt);
             }
         });
 
@@ -88,11 +93,11 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jButton2.setText("Deny Order");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDenyOrder.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnDenyOrder.setText("Deny Order");
+        btnDenyOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDenyOrderActionPerformed(evt);
             }
         });
 
@@ -111,9 +116,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                         .addGap(41, 41, 41)
                         .addComponent(AssignBtn1)
                         .addGap(253, 253, 253)
-                        .addComponent(viewOrderBtn)
+                        .addComponent(btnReadyToDeliver)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(btnDenyOrder)
                         .addGap(39, 39, 39)))
                 .addContainerGap())
         );
@@ -127,15 +132,34 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AssignBtn1)
-                    .addComponent(viewOrderBtn)
-                    .addComponent(jButton2))
+                    .addComponent(btnReadyToDeliver)
+                    .addComponent(btnDenyOrder))
                 .addContainerGap(427, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderBtnActionPerformed
-
-    }//GEN-LAST:event_viewOrderBtnActionPerformed
+    private void btnReadyToDeliverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadyToDeliverActionPerformed
+        //System.out.println(enterprise.getWorkQueue().getWorkRequestList());
+        int selectedRow = tblOrder.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        Order placeorder  = (Order)tblOrder.getValueAt(selectedRow, 0);
+            if(placeorder.getStatus().equals("Ready to Deliver")){
+                JOptionPane.showMessageDialog(null,"Already Ready");
+            } else if (placeorder.getStatus().equals("New Order") || (placeorder.getStatus().equals("Order Denied"))){
+            placeorder.setStatus("Ready to Deliver");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Already ready to deliver");
+            }
+            for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order = (Order)wr;
+                    if(order.getId()==placeorder.getId()){
+                        order.setStatus("Ready to deliver");
+                    }
+            }    
+    }//GEN-LAST:event_btnReadyToDeliverActionPerformed
 
     private void AssignBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignBtn1ActionPerformed
        AssignDeliveryManagerJPanel assignDeliveryManagerJPanel = new AssignDeliveryManagerJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
@@ -144,17 +168,40 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
        layout.next(userProcessContainer);
     }//GEN-LAST:event_AssignBtn1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnDenyOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDenyOrderActionPerformed
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnDenyOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AssignBtn1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnDenyOrder;
+    private javax.swing.JButton btnReadyToDeliver;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblManageOrders;
-    private javax.swing.JButton viewOrderBtn;
+    private javax.swing.JTable tblOrder;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) tblOrder.getModel();
+        dtm.setRowCount(0);
+
+            
+                for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order = (Order)wr;
+                    
+                    Object[] row = new Object[7];
+                    row[0] = order.getMessage();
+                    row[1] = order.getReceiver();
+                    row[2] = order.getSender();
+                    row[3] = order.getStatus();
+                    row[4] = order.getQuantity();
+                    row[5] = order.getVaccineName();
+                    row[6] = order.getId();
+
+                    dtm.addRow(row);
+                
+                }//To change body of generated methods, choose Tools | Templates.
+  
+    }
 }
