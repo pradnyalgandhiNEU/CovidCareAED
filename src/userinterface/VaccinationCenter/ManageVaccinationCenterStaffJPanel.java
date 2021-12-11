@@ -81,7 +81,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Staff ID", "Name", "UserName", "Password"
+                "UserName", "Staff ID", "Name", "Password"
             }
         ));
         jScrollPane1.setViewportView(tblStaff);
