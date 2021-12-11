@@ -29,6 +29,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     public ManagePersonJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        this.userProcessContainer = userProcessContainer;
 
         populatePersonTable();
     }
