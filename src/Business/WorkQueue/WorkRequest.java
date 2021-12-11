@@ -17,11 +17,22 @@ public abstract class WorkRequest {
     private UserAccount sender;
     private UserAccount receiver;
     private String status;
-    private Date requestDate;
-    private Date resolveDate;
+    //private Date requestDate;
+    //private Date resolveDate;
+    //private int quantity;
     
-    public WorkRequest(){
-        requestDate = new Date();
+    //public WorkRequest(){
+      //  requestDate = new Date();
+    //}
+    
+    public WorkRequest(String message, UserAccount sender, UserAccount receiver, String status) {
+        this.message = message;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.status = status;
+        //this.requestDate = requestDate;
+        //this.resolveDate = resolveDate;
+        //this.quantity = quantity;
     }
 
     public String getMessage() {
@@ -55,20 +66,16 @@ public abstract class WorkRequest {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public Date getRequestDate() {
+    /* public Date getRequestDate() {
         return requestDate;
     }
-
     public void setRequestDate(Date requestDate) {
         this.requestDate = requestDate;
     }
-
     public Date getResolveDate() {
         return resolveDate;
     }
-
     public void setResolveDate(Date resolveDate) {
         this.resolveDate = resolveDate;
-    }
+    }*/
 }

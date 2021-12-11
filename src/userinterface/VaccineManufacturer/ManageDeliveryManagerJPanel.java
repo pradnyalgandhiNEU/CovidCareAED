@@ -6,10 +6,16 @@ package userinterface.VaccineManufacturer;
 
 import Business.City.City;
 import Business.EcoSystem;
+import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
+import Business.Role.DeliveryManagerRole;
+import Business.Role.Role;
+import Business.Role.VaccinationCenterStaffRole;
 import Business.UserAccount.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -46,7 +52,7 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDeliveryManager = new javax.swing.JTable();
         btnUpdate = new javax.swing.JButton();
         lblManageAdmin = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
@@ -58,19 +64,21 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         txtUsername = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtStaffID = new javax.swing.JTextField();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDeliveryManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Name", "Username", "Password"
+                "Username", "Name", "Staff ID", "Password"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblDeliveryManager);
 
         btnUpdate.setText("Update");
 
@@ -82,6 +90,11 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         lblPassword.setText("Password:");
 
         btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
 
@@ -90,6 +103,8 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         btnView.setText("View");
 
         lblName.setText("Name:");
+
+        jLabel1.setText("StaffID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,10 +118,6 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblName)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblPassword)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,7 +125,18 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                                 .addComponent(btnUpdate)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCreate))
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(lblName))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 370, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -137,9 +159,13 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView)
-                    .addComponent(btnDelete))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnView)
+                        .addComponent(btnDelete))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
@@ -160,20 +186,61 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        Employee employee = enterprise.getEmployeeDirectory().createEmployee(txtName.getText());
+        String userName = txtUsername.getText();
+        String password = txtPassword.getText();
+        if (enterprise.getUserAccountDirectory().authenticateUser(userName, password) != null) {
+                JOptionPane.showMessageDialog(null, "Username Already exists");
+                    return;
+        }
+
+        if (userName.equals("") || password.equals("")) {
+               JOptionPane.showMessageDialog(null, "Username and password can not be empty");
+                    return;
+        }
+        Role role = new DeliveryManagerRole();
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+                     
+       populateTable();
+    }//GEN-LAST:event_btnCreateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblManageAdmin;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
+    private javax.swing.JTable tblDeliveryManager;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) tblDeliveryManager.getModel();
+        dtm.setRowCount(0);
+
+            
+                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    if("Business.Role.DeliveryManagerRole".equals(userAccount.getRole().getClass().getName())){
+                    System.out.println(userAccount.getRole());
+                    Object[] row = new Object[4];
+                    row[0] = userAccount;
+                    row[1] = userAccount.getEmployee().getId();
+                    row[2] = userAccount.getEmployee().getName();
+                    row[3] = userAccount.getPassword();
+
+                    dtm.addRow(row);
+                }
+                }
+
+    }
 }

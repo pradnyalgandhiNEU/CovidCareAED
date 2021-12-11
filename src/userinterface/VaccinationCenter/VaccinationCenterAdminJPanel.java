@@ -8,21 +8,25 @@ package userinterface.VaccinationCenter;
 
 import Business.City.City;
 import Business.EcoSystem;
+import Business.Employee.EmployeeDirectory;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author ayushgupta
  */
+
 public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form VaccinationCenterAdminJPanel
      */
+    
     JPanel userProcessContainer;
     EcoSystem system;
     UserAccount userAccount;
@@ -51,12 +55,10 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         btnViewInventory = new javax.swing.JButton();
         btnManageStaff = new javax.swing.JButton();
         btnPlaceOrder = new javax.swing.JButton();
-
-        jLabel1.setText("Manage Vaccination Center");
+        lblManufacturereAdmin = new javax.swing.JLabel();
 
         btnViewInventory.setText("View Inventory");
         btnViewInventory.addActionListener(new java.awt.event.ActionListener() {
@@ -79,32 +81,39 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblManufacturereAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManufacturereAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManufacturereAdmin.setText("Welcome, Vaccination Center");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(397, 397, 397)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnPlaceOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnManageStaff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnViewInventory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnPlaceOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageStaff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewInventory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(467, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblManufacturereAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(48, 48, 48)
+                .addComponent(lblManufacturereAdmin)
+                .addGap(95, 95, 95)
                 .addComponent(btnViewInventory)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addComponent(btnManageStaff)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(btnPlaceOrder)
-                .addContainerGap(476, Short.MAX_VALUE))
+                .addContainerGap(504, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,14 +125,14 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewInventoryActionPerformed
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
-       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageVaccinationCenterStaffJPanel( );
+       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageVaccinationCenterStaffJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
        userProcessContainer.add("manageVaccinationCenterStaffJPanel", manageVaccinationCenterStaffJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next( userProcessContainer);
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
-       PlaceVaccineOrderJPanel placeVaccineOrderJPanel = new PlaceVaccineOrderJPanel();
+       PlaceVaccineOrderJPanel placeVaccineOrderJPanel = new PlaceVaccineOrderJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
        userProcessContainer.add("placeVaccineOrderJPanel", placeVaccineOrderJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next( userProcessContainer);
@@ -134,6 +143,6 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageStaff;
     private javax.swing.JButton btnPlaceOrder;
     private javax.swing.JButton btnViewInventory;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblManufacturereAdmin;
     // End of variables declaration//GEN-END:variables
 }

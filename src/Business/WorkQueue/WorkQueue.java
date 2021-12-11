@@ -4,6 +4,7 @@
  */
 package Business.WorkQueue;
 
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -20,5 +21,11 @@ public class WorkQueue {
 
     public ArrayList<WorkRequest> getWorkRequestList() {
         return workRequestList;
+    }
+    
+    public Order addWorkRequestList(String message, UserAccount sender, UserAccount receiver, String status) {
+        Order temp = new Order(message, sender, receiver, status);
+        workRequestList.add(temp);
+        return temp;
     }
 }

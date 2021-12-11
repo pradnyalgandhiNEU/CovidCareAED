@@ -9,6 +9,10 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Role.HospitalAdminRole;
+import Business.Role.Role;
+import Business.Role.TestingLabAdminRole;
+import Business.Role.VaccinationCenterAdminRole;
+import Business.Role.VaccineManufacturerRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -254,8 +258,36 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
                         Employee employee = enterprise.getEmployeeDirectory().createEmployee(username);
                         System.out.println(employee);
-                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole());
-                        System.out.println(account);
+                        System.out.println("enterprise"+enterprise.getType());
+                        Role role = null;
+
+                        if (enterprise.getType() == "Hospital") {
+                            role = new HospitalAdminRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                        } else if (enterprise.getType() == "TestingLab") {
+                            role = new TestingLabAdminRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                        } else if (enterprise.getType() == "VaccinationCenter") {
+                            role = new VaccinationCenterAdminRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                        } else if (enterprise.getType() == "VaccineManufacturer") {
+                            int count = 0;
+                            for(UserAccount userAccount: enterprise.getUserAccountDirectory().getUserAccountList()){
+                                if((userAccount.getRole().getClass().getName()).equals("Business.Role.VaccineManufacturerRole")){
+                                    count = 1;
+                                }
+                            }
+                            if(count==0){
+                            role = new VaccineManufacturerRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(this,"Admin Already exist");
+                            }
+                        }
+                         
+                        //UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                        //System.out.println(account);
                         populateEnterpriseAdminTable();
 
                     } 
