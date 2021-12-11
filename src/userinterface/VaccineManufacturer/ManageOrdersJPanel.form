@@ -29,9 +29,9 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="AssignBtn1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="253" max="-2" attributes="0"/>
-                      <Component id="viewOrderBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReadyToDeliver" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDenyOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -49,8 +49,8 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AssignBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="viewOrderBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnReadyToDeliver" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDenyOrder" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="427" max="32767" attributes="0"/>
           </Group>
@@ -65,7 +65,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Component class="javax.swing.JTable" name="tblOrder">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="7" rowCount="4">
@@ -136,7 +136,7 @@
         <Property name="text" type="java.lang.String" value="Manage Vaccine Orders"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="viewOrderBtn">
+    <Component class="javax.swing.JButton" name="btnReadyToDeliver">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="12" style="1"/>
@@ -144,7 +144,7 @@
         <Property name="text" type="java.lang.String" value="Ready to Deliver"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewOrderBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReadyToDeliverActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="AssignBtn1">
@@ -158,7 +158,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AssignBtn1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnDenyOrder">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="13" style="1"/>
@@ -166,7 +166,7 @@
         <Property name="text" type="java.lang.String" value="Deny Order"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDenyOrderActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
