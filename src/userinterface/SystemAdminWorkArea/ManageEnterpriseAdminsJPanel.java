@@ -263,16 +263,31 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
                         if (enterprise.getType() == "Hospital") {
                             role = new HospitalAdminRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
                         } else if (enterprise.getType() == "TestingLab") {
                             role = new TestingLabAdminRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
                         } else if (enterprise.getType() == "VaccinationCenter") {
                             role = new VaccinationCenterAdminRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
                         } else if (enterprise.getType() == "VaccineManufacturer") {
+                            int count = 0;
+                            for(UserAccount userAccount: enterprise.getUserAccountDirectory().getUserAccountList()){
+                                if((userAccount.getRole().getClass().getName()).equals("Business.Role.VaccineManufacturerRole")){
+                                    count = 1;
+                                }
+                            }
+                            if(count==0){
                             role = new VaccineManufacturerRole();
+                            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(this,"Admin Already exist");
+                            }
                         }
-                            
-                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
-                        System.out.println(account);
+                         
+                        //UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                        //System.out.println(account);
                         populateEnterpriseAdminTable();
 
                     } 
