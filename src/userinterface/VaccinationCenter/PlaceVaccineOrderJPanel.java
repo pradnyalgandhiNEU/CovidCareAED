@@ -38,7 +38,9 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.city=city;
         this.organization=organization;
+        populateComboBox();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -138,43 +140,25 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
     String vaccineName;
     int qty;
-    String vaccineManufacturer;
     String message = "Order placed";
     String status = "Active";
+    
     vaccineName = txtVaccineName.getText();
     qty = Integer.parseInt(txtQty.getText());
-    int index = cmbVaccineManufacturer.getSelectedIndex();
-    switch(index){
-        case 0:
-            vaccineManufacturer = "Sereum Institute";
-                break;
-        case 1:
-            vaccineManufacturer = "Bharat BioTech";
-                break;
-        case 2:
-            vaccineManufacturer = "Pfizer";
-                break;
-    }
-    WorkQueue wq=organization.getWorkQueue();
- 
-    for(UserAccount user : system.getUserAccountDirectory().getUserAccountList()){
-        if(user.getUsername().equals("Sereum Institute")){
-            Order order = wq.addWorkRequestList(message, userAccount, user, status);
-            order.setCity(city);
-            order.setQuantity(qty);
-            user.getWorkQueue().getWorkRequestList().add(order);
-        }else if(user.getUsername().equals("Bharat Biotech")){
-            Order order = wq.addWorkRequestList(message, userAccount, user, status);
-            order.setCity(city);
-            order.setQuantity(qty);
-            user.getWorkQueue().getWorkRequestList().add(order);
-        }else if(user.getUsername().equals("Pfizer")){
-           Order order = wq.addWorkRequestList(message, userAccount, user, status);
-           order.setCity(city);
-           order.setQuantity(qty);
-           user.getWorkQueue().getWorkRequestList().add(order);
+    String VaccineManufacturerName = (String) cmbVaccineManufacturer.getSelectedItem();
+    for(City city : system.getCityList()){
+        for (Enterprise e : city.getEnterpriseDirectory().getEnterpriseList()) {
+            if((e.getName()).equals(VaccineManufacturerName)){
+                UserAccount receiver = e.getUserAccountDirectory().getUserAccountList().get(0);
+                Order order = e.getWorkQueue().addWorkRequestList(message, userAccount, receiver, status);
+                order.setQuantity(qty);
+                order.setVaccineName(vaccineName);
+                //System.out.println(e.getWorkQueue().getWorkRequestList().get(0));
+            }
+            
         }
-    }
+        }
+    
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 
@@ -188,4 +172,15 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtQty;
     private javax.swing.JTextField txtVaccineName;
     // End of variables declaration//GEN-END:variables
+
+    private void populateComboBox() {
+        cmbVaccineManufacturer.removeAllItems();
+        for(City city : system.getCityList()){
+        for (Enterprise e : city.getEnterpriseDirectory().getEnterpriseList()) {
+            System.out.println(e.getClass().getName());
+            if((e.getClass().getName()).equals("Business.Enterprise.VaccineManufacturer"))
+            cmbVaccineManufacturer.addItem(e.getName());
+        } //To change body of generated methods, choose Tools | Templates.
+    }
+    }
 }

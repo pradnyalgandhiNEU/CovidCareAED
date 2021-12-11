@@ -14,9 +14,18 @@ import Business.UserAccount.UserAccount;
  * @author ayushgupta
  */
 public class Order extends WorkRequest{
-    private City city;
+    //private City city;
     private int quantity;
+    private String VaccineName;
     //private VaccineManufacturerOrganization vaccineManufacturer;
+
+    public String getVaccineName() {
+        return VaccineName;
+    }
+
+    public void setVaccineName(String VaccineName) {
+        this.VaccineName = VaccineName;
+    }
 
     public Order(String message, UserAccount sender, UserAccount receiver, String status) {
         super(message, sender, receiver, status);
@@ -30,13 +39,13 @@ public class Order extends WorkRequest{
         this.quantity = quantity;
     }
 
-    public City getCity() {
+    /*public City getCity() {
         return city;
     }
 
     public void setCity(City city) {
         this.city = city;
-    }
+    }*/
     
 
     /*public VaccineManufacturerOrganization getVaccineManufacturer() {
