@@ -4,6 +4,14 @@
  */
 package userinterface.VaccineManufacturer;
 
+import Business.City.City;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyalgandhi
@@ -13,8 +21,21 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrdersJPanel
      */
-    public ManageOrdersJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public ManageOrdersJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;
+        this.userAccount=userAccount;
+        this.city=city;
+        this.organization=organization;
+        this.enterprise=enterprise;
     }
 
     /**
@@ -26,14 +47,12 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnDeliver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         lblManageOrders = new javax.swing.JLabel();
-        btnReject = new javax.swing.JButton();
-        btnAccept = new javax.swing.JButton();
-
-        btnDeliver.setText("Set to Deliver");
+        viewOrderBtn = new javax.swing.JButton();
+        AssignBtn1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -53,30 +72,50 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         lblManageOrders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageOrders.setText("Manage Vaccine Orders");
 
-        btnReject.setText("Reject");
+        viewOrderBtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        viewOrderBtn.setText("Ready to Deliver");
+        viewOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewOrderBtnActionPerformed(evt);
+            }
+        });
 
-        btnAccept.setText("Accept");
+        AssignBtn1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        AssignBtn1.setText("Assign to Delivery Man ");
+        AssignBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssignBtn1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jButton2.setText("Deny Order");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                            .addComponent(lblManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnAccept)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDeliver)
+                            .addComponent(lblManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(AssignBtn1)
+                        .addGap(253, 253, 253)
+                        .addComponent(viewOrderBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnReject)
-                        .addGap(42, 42, 42))))
+                        .addComponent(jButton2)
+                        .addGap(39, 39, 39)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,22 +124,37 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 .addComponent(lblManageOrders)
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDeliver)
-                    .addComponent(btnReject)
-                    .addComponent(btnAccept))
-                .addContainerGap(443, Short.MAX_VALUE))
+                    .addComponent(AssignBtn1)
+                    .addComponent(viewOrderBtn)
+                    .addComponent(jButton2))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void viewOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrderBtnActionPerformed
+
+    }//GEN-LAST:event_viewOrderBtnActionPerformed
+
+    private void AssignBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignBtn1ActionPerformed
+       AssignDeliveryManagerJPanel assignDeliveryManagerJPanel = new AssignDeliveryManagerJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
+       userProcessContainer.add("assignDeliveryManagerJPanel", assignDeliveryManagerJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
+    }//GEN-LAST:event_AssignBtn1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAccept;
-    private javax.swing.JButton btnDeliver;
-    private javax.swing.JButton btnReject;
+    private javax.swing.JButton AssignBtn1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblManageOrders;
+    private javax.swing.JButton viewOrderBtn;
     // End of variables declaration//GEN-END:variables
 }
