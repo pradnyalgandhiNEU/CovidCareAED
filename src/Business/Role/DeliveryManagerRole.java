@@ -12,6 +12,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.VaccineManufacturer.ManageDeliveryManagerJPanel;
+import userinterface.VaccineManufacturer.ManageOrdersJPanel;
 /**
  *
  * @author shreya.ghate
@@ -22,7 +23,7 @@ public class DeliveryManagerRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
             Enterprise enterprise, EcoSystem system) {
-        return new ManageDeliveryManagerJPanel(userProcessContainer,city, userAccount, organization, enterprise, system);
+        return new ManageOrdersJPanel(userProcessContainer,city, userAccount, organization, enterprise, system);
     } 
     
 }

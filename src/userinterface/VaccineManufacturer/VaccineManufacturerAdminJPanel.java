@@ -50,17 +50,10 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnManageOrders = new javax.swing.JButton();
         btnManageInventory = new javax.swing.JButton();
         btnManageDeliveryManger = new javax.swing.JButton();
         lblManufacturereAdmin = new javax.swing.JLabel();
-
-        btnManageOrders.setText("Manage Orders");
-        btnManageOrders.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageOrdersActionPerformed(evt);
-            }
-        });
+        btnManageOrder = new javax.swing.JButton();
 
         btnManageInventory.setText("Manage Inventory");
         btnManageInventory.addActionListener(new java.awt.event.ActionListener() {
@@ -81,43 +74,43 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
         lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManufacturereAdmin.setText("Welcome, Vaccine Manufacturer");
 
+        btnManageOrder.setText("Manage Orders");
+        btnManageOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageOrderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(387, 387, 387)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnManageInventory, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                    .addComponent(btnManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageDeliveryManger, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(425, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblManufacturereAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(387, 387, 387)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnManageDeliveryManger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageInventory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(lblManufacturereAdmin)
-                .addGap(72, 72, 72)
-                .addComponent(btnManageOrders)
-                .addGap(18, 18, 18)
+                .addGap(62, 62, 62)
                 .addComponent(btnManageInventory)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageDeliveryManger)
-                .addContainerGap(531, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnManageOrder)
+                .addContainerGap(541, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnManageOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrdersActionPerformed
-       ManageOrdersJPanel manageOrdersJPanel = new ManageOrdersJPanel();
-       userProcessContainer.add("manageOrdersJPanel", manageOrdersJPanel);
-       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-       layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageOrdersActionPerformed
 
     private void btnManageInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageInventoryActionPerformed
        ManageInventoryJPanel manageInventoryJPanel = new ManageInventoryJPanel();
@@ -133,11 +126,18 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageDeliveryMangerActionPerformed
 
+    private void btnManageOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrderActionPerformed
+       ManageOrdersJPanel manageOrderJPanel = new ManageOrdersJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
+       userProcessContainer.add("manageOrderJPanel", manageOrderJPanel);
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageOrderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageDeliveryManger;
     private javax.swing.JButton btnManageInventory;
-    private javax.swing.JButton btnManageOrders;
+    private javax.swing.JButton btnManageOrder;
     private javax.swing.JLabel lblManufacturereAdmin;
     // End of variables declaration//GEN-END:variables
 }

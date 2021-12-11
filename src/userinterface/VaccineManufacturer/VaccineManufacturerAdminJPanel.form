@@ -16,19 +16,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="387" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnManageInventory" pref="188" max="32767" attributes="0"/>
-                  <Component id="btnManageOrders" max="32767" attributes="0"/>
-                  <Component id="btnManageDeliveryManger" alignment="0" pref="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="425" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblManufacturereAdmin" pref="988" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="387" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnManageDeliveryManger" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnManageOrder" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnManageInventory" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -37,26 +37,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Component id="lblManufacturereAdmin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-              <Component id="btnManageOrders" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               <Component id="btnManageInventory" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnManageDeliveryManger" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="531" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnManageOrder" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="541" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnManageOrders">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Orders"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageOrdersActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnManageInventory">
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Inventory"/>
@@ -84,6 +76,14 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Welcome, Vaccine Manufacturer"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnManageOrder">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manage Orders"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageOrderActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
