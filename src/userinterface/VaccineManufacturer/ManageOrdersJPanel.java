@@ -7,8 +7,10 @@ package userinterface.VaccineManufacturer;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.VaccineManufacturer;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.Vaccine.Vaccine;
 import Business.WorkQueue.Order;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -58,6 +60,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         btnReadyToDeliver = new javax.swing.JButton();
         AssignBtn1 = new javax.swing.JButton();
         btnDenyOrder = new javax.swing.JButton();
+        lblAvailableStock = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,6 +105,13 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Available Stock");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,9 +120,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                            .addComponent(lblManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(AssignBtn1)
@@ -119,22 +128,35 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                         .addComponent(btnReadyToDeliver)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDenyOrder)
-                        .addGap(39, 39, 39)))
+                        .addGap(39, 39, 39))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(39, 39, 39)
+                .addComponent(lblAvailableStock, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(26, 26, 26)
                 .addComponent(lblManageOrders)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1)
+                    .addComponent(lblAvailableStock, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AssignBtn1)
                     .addComponent(btnReadyToDeliver)
                     .addComponent(btnDenyOrder))
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -172,12 +194,24 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnDenyOrderActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        VaccineManufacturer e =(VaccineManufacturer)enterprise;
+        int count = 0;
+        for(Vaccine vaccine: e.getVaccineDirectory().getVaccDir()){
+          count = count+vaccine.getQty();
+        }
+        lblAvailableStock.setText(String.valueOf(count));
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AssignBtn1;
     private javax.swing.JButton btnDenyOrder;
     private javax.swing.JButton btnReadyToDeliver;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAvailableStock;
     private javax.swing.JLabel lblManageOrders;
     private javax.swing.JTable tblOrder;
     // End of variables declaration//GEN-END:variables

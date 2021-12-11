@@ -6,6 +6,7 @@
 package Business.Enterprise;
 
 import Business.Role.Role;
+import Business.Vaccine.VaccineDirectory;
 import java.util.ArrayList;
 
 /**
@@ -13,9 +14,21 @@ import java.util.ArrayList;
  * @author shreya.ghate
  */
 public class VaccineManufacturer extends Enterprise {
-     public VaccineManufacturer (String name){
+    VaccineDirectory vaccineDirectory=new VaccineDirectory();
+     
+    public VaccineManufacturer (String name){
         super( Enterprise.EnterpriseType.VaccineManufacturer, name);
+        vaccineDirectory = new VaccineDirectory();
     }
+
+    public VaccineDirectory getVaccineDirectory() {
+        return vaccineDirectory;
+    }
+
+    public void setVaccineDitrectory(VaccineDirectory vaccineDitrectory) {
+        this.vaccineDirectory = vaccineDitrectory;
+    }
+     
 
     @Override
     public ArrayList<Role> getSupportedRole() {
