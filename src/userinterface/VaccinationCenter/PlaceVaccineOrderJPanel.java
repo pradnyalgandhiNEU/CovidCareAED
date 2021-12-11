@@ -5,6 +5,14 @@
  */
 package userinterface.VaccinationCenter;
 
+import Business.City.City;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkQueue;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.WorkQueue.Order;
+import javax.swing.JPanel;
 /**
  *
  * @author ayushgupta
@@ -14,9 +22,22 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PlaceVaccineOrder
      */
-    public PlaceVaccineOrderJPanel() {
-        initComponents();
-    }
+    JPanel userProcessContainer;
+EcoSystem system;
+UserAccount userAccount;
+Organization organization;
+Enterprise enterprise;
+City city;
+public PlaceVaccineOrderJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization,
+Enterprise enterprise, EcoSystem system) {
+initComponents();
+this.userProcessContainer=userProcessContainer;
+this.system=system;
+this.userAccount=userAccount;
+this.enterprise=enterprise;
+this.city=city;
+this.organization=organization;
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +74,11 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sereum Institute", "Bharat BioTech", "Pfizer" }));
 
         jButton1.setText("Submit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -107,6 +133,50 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
     private void txtVaccineNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVaccineNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVaccineNameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+String vaccineName;
+int qty;
+String vaccineManufacturer;
+String message = "Order placed";
+String status = "Active";
+vaccineName = txtVaccineName.getText();
+qty = Integer.parseInt(jTextField3.getText());
+int index = jComboBox1.getSelectedIndex();
+switch(index){
+case 0:
+vaccineManufacturer = "Sereum Institute";
+break;
+case 1:
+vaccineManufacturer = "Bharat BioTech";
+break;
+case 2:
+vaccineManufacturer = "Pfizer";
+break;
+}
+WorkQueue wq=organization.getWorkQueue();
+for(UserAccount user : system.getUserAccountDirectory().getUserAccountList()){
+if(user.getUsername().equals("Sereum Institute")){
+Order order = wq.addWorkRequestList(message, userAccount, user, status);
+order.setCity(city);
+order.setQuantity(qty);
+user.getWorkQueue().getWorkRequestList().add(order);
+}else if(user.getUsername().equals("Bharat Biotech")){
+Order order = wq.addWorkRequestList(message, userAccount, user, status);
+order.setCity(city);
+order.setQuantity(qty);
+user.getWorkQueue().getWorkRequestList().add(order);
+}else if(user.getUsername().equals("Pfizer")){
+Order order = wq.addWorkRequestList(message, userAccount, user, status);
+order.setCity(city);
+order.setQuantity(qty);
+user.getWorkQueue().getWorkRequestList().add(order);
+}
+}
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
