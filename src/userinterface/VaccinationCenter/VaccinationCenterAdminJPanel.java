@@ -121,7 +121,7 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewInventoryActionPerformed
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
-       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageVaccinationCenterStaffJPanel( );
+       ManageVaccinationCenterStaffJPanel manageVaccinationCenterStaffJPanel = new ManageVaccinationCenterStaffJPanel(userProcessContainer, city, userAccount, organization, enterprise, system );
        userProcessContainer.add("manageVaccinationCenterStaffJPanel", manageVaccinationCenterStaffJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next( userProcessContainer);

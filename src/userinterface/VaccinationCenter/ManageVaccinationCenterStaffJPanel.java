@@ -5,6 +5,13 @@
  */
 package userinterface.VaccinationCenter;
 
+import Business.City.City;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author ayushgupta
@@ -14,8 +21,21 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageVacciantionCenterStaff
      */
-    public ManageVaccinationCenterStaffJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public ManageVaccinationCenterStaffJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;  
+        this.userAccount=userAccount;
+        this.enterprise=enterprise;
+        this.city=city;
+        this.organization=organization;
     }
 
     /**
