@@ -69,15 +69,12 @@ public abstract class WorkRequest {
     /* public Date getRequestDate() {
         return requestDate;
     }
-
     public void setRequestDate(Date requestDate) {
         this.requestDate = requestDate;
     }
-
     public Date getResolveDate() {
         return resolveDate;
     }
-
     public void setResolveDate(Date resolveDate) {
         this.resolveDate = resolveDate;
     }*/
