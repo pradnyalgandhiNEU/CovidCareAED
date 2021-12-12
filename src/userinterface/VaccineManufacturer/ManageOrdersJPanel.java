@@ -166,10 +166,18 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-        Order placeorder  = (Order)tblOrder.getValueAt(selectedRow, 0);
+        //System.out.println(tblOrder.getValueAt(selectedRow, 0));
+        Order placeorder=null;
+        int orderid  = (int)tblOrder.getValueAt(selectedRow, 6);
+        for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order = (Order)wr;
+                    if(order.getId()==orderid){
+                        placeorder=order;
+                    }
+        }
             if(placeorder.getStatus().equals("Ready to Deliver")){
                 JOptionPane.showMessageDialog(null,"Already Ready");
-            } else if (placeorder.getStatus().equals("New Order") || (placeorder.getStatus().equals("Order Denied"))){
+            } else if (placeorder.getStatus().equals("Active") || (placeorder.getStatus().equals("Order Denied"))){
             placeorder.setStatus("Ready to Deliver");
             }
             else{
@@ -181,17 +189,58 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                         order.setStatus("Ready to deliver");
                     }
             }    
+            populateTable();
     }//GEN-LAST:event_btnReadyToDeliverActionPerformed
 
     private void AssignBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignBtn1ActionPerformed
-       AssignDeliveryManagerJPanel assignDeliveryManagerJPanel = new AssignDeliveryManagerJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
+       int selectedRow = tblOrder.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        //System.out.println(tblOrder.getValueAt(selectedRow, 0));
+        Order placeorder=null;
+        int orderid  = (int)tblOrder.getValueAt(selectedRow, 6);
+        for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order = (Order)wr;
+                    if(order.getId()==orderid){
+                        placeorder=order;
+                    }
+        }
+        AssignDeliveryManagerJPanel assignDeliveryManagerJPanel = new AssignDeliveryManagerJPanel(userProcessContainer, city, userAccount, organization, enterprise, system, placeorder);
        userProcessContainer.add("assignDeliveryManagerJPanel", assignDeliveryManagerJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next(userProcessContainer);
     }//GEN-LAST:event_AssignBtn1ActionPerformed
 
     private void btnDenyOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDenyOrderActionPerformed
-
+int selectedRow = tblOrder.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        //System.out.println(tblOrder.getValueAt(selectedRow, 0));
+        Order placeorder=null;
+        int orderid  = (int)tblOrder.getValueAt(selectedRow, 6);
+        for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order = (Order)wr;
+                    if(order.getId()==orderid){
+                        placeorder=order;
+                    }
+        }
+            if(placeorder.getStatus().equals("Ready to deliver")){
+                JOptionPane.showMessageDialog(null,"Cannot Deny Order");
+            } else if (placeorder.getStatus().equals("Active")){
+            placeorder.setStatus("Order Denied");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Order already denied");
+            }
+            for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order = (Order)wr;
+                    if(order.getId()==placeorder.getId()){
+                        order.setStatus("Order Denied");
+                    }
+            }    
+            populateTable();
     }//GEN-LAST:event_btnDenyOrderActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -225,12 +274,12 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                     Order order = (Order)wr;
                     
                     Object[] row = new Object[7];
-                    row[0] = order.getMessage();
+                    row[0] = order.getVaccineName();
                     row[1] = order.getReceiver();
                     row[2] = order.getSender();
                     row[3] = order.getStatus();
                     row[4] = order.getQuantity();
-                    row[5] = order.getVaccineName();
+                    row[5] = order.getMessage();
                     row[6] = order.getId();
 
                     dtm.addRow(row);
