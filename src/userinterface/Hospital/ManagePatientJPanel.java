@@ -346,7 +346,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             VaccinationStatus = cboxVaccinationStatus.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(this, "Please select your Vaccination Status");
-//            count++;
         }
         String QuarantineLocation = "Unassigned";
         if (cboxQuarantineLocation.getSelectedItem() != null) 
@@ -354,7 +353,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             QuarantineLocation = cboxQuarantineLocation.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(this, "Please select where is the Quarantine");
-//            count++;
         }
         String DoctorName = "unassigned";
         if (cboxDoctor.getSelectedItem() != null) 
@@ -365,23 +363,47 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please assign a Doctor to this patient");
         }
 
-        String PersonName="";
+        //String PersonName="";
             Hospital hospitalEnterprise =(Hospital)enterprise;
 
-        for (Person p:system.getPersonDirectory().getPersonList()) {
-                    if (!txtSearch.getText().isEmpty()) {
-                        PersonName = txtSearch.getText();
-                    }
-                    if (p.getName().equals(PersonName)){
-
-                        Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
-                        Role role = new PatientRole();
-                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-                    }
+//        for (Person p:system.getPersonDirectory().getPersonList()) {
+//                    if (!txtSearch.getText().isEmpty()) {
+//                        PersonName = txtSearch.getText();
+//                    }
+//                    if (p.getName().equals(PersonName)){
+//                        
+//                        for(Patient p1:hospitalEnterprise.getPatientDirectory().getPatientDir()){
+//                            if(p1.getName().equals(p.getName())){
+//                        hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
+//                        Role role = new PatientRole();
+//                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+//                    }
+//                    }
+//                    }
+//                    
+//        
+        String patientName = txtName.getText();
+        int flag=0;
+        for(Patient p1:hospitalEnterprise.getPatientDirectory().getPatientDir()){
+            if(p1.getName().equals(patientName)){
+                flag=1;
+            }
+        }
+        if(flag==0){
+            for (Person p:system.getPersonDirectory().getPersonList()){
+                if(p.getName().equals(patientName)){ 
+            hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
+            Role role = new PatientRole();
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+            JOptionPane.showMessageDialog(null, "Patient Admitted");
+            break;
+        } else {
+               JOptionPane.showMessageDialog(null, "Patient already exists"); 
+                }
+        }
         }
         //Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(DoctorName, QuarantineLocation, VaccinationStatus);
         populatePersonTable();
-        JOptionPane.showMessageDialog(null, "Patient Admitted");
         populatePatientTable();
         txtUsername.setText("");
         txtName.setText("");
@@ -523,9 +545,9 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
                  Hospital hospitalEnterprise =(Hospital)enterprise;
 
-               for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
+               //for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
                     //System.out.println("useracc"+userAccount);
-                        if("Business.Role.PatientRole" == userAccount.getRole().toString()){
+                        //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
 //                            System.out.println("useracc"+userAccount.getRole().toString());
                        for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
                     //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
@@ -539,7 +561,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                     dtm.addRow(row);
                 }
                        }
-                }                
-                } 
+              //  }                
+                //} 
     
 }

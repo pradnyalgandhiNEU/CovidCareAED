@@ -34,6 +34,7 @@ public class PatientDirectory {
     
     public Patient addPatientDir(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String DoctorName, String QuarantineStatus, String VaccinationStatus) {
         Patient p = new Patient(personID, name, street, zipcode, age, Community, phoneNo, email, DoctorName, QuarantineStatus, VaccinationStatus);
+        
         patientDir.add(p);
         return p;
     }
