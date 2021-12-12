@@ -148,7 +148,7 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
         // TODO add your handling code here:
-        ManageHospitalStaffJPanel manageStaffJPanel = new ManageHospitalStaffJPanel();
+        ManageHospitalStaffJPanel manageStaffJPanel = new ManageHospitalStaffJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
         userProcessContainer.add("manageStaffJPanel", manageStaffJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
