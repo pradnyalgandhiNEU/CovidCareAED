@@ -453,12 +453,20 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
     private void populateComboBox() {
             cboxDoctor.removeAllItems();
-
-            for (UserAccount account: enterprise.getUserAccountDirectory().getUserAccountList()) {
-                if("Business.Role.DoctorRole".equals(userAccount.getRole().getClass().getName())){
-                    System.out.println(account.getUsername());
+        for(City city : system.getCityList()){
+            System.out.println(city.getName());
+            for(Enterprise e: city.getEnterpriseDirectory().getEnterpriseList()){
+                System.out.println(e);
+                for (UserAccount account: e.getUserAccountDirectory().getUserAccountList()) {
+                    System.out.println(account);
+                    System.out.println(account.getRole());
+                if("Business.Role.DoctorRole" == account.getRole().toString()){
+                    System.out.println("username"+account.getUsername());
                 cboxDoctor.addItem(account.getUsername());
-            } 
+            }
+            }
+            }
+            
     }
     }
     private void populatePersonTable() {
@@ -493,11 +501,12 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
         DefaultTableModel dtm = (DefaultTableModel) tblPatients.getModel();
         dtm.setRowCount(0);
- 
+                 Hospital hospitalEnterprise =(Hospital)enterprise;
+
                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
                        for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
                     if("Business.Role.PatientRole".equals(userAccount.getRole().getClass().getName())){
-                    System.out.println(userAccount.getRole());
+                    System.out.println("patientrole"+userAccount.getRole());
                     Object[] row = new Object[4];
                     row[0] = userAccount;
                     row[1] = userAccount.getPassword();
