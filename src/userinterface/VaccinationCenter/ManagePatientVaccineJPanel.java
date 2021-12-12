@@ -11,6 +11,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
 
 /**
@@ -65,6 +67,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         txtBatchNo = new javax.swing.JTextField();
         cboxVaccineNames = new javax.swing.JComboBox<>();
         cboxVaccineNames1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
         lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
@@ -108,6 +111,13 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         cboxVaccineNames.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Covishield", "Covaxin", "Pfizer" }));
 
         cboxVaccineNames1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Covishield", "Covaxin", "Pfizer" }));
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -154,11 +164,17 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                                     .addGap(18, 18, 18)
                                     .addComponent(txtBatchNo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(348, 348, 348))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(22, 22, 22)
                 .addComponent(lblManageInventory)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,6 +210,17 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        VaccinationCenterAdminJPanel vaccinationCenterjp = (VaccinationCenterAdminJPanel) component;
+        //        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
@@ -202,6 +229,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> cboxVaccineNames;
     private javax.swing.JComboBox<String> cboxVaccineNames1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblBatch;
