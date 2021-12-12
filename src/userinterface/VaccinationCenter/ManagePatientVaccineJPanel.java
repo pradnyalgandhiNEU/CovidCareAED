@@ -62,7 +62,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         tblVaccine = new javax.swing.JTable();
         btnAdd = new javax.swing.JButton();
         lblBatch = new javax.swing.JLabel();
-        txtBatchNo = new javax.swing.JTextField();
+        txtStaffID = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
@@ -110,7 +110,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                         .addGap(373, 373, 373)
                         .addComponent(lblBatch)
                         .addGap(18, 18, 18)
-                        .addComponent(txtBatchNo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(356, 356, 356))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
@@ -139,7 +139,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                 .addGap(154, 154, 154)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBatch)
-                    .addComponent(txtBatchNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(263, Short.MAX_VALUE))
@@ -170,6 +170,8 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                            }
                }
            }
+        txtStaffID.setText(String.valueOf(userAccount.getEmployee().getId()));
+        populateTable();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -181,7 +183,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblBatch;
     private javax.swing.JLabel lblManageInventory;
     private javax.swing.JTable tblVaccine;
-    private javax.swing.JTextField txtBatchNo;
+    private javax.swing.JTextField txtStaffID;
     // End of variables declaration//GEN-END:variables
 private void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblVaccine.getModel();
