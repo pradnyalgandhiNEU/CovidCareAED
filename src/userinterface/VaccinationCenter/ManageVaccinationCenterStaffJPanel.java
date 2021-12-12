@@ -74,6 +74,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        lblManageInventory = new javax.swing.JLabel();
 
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,6 +115,11 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageInventory.setText("Manage Patient Vaccination Details");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,28 +147,34 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                             .addComponent(txtPassword))
                         .addGap(0, 435, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(302, 302, 302)
-                .addComponent(btnUpdate)
-                .addGap(65, 65, 65)
-                .addComponent(btnCreate)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnView)
+                .addGap(139, 139, 139))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnView)
-                        .addGap(139, 139, 139))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(20, 20, 20))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addComponent(btnUpdate)
+                        .addGap(65, 65, 65)
+                        .addComponent(btnCreate))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblManageInventory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addComponent(jButton1)
-                .addGap(82, 82, 82)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblManageInventory)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addComponent(btnView)
@@ -232,6 +244,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblManageInventory;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblStaffID;
     private javax.swing.JTable tblStaff;
