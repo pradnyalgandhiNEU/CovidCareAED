@@ -101,7 +101,7 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReportActionPerformed
         // TODO add your handling code here:
-        ManageTestReportsJPanel manageTestReportsJPanel = new ManageTestReportsJPanel();
+        ManageTestReportsJPanel manageTestReportsJPanel = new ManageTestReportsJPanel(system, userProcessContainer);
         userProcessContainer.add("manageTestReportsJPanel", manageTestReportsJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -109,7 +109,7 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
 
     private void btnNewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReportActionPerformed
         // TODO add your handling code here:
-        NewReportJPanel newReportJPanel = new NewReportJPanel();
+        NewReportJPanel newReportJPanel = new NewReportJPanel(system, userProcessContainer);
         userProcessContainer.add("newReportJPanel", newReportJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

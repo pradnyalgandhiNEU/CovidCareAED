@@ -443,7 +443,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
 
         for (Person person : ecosystem.getPersonDirectory().getPersonList()) {
-            System.out.println(person);
+//            System.out.println(person);
             Object[] row = new Object[8];
             row[0] = person;
             row[1] = person.getPersonID();
