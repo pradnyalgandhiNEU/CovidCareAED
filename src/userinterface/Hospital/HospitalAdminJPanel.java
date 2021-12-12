@@ -8,9 +8,15 @@ package userinterface.Hospital;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
+import Business.Enterprise.Hospital;
 import Business.Organization.Organization;
+import Business.Patient.Patient;
+import Business.Patient.PatientDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
@@ -166,7 +172,10 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
     private void btnSendVCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendVCActionPerformed
-        // TODO add your handling code here:
+        PlaceVaccinationRequest pr = new PlaceVaccinationRequest(userProcessContainer, city, userAccount, organization, enterprise, system);
+        userProcessContainer.add("pr", pr);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnSendVCActionPerformed
 
 
