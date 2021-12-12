@@ -118,7 +118,7 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed
-       ViewVaccineInventoryJPanel viewVaccineInventoryJPanel = new ViewVaccineInventoryJPanel();
+       ViewVaccineInventoryJPanel viewVaccineInventoryJPanel = new ViewVaccineInventoryJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
        userProcessContainer.add("viewVaccineInventoryJPanel", viewVaccineInventoryJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next( userProcessContainer);

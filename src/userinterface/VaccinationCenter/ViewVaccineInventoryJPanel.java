@@ -5,6 +5,17 @@
  */
 package userinterface.VaccinationCenter;
 
+import Business.City.City;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.VaccineManufacturer;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.Order;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ayushgupta
@@ -14,8 +25,22 @@ public class ViewVaccineInventoryJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageVaccineInventory
      */
-    public ViewVaccineInventoryJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    Enterprise enterprise;
+    City city;
+    public ViewVaccineInventoryJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+            Enterprise enterprise, EcoSystem system){
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.system=system;
+        this.userAccount=userAccount;
+        this.city=city;
+        this.organization=organization;
+        this.enterprise=enterprise;
+        populateTable();
     }
 
     /**
@@ -28,11 +53,11 @@ public class ViewVaccineInventoryJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tblInventory = new javax.swing.JTable();
+        btnRefresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblInventory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -43,9 +68,14 @@ public class ViewVaccineInventoryJPanel extends javax.swing.JPanel {
                 "Vaccine Name", "Batch ID", "Qty"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblInventory);
 
-        jButton1.setText("Refresh");
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("INVENTORY");
 
@@ -56,7 +86,7 @@ public class ViewVaccineInventoryJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(221, 221, 221)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(btnRefresh)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(239, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -72,16 +102,51 @@ public class ViewVaccineInventoryJPanel extends javax.swing.JPanel {
                 .addGap(61, 61, 61)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addComponent(jButton1)
+                .addComponent(btnRefresh)
                 .addContainerGap(424, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        populateTable();
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblInventory;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) tblInventory.getModel();
+        dtm.setRowCount(0);
+         
+       
+         for(City c : system.getCityList()){
+             
+           for(Enterprise e : c.getEnterpriseDirectory().getEnterpriseList()){
+               
+               if(e.getClass().getName().equals("Business.Enterprise.VaccineManufacturer")){
+                   //System.out.println(e);
+                    for(UserAccount user:enterprise.getUserAccountDirectory().getUserAccountList()){
+                        
+                        for(WorkRequest wr:e.getWorkQueue().getWorkRequestList()){
+                           Order order = (Order)wr;
+                           //System.out.println(order.getSender()==user);
+                           if(order.getSender()==user && order.getStatus().equals("Delivered")){
+                               //System.out.println(order);
+                               Object[] row = new Object[3];
+                                row[0] = order;
+                                row[1] = order.getId();
+                                row[2] = order.getQuantity();
+                            dtm.addRow(row);
+                           }
+                       }
+                   }
+               }
+           }
+       }
+    }
 }
