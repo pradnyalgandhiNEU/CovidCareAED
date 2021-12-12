@@ -28,6 +28,7 @@
                   <Component id="btnManageCapacity" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnManagePatient" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                   <Component id="btnManageDoctor" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="btnSendVC" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -46,7 +47,9 @@
               <Component id="btnManageStaff" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnManageCapacity" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="531" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnSendVC" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="484" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -95,6 +98,14 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Welcome, Hospital Admin"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSendVC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Send Non-Vaccinated People"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSendVCActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
