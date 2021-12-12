@@ -100,6 +100,11 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         lblUsername.setText("Username:");
 

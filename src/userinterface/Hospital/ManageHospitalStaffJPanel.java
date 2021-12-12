@@ -237,6 +237,9 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
 
         populateTable();
+        txtUserName.setText("");
+        txtName.setText("");
+        txtPassword.setText("");
 
     }//GEN-LAST:event_btnCreateActionPerformed
 

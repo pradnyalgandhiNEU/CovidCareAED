@@ -90,6 +90,11 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblStaff);
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View");
 
