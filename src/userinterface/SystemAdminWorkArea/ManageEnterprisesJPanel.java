@@ -259,6 +259,6 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
 
         for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
             cmbEnterpriseType.addItem(type);
-        } //To change body of generated methods, choose Tools | Templates.
+        } 
     }
 }
