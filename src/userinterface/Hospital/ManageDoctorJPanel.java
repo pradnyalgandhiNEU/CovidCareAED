@@ -51,7 +51,6 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         this.organization=organization;
         this.userAccountDir=userAccountDir;
         populateTable();
-        btnUpdate.setEnabled(false);
     }
 
     /**
@@ -66,11 +65,9 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         lblManageManufacturer = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDoctor = new javax.swing.JTable();
-        btnView = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
-        btnUpdate = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -98,13 +95,6 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblDoctor);
 
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,13 +103,6 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         });
 
         lblName.setText("Name:");
-
-        btnUpdate.setText("Update");
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -145,27 +128,6 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(lblName)
-                            .addComponent(lblStaffID))
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtStaffID)
-                            .addComponent(txtName)
-                            .addComponent(txtUserName)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCreate)))
-                .addGap(322, 322, 322))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,14 +136,28 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
                         .addContainerGap())
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 772, Short.MAX_VALUE)
-                        .addComponent(btnView)
-                        .addGap(18, 18, 18)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnDelete)
                         .addGap(45, 45, 45))))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnBack)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(lblName)
+                    .addComponent(lblStaffID))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCreate)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtStaffID)
+                        .addComponent(txtName)
+                        .addComponent(txtUserName)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(322, 322, 322))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,9 +169,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
                 .addGap(108, 108, 108)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView)
-                    .addComponent(btnDelete))
+                .addComponent(btnDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStaffID)
@@ -212,34 +186,11 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnCreate))
-                .addGap(125, 125, 125))
+                .addGap(18, 18, 18)
+                .addComponent(btnCreate)
+                .addGap(146, 146, 146))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-//         int selectedRow = tblDoctor.getSelectedRow();
-//
-//        if (selectedRow < 0) {
-//            JOptionPane.showMessageDialog(this, "Please select a Doctor");
-//        } else {
-//            btnUpdate.setEnabled(true);
-//            txtUserName.setEnabled(false);
-//            txtPassword.setEnabled(false);
-//            txtStaffID.setVisible(false);
-//            lblStaffID.setVisible(false);
-//            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
-//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
-//            
-//            txtName.setText(selectedUser.getEmployee().toString());
-//            txtUserName.setText(selectedUser.getUsername());
-//            txtPassword.setText(selectedUser.getPassword());
-//        }
-    }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(txtName.getText());
@@ -276,67 +227,27 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-         int selectedRow = tblDoctor.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a Doctor");
-        } else {
-            btnDelete.setEnabled(false);
-            btnUpdate.setEnabled(false);
-            
-            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
-            UserAccount account = (UserAccount) model.getValueAt(selectedRow, 0);
-
-            userAccountDir.deleteUserAccount(account);
-
-            populateTable();
-        }
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-//        txtStaffID.setEnabled(false);
-//        txtName.setEnabled(false);
-//        String name = txtName.getText();
-//        String username = txtUserName.getText();
-//        String password = txtPassword.getText();
-//        
-//        int selectedRow = tblDoctor.getSelectedRow();
-//        if(selectedRow<0){
-//            JOptionPane.showMessageDialog(this, "Please select a doctor");
-//            txtStaffID.setEnabled(true);
-//        }
-//        else{
+//         int selectedRow = tblDoctor.getSelectedRow();
+//
+//        if (selectedRow < 0) {
+//            JOptionPane.showMessageDialog(this, "Please select a Doctor");
+//        } else {
 //            btnDelete.setEnabled(false);
-//            btnUpdate.setEnabled(false);
+//            
 //            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
 //            UserAccount account = (UserAccount) model.getValueAt(selectedRow, 0);
-//            if (name.isEmpty() || username.isEmpty() || password.isEmpty()) {
-//            JOptionPane.showMessageDialog(null, "Empty Fields", "Warning", JOptionPane.WARNING_MESSAGE);
-//            return;
-//        }
-//            else{
-//            UserAccount user = (UserAccount) model.getValueAt(selectedRow, 0);
-//            userAccountDir.updateUserAccount(user, username, password);
-////            System.out.print(username);
-//            JOptionPane.showMessageDialog(this, "Doctor details updated successfully");
+//
+//            userAccountDir.deleteUserAccount(account);
+//
 //            populateTable();
-//            txtName.setEnabled(true);
-//            txtUserName.setText("");
-//            txtPassword.setText("");
-//            txtStaffID.setEnabled(true);
 //        }
-//            
-//        }
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

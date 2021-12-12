@@ -8,6 +8,7 @@ package userinterface.SystemAdminWorkArea;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.EnterpriseDirectory;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -25,10 +26,12 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     EcoSystem system;
+    EnterpriseDirectory enterprise;
     public ManageEnterprisesJPanel(JPanel userProcessContainer,EcoSystem system) {
         initComponents();
         this.userProcessContainer= userProcessContainer;
         this.system=system;
+        this.enterprise=enterprise;
         populateTable();
         populateComboBox();
     }
@@ -184,14 +187,21 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         City city = (City) cmbCity.getSelectedItem();
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) cmbEnterpriseType.getSelectedItem();
-
-        if (city == null || type == null) {
+        String name = txtName.getText();
+        int id = Integer.parseInt(txtID.getText());
+        if (city == null || type == null || name == null ) {
             JOptionPane.showMessageDialog(null, "Invalid Input!");
             return;
         }
-
-        String name = txtName.getText();
-        int id = Integer.parseInt(txtID.getText());
+//        System.out.print(city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name));
+//        if (city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name) != true) {
+//                JOptionPane.showMessageDialog(null, "Enterprise name exists");
+//                    return;
+//        }
+//        else if(!enterprise.checkIfEnterpriseNameIsUnique(name)){
+//            JOptionPane.showMessageDialog(null, String.format("Enterprise Name %s already exists!", name),"Warning",JOptionPane.ERROR_MESSAGE);
+//        }
+       
         Enterprise enterprise = city.getEnterpriseDirectory().createAndAddEnterprise(name , type, id);
 
         populateTable();

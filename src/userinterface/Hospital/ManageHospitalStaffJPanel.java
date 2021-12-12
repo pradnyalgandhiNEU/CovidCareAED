@@ -61,7 +61,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         lblManageStaff1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblStaff = new javax.swing.JTable();
-        btnView1 = new javax.swing.JButton();
         btnDelete1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -71,7 +70,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         lblStaffID = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
-        btnUpdate = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
@@ -93,8 +91,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tblStaff);
 
-        btnView1.setText("View");
-
         btnDelete1.setText("Delete");
 
         jLabel1.setText("Username:");
@@ -104,8 +100,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         lblStaffID.setText("Staff ID:");
 
         lblName.setText("Name:");
-
-        btnUpdate.setText("Update");
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +121,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView1)
-                .addGap(18, 18, 18)
                 .addComponent(btnDelete1)
                 .addGap(48, 48, 48))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -138,11 +130,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
             .addComponent(lblManageStaff1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(439, 439, 439)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCreate))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -161,7 +148,8 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtName)
                                 .addComponent(txtUserName)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCreate)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBack)))
@@ -177,9 +165,7 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView1)
-                    .addComponent(btnDelete1))
+                .addComponent(btnDelete1)
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStaffID)
@@ -196,11 +182,9 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnCreate))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCreate)
+                .addContainerGap(198, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -260,8 +244,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete1;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
