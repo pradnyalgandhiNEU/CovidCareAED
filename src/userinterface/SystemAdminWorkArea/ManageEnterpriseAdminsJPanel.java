@@ -278,9 +278,19 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                             role = new TestingLabAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
                         } else if (enterprise.getClass().getName().toString() == "Business.Enterprise.VaccinationCenter") {
-                            //System.out.println(enterprise.getUserAccountDirectory());
-                            role = new VaccinationCenterAdminRole();
+                            int count = 0;
+                            for(UserAccount userAccount: enterprise.getUserAccountDirectory().getUserAccountList()){
+                                if((userAccount.getRole().getClass().getName()).equals("Business.Role.VaccinationCenterRole")){
+                                    count = 1;
+                                }
+                            }
+                            if(count==0){
+                            role = new VaccineManufacturerRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(this,"Admin Already exist");
+                            }
                         } else if (enterprise.getClass().getName().toString() == "Business.Enterprise.VaccineManufacturer") {
                             int count = 0;
                             for(UserAccount userAccount: enterprise.getUserAccountDirectory().getUserAccountList()){

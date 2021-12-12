@@ -23,6 +23,7 @@ public class Patient extends Person {
     private String QuarantineStatus;
     private String DoctorName;
     Person person;
+    String AdmitStatus;
     VitalSignsHistory vitalHistory=new VitalSignsHistory();
 
     public VitalSignsHistory getVitalHistory() {
