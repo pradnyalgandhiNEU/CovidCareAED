@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/VaccineManufacturer/AssignDeliveryManagerJPanel.java</file>
-            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/SystemAdminWorkArea/ManageCityJPanel.java</file>
+            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/SystemAdminWorkArea/ManageEnterpriseAdminsJPanel.java</file>
+            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/Business/Organization/DoctorOrganization.java</file>
+            <file>file:/Users/ayushgupta/Desktop/Final%20Project%20AED/CovidCareAED/src/userinterface/Hospital/ManageDoctorJPanel.java</file>
         </group>
     </open-files>
 </project-private>

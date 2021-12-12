@@ -28,4 +28,10 @@ public class WorkQueue {
         workRequestList.add(temp);
         return temp;
     }
+    
+    public VaccinatePatient addWorkRequestList2(String message, UserAccount sender, UserAccount receiver, String status){
+        VaccinatePatient temp = new VaccinatePatient(message, sender, receiver, status);
+        workRequestList.add(temp);
+        return temp;
+    }
 }
