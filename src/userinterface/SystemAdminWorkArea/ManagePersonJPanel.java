@@ -337,7 +337,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             ecosystem.getPersonDirectory().deletePerson(selectedPerson);
 
             populatePersonTable();
-            JOptionPane.showMessageDialog(this, "Customer deleted successfully");
+            JOptionPane.showMessageDialog(this, "Pe deleted successfully");
             txtID.setText("");
             txtName.setText("");
             txtStreet.setText("");

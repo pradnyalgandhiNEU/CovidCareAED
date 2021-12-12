@@ -8,6 +8,10 @@ import Business.City.City;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
+import static Business.Enterprise.Enterprise.EnterpriseType.TestingLab;
+import static Business.Enterprise.Enterprise.EnterpriseType.VaccinationCenter;
+import static Business.Enterprise.Enterprise.EnterpriseType.VaccineManufacturer;
 import Business.Role.HospitalAdminRole;
 import Business.Role.Role;
 import Business.Role.TestingLabAdminRole;
@@ -262,21 +266,22 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
 
                         Employee employee = enterprise.getEmployeeDirectory().createEmployee(username);
-                        System.out.println(employee);
-                        System.out.println("enterprise"+enterprise.getType());
+                        //System.out.println(employee);
+                        //System.out.println(enterprise.getClass().getName().toString() == "Business.Enterprise.VaccinationCenter");
                         Role role;
 
-                        if (enterprise.getType() == "Hospital") {
+                        if (enterprise.getClass().getName().toString() == "Business.Enterprise.Hospital") {
                             role = new HospitalAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
-                            System.out.println(account);
-                        } else if (enterprise.getType() == "TestingLab") {
+                            //System.out.println(account);
+                        } else if (enterprise.getClass().getName().toString() == "Business.Enterprise.TestingLab") {
                             role = new TestingLabAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
-                        } else if (enterprise.getType() == "VaccinationCenter") {
+                        } else if (enterprise.getClass().getName().toString() == "Business.Enterprise.VaccinationCenter") {
+                            //System.out.println(enterprise.getUserAccountDirectory());
                             role = new VaccinationCenterAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
-                        } else if (enterprise.getType() == "VaccineManufacturer") {
+                        } else if (enterprise.getClass().getName().toString() == "Business.Enterprise.VaccineManufacturer") {
                             int count = 0;
                             for(UserAccount userAccount: enterprise.getUserAccountDirectory().getUserAccountList()){
                                 if((userAccount.getRole().getClass().getName()).equals("Business.Role.VaccineManufacturerRole")){
@@ -299,6 +304,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                     } 
                 }
         }
+        //populateEnterpriseAdminTable();
         txtUsername.setText("");
         txtPassword.setText("");
     }//GEN-LAST:event_btnCreateActionPerformed
