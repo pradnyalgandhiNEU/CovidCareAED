@@ -58,10 +58,7 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         lblManageStaff1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblStaff = new javax.swing.JTable();
-        lblSearch1 = new javax.swing.JLabel();
-        txtSearch1 = new javax.swing.JTextField();
         btnView1 = new javax.swing.JButton();
-        btnSearch1 = new javax.swing.JButton();
         btnDelete1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -81,22 +78,18 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
 
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Staff ID", "Name", "Email", "Age", "Phone No", "Specialization"
+                "Username", "Staff ID", "Name", "Password"
             }
         ));
         jScrollPane2.setViewportView(tblStaff);
 
-        lblSearch1.setText("Search:");
-
         btnView1.setText("View");
-
-        btnSearch1.setText("Search");
 
         btnDelete1.setText("Delete");
 
@@ -133,37 +126,28 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addComponent(lblManageStaff1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(315, 315, 315)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(lblSearch1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblStaffID)
+                            .addComponent(lblName)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblStaffID)
-                                    .addComponent(lblName)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2))
-                                        .addGap(2, 2, 2)))
-                                .addGap(50, 50, 50)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtStaffID)
-                                    .addComponent(txtName)
-                                    .addComponent(txtUserName)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(btnUpdate)
-                                .addGap(65, 65, 65)
-                                .addComponent(btnCreate)))))
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(2, 2, 2)))
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtStaffID)
+                            .addComponent(txtName)
+                            .addComponent(txtUserName)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(btnUpdate)
+                        .addGap(65, 65, 65)
+                        .addComponent(btnCreate)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -171,12 +155,7 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(lblManageStaff1)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSearch1)
-                    .addComponent(txtSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(71, 71, 71)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -247,7 +226,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete1;
-    private javax.swing.JButton btnSearch1;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView1;
     private javax.swing.JLabel jLabel1;
@@ -256,12 +234,10 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblManageStaff1;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblSearch1;
     private javax.swing.JLabel lblStaffID;
     private javax.swing.JTable tblStaff;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtSearch1;
     private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
