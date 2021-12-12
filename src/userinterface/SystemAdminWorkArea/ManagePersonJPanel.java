@@ -32,6 +32,8 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
 
         populatePersonTable();
+        btnUpdate.setEnabled(false);
+        btnDelete.setEnabled(false);
     }
 
     /**
@@ -67,6 +69,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         txtAge = new javax.swing.JTextField();
         lblAge = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         lblStreet.setText("Street:");
 
@@ -102,7 +105,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         lblManagePerson.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManagePerson.setForeground(new java.awt.Color(204, 204, 204));
         lblManagePerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManagePerson.setText("Manage Person");
+        lblManagePerson.setText("MANAGE PERSON");
 
         lblName.setText("Name:");
 
@@ -137,6 +140,13 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,58 +161,59 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                         .addComponent(lblManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(btnUpdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCreate)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnView)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnView)
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete)
                 .addGap(42, 42, 42))
             .addGroup(layout.createSequentialGroup()
-                .addGap(291, 291, 291)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblAge)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(291, 291, 291)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblAge)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPhone, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCommunity)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(lblID)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblName)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(lblStreet)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblApartment)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPhone, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(351, 351, 351)
+                        .addComponent(btnCancel)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblCommunity)
+                        .addComponent(btnUpdate)
                         .addGap(18, 18, 18)
-                        .addComponent(txtCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblID)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblName)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblStreet)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblApartment)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnCreate)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -250,11 +261,12 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCommunity)
                     .addComponent(txtCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
-                    .addComponent(btnCreate))
-                .addGap(30, 30, 30))
+                    .addComponent(btnCreate)
+                    .addComponent(btnCancel))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -273,22 +285,33 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Empty Fields", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (phoneNo.length() != 10) {
+        else if (phoneNo.length() != 10) {
+            JOptionPane.showMessageDialog(null, "Invalid Phone Number", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if (validateEmail(email) == false) {
+            JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (zipcode.length() != 5) {
             JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-//        if (zipcode.length() != 5) {
-//            JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
-//            return;
-//        }
-
-        if (validateEmail(email) == false) {
-            JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
+        
+        else if(!ecosystem.getPersonDirectory().checkIfIDIsUnique(ID)){
+            JOptionPane.showMessageDialog(null, String.format("Person ID %s already exists!", ID),"Warning",JOptionPane.ERROR_MESSAGE);
         }
-
-        ecosystem.getPersonDirectory().newPerson(ID, name, street, zipcode, age, community, phoneNo, email);
-        populatePersonTable();
-        JOptionPane.showMessageDialog(null, "Customer Created");
+        else if(!ecosystem.getPersonDirectory().checkIfNameIsUnique(name)){
+            JOptionPane.showMessageDialog(null, String.format("Person name %s already exists!", name),"Warning",JOptionPane.ERROR_MESSAGE);
+        }
+        else if(!ecosystem.getPersonDirectory().checkIfEmailIsUnique(email)){
+            JOptionPane.showMessageDialog(null, String.format("Person email %s already exists!", email),"Warning",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            ecosystem.getPersonDirectory().newPerson(ID, name, street, zipcode, age, community, phoneNo, email);
+            populatePersonTable();
+            JOptionPane.showMessageDialog(null, "Customer Created");
+        }
+        
 //        System.out.println(ecosystem.getPersonDirectory().getPersonList());
 
         txtID.setText("");
@@ -304,11 +327,15 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+        
         int selectedRow = personTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Row");
         } else {
+            btnUpdate.setEnabled(true);
+            btnDelete.setEnabled(true);
+            txtID.setEnabled(false);
             DefaultTableModel model = (DefaultTableModel) personTable.getModel();
 //            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
             Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
@@ -322,6 +349,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             txtCommunity.setText(selectedPerson.getCommunity());
 
         }
+        
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -331,13 +359,16 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Row");
         } else {
+            btnDelete.setEnabled(false);
+            btnUpdate.setEnabled(false);
+            
             DefaultTableModel model = (DefaultTableModel) personTable.getModel();
             Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
 
             ecosystem.getPersonDirectory().deletePerson(selectedPerson);
 
             populatePersonTable();
-            JOptionPane.showMessageDialog(this, "Pe deleted successfully");
+            
             txtID.setText("");
             txtName.setText("");
             txtStreet.setText("");
@@ -346,6 +377,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             txtPhone.setText("");
             txtEmail.setText("");
             txtCommunity.setText("");
+            txtID.setEnabled(true);
     }//GEN-LAST:event_btnDeleteActionPerformed
     }
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -366,17 +398,32 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             txtID.setEnabled(true);
         }
         else{
+            btnDelete.setEnabled(false);
+            btnUpdate.setEnabled(false);
             DefaultTableModel model = (DefaultTableModel) personTable.getModel();
             Person person = (Person)model.getValueAt(selectedRow, 0);
             
-            if(txtID.getText().isEmpty() || txtAge.getText().isEmpty() || name.isEmpty() || street.isEmpty() || zipcode.isEmpty() || community.isEmpty() || phoneNo.isEmpty() || email.isEmpty()){
-                JOptionPane.showMessageDialog(null, "Invalid Input");
-                txtID.setEnabled(true);
-            }       
+            if (txtID.getText().isEmpty() || txtAge.getText().isEmpty() || name.isEmpty() || street.isEmpty() || zipcode.isEmpty() || community.isEmpty() || phoneNo.isEmpty() || email.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Empty Fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if (phoneNo.length() != 10) {
+            JOptionPane.showMessageDialog(null, "Invalid Phone Number", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if (validateEmail(email) == false) {
+            JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (zipcode.length() != 5) {
+            JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+             
         
             else{
             ecosystem.getPersonDirectory().updatePerson(person, name, street, zipcode, age, community, phoneNo, email);
 //            System.out.print(username);
+            JOptionPane.showMessageDialog(this, " Person updated successfully");
             populatePersonTable();
             txtID.setText("");
             txtName.setText("");
@@ -404,6 +451,21 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        txtID.setEnabled(true);
+        btnUpdate.setEnabled(false);
+        btnDelete.setEnabled(false);
+        txtID.setText("");
+        txtName.setText("");
+        txtStreet.setText("");
+        txtZipcode.setText("");
+        txtAge.setText("");
+        txtPhone.setText("");
+        txtEmail.setText("");
+        txtCommunity.setText("");
+    }//GEN-LAST:event_btnCancelActionPerformed
+
 
     private boolean validateEmail(String email) {
         Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
@@ -412,6 +474,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
