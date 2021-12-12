@@ -126,6 +126,11 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(enterpriseTable);
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         comboEnterprise.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -320,6 +325,10 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
             populateEnterpriseCombo(city);
         }
     }//GEN-LAST:event_comboboxCityActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewActionPerformed
 
     private boolean validateUsername(String email) {
         Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");

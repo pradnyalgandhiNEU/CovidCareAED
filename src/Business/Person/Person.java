@@ -12,15 +12,15 @@ import Business.TestReport.TestReportDirectory;
  * @author pradnyalgandhi
  */
 public class Person {
-    private int personID;
-    private String name;
-    private String street;
-    private String zipcode;
-    private int age;
-    private String Community;
-    private String phoneNo;
-    private String email;
-    private TestReportDirectory testHistory=new TestReportDirectory();
+    public int personID;
+    public String name;
+    public String street;
+    public String zipcode;
+    public int age;
+    public String Community;
+    public String phoneNo;
+    public String email;
+    public TestReportDirectory testHistory=new TestReportDirectory();
     
     
     public Person(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email){
