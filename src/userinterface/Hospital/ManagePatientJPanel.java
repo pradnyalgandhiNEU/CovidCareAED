@@ -95,7 +95,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPerson = new javax.swing.JTable();
-        btnViewPatient = new javax.swing.JButton();
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -106,13 +105,13 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Username", "Password", "Patient ID", "Vaccination Status", "Quarantine", "Doctor"
+                "Patient Name", "Patient ID", "Vaccination Status", "Quarantine", "Doctor"
             }
         ));
         jScrollPane1.setViewportView(tblPatients);
@@ -189,17 +188,10 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Person ID", "Name", "Age", "Community"
+                "Person Name", "ID", "Age", "Community"
             }
         ));
         jScrollPane2.setViewportView(tblPerson);
-
-        btnViewPatient.setText("View Patient");
-        btnViewPatient.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewPatientActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -258,17 +250,13 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCreatePatient)
-                        .addGap(262, 262, 262)
-                        .addComponent(btnViewPatient)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDeletePatient)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnViewPerson)
-                        .addGap(35, 35, 35))))
+                        .addGap(380, 380, 380)
+                        .addComponent(btnDeletePatient))
+                    .addComponent(btnViewPerson))
+                .addGap(35, 35, 35))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -319,8 +307,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreatePatient)
-                    .addComponent(btnDeletePatient)
-                    .addComponent(btnViewPatient))
+                    .addComponent(btnDeletePatient))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
@@ -425,12 +412,13 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
         // TODO add your handling code here:
-          int selectedRow = tblPerson.getSelectedRow();
+        int selectedRow = tblPerson.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Person");
         } else {
             DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
+//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
             Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
             txtName.setText(selectedPerson.getName());
         }
@@ -443,45 +431,24 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Patient");
         } else {
-            DefaultTableModel model = (DefaultTableModel) tblPatients.getModel();
-            Patient selectedPatient = (Patient) model.getValueAt(selectedRow, 0);
-            Hospital hospitalEnterprise =(Hospital)enterprise;
-            hospitalEnterprise.getPatientDirectory().deletePatient(selectedPatient);
-
-            JOptionPane.showMessageDialog(this, "Patient deleted successfully");
-            populatePatientTable();
-
+           Hospital e =(Hospital)enterprise;
+         String patientname= (String) tblPatients.getValueAt(selectedRow, 0);
+            
+            txtName.setText(patientname);
+        for(Patient p: e.getPatientDirectory().getPatientDir()){
+            System.out.println(patientname);
+            
+            if(p.getName().equals(patientname)){
+                //System.out.println(p);
+                e.getPatientDirectory().deletePatient(p);
+                JOptionPane.showMessageDialog(this, "Patient deleted successfully");
+                populatePatientTable();
+            }
         }
+            
+        }
+        
     }//GEN-LAST:event_btnDeletePatientActionPerformed
-
-    private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = tblPatients.getSelectedRow();
-        Object selectedVaccinationStatus = cboxVaccinationStatus.getSelectedItem();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a Patient");
-        } else {
-            DefaultTableModel model = (DefaultTableModel) tblPatients.getModel();
-            Patient selectedPatient = (Patient) model.getValueAt(selectedRow, 0);
-            txtName.setText(selectedPatient.getName());
-//            for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
-//            txtUsername.setText(userAccount.getUsername());
-//            txtPassword.setText(userAccount.getPassword());
-//            }
-            if (selectedPatient.getVaccinationStatus()!= null)
-            {
-                cboxVaccinationStatus.setSelectedItem(selectedPatient.getVaccinationStatus());
-            }
-            if (selectedPatient.getQuarantineStatus()!= null)
-            {
-                cboxQuarantineLocation.setSelectedItem(selectedPatient.getQuarantineStatus());
-            }if (selectedPatient.getVaccinationStatus()!= null)
-            {
-                cboxDoctor.setSelectedItem(selectedPatient.getDoctorName());
-            }
-        }
-    }//GEN-LAST:event_btnViewPatientActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -489,7 +456,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCreatePatient;
     private javax.swing.JButton btnDeletePatient;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnViewPatient;
     private javax.swing.JButton btnViewPerson;
     private javax.swing.JComboBox<String> cboxDoctor;
     private javax.swing.JComboBox<String> cboxQuarantineLocation;
@@ -564,13 +530,12 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 //                            System.out.println("useracc"+userAccount.getRole().toString());
                        for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
                     //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
-                    Object[] row = new Object[6];
-                    row[0] = userAccount;
-                    row[1] = userAccount.getPassword();
-                    row[2] = p.getPatientID();
-                    row[3] = p.getVaccinationStatus();
-                    row[4] = p.getQuarantineStatus();
-                    row[5] = p.getDoctorName();
+                    Object[] row = new Object[5];
+                    row[0] = p.getName();
+                    row[1] = p.getPatientID();
+                    row[2] = p.getVaccinationStatus();
+                    row[3] = p.getQuarantineStatus();
+                    row[4] = p.getDoctorName();
 
                     dtm.addRow(row);
                 }

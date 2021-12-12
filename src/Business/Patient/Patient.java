@@ -7,7 +7,9 @@ package Business.Patient;
 
 import Business.Person.Person;
 import Business.WorkQueue.AdmitPatient;
+import static Business.WorkQueue.Order.gen;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -19,7 +21,7 @@ public class Patient extends Person {
     private String QuarantineStatus;
     private String DoctorName;
     Person person;
-    private static int count = 1;
+//    private static int count = 1;
 
 //    public void addPatient(String DoctorName, String PatientName, String AdmissionStatus, int PatientID) {
 //        AdmitPatient admitPatient=new AdmitPatient();
@@ -36,10 +38,15 @@ public class Patient extends Person {
         this.DoctorName=DoctorName;
         this.VaccinationStatus=VaccinationStatus;
         this.QuarantineStatus=QuarantineStatus;
-        PatientID = count;
-        count++;
+        this.PatientID = gen();
+
     }
 
+     public static int gen() {
+        Random r = new Random( System.currentTimeMillis() );
+        return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
+    }
+     
     public int getPatientID() {
         return PatientID;
     }
