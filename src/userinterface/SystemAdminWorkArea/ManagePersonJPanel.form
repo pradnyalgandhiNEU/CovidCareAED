@@ -236,7 +236,7 @@
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="MANAGE PERSON"/>
+        <Property name="text" type="java.lang.String" value="Manage Person"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblName">

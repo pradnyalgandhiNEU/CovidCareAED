@@ -8,9 +8,12 @@ package userinterface.Hospital;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.Hospital;
 import Business.Organization.Organization;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -51,7 +54,7 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblPatients = new javax.swing.JTable();
         btnDischarge = new javax.swing.JButton();
         lblManagePatient = new javax.swing.JLabel();
 
@@ -64,7 +67,7 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -75,7 +78,7 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
                 "ID", "Name", "Address", "Email", "Age", "Phone No", "Community", "Status"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblPatients);
 
         btnDischarge.setText("Mark Discharged");
 
@@ -136,9 +139,30 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDischarge;
     private javax.swing.JButton btnSearch;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblManagePatient;
     private javax.swing.JLabel lblSearch;
+    private javax.swing.JTable tblPatients;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+
+    private void populatePatientTable() {
+
+        DefaultTableModel dtm = (DefaultTableModel) tblPatients.getModel();
+        dtm.setRowCount(0);
+                 Hospital hospitalEnterprise =(Hospital)enterprise;
+                       for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
+                    Object[] row = new Object[5];
+                    row[0] = p.getName();
+                    row[1] = p.getPatientID();
+                    row[2] = p.getVaccinationStatus();
+                    row[3] = p.getQuarantineStatus();
+                    row[4] = p.getDoctorName();
+                    row[5] = p.getAdmitStatus();
+
+                    dtm.addRow(row);
+                }
+                       }
+              //  }                
+                //} 
 }

@@ -118,7 +118,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
         lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageInventory.setText("Manage Patient Vaccination Details");
+        lblManageInventory.setText("Manage Vaccination Center Staff");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
