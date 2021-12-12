@@ -46,6 +46,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.city=city;
         this.organization=organization;
+        populateTable();
     }
 
     /**
@@ -235,7 +236,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        HospitalAdminJPanel sysAdminwjp = (HospitalAdminJPanel) component;
         //        sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);

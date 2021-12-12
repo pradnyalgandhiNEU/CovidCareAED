@@ -95,16 +95,21 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         tblPatient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Person ID", "Name", "Age", "Community", "Status"
+                "Person ID", "Name", "Age", "Community"
             }
         ));
         jScrollPane1.setViewportView(tblPatient);
@@ -346,11 +351,16 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        HospitalAdminJPanel sysAdminwjp = (HospitalAdminJPanel) component;
         //        sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        populatePatientTable();
+    }//GEN-LAST:event_btnSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -385,21 +395,21 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
         DefaultTableModel dtm = (DefaultTableModel) tblPatient.getModel();
         dtm.setRowCount(0);
-
+ 
                 Hospital hospitalEnterprise =(Hospital)enterprise;
-                for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
+                for (Person p:system.getPersonDirectory().getPersonList()) {
                     if (!txtSearch.getText().isEmpty()) {
                         PersonName = txtSearch.getText();
                     }
+               
                     if (p.getName().equals(PersonName)) {
-                    Object[] row = new Object[7];
+                    Object[] row = new Object[4];
                     row[0] = p.getName();
                     row[1] = p.getPersonID();
                     row[2] = p.getCommunity();
                     row[3] = p.getAge();
-                    row[4] = p.getDoctorName();
-                    row[5] = p.getQuarantineStatus();
-                    row[6] = p.getVaccinationStatus();
+//                    row[5] = p.getQuarantineStatus();
+//                    row[6] = p.getVaccinationStatus();
 
                     dtm.addRow(row);
                 
