@@ -163,6 +163,4 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
                     dtm.addRow(row);
                 }
                        }
-              //  }                
-                //} 
 }
