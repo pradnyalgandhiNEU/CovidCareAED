@@ -12,6 +12,8 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.Order;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -55,7 +57,7 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDeliveryManager = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnAssignOrder = new javax.swing.JButton();
 
         tblDeliveryManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,11 +72,11 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblDeliveryManager);
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jButton2.setText("Assign Order");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAssignOrder.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnAssignOrder.setText("Assign Order");
+        btnAssignOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAssignOrderActionPerformed(evt);
             }
         });
 
@@ -86,7 +88,7 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
                 .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(btnAssignOrder))
                 .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
@@ -95,18 +97,30 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jButton2)
+                .addComponent(btnAssignOrder)
                 .addContainerGap(148, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAssignOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignOrderActionPerformed
+    int selectedRow = tblDeliveryManager.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+        }
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+        UserAccount deliveryManager  = (UserAccount) tblDeliveryManager.getValueAt(selectedRow, 0);
+        
+        for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+                    Order order1 = (Order)wr;
+                    if(order1.getId()==order.getId()){
+                        order.setDeliveryManager(deliveryManager);
+                    }
+        }
+    }//GEN-LAST:event_btnAssignOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAssignOrder;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblDeliveryManager;
     // End of variables declaration//GEN-END:variables
