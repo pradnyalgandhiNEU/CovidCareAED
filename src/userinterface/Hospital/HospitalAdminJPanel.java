@@ -54,6 +54,7 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         btnManagePatient = new javax.swing.JButton();
         btnManageStaff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnSendVC = new javax.swing.JButton();
 
         btnManageDoctor.setText("Manage Doctor");
         btnManageDoctor.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +89,13 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome, Hospital Admin");
 
+        btnSendVC.setText("Send Non-Vaccinated People");
+        btnSendVC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSendVCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,7 +110,8 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
                     .addComponent(btnManageStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManageCapacity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManagePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnManageDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSendVC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,7 +127,9 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
                 .addComponent(btnManageStaff)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageCapacity)
-                .addContainerGap(531, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSendVC)
+                .addContainerGap(484, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -154,12 +165,17 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageStaffActionPerformed
 
+    private void btnSendVCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendVCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSendVCActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageCapacity;
     private javax.swing.JButton btnManageDoctor;
     private javax.swing.JButton btnManagePatient;
     private javax.swing.JButton btnManageStaff;
+    private javax.swing.JButton btnSendVC;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

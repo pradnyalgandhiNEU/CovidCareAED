@@ -21,6 +21,7 @@ public class Patient extends Person {
     private String QuarantineStatus;
     private String DoctorName;
     Person person;
+    private String AdmitStatus;
     
     public Patient(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String DoctorName, String QuarantineStatus, String VaccinationStatus) {
         super(personID, name, street, zipcode, age, Community, phoneNo, email);
@@ -28,7 +29,7 @@ public class Patient extends Person {
         this.VaccinationStatus=VaccinationStatus;
         this.QuarantineStatus=QuarantineStatus;
         this.PatientID = gen();
-
+        this.AdmitStatus="Admitted";
     }
 
      public static int gen() {
@@ -139,6 +140,15 @@ public class Patient extends Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getAdmitStatus() {
+        return AdmitStatus;
+    }
+
+    public void setAdmitStatus(String AdmitStatus) {
+        this.AdmitStatus = AdmitStatus;
+    }
+    
 @Override
         public String toString(){
             return name;

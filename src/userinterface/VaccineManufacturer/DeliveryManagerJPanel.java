@@ -59,6 +59,7 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         btnMarkAsDelivered = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        lblManageAdmin = new javax.swing.JLabel();
 
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,6 +95,11 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblManageAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageAdmin.setText("Manage Delivery Manager");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,7 +117,9 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblManageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2))
                         .addGap(42, 42, 42))))
         );
         layout.setVerticalGroup(
@@ -119,13 +127,15 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jButton2)
-                .addGap(57, 57, 57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblManageAdmin)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(btnMarkAsDelivered))
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(433, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -164,6 +174,7 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblManageAdmin;
     private javax.swing.JTable tblOrder;
     // End of variables declaration//GEN-END:variables
 

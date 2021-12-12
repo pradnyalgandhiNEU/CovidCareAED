@@ -114,7 +114,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         lblManageVaccinationCenter.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageVaccinationCenter.setForeground(new java.awt.Color(204, 204, 204));
         lblManageVaccinationCenter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageVaccinationCenter.setText("MANAGE ENTERPRISE ADMINS");
+        lblManageVaccinationCenter.setText("Manage Enterprise Admins");
 
         enterpriseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
