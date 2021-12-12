@@ -6,11 +6,14 @@
 package userinterface.VaccineManufacturer;
 
 import Business.City.City;
+import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.Order;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,8 +30,9 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     City city;
+    Order order;
     public AssignDeliveryManagerJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
-            Enterprise enterprise, EcoSystem system) {
+            Enterprise enterprise, EcoSystem system, Order order) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system=system;
@@ -36,6 +40,8 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
         this.city=city;
         this.organization=organization;
         this.enterprise=enterprise;
+        this.order=order;
+        populateTable();
     }
 
     /**
@@ -48,10 +54,10 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDeliveryManager = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDeliveryManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -62,7 +68,7 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
                 "Delivery ManagerName", "ID"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblDeliveryManager);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jButton2.setText("Assign Order");
@@ -102,6 +108,24 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblDeliveryManager;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel)tblDeliveryManager.getModel();
+        
+        model.setRowCount(0);
+        
+        for(UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
+            if((userAccount.getRole().getClass().getName()).equals("Business.Role.DeliveryManagerRole")){
+               Object[] row = new Object[2];
+               
+                row[0] = userAccount;
+                row[1] = userAccount.getEmployee().getId();
+         
+                
+                model.addRow(row);
+            }
+        }//To change body of generated methods, choose Tools | Templates.
+    }
 }
