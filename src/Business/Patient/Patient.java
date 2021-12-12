@@ -39,7 +39,7 @@ public class Patient extends Person {
         this.VaccinationStatus=VaccinationStatus;
         this.QuarantineStatus=QuarantineStatus;
         this.PatientID = gen();
-
+        this.AdmitStatus="Admitted";
     }
 
      public static int gen() {
@@ -150,6 +150,15 @@ public class Patient extends Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getAdmitStatus() {
+        return AdmitStatus;
+    }
+
+    public void setAdmitStatus(String AdmitStatus) {
+        this.AdmitStatus = AdmitStatus;
+    }
+    
 @Override
         public String toString(){
             return name;

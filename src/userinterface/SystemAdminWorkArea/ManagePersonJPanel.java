@@ -105,7 +105,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         lblManagePerson.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManagePerson.setForeground(new java.awt.Color(204, 204, 204));
         lblManagePerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManagePerson.setText("MANAGE PERSON");
+        lblManagePerson.setText("Manage Person");
 
         lblName.setText("Name:");
 
