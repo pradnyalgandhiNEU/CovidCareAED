@@ -60,6 +60,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 //        this.patientDir=patientDir;
         populatePersonTable();
         populateComboBox();
+        populatePatientTable();
     }
 
     /**
@@ -362,26 +363,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "Please assign a Doctor to this patient");
         }
-
-        //String PersonName="";
-            Hospital hospitalEnterprise =(Hospital)enterprise;
-
-//        for (Person p:system.getPersonDirectory().getPersonList()) {
-//                    if (!txtSearch.getText().isEmpty()) {
-//                        PersonName = txtSearch.getText();
-//                    }
-//                    if (p.getName().equals(PersonName)){
-//                        
-//                        for(Patient p1:hospitalEnterprise.getPatientDirectory().getPatientDir()){
-//                            if(p1.getName().equals(p.getName())){
-//                        hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
-//                        Role role = new PatientRole();
-//                        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-//                    }
-//                    }
-//                    }
-//                    
-//        
+            Hospital hospitalEnterprise =(Hospital)enterprise;       
         String patientName = txtName.getText();
         int flag=0;
         for(Patient p1:hospitalEnterprise.getPatientDirectory().getPatientDir()){
@@ -397,11 +379,12 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
             JOptionPane.showMessageDialog(null, "Patient Admitted");
             break;
-        } else {
-               JOptionPane.showMessageDialog(null, "Patient already exists"); 
-                }
+            } 
         }
         }
+        else {
+            JOptionPane.showMessageDialog(null, "Patient already exists"); 
+            }
         //Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(DoctorName, QuarantineLocation, VaccinationStatus);
         populatePersonTable();
         populatePatientTable();
