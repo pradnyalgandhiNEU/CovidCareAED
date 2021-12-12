@@ -227,9 +227,17 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         }
         Role role = new DoctorRole();
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+<<<<<<< HEAD
         System.out.println(account);             
         populateTable();
         
+=======
+//        System.out.println(account);
+        populateTable();
+        txtUserName.setText("");
+        txtName.setText("");
+        txtPassword.setText("");
+>>>>>>> 7ca3ed9f1adba9b601226096ea53994d3443f9f5
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -269,7 +277,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
 
             
                 for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
-                    if("Business.Role.DoctorRole".equals(userAccount.getRole().getClass().getName())){
+                    if("Business.Role.DoctorRole" == userAccount.getRole().toString()){
                     System.out.println(userAccount.getRole());
                     Object[] row = new Object[4];
                     row[0] = userAccount;

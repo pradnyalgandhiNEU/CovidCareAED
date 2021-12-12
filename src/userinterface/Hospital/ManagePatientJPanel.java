@@ -60,6 +60,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 //        this.patientDir=patientDir;
         populatePersonTable();
         populateComboBox();
+        populatePatientTable();
     }
 
     /**
@@ -75,9 +76,8 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPatients = new javax.swing.JTable();
-        btnView = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        btnViewPerson = new javax.swing.JButton();
+        btnDeletePatient = new javax.swing.JButton();
         lblStatus = new javax.swing.JLabel();
         lblManagePatient = new javax.swing.JLabel();
         lblQuarantine = new javax.swing.JLabel();
@@ -106,27 +106,30 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Username", "Password", "Patient ID", "Vaccination Status", "Quarantine", "Doctor"
+                "Patient Name", "Patient ID", "Vaccination Status", "Quarantine", "Doctor"
             }
         ));
         jScrollPane1.setViewportView(tblPatients);
 
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
+        btnViewPerson.setText("View Person");
+        btnViewPerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
+                btnViewPersonActionPerformed(evt);
             }
         });
 
-        btnUpdate.setText("Update");
-
-        btnDelete.setText("Delete");
+        btnDeletePatient.setText("Delete Patient");
+        btnDeletePatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletePatientActionPerformed(evt);
+            }
+        });
 
         lblStatus.setText("Vaccination Status:");
 
@@ -137,7 +140,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
         lblQuarantine.setText("Quarantine:");
 
-        lblSearch.setText("Person ID:");
+        lblSearch.setText("Person Name:");
 
         cboxQuarantineLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Quarantine", "Home Quarantine" }));
 
@@ -158,7 +161,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             }
         });
 
-        cboxVaccinationStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Partially/Fully Vaccinated", "Non-vaccinated" }));
+        cboxVaccinationStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Partially Vaccinated", "Non-vaccinated", "Fully Vaccinated" }));
 
         cboxDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cboxDoctor.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +189,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Person ID", "Name", "Age", "Community"
+                "Person Name", "ID", "Age", "Community"
             }
         ));
         jScrollPane2.setViewportView(tblPerson);
@@ -196,66 +199,65 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblName)
-                            .addGap(18, 18, 18))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblUsername)
-                            .addGap(30, 30, 30)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblPassword)
-                        .addGap(42, 42, 42)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                    .addComponent(txtUsername)
-                    .addComponent(txtName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblEnterprise)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cboxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblStatus)
-                            .addComponent(lblQuarantine))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboxQuarantineLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboxVaccinationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(289, 289, 289))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblManagePatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnView)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnDelete))
+                                .addComponent(btnBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblManagePatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(lblSearch)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnSearch)
-                                .addGap(294, 294, 294)))))
+                                .addGap(294, 294, 294))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(lblName)
+                                    .addGap(18, 18, 18))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblUsername)
+                                    .addGap(30, 30, 30)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblPassword)
+                                .addGap(42, 42, 42)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtPassword)
+                            .addComponent(txtUsername)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblEnterprise)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cboxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblStatus)
+                                    .addComponent(lblQuarantine))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cboxQuarantineLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxVaccinationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnUpdate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCreatePatient)
-                .addGap(432, 432, 432))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCreatePatient)
+                        .addGap(380, 380, 380)
+                        .addComponent(btnDeletePatient))
+                    .addComponent(btnViewPerson))
+                .addGap(35, 35, 35))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -275,11 +277,9 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblSearch)
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(240, 240, 240)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView)
-                    .addComponent(btnDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(206, 206, 206)
+                .addComponent(btnViewPerson)
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -305,13 +305,13 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cboxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblEnterprise))))
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreatePatient)
-                    .addComponent(btnUpdate))
-                .addGap(26, 26, 26)
+                    .addComponent(btnDeletePatient))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(77, 77, 77))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(167, 167, 167)
@@ -347,7 +347,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             VaccinationStatus = cboxVaccinationStatus.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(this, "Please select your Vaccination Status");
-//            count++;
         }
         String QuarantineLocation = "Unassigned";
         if (cboxQuarantineLocation.getSelectedItem() != null) 
@@ -355,7 +354,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             QuarantineLocation = cboxQuarantineLocation.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(this, "Please select where is the Quarantine");
-//            count++;
         }
         String DoctorName = "unassigned";
         if (cboxDoctor.getSelectedItem() != null) 
@@ -364,30 +362,35 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             
         } else {
             JOptionPane.showMessageDialog(this, "Please assign a Doctor to this patient");
-//            count++;
         }
-//        if (selectedManufacturer != null) 
-//        {
-//            manufacturer = selectedManufacturer.toString();
-//        }
-//            c.setManufacturer(manufacturer);
-        String PersonName="";
-            Hospital hospitalEnterprise =(Hospital)enterprise;
-
-        //ArrayList<Patient> p1 = hospitalEnterprise.getPatientDirectory().getPatientDir();
-        for (Person p:system.getPersonDirectory().getPersonList()) {
-                    if (!txtSearch.getText().isEmpty()) {
-                        PersonName = txtSearch.getText();
-                    }
-                    if (p.getName().equals(PersonName)){
-
-                        Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
-                    }
+            Hospital hospitalEnterprise =(Hospital)enterprise;       
+        String patientName = txtName.getText();
+        int flag=0;
+        for(Patient p1:hospitalEnterprise.getPatientDirectory().getPatientDir()){
+            if(p1.getName().equals(patientName)){
+                flag=1;
+            }
         }
+        if(flag==0){
+            for (Person p:system.getPersonDirectory().getPersonList()){
+                if(p.getName().equals(patientName)){ 
+            hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
+            Role role = new PatientRole();
+            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+            JOptionPane.showMessageDialog(null, "Patient Admitted");
+            break;
+            } 
+        }
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Patient already exists"); 
+            }
         //Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(DoctorName, QuarantineLocation, VaccinationStatus);
         populatePersonTable();
-        JOptionPane.showMessageDialog(null, "Patient Admitted");
         populatePatientTable();
+        txtUsername.setText("");
+        txtName.setText("");
+        txtPassword.setText("");
 //        System.out.println(ecosystem.getPersonDirectory().getPersonList());
     }//GEN-LAST:event_btnCreatePatientActionPerformed
 
@@ -411,27 +414,53 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboxDoctorActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+    private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
         // TODO add your handling code here:
-          int selectedRow = tblPerson.getSelectedRow();
+        int selectedRow = tblPerson.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Person");
         } else {
             DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
+//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
             Person selectedPerson = (Person) model.getValueAt(selectedRow, 0);
             txtName.setText(selectedPerson.getName());
         }
-    }//GEN-LAST:event_btnViewActionPerformed
+    }//GEN-LAST:event_btnViewPersonActionPerformed
+
+    private void btnDeletePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePatientActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblPatients.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a Patient");
+        } else {
+           Hospital e =(Hospital)enterprise;
+         String patientname= (String) tblPatients.getValueAt(selectedRow, 0);
+            
+            txtName.setText(patientname);
+        for(Patient p: e.getPatientDirectory().getPatientDir()){
+            System.out.println(patientname);
+            
+            if(p.getName().equals(patientname)){
+                //System.out.println(p);
+                e.getPatientDirectory().deletePatient(p);
+                JOptionPane.showMessageDialog(this, "Patient deleted successfully");
+                populatePatientTable();
+            }
+        }
+            
+        }
+        
+    }//GEN-LAST:event_btnDeletePatientActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreatePatient;
-    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDeletePatient;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView;
+    private javax.swing.JButton btnViewPerson;
     private javax.swing.JComboBox<String> cboxDoctor;
     private javax.swing.JComboBox<String> cboxQuarantineLocation;
     private javax.swing.JComboBox<String> cboxVaccinationStatus;
@@ -456,12 +485,8 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
     private void populateComboBox() {
             cboxDoctor.removeAllItems();
         for(City city : system.getCityList()){
-//            System.out.println(city.getName());
             for(Enterprise e: city.getEnterpriseDirectory().getEnterpriseList()){
-//                System.out.println(e);
                 for (UserAccount account: e.getUserAccountDirectory().getUserAccountList()) {
-//                    System.out.println(account);
-//                    System.out.println(account.getRole());
                 if("Business.Role.DoctorRole" == account.getRole().toString()){
                     System.out.println("username"+account.getUsername());
                 cboxDoctor.addItem(account.getUsername());
@@ -489,12 +514,10 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                     row[1] = p.getPersonID();
                     row[2] = p.getAge();
                     row[3] = p.getCommunity();
-//                    row[5] = p.getQuarantineStatus();
-//                    row[6] = p.getVaccinationStatus();
 
                     dtm.addRow(row);
                 
-                } //To change body of generated methods, choose Tools | Templates.
+                } 
     }
                 
     }
@@ -505,26 +528,23 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
                  Hospital hospitalEnterprise =(Hospital)enterprise;
 
-               for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
-//                    System.out.println("useracc"+userAccount);
-
+               //for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
+                    //System.out.println("useracc"+userAccount);
+                        //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
+//                            System.out.println("useracc"+userAccount.getRole().toString());
                        for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
-//                    System.out.println("p"+p.getDoctorName());
-//                                        System.out.println("Prole"+userAccount.getRole().toString());
-                    if("Business.Role.DoctorRole" == userAccount.getRole().toString()){
-//                    System.out.println("patientrole"+userAccount.getRole());
-                    Object[] row = new Object[6];
-                    row[0] = userAccount;
-                    row[1] = userAccount.getPassword();
-                    row[2] = p.getPatientID();
-                    row[3] = p.getVaccinationStatus();
-                    row[4] = p.getQuarantineStatus();
-                    row[5] = p.getDoctorName();
+                    //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
+                    Object[] row = new Object[5];
+                    row[0] = p.getName();
+                    row[1] = p.getPatientID();
+                    row[2] = p.getVaccinationStatus();
+                    row[3] = p.getQuarantineStatus();
+                    row[4] = p.getDoctorName();
 
                     dtm.addRow(row);
                 }
                        }
-                }                
-                } //To change body of generated methods, choose Tools | Templates.
+              //  }                
+                //} 
     
 }

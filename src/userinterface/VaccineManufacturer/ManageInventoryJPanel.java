@@ -297,7 +297,6 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
             txtBatchNo.setText(String.valueOf(BatchID));
             txtQuantity.setText(String.valueOf(Quantity));
             txtStatus.setText(status);
-
         }
         else {
             JOptionPane.showMessageDialog(null,"Please select a row");

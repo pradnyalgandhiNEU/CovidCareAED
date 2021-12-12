@@ -58,4 +58,26 @@ public class PersonDirectory {
         personList.remove(person);
     }
     
+    public boolean checkIfNameIsUnique(String name){
+        for (Person p : personList){
+            if (p.getName().equals(name))
+                return false;
+        }
+        return true;
+    }
+    public boolean checkIfEmailIsUnique(String email){
+        for (Person p : personList){
+            if (p.getEmail().equals(email))
+                return false;
+        }
+        return true;
+    }
+    public boolean checkIfIDIsUnique(int ID){
+        for (Person p : personList){
+            if (p.getPersonID()==ID)
+                return false;
+        }
+        return true;
+    }
+    
 }
