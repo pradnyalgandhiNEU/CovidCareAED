@@ -228,7 +228,8 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         Role role = new DoctorRole();
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         System.out.println(account);             
-       populateTable();
+        populateTable();
+        
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
