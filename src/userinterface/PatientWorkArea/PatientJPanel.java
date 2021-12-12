@@ -7,7 +7,12 @@ package userinterface.PatientWorkArea;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
+import Business.Enterprise.Hospital;
 import Business.Organization.Organization;
+import Business.Patient.Patient;
+import Business.Person.Person;
+import Business.TestReport.TestReport;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -46,28 +51,29 @@ public class PatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnManageVaccinations = new javax.swing.JButton();
-        btnManageReports = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-
-        btnManageVaccinations.setText("Manage Vaccinations");
-        btnManageVaccinations.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageVaccinationsActionPerformed(evt);
-            }
-        });
-
-        btnManageReports.setText("Manage Reports");
-        btnManageReports.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageReportsActionPerformed(evt);
-            }
-        });
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtStatus = new javax.swing.JTextField();
+        txtReport = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        lblWelcome = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hi");
+
+        jLabel2.setText("Your Vaccination Status");
+
+        jLabel3.setText("Your Test Report");
+
+        jButton1.setText("Check");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -76,40 +82,84 @@ public class PatientJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(382, 382, 382)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnManageVaccinations, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnManageReports, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(321, 321, 321)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(481, 481, 481)
+                        .addGap(164, 164, 164)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(126, 126, 126)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(txtReport)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
-                .addComponent(jLabel1)
-                .addGap(107, 107, 107)
-                .addComponent(btnManageReports)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageVaccinations)
-                .addContainerGap(585, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86)
+                .addComponent(jButton1)
+                .addContainerGap(552, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnManageVaccinationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVaccinationsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageVaccinationsActionPerformed
-
-    private void btnManageReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReportsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageReportsActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        for(City c : system.getCityList()){
+             
+           for(Enterprise e : c.getEnterpriseDirectory().getEnterpriseList()){
+               Hospital hos = (Hospital)e;
+               if(e.getClass().getName().equals("Business.Enterprise.Hospital")){
+                   //System.out.println(e);
+                    for(Patient patient: hos.getPatientDirectory().getPatientDir()){
+                        if(patient.getName().equals(userAccount.getEmployee().getName())){
+                            txtStatus.setText(patient.getVaccinationStatus());
+                          
+                        }
+                    }
+               }
+           }
+        }
+        String status=" ";
+        for(Person p : system.getPersonDirectory().getPersonList()){
+            if(p.getName().equals(userAccount.getEmployee().getName())){
+                TestReport report = p.getTestHistory().getTestReportList().get(p.getTestHistory().getTestReportList().size()-1);
+                if(report.isResult()==true){
+                    status = "Covid Positive";
+                }
+                else{
+                    status = "Covid Negative";
+                }
+                txtReport.setText(status);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageReports;
-    private javax.swing.JButton btnManageVaccinations;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JTextField txtReport;
+    private javax.swing.JTextField txtStatus;
     // End of variables declaration//GEN-END:variables
 }
