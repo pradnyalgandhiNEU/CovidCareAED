@@ -29,6 +29,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     public ManagePersonJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
         initComponents();
         this.ecosystem = ecosystem;
+        this.userProcessContainer = userProcessContainer;
 
         populatePersonTable();
     }
@@ -276,10 +277,10 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (zipcode.length() < 5 || zipcode.length() > 6) {
-            JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+//        if (zipcode.length() != 5) {
+//            JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
 
         if (validateEmail(email) == false) {
             JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -442,7 +443,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
 
         for (Person person : ecosystem.getPersonDirectory().getPersonList()) {
-            System.out.println(person);
+//            System.out.println(person);
             Object[] row = new Object[8];
             row[0] = person;
             row[1] = person.getPersonID();

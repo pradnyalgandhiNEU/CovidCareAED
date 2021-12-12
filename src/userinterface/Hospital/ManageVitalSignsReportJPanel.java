@@ -52,7 +52,7 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
 
         btnDelete.setText("Delete");
 
-        lblSearch.setText("Search:");
+        lblSearch.setText("Search Patient Name:");
 
         btnView.setText("View");
 
@@ -75,6 +75,12 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         lblManageManufacturer.setForeground(new java.awt.Color(204, 204, 204));
         lblManageManufacturer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageManufacturer.setText("Manage Patient Vital Signs");
+
+        txtReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReportActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setText("Update");
 
@@ -191,6 +197,10 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
                 .addContainerGap(155, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReportActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReportActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
