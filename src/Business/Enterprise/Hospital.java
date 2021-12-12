@@ -5,7 +5,9 @@
  */
 package Business.Enterprise;
 
+import Business.Patient.PatientDirectory;
 import Business.Role.Role;
+import Business.Vaccine.VaccineDirectory;
 import java.util.ArrayList;
 
 /**
@@ -13,10 +15,20 @@ import java.util.ArrayList;
  * @author shreya.ghate
  */
 public class Hospital extends Enterprise {
+    PatientDirectory patientDirectory=new PatientDirectory();
+
     public Hospital (String name){
         super( EnterpriseType.Hospital, name);
+        patientDirectory = new PatientDirectory();
     }
 
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory;
+    }
+
+    public void setPatientDirectory(PatientDirectory patientDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;

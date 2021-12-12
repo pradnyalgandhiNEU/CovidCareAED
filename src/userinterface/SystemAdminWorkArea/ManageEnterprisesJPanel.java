@@ -91,6 +91,11 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
 
         cmbCity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCityActionPerformed(evt);
+            }
+        });
 
         cmbEnterpriseType.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         cmbEnterpriseType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -205,6 +210,10 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
 
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void cmbCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCityActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -276,10 +276,10 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (zipcode.length() < 5 || zipcode.length() > 6) {
-            JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+//        if (zipcode.length() != 5) {
+//            JOptionPane.showMessageDialog(null, "Invalid Zipcode", "Warning", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
 
         if (validateEmail(email) == false) {
             JOptionPane.showMessageDialog(null, "Invalid Email", "Warning", JOptionPane.WARNING_MESSAGE);
