@@ -214,16 +214,16 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(txtName.getText());
-        String userName = txtUserName.getText();
+        String userName = txtName.getText();
         String password = txtPassword.getText();
         if (enterprise.getUserAccountDirectory().authenticateUser(userName, password) != null) {
-            JOptionPane.showMessageDialog(null, "Username Already exists");
-            return;
+                JOptionPane.showMessageDialog(null, "Username Already exists");
+                    return;
         }
 
         if (userName.equals("") || password.equals("")) {
-            JOptionPane.showMessageDialog(null, "Username and password can not be empty");
-            return;
+               JOptionPane.showMessageDialog(null, "Username and password can not be empty");
+                    return;
         }
         Role role = new DoctorRole();
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
