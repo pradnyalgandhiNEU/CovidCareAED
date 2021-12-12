@@ -342,7 +342,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         
         String VaccinationStatus = "Unassigned";
 
-        if (cboxVaccinationStatus.getSelectedIndex() != 0) 
+        if (cboxVaccinationStatus.getSelectedItem() != null) 
         {
             VaccinationStatus = cboxVaccinationStatus.getSelectedItem().toString();
         } else {
@@ -350,7 +350,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 //            count++;
         }
         String QuarantineLocation = "Unassigned";
-        if (cboxQuarantineLocation.getSelectedIndex() != 0) 
+        if (cboxQuarantineLocation.getSelectedItem() != null) 
         {
             QuarantineLocation = cboxQuarantineLocation.getSelectedItem().toString();
         } else {
@@ -358,13 +358,19 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 //            count++;
         }
         String DoctorName = "unassigned";
-        if (cboxDoctor.getSelectedIndex() != 0) 
+        if (cboxDoctor.getSelectedItem() != null) 
         {
             DoctorName = cboxDoctor.getSelectedItem().toString();
+            
         } else {
             JOptionPane.showMessageDialog(this, "Please assign a Doctor to this patient");
 //            count++;
         }
+//        if (selectedManufacturer != null) 
+//        {
+//            manufacturer = selectedManufacturer.toString();
+//        }
+//            c.setManufacturer(manufacturer);
         String PersonName="";
         
         //ArrayList<Patient> p1 = hospitalEnterprise.getPatientDirectory().getPatientDir();
@@ -450,7 +456,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
             for (UserAccount account: enterprise.getUserAccountDirectory().getUserAccountList()) {
                 if("Business.Role.DoctorRole".equals(userAccount.getRole().getClass().getName())){
-
+                    System.out.println(account.getUsername());
                 cboxDoctor.addItem(account.getUsername());
             } 
     }
