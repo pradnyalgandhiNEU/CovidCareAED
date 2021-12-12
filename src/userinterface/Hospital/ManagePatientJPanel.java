@@ -372,13 +372,15 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 //        }
 //            c.setManufacturer(manufacturer);
         String PersonName="";
-        
+            Hospital hospitalEnterprise =(Hospital)enterprise;
+
         //ArrayList<Patient> p1 = hospitalEnterprise.getPatientDirectory().getPatientDir();
         for (Person p:system.getPersonDirectory().getPersonList()) {
                     if (!txtSearch.getText().isEmpty()) {
                         PersonName = txtSearch.getText();
                     }
                     if (p.getName().equals(PersonName)){
+
                         Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
                     }
         }
@@ -454,12 +456,12 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
     private void populateComboBox() {
             cboxDoctor.removeAllItems();
         for(City city : system.getCityList()){
-            System.out.println(city.getName());
+//            System.out.println(city.getName());
             for(Enterprise e: city.getEnterpriseDirectory().getEnterpriseList()){
-                System.out.println(e);
+//                System.out.println(e);
                 for (UserAccount account: e.getUserAccountDirectory().getUserAccountList()) {
-                    System.out.println(account);
-                    System.out.println(account.getRole());
+//                    System.out.println(account);
+//                    System.out.println(account.getRole());
                 if("Business.Role.DoctorRole" == account.getRole().toString()){
                     System.out.println("username"+account.getUsername());
                 cboxDoctor.addItem(account.getUsername());
@@ -485,8 +487,8 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                     Object[] row = new Object[4];
                     row[0] = p;
                     row[1] = p.getPersonID();
-                    row[2] = p.getCommunity();
-                    row[3] = p.getAge();
+                    row[2] = p.getAge();
+                    row[3] = p.getCommunity();
 //                    row[5] = p.getQuarantineStatus();
 //                    row[6] = p.getVaccinationStatus();
 
@@ -504,15 +506,20 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
                  Hospital hospitalEnterprise =(Hospital)enterprise;
 
                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
+//                    System.out.println("useracc"+userAccount);
+
                        for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
-                    if("Business.Role.PatientRole".equals(userAccount.getRole().getClass().getName())){
-                    System.out.println("patientrole"+userAccount.getRole());
-                    Object[] row = new Object[4];
+//                    System.out.println("p"+p.getDoctorName());
+//                                        System.out.println("Prole"+userAccount.getRole().toString());
+                    if("Business.Role.DoctorRole" == userAccount.getRole().toString()){
+//                    System.out.println("patientrole"+userAccount.getRole());
+                    Object[] row = new Object[6];
                     row[0] = userAccount;
                     row[1] = userAccount.getPassword();
-                    row[1] = p.getPatientID();
-                    row[2] = p.getVaccinationStatus();
-                    row[3] = p.getDoctorName();
+                    row[2] = p.getPatientID();
+                    row[3] = p.getVaccinationStatus();
+                    row[4] = p.getQuarantineStatus();
+                    row[5] = p.getDoctorName();
 
                     dtm.addRow(row);
                 }
