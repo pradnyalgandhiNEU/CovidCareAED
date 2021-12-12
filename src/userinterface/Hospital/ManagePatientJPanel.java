@@ -330,7 +330,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
     private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
         // TODO add your handling code here:
-        
+        txtName.setEnabled(false);
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(txtName.getText());
         String userName = txtUsername.getText();
         String password = txtPassword.getText();

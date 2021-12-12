@@ -85,9 +85,9 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
 
         lblID.setText("ID:");
 
-        lblCity.setText("City");
+        lblCity.setText("City:");
 
-        lblEnterpriseType.setText("Enterprise Type");
+        lblEnterpriseType.setText("Enterprise Type:");
 
         cmbCity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -140,11 +140,15 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
                                 .addComponent(lblName)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEnterpriseType))
-                        .addGap(109, 109, 109)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(218, 218, 218)
+                                .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblEnterpriseType)
+                                .addGap(64, 64, 64)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbEnterpriseType, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
