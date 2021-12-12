@@ -18,7 +18,16 @@ public class Order extends WorkRequest{
     private int quantity;
     private String VaccineName;
     private int id=0;
+    private UserAccount deliveryManager=null;
     //private VaccineManufacturerOrganization vaccineManufacturer;
+
+    public UserAccount getDeliveryManager() {
+        return deliveryManager;
+    }
+
+    public void setDeliveryManager(UserAccount deliveryManager) {
+        this.deliveryManager = deliveryManager;
+    }
 
     public String getVaccineName() {
         return VaccineName;
@@ -47,6 +56,10 @@ public class Order extends WorkRequest{
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+    @Override
+    public String toString(){
+        return VaccineName;
     }
 
     /*public City getCity() {

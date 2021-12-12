@@ -31,7 +31,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     City city;
-    VaccineManufacturer e =(VaccineManufacturer)enterprise;
+    //VaccineManufacturer e =(VaccineManufacturer)enterprise;
     public ManageInventoryJPanel(JPanel userProcessContainer,City city,UserAccount userAccount,Organization organization,Enterprise enterprise,EcoSystem system) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
@@ -43,6 +43,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         //VaccineManufacturer e =(VaccineManufacturer)enterprise;
         populateTable();
     }
+    //VaccineManufacturer e =(VaccineManufacturer)enterprise;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,6 +107,11 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         lblBatch.setText("Batch No:");
 
@@ -114,6 +120,11 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         lblStatus.setText("Status:");
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
@@ -232,9 +243,9 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
          batchId = Integer.parseInt(txtBatchNo.getText());
          status = txtStatus.getText();
          name = txtName.getText();
-         //VaccineManufacturer e =(VaccineManufacturer)enterprise;
+         VaccineManufacturer e =(VaccineManufacturer)enterprise;
+         System.out.println(e.getVaccineDirectory().getVaccDir());
          Vaccine v = e.getVaccineDirectory().addVaccDir(qty, batchId, status, name);
-         //System.out.println(v);
          /*v.setBatchId(batchId);
          v.setName(name);
          v.setQty(qty);
@@ -245,6 +256,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        VaccineManufacturer e =(VaccineManufacturer)enterprise;
         int count = 0;
         for(Vaccine vaccine: e.getVaccineDirectory().getVaccDir()){
           count = count+vaccine.getQty();
@@ -259,12 +271,12 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         int selectRow = tblVaccineInventory.getSelectedRow();
-
+        //VaccineManufacturer e =(VaccineManufacturer)enterprise;
         if(selectRow>=0){
-            String name= (String) tblVaccineInventory.getValueAt(selectRow, 1);
-            int BatchID= (int) tblVaccineInventory.getValueAt(selectRow, 2);
-            int Quantity = (int) tblVaccineInventory.getValueAt(selectRow, 3);
-            String status= (String) tblVaccineInventory.getValueAt(selectRow, 4);
+            String name= (String) tblVaccineInventory.getValueAt(selectRow, 0);
+            int BatchID= (int) tblVaccineInventory.getValueAt(selectRow, 1);
+            int Quantity = (int) tblVaccineInventory.getValueAt(selectRow, 2);
+            String status= (String) tblVaccineInventory.getValueAt(selectRow, 3);
             
             txtName.setText(name);
             txtBatchNo.setText(String.valueOf(BatchID));
@@ -276,6 +288,34 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row");
         }
     }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        VaccineManufacturer e =(VaccineManufacturer)enterprise;
+        int qty=Integer.parseInt(txtQuantity.getText());
+        int batchId=Integer.parseInt(txtBatchNo.getText());
+        String status=txtStatus.getText();
+        String name=txtName.getText();
+        
+        for(Vaccine v: e.getVaccineDirectory().getVaccDir()){
+            if(v.getBatchId()==batchId){
+                v.setName(name);
+                v.setQty(qty);
+                v.setStatus(status);
+            }
+        }
+        
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        VaccineManufacturer e =(VaccineManufacturer)enterprise;
+        int batchId=Integer.parseInt(txtBatchNo.getText());
+        for(Vaccine v: e.getVaccineDirectory().getVaccDir()){
+            if(v.getBatchId()==batchId){
+                e.getVaccineDirectory().getVaccDir().remove(v);
+            }
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
