@@ -21,17 +21,6 @@ public class Patient extends Person {
     private String QuarantineStatus;
     private String DoctorName;
     Person person;
-//    private static int count = 1;
-
-//    public void addPatient(String DoctorName, String PatientName, String AdmissionStatus, int PatientID) {
-//        AdmitPatient admitPatient=new AdmitPatient();
-//        admitPatient.setPatientID(String.valueOf(id));
-//        admitPatient.setDoctorName(DoctorName);
-//        admitPatient.setPatientName(person.name);
-//        admitPatient.setAdmissionStatus("Admitted");
-//        patientList.add(admitPatient);
-//        id++;
-//    }
     
     public Patient(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String DoctorName, String QuarantineStatus, String VaccinationStatus) {
         super(personID, name, street, zipcode, age, Community, phoneNo, email);

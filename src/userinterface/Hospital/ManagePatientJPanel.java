@@ -363,7 +363,6 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             
         } else {
             JOptionPane.showMessageDialog(this, "Please assign a Doctor to this patient");
-//            count++;
         }
 
         String PersonName="";
