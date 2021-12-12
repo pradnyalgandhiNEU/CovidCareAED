@@ -259,11 +259,12 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                         Employee employee = enterprise.getEmployeeDirectory().createEmployee(username);
                         System.out.println(employee);
                         System.out.println("enterprise"+enterprise.getType());
-                        Role role = null;
+                        Role role;
 
                         if (enterprise.getType() == "Hospital") {
                             role = new HospitalAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
+                            System.out.println(account);
                         } else if (enterprise.getType() == "TestingLab") {
                             role = new TestingLabAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
@@ -292,7 +293,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
                     } 
                 }
-//            }
         }
         txtUsername.setText("");
         txtPassword.setText("");

@@ -12,6 +12,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import Business.Vaccine.VaccineDirectory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -86,13 +87,13 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
 
         tblVaccineInventory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Batch Number", "Quantity", "Status"
+                "Name", "Batch Number", "Quantity", "Status"
             }
         ));
         jScrollPane1.setViewportView(tblVaccineInventory);
@@ -115,6 +116,11 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         btnUpdate.setText("Update");
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Name");
 
@@ -250,6 +256,26 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     private void txtAvailabilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAvailabilityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAvailabilityActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        int selectRow = tblVaccineInventory.getSelectedRow();
+
+        if(selectRow>=0){
+            String name= (String) tblVaccineInventory.getValueAt(selectRow, 1);
+            int BatchID= (int) tblVaccineInventory.getValueAt(selectRow, 2);
+            int Quantity = (int) tblVaccineInventory.getValueAt(selectRow, 3);
+            String status= (String) tblVaccineInventory.getValueAt(selectRow, 4);
+            
+            txtName.setText(name);
+            txtBatchNo.setText(String.valueOf(BatchID));
+            txtQuantity.setText(String.valueOf(Quantity));
+            txtStatus.setText(status);
+
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Please select a row");
+        }
+    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
