@@ -8,10 +8,6 @@ import Business.City.City;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
-import static Business.Enterprise.Enterprise.EnterpriseType.TestingLab;
-import static Business.Enterprise.Enterprise.EnterpriseType.VaccinationCenter;
-import static Business.Enterprise.Enterprise.EnterpriseType.VaccineManufacturer;
 import Business.Role.HospitalAdminRole;
 import Business.Role.Role;
 import Business.Role.TestingLabAdminRole;
@@ -71,17 +67,14 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
-        btnUpdate = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
         lblManageVaccinationCenter = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         enterpriseTable = new javax.swing.JTable();
-        btnView = new javax.swing.JButton();
         comboEnterprise = new javax.swing.JComboBox<>();
         lblEnterprise = new javax.swing.JLabel();
         lblCity = new javax.swing.JLabel();
@@ -89,8 +82,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         comboboxCity = new javax.swing.JComboBox();
 
         jLabel1.setText("jLabel1");
-
-        btnDelete.setText("Delete");
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +97,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         });
 
         lblUsername.setText("Username:");
-
-        btnUpdate.setText("Update");
 
         lblPassword.setText("Password:");
 
@@ -128,13 +117,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(enterpriseTable);
-
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
 
         comboEnterprise.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -170,37 +152,31 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblManageVaccinationCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addGap(68, 68, 68))
             .addGroup(layout.createSequentialGroup()
-                .addGap(291, 291, 291)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCreate)
-                        .addGap(28, 28, 28))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblUsername)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblPassword)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(291, 291, 291)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEnterprise)
-                            .addComponent(lblCity))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(comboEnterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboboxCity, 0, 212, Short.MAX_VALUE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblUsername)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(lblPassword)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblEnterprise)
+                                    .addComponent(lblCity))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(comboEnterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboboxCity, 0, 212, Short.MAX_VALUE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(441, 441, 441)
+                        .addComponent(btnCreate)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -212,11 +188,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                     .addComponent(btnBack))
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView)
-                    .addComponent(btnDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCity)
                     .addComponent(comboboxCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -232,11 +204,9 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnCreate))
-                .addGap(205, 205, 205))
+                .addGap(29, 29, 29)
+                .addComponent(btnCreate)
+                .addGap(212, 212, 212))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {comboEnterprise, comboboxCity});
@@ -332,10 +302,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_comboboxCityActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewActionPerformed
-
     private boolean validateUsername(String email) {
         Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
         Matcher m = p.matcher(email);
@@ -345,9 +311,6 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> comboEnterprise;
     private javax.swing.JComboBox comboboxCity;
     private javax.swing.JTable enterpriseTable;

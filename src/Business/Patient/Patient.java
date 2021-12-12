@@ -24,7 +24,7 @@ public class Patient extends Person {
     private String DoctorName;
     Person person;
     VitalSignsHistory vitalHistory=new VitalSignsHistory();
-
+     private String AdmitStatus;
     public VitalSignsHistory getVitalHistory() {
         return vitalHistory;
     }
