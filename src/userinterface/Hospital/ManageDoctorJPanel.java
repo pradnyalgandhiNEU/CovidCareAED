@@ -11,9 +11,11 @@ import Business.Employee.Employee;
 import Business.Employee.EmployeeDirectory;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
+import Business.Person.Person;
 import Business.Role.DoctorRole;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -33,6 +35,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     EcoSystem system;
     UserAccount userAccount;
+    UserAccountDirectory userAccountDir;
     Organization organization;
     Enterprise enterprise;
     City city;
@@ -46,7 +49,9 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.city=city;
         this.organization=organization;
+        this.userAccountDir=userAccountDir;
         populateTable();
+        btnUpdate.setEnabled(false);
     }
 
     /**
@@ -110,6 +115,11 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +222,23 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+//         int selectedRow = tblDoctor.getSelectedRow();
+//
+//        if (selectedRow < 0) {
+//            JOptionPane.showMessageDialog(this, "Please select a Doctor");
+//        } else {
+//            btnUpdate.setEnabled(true);
+//            txtUserName.setEnabled(false);
+//            txtPassword.setEnabled(false);
+//            txtStaffID.setVisible(false);
+//            lblStaffID.setVisible(false);
+//            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
+//            UserAccount selectedUser = (UserAccount) model.getValueAt(selectedRow, 0);
+//            
+//            txtName.setText(selectedUser.getEmployee().toString());
+//            txtUserName.setText(selectedUser.getUsername());
+//            txtPassword.setText(selectedUser.getPassword());
+//        }
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -229,7 +256,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         }
         Role role = new DoctorRole();
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-//        System.out.println(account);
+        System.out.println(employee);
         populateTable();
         txtUserName.setText("");
         txtName.setText("");
@@ -249,7 +276,59 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+         int selectedRow = tblDoctor.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a Doctor");
+        } else {
+            btnDelete.setEnabled(false);
+            btnUpdate.setEnabled(false);
+            
+            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
+            UserAccount account = (UserAccount) model.getValueAt(selectedRow, 0);
+
+            userAccountDir.deleteUserAccount(account);
+
+            populateTable();
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+//        txtStaffID.setEnabled(false);
+//        txtName.setEnabled(false);
+//        String name = txtName.getText();
+//        String username = txtUserName.getText();
+//        String password = txtPassword.getText();
+//        
+//        int selectedRow = tblDoctor.getSelectedRow();
+//        if(selectedRow<0){
+//            JOptionPane.showMessageDialog(this, "Please select a doctor");
+//            txtStaffID.setEnabled(true);
+//        }
+//        else{
+//            btnDelete.setEnabled(false);
+//            btnUpdate.setEnabled(false);
+//            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
+//            UserAccount account = (UserAccount) model.getValueAt(selectedRow, 0);
+//            if (name.isEmpty() || username.isEmpty() || password.isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Empty Fields", "Warning", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
+//            else{
+//            UserAccount user = (UserAccount) model.getValueAt(selectedRow, 0);
+//            userAccountDir.updateUserAccount(user, username, password);
+////            System.out.print(username);
+//            JOptionPane.showMessageDialog(this, "Doctor details updated successfully");
+//            populateTable();
+//            txtName.setEnabled(true);
+//            txtUserName.setText("");
+//            txtPassword.setText("");
+//            txtStaffID.setEnabled(true);
+//        }
+//            
+//        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

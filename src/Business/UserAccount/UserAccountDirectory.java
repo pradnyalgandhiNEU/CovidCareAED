@@ -5,6 +5,7 @@
 package Business.UserAccount;
 
 import Business.Employee.Employee;
+import Business.Person.Person;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -48,5 +49,13 @@ public class UserAccountDirectory {
                 return false;
         }
         return true;
+    }
+    public void deleteUserAccount(UserAccount account){
+        userAccountList.remove(account);
+    }
+    
+     public void updateUserAccount(UserAccount userAccount, String username, String password){
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
     }
 }

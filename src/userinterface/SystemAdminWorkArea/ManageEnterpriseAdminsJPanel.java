@@ -39,6 +39,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         this.ecosystem = ecosystem;
         this.userProcessContainer = userProcessContainer;
         populateCityComboBox();
+        populateEnterpriseAdminTable();
     }
 
     private void populateCityComboBox(){

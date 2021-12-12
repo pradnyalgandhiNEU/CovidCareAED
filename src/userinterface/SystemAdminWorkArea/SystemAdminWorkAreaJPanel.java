@@ -41,6 +41,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.city=city;
         this.organization=organization;
+       
     }
     
     
