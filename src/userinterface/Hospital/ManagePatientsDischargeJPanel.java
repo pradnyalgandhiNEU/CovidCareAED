@@ -68,15 +68,29 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         comboTestingCenters = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
-        lblSearch.setText("Patient Name:");
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblSearch.setForeground(new java.awt.Color(0, 0, 0));
+        lblSearch.setText("Patient Name:");
+        add(lblSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
+
+        txtSearch.setBackground(new java.awt.Color(214, 229, 244));
+        txtSearch.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 220, -1));
+
+        btnSearch.setBackground(new java.awt.Color(0, 0, 0));
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, -1, -1));
 
+        tblPatients.setBackground(new java.awt.Color(214, 229, 244));
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -90,101 +104,57 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPatients);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 790, 183));
+
+        btnDischarge.setBackground(new java.awt.Color(0, 0, 0));
+        btnDischarge.setForeground(new java.awt.Color(255, 255, 255));
         btnDischarge.setText("Mark Discharged");
+        add(btnDischarge, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, -1, -1));
 
         lblManagePatient.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManagePatient.setForeground(new java.awt.Color(204, 204, 204));
+        lblManagePatient.setForeground(new java.awt.Color(0, 0, 0));
         lblManagePatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManagePatient.setText("Manage Patient Discharge");
+        lblManagePatient.setText("MANAGE PERSON DISCHARGE");
+        add(lblManagePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1288, -1));
 
+        btnView.setBackground(new java.awt.Color(0, 0, 0));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewActionPerformed(evt);
             }
         });
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 380, -1, -1));
 
+        lblSearch1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblSearch1.setForeground(new java.awt.Color(0, 0, 0));
         lblSearch1.setText("Patient Name:");
+        add(lblSearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, -1, -1));
 
+        txtPatientName.setBackground(new java.awt.Color(214, 229, 244));
+        txtPatientName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 510, 220, -1));
+
+        lblSearch2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblSearch2.setForeground(new java.awt.Color(0, 0, 0));
         lblSearch2.setText("Testing Lab:");
+        add(lblSearch2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 560, -1, -1));
 
+        comboTestingCenters.setBackground(new java.awt.Color(214, 229, 244));
+        comboTestingCenters.setForeground(new java.awt.Color(0, 0, 0));
         comboTestingCenters.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboTestingCenters, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 550, 220, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Schedule Test");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblManagePatient, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblSearch)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch)
-                        .addGap(294, 294, 294)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDischarge))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(312, 312, 312)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSearch1)
-                    .addComponent(lblSearch2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtPatientName, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                        .addComponent(comboTestingCenters, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(lblManagePatient)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblSearch)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDischarge)
-                    .addComponent(btnView))
-                .addGap(101, 101, 101)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSearch1)
-                    .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSearch2)
-                    .addComponent(comboTestingCenters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jButton1)
-                .addContainerGap(238, Short.MAX_VALUE))
-        );
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populateTestingCombo() {

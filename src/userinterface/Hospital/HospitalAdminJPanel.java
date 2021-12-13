@@ -62,81 +62,64 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnSendVC = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnManageDoctor.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageDoctor.setForeground(new java.awt.Color(255, 255, 255));
         btnManageDoctor.setText("Manage Doctor");
         btnManageDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageDoctorActionPerformed(evt);
             }
         });
+        add(btnManageDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 230, 30));
 
+        btnManageCapacity.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageCapacity.setForeground(new java.awt.Color(255, 255, 255));
         btnManageCapacity.setText("Manage Capacity");
         btnManageCapacity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageCapacityActionPerformed(evt);
             }
         });
+        add(btnManageCapacity, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 230, 30));
 
+        btnManagePatient.setBackground(new java.awt.Color(0, 0, 0));
+        btnManagePatient.setForeground(new java.awt.Color(255, 255, 255));
         btnManagePatient.setText("Manage Patient");
         btnManagePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManagePatientActionPerformed(evt);
             }
         });
+        add(btnManagePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 230, 30));
 
+        btnManageStaff.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageStaff.setForeground(new java.awt.Color(255, 255, 255));
         btnManageStaff.setText("Manage Staff");
         btnManageStaff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageStaffActionPerformed(evt);
             }
         });
+        add(btnManageStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 230, 30));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Welcome, Hospital Admin");
+        jLabel1.setText("WELCOME, HOSPITAL ADMIN");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 48, 1210, -1));
 
+        btnSendVC.setBackground(new java.awt.Color(0, 0, 0));
+        btnSendVC.setForeground(new java.awt.Color(255, 255, 255));
         btnSendVC.setText("Send Non-Vaccinated People");
         btnSendVC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendVCActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(379, 379, 379)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnManageStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageCapacity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManagePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSendVC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addGap(57, 57, 57)
-                .addComponent(btnManageDoctor)
-                .addGap(18, 18, 18)
-                .addComponent(btnManagePatient)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageStaff)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageCapacity)
-                .addGap(18, 18, 18)
-                .addComponent(btnSendVC)
-                .addContainerGap(484, Short.MAX_VALUE))
-        );
+        add(btnSendVC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDoctorActionPerformed

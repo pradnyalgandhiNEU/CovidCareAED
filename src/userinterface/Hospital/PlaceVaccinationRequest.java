@@ -56,45 +56,36 @@ public class PlaceVaccinationRequest extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         cmbVaccinationCenters = new javax.swing.JComboBox<>();
         btnSendRequest = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        jLabel1.setText("Select Test Center");
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Select Test Center:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 121, 32));
+
+        cmbVaccinationCenters.setBackground(new java.awt.Color(214, 229, 244));
+        cmbVaccinationCenters.setForeground(new java.awt.Color(0, 0, 0));
         cmbVaccinationCenters.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cmbVaccinationCenters, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 170, 30));
 
+        btnSendRequest.setBackground(new java.awt.Color(0, 0, 0));
+        btnSendRequest.setForeground(new java.awt.Color(255, 255, 255));
         btnSendRequest.setText("Send Request");
         btnSendRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendRequestActionPerformed(evt);
             }
         });
+        add(btnSendRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(cmbVaccinationCenters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(btnSendRequest)))
-                .addContainerGap(293, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbVaccinationCenters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(btnSendRequest)
-                .addContainerGap(97, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("SEND VACCINATION REPORT");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 1000, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestActionPerformed
@@ -131,6 +122,7 @@ public class PlaceVaccinationRequest extends javax.swing.JPanel {
     private javax.swing.JButton btnSendRequest;
     private javax.swing.JComboBox<String> cmbVaccinationCenters;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 private void populateComboBox() {
         cmbVaccinationCenters.removeAllItems();
