@@ -154,8 +154,11 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) cmbEnterpriseType.getSelectedItem();
         String name = txtName.getText();
         int id = Integer.parseInt(txtID.getText());
+        if(!city.getEnterpriseDirectory().checkIfIDIsUnique(id)){
+            JOptionPane.showMessageDialog(null, String.format("Enterprise ID %s already exists!", id),"Warning",JOptionPane.ERROR_MESSAGE);
+        }
         if (city == null || type == null || name == null ) {
-            JOptionPane.showMessageDialog(null, "Invalid Input!");
+            JOptionPane.showMessageDialog(null, "Invalid Input!"); 
             return;
         }
 //        System.out.print(city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name));
