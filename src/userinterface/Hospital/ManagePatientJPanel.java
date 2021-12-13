@@ -97,13 +97,22 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPerson = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtSearch.setBackground(new java.awt.Color(214, 229, 244));
+        txtSearch.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 121, 220, -1));
+
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(928, 121, -1, -1));
 
+        tblPatients.setBackground(new java.awt.Color(214, 229, 244));
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -117,70 +126,126 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPatients);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 606, 840, 183));
+
+        btnViewPerson.setBackground(new java.awt.Color(0, 0, 0));
+        btnViewPerson.setForeground(new java.awt.Color(255, 255, 255));
         btnViewPerson.setText("View Person");
         btnViewPerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewPersonActionPerformed(evt);
             }
         });
+        add(btnViewPerson, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, -1, -1));
 
+        btnDeletePatient.setBackground(new java.awt.Color(0, 0, 0));
+        btnDeletePatient.setForeground(new java.awt.Color(255, 255, 255));
         btnDeletePatient.setText("Delete Patient");
         btnDeletePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletePatientActionPerformed(evt);
             }
         });
+        add(btnDeletePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 810, -1, -1));
 
+        lblStatus.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblStatus.setForeground(new java.awt.Color(0, 0, 0));
         lblStatus.setText("Vaccination Status:");
+        add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(658, 438, -1, -1));
 
         lblManagePatient.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManagePatient.setForeground(new java.awt.Color(204, 204, 204));
+        lblManagePatient.setForeground(new java.awt.Color(0, 0, 0));
         lblManagePatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManagePatient.setText("Manage Patient Admission");
+        lblManagePatient.setText("MANAGE PERSONS");
+        add(lblManagePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 62, 1010, -1));
 
+        lblQuarantine.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblQuarantine.setForeground(new java.awt.Color(0, 0, 0));
         lblQuarantine.setText("Quarantine:");
+        add(lblQuarantine, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 481, -1, -1));
 
+        lblSearch.setForeground(new java.awt.Color(0, 0, 0));
         lblSearch.setText("Person Name:");
+        add(lblSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 124, -1, -1));
 
+        cboxQuarantineLocation.setBackground(new java.awt.Color(214, 229, 244));
+        cboxQuarantineLocation.setForeground(new java.awt.Color(0, 0, 0));
         cboxQuarantineLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Quarantine", "Home Quarantine" }));
+        add(cboxQuarantineLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 478, 212, -1));
 
+        lblPassword.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(0, 0, 0));
         lblPassword.setText("Password:");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 514, -1, -1));
 
+        txtPassword.setBackground(new java.awt.Color(214, 229, 244));
+        txtPassword.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 511, 208, -1));
+
+        lblUsername.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(0, 0, 0));
         lblUsername.setText("Username:");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 473, -1, -1));
 
+        txtUsername.setBackground(new java.awt.Color(214, 229, 244));
+        txtUsername.setForeground(new java.awt.Color(0, 0, 0));
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
             }
         });
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 470, 208, -1));
 
+        btnCreatePatient.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreatePatient.setForeground(new java.awt.Color(255, 255, 255));
         btnCreatePatient.setText("Admit Patient");
         btnCreatePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreatePatientActionPerformed(evt);
             }
         });
+        add(btnCreatePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 550, -1, -1));
 
+        cboxVaccinationStatus.setBackground(new java.awt.Color(214, 229, 244));
+        cboxVaccinationStatus.setForeground(new java.awt.Color(0, 0, 0));
         cboxVaccinationStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Partially Vaccinated", "Non-vaccinated", "Fully Vaccinated" }));
+        add(cboxVaccinationStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 435, 212, -1));
 
+        cboxDoctor.setBackground(new java.awt.Color(214, 229, 244));
+        cboxDoctor.setForeground(new java.awt.Color(0, 0, 0));
         cboxDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cboxDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboxDoctorActionPerformed(evt);
             }
         });
+        add(cboxDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 513, 212, -1));
 
+        lblEnterprise.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblEnterprise.setForeground(new java.awt.Color(0, 0, 0));
         lblEnterprise.setText("Assign Doctor:");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 516, -1, -1));
 
+        lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Patient Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 438, -1, -1));
 
+        txtName.setBackground(new java.awt.Color(214, 229, 244));
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 435, 208, -1));
+
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
+        tblPerson.setBackground(new java.awt.Color(214, 229, 244));
         tblPerson.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -194,134 +259,7 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tblPerson);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnBack)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblManagePatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                    .addComponent(lblName)
-                                                    .addGap(18, 18, 18))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(lblUsername)
-                                                    .addGap(30, 30, 30)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblPassword)
-                                                .addGap(42, 42, 42)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txtPassword)
-                                            .addComponent(txtUsername)
-                                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblEnterprise)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(cboxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(lblStatus)
-                                                    .addComponent(lblQuarantine))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(cboxQuarantineLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(cboxVaccinationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblSearch)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnSearch)))
-                                .addGap(294, 294, 294))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnDeletePatient)
-                        .addGap(461, 461, 461))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnViewPerson)
-                        .addGap(35, 35, 35))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(405, 405, 405)
-                .addComponent(btnCreatePatient)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblManagePatient)
-                    .addComponent(btnBack))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblSearch)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(206, 206, 206)
-                .addComponent(btnViewPerson)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblUsername)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPassword)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblStatus)
-                            .addComponent(cboxVaccinationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblQuarantine)
-                            .addComponent(cboxQuarantineLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cboxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEnterprise))))
-                .addGap(18, 18, 18)
-                .addComponent(btnCreatePatient)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDeletePatient)
-                .addGap(30, 30, 30))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(167, 167, 167)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(491, Short.MAX_VALUE)))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 167, 680, 183));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
