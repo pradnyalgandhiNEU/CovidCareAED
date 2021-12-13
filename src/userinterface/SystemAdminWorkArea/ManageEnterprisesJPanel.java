@@ -8,6 +8,7 @@ package userinterface.SystemAdminWorkArea;
 import Business.City.City;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.EnterpriseDirectory;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -25,10 +26,12 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     EcoSystem system;
+    EnterpriseDirectory enterprise;
     public ManageEnterprisesJPanel(JPanel userProcessContainer,EcoSystem system) {
         initComponents();
         this.userProcessContainer= userProcessContainer;
         this.system=system;
+        this.enterprise=enterprise;
         populateTable();
         populateComboBox();
     }
@@ -85,9 +88,9 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
 
         lblID.setText("ID:");
 
-        lblCity.setText("City");
+        lblCity.setText("City:");
 
-        lblEnterpriseType.setText("Enterprise Type");
+        lblEnterpriseType.setText("Enterprise Type:");
 
         cmbCity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -140,11 +143,15 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
                                 .addComponent(lblName)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEnterpriseType))
-                        .addGap(109, 109, 109)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(218, 218, 218)
+                                .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblEnterpriseType)
+                                .addGap(64, 64, 64)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbEnterpriseType, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -180,14 +187,21 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         City city = (City) cmbCity.getSelectedItem();
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) cmbEnterpriseType.getSelectedItem();
-
-        if (city == null || type == null) {
+        String name = txtName.getText();
+        int id = Integer.parseInt(txtID.getText());
+        if (city == null || type == null || name == null ) {
             JOptionPane.showMessageDialog(null, "Invalid Input!");
             return;
         }
-
-        String name = txtName.getText();
-        int id = Integer.parseInt(txtID.getText());
+//        System.out.print(city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name));
+//        if (city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name) != true) {
+//                JOptionPane.showMessageDialog(null, "Enterprise name exists");
+//                    return;
+//        }
+//        else if(!enterprise.checkIfEnterpriseNameIsUnique(name)){
+//            JOptionPane.showMessageDialog(null, String.format("Enterprise Name %s already exists!", name),"Warning",JOptionPane.ERROR_MESSAGE);
+//        }
+       
         Enterprise enterprise = city.getEnterpriseDirectory().createAndAddEnterprise(name , type, id);
 
         populateTable();

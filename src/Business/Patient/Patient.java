@@ -6,6 +6,8 @@
 package Business.Patient;
 
 import Business.Person.Person;
+import Business.VitalSigns.VitalSigns;
+import Business.VitalSigns.VitalSignsHistory;
 import Business.WorkQueue.AdmitPatient;
 import static Business.WorkQueue.Order.gen;
 import java.util.ArrayList;
@@ -21,7 +23,15 @@ public class Patient extends Person {
     private String QuarantineStatus;
     private String DoctorName;
     Person person;
-    private String AdmitStatus;
+    String AdmitStatus;
+    VitalSignsHistory vitalHistory=new VitalSignsHistory();
+    public VitalSignsHistory getVitalHistory() {
+        return vitalHistory;
+    }
+
+    public void setVitalHistory(VitalSignsHistory vitalHistory) {
+        this.vitalHistory = vitalHistory;
+    }
     
     public Patient(int personID, String name, String street, String zipcode, int age, String Community, String phoneNo, String email, String DoctorName, String QuarantineStatus, String VaccinationStatus) {
         super(personID, name, street, zipcode, age, Community, phoneNo, email);
