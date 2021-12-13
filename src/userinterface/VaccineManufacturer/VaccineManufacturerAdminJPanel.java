@@ -55,61 +55,41 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
         lblManufacturereAdmin = new javax.swing.JLabel();
         btnManageOrder = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnManageInventory.setBackground(new java.awt.Color(0, 0, 0));
         btnManageInventory.setText("Manage Inventory");
         btnManageInventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageInventoryActionPerformed(evt);
             }
         });
+        add(btnManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 181, 30));
 
+        btnManageDeliveryManger.setBackground(new java.awt.Color(0, 0, 0));
         btnManageDeliveryManger.setText("Manage Delivery Manager");
         btnManageDeliveryManger.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageDeliveryMangerActionPerformed(evt);
             }
         });
+        add(btnManageDeliveryManger, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, -1, 30));
 
         lblManufacturereAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManufacturereAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManufacturereAdmin.setForeground(new java.awt.Color(0, 0, 0));
         lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManufacturereAdmin.setText("Welcome, Vaccine Manufacturer");
+        lblManufacturereAdmin.setText("WELCOME VACCINE MANUFACTURER");
+        add(lblManufacturereAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 730, -1));
 
+        btnManageOrder.setBackground(new java.awt.Color(0, 0, 0));
         btnManageOrder.setText("Manage Orders");
         btnManageOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageOrderActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblManufacturereAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(387, 387, 387)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnManageDeliveryManger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageInventory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lblManufacturereAdmin)
-                .addGap(62, 62, 62)
-                .addComponent(btnManageInventory)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageDeliveryManger)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageOrder)
-                .addContainerGap(541, Short.MAX_VALUE))
-        );
+        add(btnManageOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 181, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageInventoryActionPerformed

@@ -65,6 +65,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblOrder.setBackground(new java.awt.Color(214, 229, 244));
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -78,102 +82,71 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblOrder);
 
-        lblManageOrders.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageOrders.setForeground(new java.awt.Color(204, 204, 204));
-        lblManageOrders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageOrders.setText("Manage Vaccine Orders");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 988, 183));
 
+        lblManageOrders.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageOrders.setForeground(new java.awt.Color(0, 0, 0));
+        lblManageOrders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageOrders.setText("MANAGE VACCINE ORDERS");
+        add(lblManageOrders, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 400, -1));
+
+        btnReadyToDeliver.setBackground(new java.awt.Color(0, 0, 0));
         btnReadyToDeliver.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnReadyToDeliver.setForeground(new java.awt.Color(255, 255, 255));
         btnReadyToDeliver.setText("Ready to Deliver");
         btnReadyToDeliver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReadyToDeliverActionPerformed(evt);
             }
         });
+        add(btnReadyToDeliver, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, -1, -1));
 
+        AssignBtn1.setBackground(new java.awt.Color(0, 0, 0));
         AssignBtn1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        AssignBtn1.setForeground(new java.awt.Color(255, 255, 255));
         AssignBtn1.setText("Assign to Delivery Man ");
         AssignBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AssignBtn1ActionPerformed(evt);
             }
         });
+        add(AssignBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, -1, -1));
 
+        btnDenyOrder.setBackground(new java.awt.Color(0, 0, 0));
         btnDenyOrder.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnDenyOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnDenyOrder.setText("Deny Order");
         btnDenyOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDenyOrderActionPerformed(evt);
             }
         });
+        add(btnDenyOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 500, -1, -1));
 
+        lblAvailableStock.setBackground(new java.awt.Color(255, 255, 51));
+        lblAvailableStock.setForeground(new java.awt.Color(214, 229, 244));
+        lblAvailableStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(86, 147, 209)));
+        add(lblAvailableStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 190, 20));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Available Stock");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Button");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(AssignBtn1)
-                        .addGap(253, 253, 253)
-                        .addComponent(btnReadyToDeliver)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDenyOrder)
-                        .addGap(39, 39, 39))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblManageOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 406, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(251, 251, 251)
-                        .addComponent(lblAvailableStock, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addContainerGap())))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblManageOrders)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblAvailableStock, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AssignBtn1)
-                    .addComponent(btnReadyToDeliver)
-                    .addComponent(btnDenyOrder))
-                .addContainerGap(233, Short.MAX_VALUE))
-        );
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReadyToDeliverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadyToDeliverActionPerformed
