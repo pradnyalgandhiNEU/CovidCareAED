@@ -24,8 +24,8 @@ public class TestReportDirectory {
         this.testReportList = testReportList;
     }
    
-   public TestReport newTestReport(String testDate, Boolean result){
-       TestReport testReport = new TestReport(testDate ,result);
+   public TestReport newTestReport(Boolean result){
+       TestReport testReport = new TestReport(result);
        testReportList.add(testReport);
        return testReport;
    }
