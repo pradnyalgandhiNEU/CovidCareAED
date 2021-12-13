@@ -134,7 +134,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                         .addComponent(jButton1))
 =======
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE))
->>>>>>> fd1ee87c915391572fa14b5c21a9969e4d643637
+>>>>>>> 927aca32db69bf29b228d932567cf5527b8bdac0
                     .addGroup(layout.createSequentialGroup()
                         .addGap(296, 296, 296)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -180,7 +180,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                         .addComponent(btnView1)
                         .addGap(6, 6, 6)))
                 .addContainerGap())
->>>>>>> fd1ee87c915391572fa14b5c21a9969e4d643637
+>>>>>>> 927aca32db69bf29b228d932567cf5527b8bdac0
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +203,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                     .addComponent(lblStaffID)
                     .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
->>>>>>> fd1ee87c915391572fa14b5c21a9969e4d643637
+>>>>>>> 927aca32db69bf29b228d932567cf5527b8bdac0
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,7 +225,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                     .addComponent(btnUpdate)
                     .addComponent(btnCreate))
                 .addContainerGap(190, Short.MAX_VALUE))
->>>>>>> fd1ee87c915391572fa14b5c21a9969e4d643637
+>>>>>>> 927aca32db69bf29b228d932567cf5527b8bdac0
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -270,7 +270,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JButton btnView1;
->>>>>>> fd1ee87c915391572fa14b5c21a9969e4d643637
+>>>>>>> 927aca32db69bf29b228d932567cf5527b8bdac0
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
