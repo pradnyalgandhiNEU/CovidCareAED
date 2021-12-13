@@ -1,6 +1,5 @@
 package userinterface.TestingCenter;
 
-
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Person.Person;
@@ -16,7 +15,6 @@ import javax.swing.table.DefaultTableModel;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-
 /**
  *
  * @author pradnyalgandhi
@@ -27,9 +25,10 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
      * Creates new form ManageScheduledTestsJPanel
      */
     JPanel userProcessContainer;
-    EcoSystem system; 
+    EcoSystem system;
     Enterprise enterprise;
-    public ManageScheduledTestsJPanel(JPanel userProcessContainer,EcoSystem system, Enterprise enterprise) {
+
+    public ManageScheduledTestsJPanel(JPanel userProcessContainer, EcoSystem system, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
@@ -61,32 +60,65 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         txtID = new javax.swing.JTextField();
         btnView = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, -1, -1));
 
         lblCreateTestReport.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblCreateTestReport.setForeground(new java.awt.Color(204, 204, 204));
+        lblCreateTestReport.setForeground(new java.awt.Color(0, 0, 0));
         lblCreateTestReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateTestReport.setText("SCHEDULED TEST");
+        add(lblCreateTestReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 400, -1));
 
+        comboReport.setBackground(new java.awt.Color(214, 229, 244));
+        comboReport.setForeground(new java.awt.Color(0, 0, 0));
         comboReport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Detected", "Non-detected" }));
+        add(comboReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, 211, -1));
 
+        lblReport.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblReport.setForeground(new java.awt.Color(0, 0, 0));
         lblReport.setText("Report:");
+        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, -1, -1));
 
+        lblDate.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(0, 0, 0));
         lblDate.setText("Date:");
+        add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, -1));
 
+        txtName.setBackground(new java.awt.Color(214, 229, 244));
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 212, -1));
+
+        txtDate.setBackground(new java.awt.Color(214, 229, 244));
+        txtDate.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 212, -1));
+
+        lblID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblID.setForeground(new java.awt.Color(0, 0, 0));
         lblID.setText("ID:");
+        add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, -1, -1));
 
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
+
+        jScrollPane1.setBackground(new java.awt.Color(214, 229, 244));
+        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         scheduledPatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,89 +133,26 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(scheduledPatientTable);
 
-        lblName.setText("Name:");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 500, 183));
 
+        lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 0));
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
+
+        txtID.setBackground(new java.awt.Color(214, 229, 244));
+        txtID.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 212, -1));
+
+        btnView.setBackground(new java.awt.Color(0, 0, 0));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCreateTestReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblReport)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCreate))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(comboReport, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblID)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblDate)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblName)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView)
-                .addGap(79, 79, 79))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCreateTestReport)
-                    .addComponent(btnBack))
-                .addGap(73, 73, 73)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnView)
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDate)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblReport)
-                    .addComponent(comboReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnCreate)
-                .addContainerGap(212, Short.MAX_VALUE))
-        );
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 370, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -193,16 +162,15 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         String date = txtDate.getText();
 //        System.out.println(date);
         Boolean result = false;
-        if(comboReport.getSelectedItem().toString().equals("Detected")){
+        if (comboReport.getSelectedItem().toString().equals("Detected")) {
             result = true;
-        }
-        else{
+        } else {
             result = false;
         }
 
-        for(Person person: system.getPersonDirectory().getPersonList()){
-            if(personName.equals(person.getName())){
-                person.getTestHistory().newTestReport(date,result);
+        for (Person person : system.getPersonDirectory().getPersonList()) {
+            if (personName.equals(person.getName())) {
+                person.getTestHistory().newTestReport(result);
                 //                System.out.println(date);
 
                 //                System.out.println( person.getTestHistory().getTestReportList().get(0));
@@ -225,18 +193,17 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
         int selectedRow = scheduledPatientTable.getSelectedRow();
-        
-        if(selectedRow<0){
+
+        if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row");
-        }
-        else{
-            DefaultTableModel dtm = (DefaultTableModel)scheduledPatientTable.getModel();
+        } else {
+            DefaultTableModel dtm = (DefaultTableModel) scheduledPatientTable.getModel();
             int patientID = (int) dtm.getValueAt(selectedRow, 0);
             String patientName = (String) dtm.getValueAt(selectedRow, 1);
-            
-            txtID.setText(String .valueOf(patientID));
+
+            txtID.setText(String.valueOf(patientID));
             txtName.setText(patientName);
-            
+
         }
     }//GEN-LAST:event_btnViewActionPerformed
 
@@ -261,17 +228,17 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
     private void populateScheduledTests() {
         DefaultTableModel dtm = (DefaultTableModel) scheduledPatientTable.getModel();
         dtm.setRowCount(0);
-                
-        for(WorkRequest wr: enterprise.getWorkQueue().getWorkRequestList()){
-            TestPatient tp = (TestPatient)wr;
+
+        for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
+            TestPatient tp = (TestPatient) wr;
             System.out.println(tp);
-            
+
             Object[] row = new Object[2];
             row[0] = tp.getPatientID();
             row[1] = tp.getPatientName();
             dtm.addRow(row);
-            
+
         }
-        
+
     }
 }

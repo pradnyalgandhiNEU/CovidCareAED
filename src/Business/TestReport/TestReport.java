@@ -14,7 +14,6 @@ import java.util.Date;
 public class TestReport {
     
 //     private Person person;
-    private String testDate;
     private boolean result;
 
 //    public Person getPerson() {
@@ -25,14 +24,6 @@ public class TestReport {
 //        this.person = person;
 //    }
 
-    public String getTestDate() {
-        return testDate;
-    }
-
-    public void setTestDate(String testDate) {
-        this.testDate = testDate;
-    }
-
     
     public boolean isResult() {
         return result;
@@ -42,9 +33,8 @@ public class TestReport {
         this.result = result;
     }
     
-    public TestReport( String testDate, Boolean result){
+    public TestReport( Boolean result){
         this.result = result;
-        this.testDate = testDate;
     }
     
 }
