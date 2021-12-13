@@ -47,12 +47,18 @@
                               <Component id="txtName" min="-2" pref="212" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCity" min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="lblEnterpriseType" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                              <Component id="lblCity" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblEnterpriseType" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cmbCity" min="-2" pref="190" max="-2" attributes="0"/>
                           <Component id="cmbEnterpriseType" min="-2" pref="190" max="-2" attributes="0"/>
@@ -84,7 +90,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblEnterpriseType" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblEnterpriseType" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="cmbEnterpriseType" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -179,12 +185,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblCity">
       <Properties>
-        <Property name="text" type="java.lang.String" value="City"/>
+        <Property name="text" type="java.lang.String" value="City:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterpriseType">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enterprise Type"/>
+        <Property name="text" type="java.lang.String" value="Enterprise Type:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbCity">

@@ -5,6 +5,8 @@
  */
 package Business.Enterprise;
 
+import Business.Person.Person;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -54,5 +56,12 @@ public class EnterpriseDirectory {
                     break;
             }
             return enterprise;
+    }
+    public boolean checkIfEnterpriseNameIsUnique(String name){
+        for (Enterprise e : enterpriseList){
+            if (e.getOrganizationDirectory().getOrganization(name).equals(name))
+                return false;
+        }
+        return true;
     }
 }

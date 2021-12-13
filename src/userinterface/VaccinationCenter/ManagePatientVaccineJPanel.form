@@ -23,7 +23,7 @@
                       <EmptySpace min="-2" pref="373" max="-2" attributes="0"/>
                       <Component id="lblBatch" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txtBatchNo" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="txtStaffID" min="-2" pref="200" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="356" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -62,7 +62,7 @@
               <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblBatch" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtBatchNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtStaffID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Component id="btnAdd" min="-2" pref="23" max="-2" attributes="0"/>
@@ -133,10 +133,14 @@
         <Property name="text" type="java.lang.String" value="Staff ID:"/>
       </Properties>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JTextField" name="txtBatchNo">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
+=======
+    <Component class="javax.swing.JTextField" name="txtStaffID">
+>>>>>>> fd1ee87c915391572fa14b5c21a9969e4d643637
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>

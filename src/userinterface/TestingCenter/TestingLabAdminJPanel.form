@@ -26,6 +26,7 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnManageReport" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnNewReport" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="btnManageScheduledTests" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -40,7 +41,9 @@
               <Component id="btnNewReport" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnManageReport" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="625" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnManageScheduledTests" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="584" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,6 +75,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewReportActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnManageScheduledTests">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Manage Scheduled Tests"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageScheduledTestsActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

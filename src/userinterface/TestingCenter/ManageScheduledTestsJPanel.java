@@ -1,33 +1,40 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package userinterface.TestingCenter;
 
+
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Person.Person;
-import Business.TestReport.TestReport;
+import Business.WorkQueue.TestPatient;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
+
 /**
  *
- * @author shreya.ghate
+ * @author pradnyalgandhi
  */
-public class NewReportJPanel extends javax.swing.JPanel {
+public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form NewReportJPanel
+     * Creates new form ManageScheduledTestsJPanel
      */
     JPanel userProcessContainer;
-    EcoSystem system;
-    public NewReportJPanel(EcoSystem system, JPanel userProcessContainer) {
+    EcoSystem system; 
+    Enterprise enterprise;
+    public ManageScheduledTestsJPanel(JPanel userProcessContainer,EcoSystem system, Enterprise enterprise) {
         initComponents();
-        this.system = system;
         this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.enterprise = enterprise;
+        populateScheduledTests();
     }
 
     /**
@@ -41,20 +48,18 @@ public class NewReportJPanel extends javax.swing.JPanel {
 
         btnCreate = new javax.swing.JButton();
         lblCreateTestReport = new javax.swing.JLabel();
-        lblReport = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        lblID = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        personTable = new javax.swing.JTable();
-        lblName = new javax.swing.JLabel();
-        btnSearch = new javax.swing.JButton();
-        txtID = new javax.swing.JTextField();
-        txtSearch = new javax.swing.JTextField();
-        lblSearch = new javax.swing.JLabel();
         comboReport = new javax.swing.JComboBox<>();
+        lblReport = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
         txtDate = new javax.swing.JTextField();
+        lblID = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        scheduledPatientTable = new javax.swing.JTable();
+        lblName = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
+        btnView = new javax.swing.JButton();
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -66,48 +71,42 @@ public class NewReportJPanel extends javax.swing.JPanel {
         lblCreateTestReport.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblCreateTestReport.setForeground(new java.awt.Color(204, 204, 204));
         lblCreateTestReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreateTestReport.setText("New Test Report");
-
-        lblReport.setText("Report:");
-
-        txtName.setEnabled(false);
-
-        lblID.setText("ID:");
-
-        personTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Name", "Address", "Email", "Age", "Phone No", "Community"
-            }
-        ));
-        jScrollPane1.setViewportView(personTable);
-
-        lblName.setText("Name:");
-
-        btnSearch.setText("Search");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
-
-        txtID.setEnabled(false);
-
-        lblSearch.setText("Person Name:");
+        lblCreateTestReport.setText("SCHEDULED TEST");
 
         comboReport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Detected", "Non-detected" }));
 
+        lblReport.setText("Report:");
+
         lblDate.setText("Date:");
+
+        lblID.setText("ID:");
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
+            }
+        });
+
+        scheduledPatientTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "ID", "Name"
+            }
+        ));
+        jScrollPane1.setViewportView(scheduledPatientTable);
+
+        lblName.setText("Name:");
+
+        btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
             }
         });
 
@@ -122,15 +121,7 @@ public class NewReportJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnBack)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCreateTestReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblSearch)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch)
-                        .addGap(294, 294, 294)))
+                        .addComponent(lblCreateTestReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(330, 330, 330)
@@ -157,22 +148,23 @@ public class NewReportJPanel extends javax.swing.JPanel {
                             .addGap(18, 18, 18)
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnView)
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateTestReport)
                     .addComponent(btnBack))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSearch)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(73, 73, 73)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(18, 18, 18)
+                .addComponent(btnView)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblID)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -190,62 +182,33 @@ public class NewReportJPanel extends javax.swing.JPanel {
                     .addComponent(comboReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCreate)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
-        String search = txtSearch.getText();
-        
-        DefaultTableModel dtm = (DefaultTableModel) personTable.getModel();
-        dtm.setRowCount(0);
-        Object[] row = new Object[7];
-        for(Person person: system.getPersonDirectory().getPersonList()){
-            System.out.println(person);
-            if((search).equals(person.getName())){
-                row[0] = person;
-                row[1] = person.getPersonID();
-                row[2] = person.getAge();
-                row[3] = person.getStreet();
-                row[4] = person.getZipcode();
-                row[5] = person.getPhoneNo();
-                row[6] = person.getCommunity();
-                dtm.addRow(row);
-                
-                txtID.setText(String.valueOf(person.getPersonID()));
-                txtName.setText(person.getName());
-            
-            
-        }
-        }
-    }//GEN-LAST:event_btnSearchActionPerformed
-
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        //String personID = txtID.getText();
-        //String personName = txtName.getText();
+        String personID = txtID.getText();
+        String personName = txtName.getText();
         String date = txtDate.getText();
-        System.out.println(date);
+//        System.out.println(date);
         Boolean result = false;
         if(comboReport.getSelectedItem().toString().equals("Detected")){
             result = true;
         }
         else{
-             result = false;
+            result = false;
         }
-        
+
         for(Person person: system.getPersonDirectory().getPersonList()){
-            if(txtSearch.getText().equals(person.getName())){
+            if(personName.equals(person.getName())){
                 person.getTestHistory().newTestReport(date,result);
-//                System.out.println(date);
-                
-//                System.out.println( person.getTestHistory().getTestReportList().get(0));
+                //                System.out.println(date);
+
+                //                System.out.println( person.getTestHistory().getTestReportList().get(0));
             }
         }
-        
-        
-        
+
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -259,11 +222,29 @@ public class NewReportJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = scheduledPatientTable.getSelectedRow();
+        
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select a row");
+        }
+        else{
+            DefaultTableModel dtm = (DefaultTableModel)scheduledPatientTable.getModel();
+            int patientID = (int) dtm.getValueAt(selectedRow, 0);
+            String patientName = (String) dtm.getValueAt(selectedRow, 1);
+            
+            txtID.setText(String .valueOf(patientID));
+            txtName.setText(patientName);
+            
+        }
+    }//GEN-LAST:event_btnViewActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> comboReport;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreateTestReport;
@@ -271,11 +252,26 @@ public class NewReportJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblReport;
-    private javax.swing.JLabel lblSearch;
-    private javax.swing.JTable personTable;
+    private javax.swing.JTable scheduledPatientTable;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+    private void populateScheduledTests() {
+        DefaultTableModel dtm = (DefaultTableModel) scheduledPatientTable.getModel();
+        dtm.setRowCount(0);
+                
+        for(WorkRequest wr: enterprise.getWorkQueue().getWorkRequestList()){
+            TestPatient tp = (TestPatient)wr;
+            System.out.println(tp);
+            
+            Object[] row = new Object[2];
+            row[0] = tp.getPatientID();
+            row[1] = tp.getPatientName();
+            dtm.addRow(row);
+            
+        }
+        
+    }
 }

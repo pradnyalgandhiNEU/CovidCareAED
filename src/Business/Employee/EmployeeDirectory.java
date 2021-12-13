@@ -28,4 +28,7 @@ public class EmployeeDirectory {
         employeeList.add(employee);
         return employee;
     }
+    public void updateEmployee(Employee employee, String name){
+        employee.setName(name);
+    }
 }
