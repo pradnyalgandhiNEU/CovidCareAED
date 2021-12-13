@@ -64,4 +64,14 @@ public class EnterpriseDirectory {
         }
         return true;
     }
+
+    
+        public boolean checkIfIDIsUnique(int ID){
+        for (Enterprise  e : enterpriseList){
+            if (e.getEnterpriseId()==ID)
+                return false;
+        }
+        return true;
+    }
+    
 }
