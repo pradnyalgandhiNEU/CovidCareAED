@@ -211,85 +211,86 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageEnterpriseAdminsActionPerformed
 
     private void btnVaccStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccStatusActionPerformed
-//        try {
-//            // TODO add your handling code here:
-//            createChart();
-//        } catch (IOException ex) {
-//            Logger.getLogger(SystemAdminWorkAreaJPanel.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        try {
+            // TODO add your handling code here:
+            createChart();
+        } catch (IOException ex) {
+            Logger.getLogger(SystemAdminWorkAreaJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnVaccStatusActionPerformed
 
-//    private void createChart() throws IOException
-//    {
-////        DefaultCategoryDataset Dataset=new DefaultCategoryDataset();
-//              DefaultPieDataset Dataset = new DefaultPieDataset( );             
-////        int selectedRow = viewPatientsJTable.getSelectedRow();
-////        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
-////        
-////        Patient patient= person.getPatient();
-////        if(patient==null)
-////        {
-////            JOptionPane.showMessageDialog(this, "Patient not created, Please create Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
-////            return;
-////        }
-//
-//        ArrayList<Person> personList = system.getPersonDirectory().getPersonList();
-//        int positive=0;
-//        int negative = 0;
-//        //int vaccinated = 0;
-//       // int partially = 0;
-//        //int nonvaccinated = 0;
+    private void createChart() throws IOException
+    {
+//        DefaultCategoryDataset Dataset=new DefaultCategoryDataset();
+              DefaultPieDataset Dataset = new DefaultPieDataset( );             
+//        int selectedRow = viewPatientsJTable.getSelectedRow();
+//        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
+//        
+//        Patient patient= person.getPatient();
+//        if(patient==null)
+//        {
+//            JOptionPane.showMessageDialog(this, "Patient not created, Please create Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+
+        ArrayList<Person> personList = system.getPersonDirectory().getPersonList();
+        int positive=0;
+        int negative = 0;
+        //int vaccinated = 0;
+       // int partially = 0;
+        //int nonvaccinated = 0;
 //        for(Person p:personList){
-//            if(p.getTestHistory().getTestReportList().get(p.getTestHistory().getTestReportList().size()).isResult()==true){
+//            System.out.println(p.getTestHistory().getTestReportList().get(0).isResult()==true);
+//            if(p.getTestHistory().getTestReportList().get(0).isResult()==true){
 //            ++positive;
 //            }
-//            if(p.getTestHistory().getTestReportList().get(p.getTestHistory().getTestReportList().size()).isResult()==false){
+//            if(p.getTestHistory().getTestReportList().get(0).isResult()==false){
 //            ++negative;
 //            }
 //            
 //        }
-//        /*At least 2 vital sign records needed to show chart */
-//        if (personList.isEmpty() || personList.size() == 1) {
-//            JOptionPane.showMessageDialog(this, "No Data Found", "Warning", JOptionPane.INFORMATION_MESSAGE);
-//            return;
+        /*At least 2 vital sign records needed to show chart */
+        if (personList.isEmpty() || personList.size() == 1) {
+            JOptionPane.showMessageDialog(this, "No Data Found", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+//        for (Person p:personList) {
+            Dataset.setValue("Positive", new Double( 20 ));
+            Dataset.setValue("Negative", new Double( 40 ));
 //        }
-////        for (Person p:personList) {
-//            Dataset.setValue("Positive", positive);
-//            Dataset.setValue("Negative", negative);
-////        }
-//JFreeChart chart = ChartFactory.createPieChart3D( 
-//         "Covid Cases in City" ,  // chart title                   
-//         Dataset ,         // data 
-//         true ,            // include legend                   
-//         true, 
-//         false);
-//        final PiePlot3D plot = ( PiePlot3D ) chart.getPlot( );             
-//      plot.setStartAngle( 270 );             
-//      plot.setForegroundAlpha( 0.60f );             
-//      plot.setInteriorGap( 0.02 );             
-//      int width = 640;   /* Width of the image */             
-//      int height = 480;  /* Height of the image */                             
-//      File pieChart3D = new File( "pie_Chart3D.jpeg" );                           
-//      ChartUtils.saveChartAsJPEG( pieChart3D , chart , width , height );   
-//      
-////        JFreeChart vitalSignChart= ChartFactory.createBarChart3D("Covid Cases Chart", "Time Stamp", "Rate", Dataset, PlotOrientation.VERTICAL, true, false, false);
-////        vitalSignChart.setBackgroundPaint(Color.white);
-////        CategoryPlot vitalSignChartPlot = vitalSignChart.getCategoryPlot();
-////        vitalSignChartPlot.setBackgroundPaint(Color.lightGray);    
-////        
-////        CategoryAxis vitalSignDomainAxis = vitalSignChartPlot.getDomainAxis();
-////        vitalSignDomainAxis.setCategoryLabelPositions(
-////            CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0)
-////        );
-////        
-////        NumberAxis vitalSignRangeAxis = (NumberAxis) vitalSignChartPlot.getRangeAxis();
-////        vitalSignRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-////        
-////        ChartFrame chartFrame = new ChartFrame("Chart", vitalSignChart);
-////        chartFrame.setVisible(true);
-////        chartFrame.setSize(500, 500);
-//
-//    }
+JFreeChart chart = ChartFactory.createPieChart3D( 
+         "Covid Cases in City" ,  // chart title                   
+         Dataset ,         // data 
+         true ,            // include legend                   
+         true, 
+         false);
+        final PiePlot3D plot = ( PiePlot3D ) chart.getPlot( );             
+      plot.setStartAngle( 270 );             
+      plot.setForegroundAlpha( 0.60f );             
+      plot.setInteriorGap( 0.02 );             
+      int width = 640;   /* Width of the image */             
+      int height = 480;  /* Height of the image */                             
+      File pieChart3D = new File( "pie_Chart3D.jpeg" );                           
+      ChartUtils.saveChartAsJPEG( pieChart3D , chart , width , height );   
+      
+//        JFreeChart vitalSignChart= ChartFactory.createBarChart3D("Covid Cases Chart", "Time Stamp", "Rate", Dataset, PlotOrientation.VERTICAL, true, false, false);
+//        vitalSignChart.setBackgroundPaint(Color.white);
+//        CategoryPlot vitalSignChartPlot = vitalSignChart.getCategoryPlot();
+//        vitalSignChartPlot.setBackgroundPaint(Color.lightGray);    
+//        
+//        CategoryAxis vitalSignDomainAxis = vitalSignChartPlot.getDomainAxis();
+//        vitalSignDomainAxis.setCategoryLabelPositions(
+//            CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0)
+//        );
+//        
+//        NumberAxis vitalSignRangeAxis = (NumberAxis) vitalSignChartPlot.getRangeAxis();
+//        vitalSignRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+//        
+//        ChartFrame chartFrame = new ChartFrame("Chart", vitalSignChart);
+//        chartFrame.setVisible(true);
+//        chartFrame.setSize(500, 500);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageCity;
