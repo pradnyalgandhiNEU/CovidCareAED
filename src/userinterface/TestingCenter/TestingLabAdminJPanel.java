@@ -51,6 +51,7 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
         btnManageReport = new javax.swing.JButton();
         lblManufacturereAdmin = new javax.swing.JLabel();
         btnNewReport = new javax.swing.JButton();
+        btnManageScheduledTests = new javax.swing.JButton();
 
         btnManageReport.setText("Manage Test Reports");
         btnManageReport.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +72,13 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageScheduledTests.setText("Manage Scheduled Tests");
+        btnManageScheduledTests.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageScheduledTestsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,7 +91,8 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
                 .addGap(379, 379, 379)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnManageReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnNewReport, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewReport, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnManageScheduledTests, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +104,9 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
                 .addComponent(btnNewReport)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageReport)
-                .addContainerGap(625, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnManageScheduledTests)
+                .addContainerGap(584, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -115,9 +126,18 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnNewReportActionPerformed
 
+    private void btnManageScheduledTestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageScheduledTestsActionPerformed
+        // TODO add your handling code here:
+        ManageScheduledTestsJPanel manageScheduledTestReports = new ManageScheduledTestsJPanel(userProcessContainer, system, enterprise);
+        userProcessContainer.add("manageScheduledTestReports", manageScheduledTestReports );
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageScheduledTestsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageReport;
+    private javax.swing.JButton btnManageScheduledTests;
     private javax.swing.JButton btnNewReport;
     private javax.swing.JLabel lblManufacturereAdmin;
     // End of variables declaration//GEN-END:variables
