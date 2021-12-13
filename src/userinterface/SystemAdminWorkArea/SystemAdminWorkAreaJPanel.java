@@ -66,6 +66,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -131,6 +133,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Create Admins of City Enterprise");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, -1, -1));
+
+        jTree1.setBackground(new java.awt.Color(94, 153, 211));
+        jTree1.setForeground(new java.awt.Color(0, 0, 0));
+        jTree1.setMinimumSize(new java.awt.Dimension(0, 860));
+        jScrollPane1.setViewportView(jTree1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 860));
     }// </editor-fold>//GEN-END:initComponents
     
     
@@ -174,5 +183,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }
