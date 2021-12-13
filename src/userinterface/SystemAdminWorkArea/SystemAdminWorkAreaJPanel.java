@@ -30,20 +30,8 @@ import java.util.logging.Logger;
 import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.table.DefaultTableModel;
 
-import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
-//import org.jfree.chart.ChartUtilities;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.CategoryAxis;
-import org.jfree.chart.axis.CategoryLabelPositions;
-import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PiePlot3D;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.DefaultPieDataset;
 
 import org.jfree.chart.ChartFactory; 
 import org.jfree.chart.JFreeChart; 
@@ -134,7 +122,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome, System Admin");
 
-        btnVaccStatus.setText("Vaccination Status");
+        btnVaccStatus.setText("Covid Cases Chart");
         btnVaccStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVaccStatusActionPerformed(evt);
@@ -211,114 +199,58 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageEnterpriseAdminsActionPerformed
 
     private void btnVaccStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccStatusActionPerformed
-//        try {
             // TODO add your handling code here:
             createChart();
-//        } catch (IOException ex) {
-//            Logger.getLogger(SystemAdminWorkAreaJPanel.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }//GEN-LAST:event_btnVaccStatusActionPerformed
 
     private void createChart() 
     {
-        final String fait = "FAIT";              
-      final String audi = "AUDI";              
-      final String ford = "FORD";              
-      final String speed = "Speed";              
-      final String popular = "Popular";              
-      final String mailage = "Mailage";              
-      final String userrating = "User Rating";              
-      final String safety = "safety";
-        DefaultCategoryDataset dataset=new DefaultCategoryDataset();
-//              DefaultPieDataset Dataset = new DefaultPieDataset( );             
-//        int selectedRow = viewPatientsJTable.getSelectedRow();
-//        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
-//        
-//        Patient patient= person.getPatient();
-//        if(patient==null)
-//        {
-//            JOptionPane.showMessageDialog(this, "Patient not created, Please create Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
-//            return;
-//        }
+        DefaultPieDataset dataset = new DefaultPieDataset( );             
 
         ArrayList<Person> personList = system.getPersonDirectory().getPersonList();
+//        System.out.println(personList);
         int positive=0;
         int negative = 0;
-        //int vaccinated = 0;
-       // int partially = 0;
-        //int nonvaccinated = 0;
-//        for(Person p:personList){
-//            System.out.println(p.getTestHistory().getTestReportList().get(0).isResult()==true);
-//            if(p.getTestHistory().getTestReportList().get(0).isResult()==true){
-//            ++positive;
-//            }
-//            if(p.getTestHistory().getTestReportList().get(0).isResult()==false){
-//            ++negative;
-//            }
-//            
-//        }
-        /*At least 2 vital sign records needed to show chart */
-        if (personList.isEmpty() || personList.size() == 1) {
+
+        for(Person p:personList){
+            //System.out.println(p.getTestHistory().getTestReportList());
+            if(p.getTestHistory().getTestReportList().size()!=0){
+            if(p.getTestHistory().getTestReportList().get(0).isResult()==true){
+            ++positive;
+            }
+            if(p.getTestHistory().getTestReportList().get(0).isResult()==false){
+            ++negative;
+            }
+            //System.out.println(positive);
+            //System.out.println(negative);
+        }
+        }
+        if (negative==0 && positive == 0) {
             JOptionPane.showMessageDialog(this, "No Data Found", "Warning", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-//        for (Person p:personList) {
-//            Dataset.addV("Positive", new Double( 20 ));
-//            Dataset.setValue("Negative", new Double( 40 ));
-//        Dataset.addValue(vitalSign.getRespiratoryRate(),"RR", vitalSign.getTimestamp());
-//            Dataset.addValue(vitalSign.getHeartRate(),"HR", vitalSign.getTimestamp());
-//            Dataset.addValue(vitalSign.getBloodPressure(),"BP", vitalSign.getTimestamp());
-//            Dataset.addValue(vitalSign.getWeight(),"WT", vitalSign.getTimestamp());
-        dataset.addValue( 1.0 , fait , speed );              
-      dataset.addValue( 4.0 , fait , popular );              
-      dataset.addValue( 3.0 , fait , userrating );              
-      dataset.addValue( 5.0 , fait , mailage );              
-      dataset.addValue( 5.0 , fait , safety );              
-      
-      dataset.addValue( 5.0 , audi , speed );              
-      dataset.addValue( 7.0 , audi , popular );              
-      dataset.addValue( 6.0 , audi , userrating );              
-      dataset.addValue( 10.0 , audi , mailage );              
-      dataset.addValue( 4.0 , audi , safety ); 
-      
-      dataset.addValue( 4.0 , ford , speed );              
-      dataset.addValue( 3.0 , ford , popular );              
-      dataset.addValue( 2.0 , ford , userrating );              
-      dataset.addValue( 3.0 , ford , mailage );              
-      dataset.addValue( 6.0 , ford , safety );            
-//        }
-//JFreeChart chart = ChartFactory.createPieChart3D( 
-//         "Covid Cases in City" ,  // chart title                   
-//         Dataset ,         // data 
-//         true ,            // include legend                   
-//         true, 
-//         false);
-//        final PiePlot3D plot = ( PiePlot3D ) chart.getPlot( );             
-//      plot.setStartAngle( 270 );             
-//      plot.setForegroundAlpha( 0.60f );             
-//      plot.setInteriorGap( 0.02 );             
-//      int width = 640;   /* Width of the image */             
-//      int height = 480;  /* Height of the image */                             
-//      File pieChart3D = new File( "pie_Chart3D.jpeg" );                           
-//      ChartUtils.saveChartAsJPEG( pieChart3D , chart , width , height );   
-      
-        JFreeChart vitalSignChart= ChartFactory.createBarChart("Covid Cases Chart", "Time Stamp", "Rate", dataset, PlotOrientation.VERTICAL, true, false, false);
-        vitalSignChart.setBackgroundPaint(Color.white);
-        CategoryPlot vitalSignChartPlot = vitalSignChart.getCategoryPlot();
-        vitalSignChartPlot.setBackgroundPaint(Color.lightGray);    
+        else{
+            dataset.setValue("Positive", positive);
+            dataset.setValue("Negative", negative);
+
+        JFreeChart chart = ChartFactory.createPieChart3D( 
+                 "Covid Cases in City" ,  // chart title                   
+                 dataset ,         // data 
+                 true ,            // include legend                   
+                 true, 
+                 false);
+                final PiePlot3D plot = ( PiePlot3D ) chart.getPlot( );             
+              plot.setStartAngle( 270 );             
+              plot.setForegroundAlpha( 0.60f );             
+              plot.setInteriorGap( 0.02 );             
+              int width = 640;   /* Width of the image */             
+              int height = 480;  /* Height of the image */                             
+
         
-        CategoryAxis vitalSignDomainAxis = vitalSignChartPlot.getDomainAxis();
-        vitalSignDomainAxis.setCategoryLabelPositions(
-            CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0)
-        );
-        
-        NumberAxis vitalSignRangeAxis = (NumberAxis) vitalSignChartPlot.getRangeAxis();
-        vitalSignRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-        
-        ChartFrame chartFrame = new ChartFrame("Chart", vitalSignChart);
+        ChartFrame chartFrame = new ChartFrame("Chart", chart);
         chartFrame.setVisible(true);
         chartFrame.setSize(500, 500);
-
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

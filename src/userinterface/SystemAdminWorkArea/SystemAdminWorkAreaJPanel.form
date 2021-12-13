@@ -113,7 +113,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnVaccStatus">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vaccination Status"/>
+            <Property name="text" type="java.lang.String" value="Covid Cases Chart"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVaccStatusActionPerformed"/>
