@@ -69,7 +69,7 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Date", "Vaccine", "Batch No", "Quantity", "Vaccination Center", "Status"
+                "Vaccine", "Sender", "Receiver", "Status", "Quantity", "Message", "Order ID"
             }
         ));
         jScrollPane1.setViewportView(tblOrder);

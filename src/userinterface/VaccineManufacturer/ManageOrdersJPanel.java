@@ -73,7 +73,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Date", "Vaccine", "Batch No", "Quantity", "Vaccination Center", "Status"
+                "Vaccine", "Receiver", "Sender", "Status", "Quantity", "Message", "Order ID"
             }
         ));
         jScrollPane1.setViewportView(tblOrder);
@@ -114,7 +114,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("Button");
+        jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

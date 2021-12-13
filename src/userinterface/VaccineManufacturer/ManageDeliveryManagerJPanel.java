@@ -55,13 +55,12 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDeliveryManager = new javax.swing.JTable();
-        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         lblManageAdmin = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
         txtPassword = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
-        btnView = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
@@ -77,12 +76,17 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Username", "Name", "Staff ID", "Password"
+                "Username", "Staff ID", "Name", "Password"
             }
         ));
         jScrollPane1.setViewportView(tblDeliveryManager);
 
-        btnUpdate.setText("Update");
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         lblManageAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageAdmin.setForeground(new java.awt.Color(204, 204, 204));
@@ -99,13 +103,6 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         });
 
         lblUsername.setText("Username:");
-
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
 
         lblName.setText("Name:");
 
@@ -134,7 +131,7 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnUpdate)
+                                .addComponent(btnDelete)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCreate))
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -158,10 +155,6 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                         .addComponent(lblManageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(81, 81, 81)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView)
-                .addGap(132, 132, 132))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
@@ -176,12 +169,10 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                 .addComponent(lblManageAdmin)
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnView)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
@@ -197,7 +188,7 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreate)
-                    .addComponent(btnUpdate))
+                    .addComponent(btnDelete))
                 .addContainerGap(267, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -231,15 +222,24 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        int selectedRow = tblDeliveryManager.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        String user = (String)tblDeliveryManager.getValueAt(selectedRow, 0);
+         for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+             if(userAccount.getUsername().equals(user)){
+                 enterprise.getUserAccountDirectory().getUserAccountList().remove(userAccount);
+                 JOptionPane.showMessageDialog(this,"DeliveryManager Deleted");
+             }
+         }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

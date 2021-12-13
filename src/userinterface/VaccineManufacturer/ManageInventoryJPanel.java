@@ -83,6 +83,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
 
         lblAvailability.setText("Available Vaccine Stock:");
 
+        txtAvailability.setEditable(false);
         txtAvailability.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAvailabilityActionPerformed(evt);
