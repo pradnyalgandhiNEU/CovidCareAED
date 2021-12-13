@@ -58,7 +58,6 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
         tblOrder = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         btnMarkAsDelivered = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         lblManageAdmin = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(167, 199, 231));
@@ -100,16 +99,6 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
         });
         add(btnMarkAsDelivered, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
-
         lblManageAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageAdmin.setForeground(new java.awt.Color(0, 0, 0));
         lblManageAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -136,21 +125,10 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        ManageOrdersJPanel manageOrderjp = (ManageOrdersJPanel) component;
-        //        sysAdminwjp.populateTree();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMarkAsDelivered;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManageAdmin;
     private javax.swing.JTable tblOrder;

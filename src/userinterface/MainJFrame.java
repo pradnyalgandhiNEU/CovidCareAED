@@ -186,7 +186,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("SHREYA GHANTE");
+        jLabel7.setText("SHREYA GHATE");
 
         jLabel8.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));

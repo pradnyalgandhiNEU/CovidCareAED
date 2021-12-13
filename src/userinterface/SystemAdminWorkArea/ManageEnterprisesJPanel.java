@@ -157,9 +157,13 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         if(!city.getEnterpriseDirectory().checkIfIDIsUnique(id)){
             JOptionPane.showMessageDialog(null, String.format("Enterprise ID %s already exists!", id),"Warning",JOptionPane.ERROR_MESSAGE);
         }
-        if (city == null || type == null || name == null ) {
+        else if (city == null || type == null || name == null ) {
             JOptionPane.showMessageDialog(null, "Invalid Input!"); 
             return;
+        }
+        else{
+            Enterprise enterprise = city.getEnterpriseDirectory().createAndAddEnterprise(name , type, id);
+
         }
 //        System.out.print(city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name));
 //        if (city.getEnterpriseDirectory().checkIfEnterpriseNameIsUnique(name) != true) {
@@ -170,7 +174,7 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
 //            JOptionPane.showMessageDialog(null, String.format("Enterprise Name %s already exists!", name),"Warning",JOptionPane.ERROR_MESSAGE);
 //        }
        
-        Enterprise enterprise = city.getEnterpriseDirectory().createAndAddEnterprise(name , type, id);
+        //Enterprise enterprise = city.getEnterpriseDirectory().createAndAddEnterprise(name , type, id);
 
         populateTable();
         txtName.setText("");
@@ -187,7 +191,7 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
-        //        sysAdminwjp.populateTree();
+               sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
 
