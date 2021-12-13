@@ -77,6 +77,13 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         lblManageInventory = new javax.swing.JLabel();
         btnView1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setBackground(new java.awt.Color(214, 229, 244));
+        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
+
+        tblStaff.setBackground(new java.awt.Color(214, 229, 244));
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -90,122 +97,84 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblStaff);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 988, 183));
+
+        btnView.setBackground(new java.awt.Color(0, 0, 0));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 370, -1, -1));
 
+        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
+        txtStaffID.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 212, -1));
+
+        lblStaffID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblStaffID.setForeground(new java.awt.Color(0, 0, 0));
         lblStaffID.setText("Staff ID:");
+        add(lblStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
 
+        txtName.setBackground(new java.awt.Color(214, 229, 244));
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 212, -1));
+
+        lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
 
+        btnUpdate.setBackground(new java.awt.Color(0, 0, 0));
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, -1, -1));
 
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 600, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("UserName");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Password");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, -1, -1));
 
+        txtUserName.setBackground(new java.awt.Color(214, 229, 244));
+        txtUserName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 212, -1));
+
+        txtPassword.setBackground(new java.awt.Color(214, 229, 244));
+        txtPassword.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 212, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageInventory.setForeground(new java.awt.Color(0, 0, 0));
         lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageInventory.setText("Manage Vaccination Center Staff");
+        lblManageInventory.setText("VACCINATION CENTER STAFF");
+        add(lblManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 620, -1));
 
+        btnView1.setBackground(new java.awt.Color(0, 0, 0));
+        btnView1.setForeground(new java.awt.Color(255, 255, 255));
         btnView1.setText("Delete");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblManageInventory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(35, 35, 35))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(231, 231, 231)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblStaffID)
-                            .addComponent(lblName)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(2, 2, 2)))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnUpdate)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnCreate))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtStaffID, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                                .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                                .addComponent(txtUserName)
-                                .addComponent(txtPassword)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnView1)
-                        .addGap(6, 6, 6)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblManageInventory)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnView)
-                    .addComponent(btnView1))
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStaffID)
-                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnCreate))
-                .addContainerGap(190, Short.MAX_VALUE))
-        );
+        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 370, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed

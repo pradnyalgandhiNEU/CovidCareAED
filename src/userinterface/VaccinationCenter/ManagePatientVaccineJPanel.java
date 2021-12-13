@@ -65,11 +65,16 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         txtStaffID = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
-        lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageInventory.setText("Manage Patient Vaccination Details");
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageInventory.setForeground(new java.awt.Color(0, 0, 0));
+        lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageInventory.setText("PATIENT VACCINATION DETAILS");
+        add(lblManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 510, -1));
+
+        tblVaccine.setBackground(new java.awt.Color(214, 229, 244));
         tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -83,67 +88,35 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblVaccine);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 692, 181));
+
+        btnAdd.setBackground(new java.awt.Color(0, 0, 0));
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Create");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 534, -1, -1));
 
+        lblBatch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblBatch.setForeground(new java.awt.Color(0, 0, 0));
         lblBatch.setText("Staff ID:");
+        add(lblBatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, -1));
 
+        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 460, 200, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(373, 373, 373)
-                        .addComponent(lblBatch)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(356, 356, 356))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblManageInventory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(163, 163, 163))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnAdd)
-                                .addGap(454, 454, 454))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblManageInventory)
-                    .addComponent(jButton1))
-                .addGap(49, 49, 49)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(154, 154, 154)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBatch)
-                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(263, Short.MAX_VALUE))
-        );
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -60,61 +60,44 @@ public class VaccinationCenterAdminJPanel extends javax.swing.JPanel {
         btnPlaceOrder = new javax.swing.JButton();
         lblManufacturereAdmin = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnViewInventory.setBackground(new java.awt.Color(0, 0, 0));
+        btnViewInventory.setForeground(new java.awt.Color(255, 255, 255));
         btnViewInventory.setText("View Inventory");
         btnViewInventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewInventoryActionPerformed(evt);
             }
         });
+        add(btnViewInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 192, 30));
 
+        btnManageStaff.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageStaff.setForeground(new java.awt.Color(255, 255, 255));
         btnManageStaff.setText("Manage Staff");
         btnManageStaff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageStaffActionPerformed(evt);
             }
         });
+        add(btnManageStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 192, 30));
 
+        btnPlaceOrder.setBackground(new java.awt.Color(0, 0, 0));
+        btnPlaceOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnPlaceOrder.setText("Place Order");
         btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPlaceOrderActionPerformed(evt);
             }
         });
+        add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 192, 30));
 
         lblManufacturereAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManufacturereAdmin.setForeground(new java.awt.Color(204, 204, 204));
+        lblManufacturereAdmin.setForeground(new java.awt.Color(0, 0, 0));
         lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManufacturereAdmin.setText("Welcome, Vaccination Center");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblManufacturereAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(397, 397, 397)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnPlaceOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageStaff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnViewInventory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(lblManufacturereAdmin)
-                .addGap(95, 95, 95)
-                .addComponent(btnViewInventory)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageStaff)
-                .addGap(18, 18, 18)
-                .addComponent(btnPlaceOrder)
-                .addContainerGap(504, Short.MAX_VALUE))
-        );
+        lblManufacturereAdmin.setText("WELCOME VACCINATION CENTER ADMIN");
+        add(lblManufacturereAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 988, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed

@@ -29,51 +29,46 @@ public class PersonJPanel extends javax.swing.JPanel {
         btnCitywiseVaccinationStatus = new javax.swing.JButton();
         btnTotalPositiveCases = new javax.swing.JButton();
         btnHospitalWiseAvailableBeds = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCitywiseVaccinationStatus.setBackground(new java.awt.Color(0, 0, 0));
+        btnCitywiseVaccinationStatus.setForeground(new java.awt.Color(255, 255, 255));
         btnCitywiseVaccinationStatus.setText("Citywise Vaccination Status");
         btnCitywiseVaccinationStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCitywiseVaccinationStatusActionPerformed(evt);
             }
         });
+        add(btnCitywiseVaccinationStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 230, 30));
 
+        btnTotalPositiveCases.setBackground(new java.awt.Color(0, 0, 0));
+        btnTotalPositiveCases.setForeground(new java.awt.Color(255, 255, 255));
         btnTotalPositiveCases.setText("Total Positive Cases");
         btnTotalPositiveCases.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTotalPositiveCasesActionPerformed(evt);
             }
         });
+        add(btnTotalPositiveCases, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 231, 30));
 
+        btnHospitalWiseAvailableBeds.setBackground(new java.awt.Color(0, 0, 0));
+        btnHospitalWiseAvailableBeds.setForeground(new java.awt.Color(255, 255, 255));
         btnHospitalWiseAvailableBeds.setText("Hospital Wise Available Beds");
         btnHospitalWiseAvailableBeds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHospitalWiseAvailableBedsActionPerformed(evt);
             }
         });
+        add(btnHospitalWiseAvailableBeds, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 230, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(422, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnHospitalWiseAvailableBeds, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTotalPositiveCases, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCitywiseVaccinationStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(347, 347, 347))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(285, 285, 285)
-                .addComponent(btnCitywiseVaccinationStatus)
-                .addGap(18, 18, 18)
-                .addComponent(btnTotalPositiveCases)
-                .addGap(18, 18, 18)
-                .addComponent(btnHospitalWiseAvailableBeds)
-                .addContainerGap(410, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PATIENT PANEL");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 550, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCitywiseVaccinationStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCitywiseVaccinationStatusActionPerformed
@@ -93,5 +88,6 @@ public class PersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCitywiseVaccinationStatus;
     private javax.swing.JButton btnHospitalWiseAvailableBeds;
     private javax.swing.JButton btnTotalPositiveCases;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

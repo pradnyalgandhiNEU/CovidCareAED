@@ -52,28 +52,44 @@ public class NewReportJPanel extends javax.swing.JPanel {
         txtSearch = new javax.swing.JTextField();
         lblSearch = new javax.swing.JLabel();
         comboReport = new javax.swing.JComboBox<>();
-        lblDate = new javax.swing.JLabel();
-        txtDate = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setForeground(new java.awt.Color(0, 0, 0));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, -1, -1));
 
         lblCreateTestReport.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblCreateTestReport.setForeground(new java.awt.Color(204, 204, 204));
+        lblCreateTestReport.setForeground(new java.awt.Color(0, 0, 0));
         lblCreateTestReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreateTestReport.setText("New Test Report");
+        lblCreateTestReport.setText("NEW TEST REPORT");
+        add(lblCreateTestReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 62, 910, -1));
 
+        lblReport.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblReport.setForeground(new java.awt.Color(0, 0, 0));
         lblReport.setText("Report:");
+        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, -1, -1));
 
+        txtName.setBackground(new java.awt.Color(214, 229, 244));
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
         txtName.setEnabled(false);
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 450, 212, -1));
 
+        lblID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblID.setForeground(new java.awt.Color(0, 0, 0));
         lblID.setText("ID:");
+        add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 412, -1, -1));
 
+        personTable.setBackground(new java.awt.Color(214, 229, 244));
         personTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -87,111 +103,51 @@ public class NewReportJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(personTable);
 
-        lblName.setText("Name:");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 166, 720, 183));
 
+        lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 0));
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 453, -1, -1));
+
+        btnSearch.setBackground(new java.awt.Color(0, 0, 0));
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 125, -1, -1));
 
+        txtID.setBackground(new java.awt.Color(214, 229, 244));
+        txtID.setForeground(new java.awt.Color(0, 0, 0));
         txtID.setEnabled(false);
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 409, 212, -1));
 
+        txtSearch.setBackground(new java.awt.Color(214, 229, 244));
+        txtSearch.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 125, 220, -1));
+
+        lblSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblSearch.setForeground(new java.awt.Color(0, 0, 0));
         lblSearch.setText("Person Name:");
+        add(lblSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 128, -1, -1));
 
+        comboReport.setBackground(new java.awt.Color(214, 229, 244));
+        comboReport.setForeground(new java.awt.Color(0, 0, 0));
         comboReport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Detected", "Non-detected" }));
+        add(comboReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 210, -1));
 
-        lblDate.setText("Date:");
-
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCreateTestReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblSearch)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch)
-                        .addGap(294, 294, 294)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblReport)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCreate))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(comboReport, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblID)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblDate)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblName)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCreateTestReport)
-                    .addComponent(btnBack))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSearch)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDate)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblReport)
-                    .addComponent(comboReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnCreate)
-                .addContainerGap(242, Short.MAX_VALUE))
-        );
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -225,8 +181,8 @@ public class NewReportJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         //String personID = txtID.getText();
         //String personName = txtName.getText();
-        String date = txtDate.getText();
-        System.out.println(date);
+//        String date = txtDate.getText();
+//        System.out.println(date);
         Boolean result = false;
         if(comboReport.getSelectedItem().toString().equals("Detected")){
             result = true;
@@ -237,7 +193,7 @@ public class NewReportJPanel extends javax.swing.JPanel {
         
         for(Person person: system.getPersonDirectory().getPersonList()){
             if(txtSearch.getText().equals(person.getName())){
-                person.getTestHistory().newTestReport(date,result);
+                person.getTestHistory().newTestReport(result);
 //                System.out.println(date);
                 
 //                System.out.println( person.getTestHistory().getTestReportList().get(0));
@@ -267,13 +223,11 @@ public class NewReportJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboReport;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreateTestReport;
-    private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblReport;
     private javax.swing.JLabel lblSearch;
     private javax.swing.JTable personTable;
-    private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSearch;

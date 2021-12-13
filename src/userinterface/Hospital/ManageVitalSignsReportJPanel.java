@@ -64,16 +64,39 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         btnCreate = new javax.swing.JButton();
         lblPulse = new javax.swing.JLabel();
         lblBloodPressure = new javax.swing.JLabel();
+        lblBloodPressure1 = new javax.swing.JLabel();
 
-        btnSearch.setText("Enter Patient Name");
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSearch.setBackground(new java.awt.Color(0, 0, 0));
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, -1, -1));
 
+        txtPulse.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 550, 212, -1));
+
+        txtSearch.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 220, -1));
+
+        txtBloodPressure.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, 212, -1));
+
+        txtTemperature.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 510, 212, -1));
+
+        lblTemperature.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblTemperature.setForeground(new java.awt.Color(0, 0, 0));
         lblTemperature.setText("Temperature:");
+        add(lblTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, -1, -1));
 
+        tblVitalSigns.setBackground(new java.awt.Color(214, 229, 244));
         tblVitalSigns.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -87,90 +110,38 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblVitalSigns);
 
-        lblManageManufacturer.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageManufacturer.setForeground(new java.awt.Color(204, 204, 204));
-        lblManageManufacturer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageManufacturer.setText("Manage Patient Vital Signs");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 910, 183));
 
+        lblManageManufacturer.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageManufacturer.setForeground(new java.awt.Color(0, 0, 0));
+        lblManageManufacturer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageManufacturer.setText("MANAGE PATIENT VITAL SIGNS");
+        add(lblManageManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 62, 970, -1));
+
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 610, -1, -1));
 
+        lblPulse.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblPulse.setForeground(new java.awt.Color(0, 0, 0));
         lblPulse.setText("SP02");
+        add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, -1, -1));
 
-        lblBloodPressure.setText("Blood Pressure:");
+        lblBloodPressure.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblBloodPressure.setForeground(new java.awt.Color(0, 0, 0));
+        lblBloodPressure.setText("Patient Name:");
+        add(lblBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblManageManufacturer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(403, 403, 403))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(309, 309, 309)
-                        .addComponent(lblBloodPressure)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(329, 329, 329)
-                            .addComponent(lblPulse)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(321, 321, 321)
-                            .addComponent(lblTemperature)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCreate)
-                .addGap(441, 441, 441))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(lblManageManufacturer)
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBloodPressure)
-                    .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTemperature)
-                    .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPulse)
-                    .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(btnCreate)
-                .addContainerGap(183, Short.MAX_VALUE))
-        );
+        lblBloodPressure1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblBloodPressure1.setForeground(new java.awt.Color(0, 0, 0));
+        lblBloodPressure1.setText("Blood Pressure:");
+        add(lblBloodPressure1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -209,6 +180,7 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearch;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBloodPressure;
+    private javax.swing.JLabel lblBloodPressure1;
     private javax.swing.JLabel lblManageManufacturer;
     private javax.swing.JLabel lblPulse;
     private javax.swing.JLabel lblTemperature;
