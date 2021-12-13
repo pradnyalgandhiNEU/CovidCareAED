@@ -128,6 +128,7 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
                     Order order1 = (Order)wr;
                     if(order1.getId()==order.getId()){
                         order.setDeliveryManager(deliveryManager);
+                        JOptionPane.showMessageDialog(this, "Order Assigned to Delivery Manager");
                     }
         }
     }//GEN-LAST:event_btnAssignOrderActionPerformed

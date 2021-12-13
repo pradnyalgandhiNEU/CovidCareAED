@@ -328,6 +328,7 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         for(Vaccine v: e.getVaccineDirectory().getVaccDir()){
             if(v.getBatchId()==batchId){
                 e.getVaccineDirectory().getVaccDir().remove(v);
+                JOptionPane.showMessageDialog(this, "Record deleted");
             }
         }
     }//GEN-LAST:event_btnDeleteActionPerformed

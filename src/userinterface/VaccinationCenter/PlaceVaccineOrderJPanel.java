@@ -14,6 +14,7 @@ import Business.WorkQueue.Order;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -157,12 +158,17 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
     String vaccineName;
-    int qty;
+    int qty=0;
     String message = "Order placed";
     String status = "Active";
     
     vaccineName = txtVaccineName.getText();
+    try{
     qty = Integer.parseInt(txtQty.getText());
+    }
+    catch(NumberFormatException e){
+        JOptionPane.showMessageDialog(this,e);
+    }
     String VaccineManufacturerName = (String) cmbVaccineManufacturer.getSelectedItem();
     for(City city : system.getCityList()){
         for (Enterprise e : city.getEnterpriseDirectory().getEnterpriseList()) {

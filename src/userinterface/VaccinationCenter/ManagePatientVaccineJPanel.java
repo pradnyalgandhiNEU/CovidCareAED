@@ -78,7 +78,7 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "Staff ID", "Patient ID"
+                "Patient ID", "Staff ID"
             }
         ));
         jScrollPane1.setViewportView(tblVaccine);
@@ -91,6 +91,8 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         });
 
         lblBatch.setText("Staff ID:");
+
+        txtBatchNo.setEditable(false);
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
