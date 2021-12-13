@@ -54,12 +54,12 @@ public class MainJFrame extends javax.swing.JFrame {
         container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         loginJButton.setBackground(new java.awt.Color(102, 255, 0));
         loginJButton.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        loginJButton.setForeground(new java.awt.Color(0, 0, 0));
         loginJButton.setText("Login");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,12 +68,10 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         userNameJTextField.setBackground(new java.awt.Color(153, 153, 153));
-        userNameJTextField.setForeground(new java.awt.Color(0, 0, 0));
         userNameJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         userNameJTextField.setDisabledTextColor(new java.awt.Color(102, 102, 102));
 
         passwordField.setBackground(new java.awt.Color(153, 153, 153));
-        passwordField.setForeground(new java.awt.Color(0, 0, 0));
         passwordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         passwordField.setDisabledTextColor(new java.awt.Color(102, 102, 102));
 
@@ -89,7 +87,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         logoutJButton.setBackground(new java.awt.Color(255, 0, 0));
         logoutJButton.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        logoutJButton.setForeground(new java.awt.Color(0, 0, 0));
         logoutJButton.setText("Logout");
         logoutJButton.setEnabled(false);
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +150,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(container);
 
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 141, 806));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

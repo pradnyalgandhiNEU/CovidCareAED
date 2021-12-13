@@ -10,13 +10,33 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 
 import Business.Organization.Organization;
+import Business.Patient.Patient;
+import Business.Person.Person;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.InputVerifier;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
+import org.jfree.chart.axis.CategoryLabelPositions;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
  * @author MyPC1
@@ -63,8 +83,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnManagePerson = new javax.swing.JButton();
         btnManageEnterpriseAdmins = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnVaccStatus = new javax.swing.JButton();
 
-        setLayout(new java.awt.BorderLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnManageCity.setText("Manage City");
         btnManageCity.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +120,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome, System Admin");
 
+        btnVaccStatus.setText("Vaccination Status");
+        btnVaccStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVaccStatusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,7 +141,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnManageEnterpriseAdmins, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManagePerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManageCity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageEnterprise, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnManageEnterprise, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVaccStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(379, 379, 379))
         );
         jPanel2Layout.setVerticalGroup(
@@ -129,10 +158,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(btnManageEnterprise)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageEnterpriseAdmins)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnVaccStatus)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
     
     
@@ -165,12 +196,61 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageEnterpriseAdminsActionPerformed
 
+    private void btnVaccStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVaccStatusActionPerformed
+
+//    private void createChart()
+//    {
+//        DefaultCategoryDataset vitalSignDataset=new DefaultCategoryDataset();
+////        int selectedRow = viewPatientsJTable.getSelectedRow();
+////        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
+////        
+////        Patient patient= person.getPatient();
+////        if(patient==null)
+////        {
+////            JOptionPane.showMessageDialog(this, "Patient not created, Please create Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
+////            return;
+////        }
+//
+//        ArrayList<Person> person = person.;
+//        /*At least 2 vital sign records needed to show chart */
+//        if (vitalSignList.isEmpty() || vitalSignList.size() == 1) {
+//            JOptionPane.showMessageDialog(this, "No vital signs or only one vital sign found. At least 2 vital sign records needed to show chart!", "Warning", JOptionPane.INFORMATION_MESSAGE);
+//            return;
+//        }
+//        for (VitalSign vitalSign : vitalSignList) {
+//            vitalSignDataset.addValue(vitalSign.getRespiratoryRate(),"RR", vitalSign.getTimestamp());
+//            vitalSignDataset.addValue(vitalSign.getHeartRate(),"HR", vitalSign.getTimestamp());
+//            vitalSignDataset.addValue(vitalSign.getBloodPressure(),"BP", vitalSign.getTimestamp());
+//            vitalSignDataset.addValue(vitalSign.getWeight(),"WT", vitalSign.getTimestamp());
+//        }
+//        
+//        JFreeChart vitalSignChart= ChartFactory.createBarChart3D("Vital Sign Chart", "Time Stamp", "Rate", vitalSignDataset, PlotOrientation.VERTICAL, true, false, false);
+//        vitalSignChart.setBackgroundPaint(Color.white);
+//        CategoryPlot vitalSignChartPlot = vitalSignChart.getCategoryPlot();
+//        vitalSignChartPlot.setBackgroundPaint(Color.lightGray);    
+//        
+//        CategoryAxis vitalSignDomainAxis = vitalSignChartPlot.getDomainAxis();
+//        vitalSignDomainAxis.setCategoryLabelPositions(
+//            CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0)
+//        );
+//        
+//        NumberAxis vitalSignRangeAxis = (NumberAxis) vitalSignChartPlot.getRangeAxis();
+//        vitalSignRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+//        
+//        ChartFrame chartFrame = new ChartFrame("Chart", vitalSignChart);
+//        chartFrame.setVisible(true);
+//        chartFrame.setSize(500, 500);
+//
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageCity;
     private javax.swing.JButton btnManageEnterprise;
     private javax.swing.JButton btnManageEnterpriseAdmins;
     private javax.swing.JButton btnManagePerson;
+    private javax.swing.JButton btnVaccStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
