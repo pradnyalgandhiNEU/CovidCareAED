@@ -72,7 +72,7 @@ public class NewReportJPanel extends javax.swing.JPanel {
         lblCreateTestReport.setForeground(new java.awt.Color(0, 0, 0));
         lblCreateTestReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateTestReport.setText("NEW TEST REPORT");
-        add(lblCreateTestReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 62, 910, -1));
+        add(lblCreateTestReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 62, 740, -1));
 
         lblReport.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblReport.setForeground(new java.awt.Color(0, 0, 0));

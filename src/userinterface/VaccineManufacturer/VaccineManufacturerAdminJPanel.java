@@ -59,6 +59,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnManageInventory.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageInventory.setForeground(new java.awt.Color(255, 255, 255));
         btnManageInventory.setText("Manage Inventory");
         btnManageInventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +69,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
         add(btnManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 181, 30));
 
         btnManageDeliveryManger.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageDeliveryManger.setForeground(new java.awt.Color(255, 255, 255));
         btnManageDeliveryManger.setText("Manage Delivery Manager");
         btnManageDeliveryManger.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +85,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
         add(lblManufacturereAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 730, -1));
 
         btnManageOrder.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnManageOrder.setText("Manage Orders");
         btnManageOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +97,7 @@ public class VaccineManufacturerAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageInventoryActionPerformed
        ManageInventoryJPanel manageInventoryJPanel = new ManageInventoryJPanel(userProcessContainer, city, userAccount, organization, enterprise, system);
-       userProcessContainer.add("manageTestCenterJPanel", manageInventoryJPanel);
+       userProcessContainer.add("manageInventoryJPanel", manageInventoryJPanel);
        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageInventoryActionPerformed

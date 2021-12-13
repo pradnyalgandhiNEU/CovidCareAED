@@ -247,7 +247,7 @@ int selectedRow = tblOrder.getSelectedRow();
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        ManageOrdersJPanel manageOrderjp = (ManageOrdersJPanel) component;
+        VaccineManufacturerAdminJPanel manageOrderjp = (VaccineManufacturerAdminJPanel) component;
         //        sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);

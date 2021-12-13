@@ -59,7 +59,6 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPatients = new javax.swing.JTable();
-        btnDischarge = new javax.swing.JButton();
         lblManagePatient = new javax.swing.JLabel();
         btnView = new javax.swing.JButton();
         lblSearch1 = new javax.swing.JLabel();
@@ -67,6 +66,7 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         lblSearch2 = new javax.swing.JLabel();
         comboTestingCenters = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,23 +93,18 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         tblPatients.setBackground(new java.awt.Color(214, 229, 244));
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "ID", "Name", "Vaccination Status", "Temperature", "SPO2 Level"
+                "ID", "Name"
             }
         ));
         jScrollPane1.setViewportView(tblPatients);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 790, 183));
-
-        btnDischarge.setBackground(new java.awt.Color(0, 0, 0));
-        btnDischarge.setForeground(new java.awt.Color(255, 255, 255));
-        btnDischarge.setText("Mark Discharged");
-        add(btnDischarge, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 380, -1, -1));
 
         lblManagePatient.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManagePatient.setForeground(new java.awt.Color(0, 0, 0));
@@ -155,6 +150,16 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
+
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populateTestingCombo() {
@@ -226,9 +231,14 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDischarge;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> comboTestingCenters;
@@ -253,12 +263,9 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
 
         for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
             if (p.getDoctorName().equals(doctorName)) {
-                Object[] row = new Object[5];
+                Object[] row = new Object[2];
                 row[0] = p.getName();
                 row[1] = p.getPatientID();
-                row[2] = p.getVaccinationStatus();
-                row[3] = p.getQuarantineStatus();
-                row[4] = p.getDoctorName();
                 dtm.addRow(row);
             }
 
