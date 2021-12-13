@@ -83,28 +83,48 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("jLabel1");
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setForeground(new java.awt.Color(0, 0, 0));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 630, -1, -1));
 
+        txtUsername.setBackground(new java.awt.Color(214, 229, 244));
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
             }
         });
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, 212, 30));
 
+        lblUsername.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(0, 0, 0));
         lblUsername.setText("Username:");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 550, -1, -1));
 
+        txtPassword.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 212, 30));
+
+        lblPassword.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(0, 0, 0));
         lblPassword.setText("Password:");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 590, -1, -1));
 
         lblManageVaccinationCenter.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageVaccinationCenter.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageVaccinationCenter.setForeground(new java.awt.Color(0, 0, 0));
         lblManageVaccinationCenter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageVaccinationCenter.setText("Manage Enterprise Admins");
+        lblManageVaccinationCenter.setText("MANAGE ENTERPRISE ADMINS");
+        add(lblManageVaccinationCenter, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 62, 1210, -1));
 
+        enterpriseTable.setBackground(new java.awt.Color(214, 229, 244));
         enterpriseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -118,19 +138,33 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(enterpriseTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 133, 1100, 183));
+
+        comboEnterprise.setBackground(new java.awt.Color(214, 229, 244));
         comboEnterprise.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 212, 28));
 
+        lblEnterprise.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblEnterprise.setForeground(new java.awt.Color(0, 0, 0));
         lblEnterprise.setText("Select Enterprise:");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, -1, -1));
 
+        lblCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblCity.setForeground(new java.awt.Color(0, 0, 0));
         lblCity.setText("Select City:");
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
 
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
+        comboboxCity.setBackground(new java.awt.Color(214, 229, 244));
         comboboxCity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         comboboxCity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboboxCity.addActionListener(new java.awt.event.ActionListener() {
@@ -138,79 +172,7 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                 comboboxCityActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblManageVaccinationCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblUsername)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(lblPassword)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblEnterprise)
-                                    .addComponent(lblCity))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(comboEnterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(comboboxCity, 0, 212, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(441, 441, 441)
-                        .addComponent(btnCreate)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblManageVaccinationCenter)
-                    .addComponent(btnBack))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCity)
-                    .addComponent(comboboxCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEnterprise)
-                    .addComponent(comboEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(btnCreate)
-                .addGap(212, 212, 212))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {comboEnterprise, comboboxCity});
-
+        add(comboboxCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, 212, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed

@@ -59,20 +59,38 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         cmbEnterpriseType = new javax.swing.JComboBox();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setForeground(new java.awt.Color(0, 0, 0));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 610, -1, -1));
 
         lblManageTesting.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageTesting.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageTesting.setForeground(new java.awt.Color(0, 0, 0));
         lblManageTesting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageTesting.setText("Manage Enterprise");
+        add(lblManageTesting, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 970, -1));
 
+        txtID.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 510, 212, 30));
+
+        lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 570, -1, 10));
 
+        txtName.setBackground(new java.awt.Color(214, 229, 244));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, 212, 30));
+
+        tblEnterprise.setBackground(new java.awt.Color(214, 229, 244));
+        tblEnterprise.setForeground(new java.awt.Color(0, 0, 0));
         tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -86,12 +104,21 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblEnterprise);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 1070, 183));
+
+        lblID.setForeground(new java.awt.Color(0, 0, 0));
         lblID.setText("ID:");
+        add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 520, -1, -1));
 
+        lblCity.setForeground(new java.awt.Color(0, 0, 0));
         lblCity.setText("City:");
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 30, 20));
 
+        lblEnterpriseType.setForeground(new java.awt.Color(0, 0, 0));
         lblEnterpriseType.setText("Enterprise Type:");
+        add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, -1, 20));
 
+        cmbCity.setBackground(new java.awt.Color(214, 229, 244));
         cmbCity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCity.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +126,9 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
                 cmbCityActionPerformed(evt);
             }
         });
+        add(cmbCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 210, -1));
 
+        cmbEnterpriseType.setBackground(new java.awt.Color(214, 229, 244));
         cmbEnterpriseType.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         cmbEnterpriseType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbEnterpriseType.addActionListener(new java.awt.event.ActionListener() {
@@ -107,81 +136,17 @@ public class ManageEnterprisesJPanel extends javax.swing.JPanel {
                 cmbEnterpriseTypeActionPerformed(evt);
             }
         });
+        add(cmbEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 210, -1));
 
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnBack)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblManageTesting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(408, 408, 408)
-                        .addComponent(btnCreate))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblID)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblName)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(218, 218, 218)
-                                .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblEnterpriseType)
-                                .addGap(64, 64, 64)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbEnterpriseType, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblManageTesting)
-                    .addComponent(btnBack))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCity)
-                    .addComponent(cmbCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEnterpriseType)
-                    .addComponent(cmbEnterpriseType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(btnCreate)
-                .addGap(316, 316, 316))
-        );
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
