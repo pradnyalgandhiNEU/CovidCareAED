@@ -73,6 +73,13 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         lblManageInventory = new javax.swing.JLabel();
         btnView1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setBackground(new java.awt.Color(214, 229, 244));
+        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
+
+        tblStaff.setBackground(new java.awt.Color(214, 229, 244));
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -86,32 +93,90 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblStaff);
 
-        lblName.setText("Name:");
+<<<<<<< HEAD
+=======
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 988, 183));
 
+        btnView.setBackground(new java.awt.Color(0, 0, 0));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
+        btnView.setText("View");
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 370, -1, -1));
+
+        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
+        txtStaffID.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 212, -1));
+
+        lblStaffID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblStaffID.setForeground(new java.awt.Color(0, 0, 0));
+        lblStaffID.setText("Staff ID:");
+        add(lblStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
+
+        txtName.setBackground(new java.awt.Color(214, 229, 244));
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 212, -1));
+
+        lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 0));
+>>>>>>> 7c44b093fa7419e60d5c3d49924cb3da021267b7
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
+
+<<<<<<< HEAD
+=======
+        btnUpdate.setBackground(new java.awt.Color(0, 0, 0));
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setText("Update");
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, -1, -1));
+
+        btnCreate.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+>>>>>>> 7c44b093fa7419e60d5c3d49924cb3da021267b7
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 600, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("UserName");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Password");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, -1, -1));
 
+        txtUserName.setBackground(new java.awt.Color(214, 229, 244));
+        txtUserName.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 212, -1));
+
+        txtPassword.setBackground(new java.awt.Color(214, 229, 244));
+        txtPassword.setForeground(new java.awt.Color(0, 0, 0));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 212, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         lblManageInventory.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        lblManageInventory.setForeground(new java.awt.Color(204, 204, 204));
+        lblManageInventory.setForeground(new java.awt.Color(0, 0, 0));
         lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageInventory.setText("Manage Vaccination Center Staff");
+        lblManageInventory.setText("VACCINATION CENTER STAFF");
+        add(lblManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 620, -1));
 
+        btnView1.setBackground(new java.awt.Color(0, 0, 0));
+        btnView1.setForeground(new java.awt.Color(255, 255, 255));
         btnView1.setText("Delete");
+<<<<<<< HEAD
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -227,6 +292,9 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                 .addContainerGap(190, Short.MAX_VALUE))
 >>>>>>> 927aca32db69bf29b228d932567cf5527b8bdac0
         );
+=======
+        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 370, -1, -1));
+>>>>>>> 7c44b093fa7419e60d5c3d49924cb3da021267b7
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed

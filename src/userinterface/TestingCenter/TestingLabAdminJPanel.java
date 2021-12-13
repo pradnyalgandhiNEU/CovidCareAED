@@ -53,61 +53,44 @@ public class TestingLabAdminJPanel extends javax.swing.JPanel {
         btnNewReport = new javax.swing.JButton();
         btnManageScheduledTests = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(167, 199, 231));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnManageReport.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageReport.setForeground(new java.awt.Color(255, 255, 255));
         btnManageReport.setText("Manage Test Reports");
         btnManageReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageReportActionPerformed(evt);
             }
         });
+        add(btnManageReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 230, 30));
 
         lblManufacturereAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManufacturereAdmin.setForeground(new java.awt.Color(51, 51, 51));
         lblManufacturereAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManufacturereAdmin.setText("Welcome, Testing Lab Admin");
+        lblManufacturereAdmin.setText("WELCOME, TESTING LAB ADMIN");
+        add(lblManufacturereAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 680, -1));
 
+        btnNewReport.setBackground(new java.awt.Color(0, 0, 0));
+        btnNewReport.setForeground(new java.awt.Color(255, 255, 255));
         btnNewReport.setText("New Report");
         btnNewReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewReportActionPerformed(evt);
             }
         });
+        add(btnNewReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 230, 30));
 
+        btnManageScheduledTests.setBackground(new java.awt.Color(0, 0, 0));
+        btnManageScheduledTests.setForeground(new java.awt.Color(255, 255, 255));
         btnManageScheduledTests.setText("Manage Scheduled Tests");
         btnManageScheduledTests.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageScheduledTestsActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblManufacturereAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(379, 379, 379)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnManageReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnNewReport, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageScheduledTests, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(lblManufacturereAdmin)
-                .addGap(57, 57, 57)
-                .addComponent(btnNewReport)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageReport)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageScheduledTests)
-                .addContainerGap(584, Short.MAX_VALUE))
-        );
+        add(btnManageScheduledTests, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReportActionPerformed
