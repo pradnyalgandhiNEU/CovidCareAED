@@ -49,9 +49,50 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.city = city;
         this.organization = organization;
+        populateTree();
 
     }
+        
+    
+    public void populateTree(){
+        DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
+        ArrayList<City> networkList=system.getCityList();
+        ArrayList<Enterprise> enterpriseList;
+        ArrayList<Organization> organizationList;
 
+        City city;
+        Enterprise enterprise;
+        Organization organization;
+
+        DefaultMutableTreeNode networks=new DefaultMutableTreeNode("Networks");
+        DefaultMutableTreeNode root=(DefaultMutableTreeNode)model.getRoot();
+        root.removeAllChildren();
+        root.insert(networks, 0);
+
+        DefaultMutableTreeNode networkNode;
+        DefaultMutableTreeNode enterpriseNode;
+        DefaultMutableTreeNode organizationNode;
+
+        int i = 0;
+        for(City n : system.getCityList()){
+            networkNode = new DefaultMutableTreeNode(n.getName());
+            networks.insert(networkNode, i);
+            i++;
+            int j = 0;
+            for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+                enterpriseNode = new DefaultMutableTreeNode(e.getName());
+                networkNode.insert(enterpriseNode, j);
+                j++;
+                int k = 0;
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    organizationNode = new DefaultMutableTreeNode(o.getName());
+                    enterpriseNode.insert(organizationNode, k);
+                    k++;
+                }
+            }
+        }
+        model.reload();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,7 +115,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        jTree = new javax.swing.JTree();
         btnManagePerson1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
@@ -143,10 +184,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel5.setText("Create Admins of City Enterprise");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, -1, -1));
 
-        jTree1.setBackground(new java.awt.Color(94, 153, 211));
-        jTree1.setForeground(new java.awt.Color(0, 0, 0));
-        jTree1.setMinimumSize(new java.awt.Dimension(0, 860));
-        jScrollPane1.setViewportView(jTree1);
+        jTree.setBackground(new java.awt.Color(94, 153, 211));
+        jTree.setForeground(new java.awt.Color(0, 0, 0));
+        jTree.setMinimumSize(new java.awt.Dimension(0, 860));
+        jScrollPane1.setViewportView(jTree);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 860));
 
@@ -260,6 +301,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JTree jTree;
     // End of variables declaration//GEN-END:variables
 }
