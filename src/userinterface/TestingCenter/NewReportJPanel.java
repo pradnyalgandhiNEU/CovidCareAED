@@ -10,6 +10,7 @@ import Business.Person.Person;
 import Business.TestReport.TestReport;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -66,28 +67,28 @@ public class NewReportJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 620, -1, -1));
 
         lblCreateTestReport.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblCreateTestReport.setForeground(new java.awt.Color(0, 0, 0));
         lblCreateTestReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateTestReport.setText("NEW TEST REPORT");
-        add(lblCreateTestReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 62, 740, -1));
+        add(lblCreateTestReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 740, -1));
 
         lblReport.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblReport.setForeground(new java.awt.Color(0, 0, 0));
         lblReport.setText("Report:");
-        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, -1, -1));
+        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, -1, -1));
 
         txtName.setBackground(new java.awt.Color(214, 229, 244));
         txtName.setForeground(new java.awt.Color(0, 0, 0));
         txtName.setEnabled(false);
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 450, 212, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, 212, -1));
 
         lblID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblID.setForeground(new java.awt.Color(0, 0, 0));
         lblID.setText("ID:");
-        add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 412, -1, -1));
+        add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, -1, -1));
 
         personTable.setBackground(new java.awt.Color(214, 229, 244));
         personTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -98,17 +99,17 @@ public class NewReportJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Address", "Email", "Age", "Phone No", "Community"
+                "Name", "ID", "Age", "Address", "Zipcode", "Phone No", "Community"
             }
         ));
         jScrollPane1.setViewportView(personTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 166, 720, 183));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 720, 183));
 
         lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 453, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 530, -1, -1));
 
         btnSearch.setBackground(new java.awt.Color(0, 0, 0));
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,26 +119,26 @@ public class NewReportJPanel extends javax.swing.JPanel {
                 btnSearchActionPerformed(evt);
             }
         });
-        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 125, -1, -1));
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
 
         txtID.setBackground(new java.awt.Color(214, 229, 244));
         txtID.setForeground(new java.awt.Color(0, 0, 0));
         txtID.setEnabled(false);
-        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 409, 212, -1));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, 212, -1));
 
         txtSearch.setBackground(new java.awt.Color(214, 229, 244));
         txtSearch.setForeground(new java.awt.Color(0, 0, 0));
-        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 125, 220, -1));
+        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 220, -1));
 
         lblSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(0, 0, 0));
         lblSearch.setText("Person Name:");
-        add(lblSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 128, -1, -1));
+        add(lblSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
 
         comboReport.setBackground(new java.awt.Color(214, 229, 244));
         comboReport.setForeground(new java.awt.Color(0, 0, 0));
         comboReport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Detected", "Non-detected" }));
-        add(comboReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 210, -1));
+        add(comboReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 570, 210, -1));
 
         btnBack.setBackground(new java.awt.Color(0, 0, 0));
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +148,7 @@ public class NewReportJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -157,8 +158,9 @@ public class NewReportJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) personTable.getModel();
         dtm.setRowCount(0);
         Object[] row = new Object[7];
+        boolean flag = false;
         for(Person person: system.getPersonDirectory().getPersonList()){
-            System.out.println(person);
+//            System.out.println(person);
             if((search).equals(person.getName())){
                 row[0] = person;
                 row[1] = person.getPersonID();
@@ -168,12 +170,18 @@ public class NewReportJPanel extends javax.swing.JPanel {
                 row[5] = person.getPhoneNo();
                 row[6] = person.getCommunity();
                 dtm.addRow(row);
+                flag = true;
                 
                 txtID.setText(String.valueOf(person.getPersonID()));
                 txtName.setText(person.getName());
             
             
         }
+        }
+        if(!flag){
+            JOptionPane.showMessageDialog(null, "Person  not Found", "Warning", JOptionPane.WARNING_MESSAGE);
+            txtID.setText("");
+            txtName.setText("");
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -190,15 +198,17 @@ public class NewReportJPanel extends javax.swing.JPanel {
         else{
              result = false;
         }
-        
         for(Person person: system.getPersonDirectory().getPersonList()){
             if(txtSearch.getText().equals(person.getName())){
                 person.getTestHistory().newTestReport(result);
+                JOptionPane.showMessageDialog(this, "Report Created");
+                
 //                System.out.println(date);
                 
 //                System.out.println( person.getTestHistory().getTestReportList().get(0));
             }
         }
+        
         
         
         

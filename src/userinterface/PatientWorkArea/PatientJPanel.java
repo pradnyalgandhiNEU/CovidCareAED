@@ -14,6 +14,7 @@ import Business.Patient.Patient;
 import Business.Person.Person;
 import Business.TestReport.TestReport;
 import Business.UserAccount.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -78,9 +79,11 @@ public class PatientJPanel extends javax.swing.JPanel {
         jLabel3.setText("Your Test Report");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 157, -1));
 
+        txtStatus.setEditable(false);
         txtStatus.setBackground(new java.awt.Color(214, 229, 244));
         add(txtStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 149, -1));
 
+        txtReport.setEditable(false);
         txtReport.setBackground(new java.awt.Color(214, 229, 244));
         add(txtReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 149, -1));
 
@@ -99,6 +102,7 @@ public class PatientJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
         for(City c : system.getCityList()){
              
            for(Enterprise e : c.getEnterpriseDirectory().getEnterpriseList()){
@@ -109,13 +113,17 @@ public class PatientJPanel extends javax.swing.JPanel {
                     for(Patient patient: hos.getPatientDirectory().getPatientDir()){
                         if(patient.getName().equals(userAccount.getEmployee().getName())){
                             txtStatus.setText(patient.getVaccinationStatus());
-                            lblWelcome.setText("Welcome "+patient.getName()+" to Covid Care");
+                            //lblWelcome.setText("Welcome "+patient.getName()+" to Covid Care");
                         }
                     }
                }
            }
+        }}
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Please get your vaccinated status");
         }
         String status=" ";
+        try{
         for(Person p : system.getPersonDirectory().getPersonList()){
             if(p.getName().equals(userAccount.getEmployee().getName())){
                 TestReport report = p.getTestHistory().getTestReportList().get(p.getTestHistory().getTestReportList().size()-1);
@@ -128,6 +136,10 @@ public class PatientJPanel extends javax.swing.JPanel {
                 txtReport.setText(status);
             }
         }
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"Please get tested first");
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

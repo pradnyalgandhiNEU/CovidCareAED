@@ -54,8 +54,6 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblSearch = new javax.swing.JLabel();
-        txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPatients = new javax.swing.JTable();
@@ -66,29 +64,19 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         lblSearch2 = new javax.swing.JLabel();
         comboTestingCenters = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lblSearch.setForeground(new java.awt.Color(0, 0, 0));
-        lblSearch.setText("Patient Name:");
-        add(lblSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
-
-        txtSearch.setBackground(new java.awt.Color(214, 229, 244));
-        txtSearch.setForeground(new java.awt.Color(0, 0, 0));
-        add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 220, -1));
-
         btnSearch.setBackground(new java.awt.Color(0, 0, 0));
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
-        btnSearch.setText("Search");
+        btnSearch.setText("Populate Patients");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
-        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, -1, -1));
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
         tblPatients.setBackground(new java.awt.Color(214, 229, 244));
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,7 +97,7 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         lblManagePatient.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManagePatient.setForeground(new java.awt.Color(0, 0, 0));
         lblManagePatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManagePatient.setText("MANAGE PERSON DISCHARGE");
+        lblManagePatient.setText("PATIENT RECORD");
         add(lblManagePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1288, -1));
 
         btnView.setBackground(new java.awt.Color(0, 0, 0));
@@ -150,16 +138,6 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
-
-        btnBack.setBackground(new java.awt.Color(0, 0, 0));
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void populateTestingCombo() {
@@ -231,26 +209,18 @@ public class ManagePatientsDischargeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> comboTestingCenters;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManagePatient;
-    private javax.swing.JLabel lblSearch;
     private javax.swing.JLabel lblSearch1;
     private javax.swing.JLabel lblSearch2;
     private javax.swing.JTable tblPatients;
     private javax.swing.JTextField txtPatientName;
-    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 
     private void populatePatientTable() {

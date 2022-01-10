@@ -13,6 +13,9 @@ import Business.Organization.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.VitalSigns.VitalSigns;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -65,6 +68,7 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         lblPulse = new javax.swing.JLabel();
         lblBloodPressure = new javax.swing.JLabel();
         lblBloodPressure1 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -116,7 +120,7 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         lblManageManufacturer.setForeground(new java.awt.Color(0, 0, 0));
         lblManageManufacturer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageManufacturer.setText("MANAGE PATIENT VITAL SIGNS");
-        add(lblManageManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 62, 970, -1));
+        add(lblManageManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 650, -1));
 
         btnCreate.setBackground(new java.awt.Color(0, 0, 0));
         btnCreate.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,10 +146,20 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         lblBloodPressure1.setForeground(new java.awt.Color(0, 0, 0));
         lblBloodPressure1.setText("Blood Pressure:");
         add(lblBloodPressure1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, -1, -1));
+
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        
+        try{
         int SPO2 = Integer.parseInt(txtPulse.getText());
         int BloodPressure = Integer.parseInt(txtBloodPressure.getText());
         double temperature = Double.parseDouble(txtTemperature.getText());
@@ -153,9 +167,14 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
         System.out.println(p.getVitalHistory());
         vs=p.getVitalHistory().addVitalDir(BloodPressure, temperature, SPO2);
         populateTable();
+        }
+        catch(Exception e ){
+            JOptionPane.showMessageDialog(this,"Invalid Input");
+        }
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+       try{
         String patientName = txtSearch.getText();
         for(City c : system.getCityList()){
              
@@ -168,14 +187,34 @@ public class ManageVitalSignsReportJPanel extends javax.swing.JPanel {
                         if(patient.getName().equals(patientName)){
                             p=patient;
                         }
+//                        else{
+//                            JOptionPane.showMessageDialog(null, "Patient not found", "Warning", JOptionPane.WARNING_MESSAGE);
+//                        }
                     }
                }
            }
         }
+        JOptionPane.showMessageDialog(this, "Patient found you can proceed");
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(this,"Patient not found");
+       }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        HospitalStaffJPanel sysAdminwjp = (HospitalStaffJPanel) component;
+        //        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnSearch;
     private javax.swing.JScrollPane jScrollPane1;

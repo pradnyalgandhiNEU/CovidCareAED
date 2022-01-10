@@ -72,7 +72,7 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Date", "Vaccine", "Batch No", "Quantity", "Vaccination Center", "Status"
+                "Vaccine Name", "Receiver", "Sender", "Status", "Quantity", "Message", "Order ID"
             }
         ));
         jScrollPane1.setViewportView(tblOrder);
@@ -115,7 +115,7 @@ public class DeliveryManagerJPanel extends javax.swing.JPanel {
         for (WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList()) {
                     Order order = (Order)wr;
                     if(order.getId()==orderid){
-                        order.setStatus("Delived");
+                        order.setStatus("Delivered");
                     }
         }
     }//GEN-LAST:event_btnMarkAsDeliveredActionPerformed

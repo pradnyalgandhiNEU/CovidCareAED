@@ -10,6 +10,8 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Employee.EmployeeDirectory;
 import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
+import Business.Enterprise.Hospital;
 import Business.Organization.Organization;
 import Business.Role.HospitalStaffRole;
 import Business.Role.Role;
@@ -46,6 +48,7 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.city=city;
         this.organization=organization;
+        populateTable();
     }
 
     /**
@@ -61,13 +64,10 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         lblManageStaff1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblStaff = new javax.swing.JTable();
-        btnDelete1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
-        txtStaffID = new javax.swing.JTextField();
-        lblStaffID = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
@@ -97,10 +97,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tblStaff);
 
-        btnDelete1.setBackground(new java.awt.Color(0, 0, 0));
-        btnDelete1.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete1.setText("Delete");
-
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Username:");
@@ -112,12 +108,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
         txtUserName.setBackground(new java.awt.Color(214, 229, 244));
 
         txtPassword.setBackground(new java.awt.Color(214, 229, 244));
-
-        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
-
-        lblStaffID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lblStaffID.setForeground(new java.awt.Color(0, 0, 0));
-        lblStaffID.setText("Staff ID:");
 
         txtName.setBackground(new java.awt.Color(214, 229, 244));
 
@@ -150,10 +140,8 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblName)
-                            .addComponent(lblStaffID)))
+                        .addGap(353, 353, 353)
+                        .addComponent(lblName))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +149,6 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtName)
                         .addComponent(txtUserName)
@@ -176,11 +163,7 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblManageStaff1, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 962, Short.MAX_VALUE)
-                                .addComponent(btnDelete1)))
+                        .addComponent(jScrollPane2)
                         .addGap(48, 48, 48))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -192,13 +175,7 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
                     .addComponent(btnBack))
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete1)
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStaffID)
-                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(126, 126, 126)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
@@ -256,18 +233,15 @@ public class ManageHospitalStaffJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnDelete1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblManageStaff1;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblStaffID;
     private javax.swing.JTable tblStaff;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 

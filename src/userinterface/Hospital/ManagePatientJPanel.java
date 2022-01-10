@@ -46,17 +46,17 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
     City city;
     EmployeeDirectory employeeDirectory;
     PatientDirectory patientDir;
-    Hospital hospitalEnterprise =(Hospital)enterprise;
+    Hospital hospitalEnterprise = (Hospital) enterprise;
 
-    public ManagePatientJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization, 
+    public ManagePatientJPanel(JPanel userProcessContainer, City city, UserAccount userAccount, Organization organization,
             Enterprise enterprise, EcoSystem system) {
         initComponents();
-        this.userProcessContainer=userProcessContainer;
-        this.system=system;  
-        this.userAccount=userAccount;
-        this.enterprise=enterprise;
-        this.city=city;
-        this.organization=organization;
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.userAccount = userAccount;
+        this.enterprise = enterprise;
+        this.city = city;
+        this.organization = organization;
 //        this.patientDir=patientDir;
         populateInitialPersonTable();
         populateComboBox();
@@ -281,52 +281,49 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Username and password can not be empty");
             return;
         }
-        
+
         String VaccinationStatus = "Unassigned";
 
-        if (cboxVaccinationStatus.getSelectedItem() != null) 
-        {
+        if (cboxVaccinationStatus.getSelectedItem() != null) {
             VaccinationStatus = cboxVaccinationStatus.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(this, "Please select your Vaccination Status");
         }
         String QuarantineLocation = "Unassigned";
-        if (cboxQuarantineLocation.getSelectedItem() != null) 
-        {
+        if (cboxQuarantineLocation.getSelectedItem() != null) {
             QuarantineLocation = cboxQuarantineLocation.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(this, "Please select where is the Quarantine");
         }
         String DoctorName = "unassigned";
-        if (cboxDoctor.getSelectedItem() != null) 
-        {
+        if (cboxDoctor.getSelectedItem() != null) {
             DoctorName = cboxDoctor.getSelectedItem().toString();
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Please assign a Doctor to this patient");
         }
-            Hospital hospitalEnterprise =(Hospital)enterprise;       
+        Hospital hospitalEnterprise = (Hospital) enterprise;
         String patientName = txtName.getText();
-        int flag=0;
-        for(Patient p1:hospitalEnterprise.getPatientDirectory().getPatientDir()){
-            if(p1.getName().equals(patientName)){
-                flag=1;
+        int flag = 0;
+        for (Patient p1 : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
+            if (p1.getName().equals(patientName)) {
+                flag = 1;
             }
         }
-        if(flag==0){
-            for (Person p:system.getPersonDirectory().getPersonList()){
-                if(p.getName().equals(patientName)){ 
-            hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
-            Role role = new PatientRole();
-            UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-            JOptionPane.showMessageDialog(null, "Patient Admitted");
-            break;
-            } 
-        }
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Patient already exists"); 
+        if (flag == 0) {
+            for (Person p : system.getPersonDirectory().getPersonList()) {
+                if (p.getName().equals(patientName)) {
+                    hospitalEnterprise.getPatientDirectory().addPatientDir(p.personID, p.getName(), p.getStreet(), p.getZipcode(), p.getAge(), p.getCommunity(), p.getPhoneNo(), p.getEmail(), DoctorName, QuarantineLocation, VaccinationStatus);
+                    Role role = new PatientRole();
+                    UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+                    JOptionPane.showMessageDialog(null, "Patient Admitted");
+                    txtSearch.setText("");
+                    break;
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Patient already exists");
+        }
         //Patient addPatient = hospitalEnterprise.getPatientDirectory().addPatientDir(DoctorName, QuarantineLocation, VaccinationStatus);
         populatePersonTable();
         populatePatientTable();
@@ -349,6 +346,8 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+       
+        
         populatePersonTable();
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -377,23 +376,23 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a Patient");
         } else {
-           Hospital e =(Hospital)enterprise;
-         String patientname= (String) tblPatients.getValueAt(selectedRow, 0);
-            
+            Hospital e = (Hospital) enterprise;
+            String patientname = (String) tblPatients.getValueAt(selectedRow, 0);
+
             txtName.setText(patientname);
-        for(Patient p: e.getPatientDirectory().getPatientDir()){
-            System.out.println(patientname);
-            
-            if(p.getName().equals(patientname)){
-                //System.out.println(p);
-                e.getPatientDirectory().deletePatient(p);
-                JOptionPane.showMessageDialog(this, "Patient deleted successfully");
-                populatePatientTable();
+            for (Patient p : e.getPatientDirectory().getPatientDir()) {
+                System.out.println(patientname);
+
+                if (p.getName().equals(patientname)) {
+                    //System.out.println(p);
+                    e.getPatientDirectory().deletePatient(p);
+                    JOptionPane.showMessageDialog(this, "Patient deleted successfully");
+                    populatePatientTable();
+                }
             }
+
         }
-            
-        }
-        
+
     }//GEN-LAST:event_btnDeletePatientActionPerformed
 
 
@@ -425,86 +424,96 @@ public class ManagePatientJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateComboBox() {
-            cboxDoctor.removeAllItems();
-        for(City city : system.getCityList()){
-            for(Enterprise e: city.getEnterpriseDirectory().getEnterpriseList()){
-                for (UserAccount account: e.getUserAccountDirectory().getUserAccountList()) {
-                if("Business.Role.DoctorRole" == account.getRole().toString()){
-                    System.out.println("username"+account.getUsername());
-                cboxDoctor.addItem(account.getUsername());
+        cboxDoctor.removeAllItems();
+        for (City city : system.getCityList()) {
+            for (Enterprise e : city.getEnterpriseDirectory().getEnterpriseList()) {
+                for (UserAccount account : e.getUserAccountDirectory().getUserAccountList()) {
+                    if ("Business.Role.DoctorRole" == account.getRole().toString()) {
+                        System.out.println("username" + account.getUsername());
+                        cboxDoctor.addItem(account.getUsername());
+                    }
+                }
             }
+
+        }
+    }
+
+    private void populatePersonTable() {
+        String PersonName = "";
+
+        DefaultTableModel dtm = (DefaultTableModel) tblPerson.getModel();
+        dtm.setRowCount(0);
+
+        Hospital hospitalEnterprise = (Hospital) enterprise;
+        boolean flag = true;
+        for (Person p : system.getPersonDirectory().getPersonList()) {
+            if (!txtSearch.getText().isEmpty()) {
+                PersonName = txtSearch.getText();
+                flag=false;
             }
+
+            if (p.getName().equals(PersonName)) {
+                flag = false;
+                Object[] row = new Object[4];
+                row[0] = p;
+                row[1] = p.getPersonID();
+                row[2] = p.getAge();
+                row[3] = p.getCommunity();
+
+                dtm.addRow(row);
+                
+
             }
             
+        }
+        
+      
+        
+        
+
     }
-    }
-    private void populatePersonTable() {
-        String PersonName="";
+
+    private void populateInitialPersonTable() {
 
         DefaultTableModel dtm = (DefaultTableModel) tblPerson.getModel();
         dtm.setRowCount(0);
- 
-                Hospital hospitalEnterprise =(Hospital)enterprise;
-                for (Person p:system.getPersonDirectory().getPersonList()) {
-                    if (!txtSearch.getText().isEmpty()) {
-                        PersonName = txtSearch.getText();
-                    }
-               
-                    if (p.getName().equals(PersonName)) {
-                    Object[] row = new Object[4];
-                    row[0] = p;
-                    row[1] = p.getPersonID();
-                    row[2] = p.getAge();
-                    row[3] = p.getCommunity();
 
-                    dtm.addRow(row);
-                
-                } 
-    }
-                
-    }
-    
-     private void populateInitialPersonTable() {
+        Hospital hospitalEnterprise = (Hospital) enterprise;
+        for (Person p : system.getPersonDirectory().getPersonList()) {
+            Object[] row = new Object[4];
+            row[0] = p;
+            row[1] = p.getPersonID();
+            row[2] = p.getAge();
+            row[3] = p.getCommunity();
 
-        DefaultTableModel dtm = (DefaultTableModel) tblPerson.getModel();
-        dtm.setRowCount(0);
- 
-                Hospital hospitalEnterprise =(Hospital)enterprise;
-                for (Person p:system.getPersonDirectory().getPersonList()) {
-                    Object[] row = new Object[4];
-                    row[0] = p;
-                    row[1] = p.getPersonID();
-                    row[2] = p.getAge();
-                    row[3] = p.getCommunity();
+            dtm.addRow(row);
 
-                    dtm.addRow(row);
-                
-                }           
+        }
     }
-    
-        private void populatePatientTable() {
+
+    private void populatePatientTable() {
 
         DefaultTableModel dtm = (DefaultTableModel) tblPatients.getModel();
         dtm.setRowCount(0);
-                 Hospital hospitalEnterprise =(Hospital)enterprise;
+        Hospital hospitalEnterprise = (Hospital) enterprise;
 
-               //for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
-                    //System.out.println("useracc"+userAccount);
-                        //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
+        //for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()){
+        //System.out.println("useracc"+userAccount);
+        //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
 //                            System.out.println("useracc"+userAccount.getRole().toString());
-                       for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
-                    //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
-                    Object[] row = new Object[5];
-                    row[0] = p.getName();
-                    row[1] = p.getPatientID();
-                    row[2] = p.getVaccinationStatus();
-                    row[3] = p.getQuarantineStatus();
-                    row[4] = p.getDoctorName();
+        for (Patient p : hospitalEnterprise.getPatientDirectory().getPatientDir()) {
+            //if("Business.Role.PatientRole" == userAccount.getRole().toString()){
+            Object[] row = new Object[5];
+            row[0] = p.getName();
+            row[1] = p.getPatientID();
+            row[2] = p.getVaccinationStatus();
+            row[3] = p.getQuarantineStatus();
+            row[4] = p.getDoctorName();
 
-                    dtm.addRow(row);
-                }
-                       }
-              //  }                
-                //} 
-    
+            dtm.addRow(row);
+        }
+    }
+    //  }                
+    //} 
+
 }

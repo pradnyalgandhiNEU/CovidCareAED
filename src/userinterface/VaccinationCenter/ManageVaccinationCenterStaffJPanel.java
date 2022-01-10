@@ -62,12 +62,8 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStaff = new javax.swing.JTable();
-        btnView = new javax.swing.JButton();
-        txtStaffID = new javax.swing.JTextField();
-        lblStaffID = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
-        btnUpdate = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -75,7 +71,6 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         txtPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         lblManageInventory = new javax.swing.JLabel();
-        btnView1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,20 +94,6 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 988, 183));
 
-        btnView.setBackground(new java.awt.Color(0, 0, 0));
-        btnView.setForeground(new java.awt.Color(255, 255, 255));
-        btnView.setText("View");
-        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 370, -1, -1));
-
-        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
-        txtStaffID.setForeground(new java.awt.Color(0, 0, 0));
-        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 212, -1));
-
-        lblStaffID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lblStaffID.setForeground(new java.awt.Color(0, 0, 0));
-        lblStaffID.setText("Staff ID:");
-        add(lblStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
-
         txtName.setBackground(new java.awt.Color(214, 229, 244));
         txtName.setForeground(new java.awt.Color(0, 0, 0));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 212, -1));
@@ -122,11 +103,6 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
 
-        btnUpdate.setBackground(new java.awt.Color(0, 0, 0));
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("Update");
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, -1, -1));
-
         btnCreate.setBackground(new java.awt.Color(0, 0, 0));
         btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
@@ -135,7 +111,7 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 600, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 620, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -170,11 +146,6 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
         lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageInventory.setText("VACCINATION CENTER STAFF");
         add(lblManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 620, -1));
-
-        btnView1.setBackground(new java.awt.Color(0, 0, 0));
-        btnView1.setForeground(new java.awt.Color(255, 255, 255));
-        btnView1.setText("Delete");
-        add(btnView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 370, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -190,9 +161,10 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(null, "Username and password can not be empty");
                     return;
         }
+        else{
         Role role = new VaccinationCenterStaffRole();
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-                     
+        }            
        populateTable();
 
                         
@@ -213,20 +185,15 @@ public class ManageVaccinationCenterStaffJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView;
-    private javax.swing.JButton btnView1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManageInventory;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblStaffID;
     private javax.swing.JTable tblStaff;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 

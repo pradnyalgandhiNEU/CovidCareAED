@@ -17,6 +17,7 @@ import Business.WorkQueue.VaccinatePatient;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -63,7 +64,6 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         btnAdd = new javax.swing.JButton();
         lblBatch = new javax.swing.JLabel();
         txtStaffID = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,23 +72,23 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
         lblManageInventory.setForeground(new java.awt.Color(0, 0, 0));
         lblManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageInventory.setText("PATIENT VACCINATION DETAILS");
-        add(lblManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 510, -1));
+        add(lblManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 510, -1));
 
         tblVaccine.setBackground(new java.awt.Color(214, 229, 244));
         tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Staff ID", "Patient ID"
+                "Patient ID", "Name", "Staff ID"
             }
         ));
         jScrollPane1.setViewportView(tblVaccine);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 692, 181));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 692, 181));
 
         btnAdd.setBackground(new java.awt.Color(0, 0, 0));
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,39 +98,20 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 534, -1, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 550, -1, -1));
 
         lblBatch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblBatch.setForeground(new java.awt.Color(0, 0, 0));
         lblBatch.setText("Staff ID:");
-        add(lblBatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, -1));
+        add(lblBatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, -1, -1));
 
+        txtStaffID.setEditable(false);
         txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
-        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 460, 200, -1));
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
+        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        VaccinationCenterAdminJPanel vaccinationCenterjp = (VaccinationCenterAdminJPanel) component;
-        //        sysAdminwjp.populateTree();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+       try{
         for(WorkRequest wr : enterprise.getWorkQueue().getWorkRequestList())  {
             VaccinatePatient vp = (VaccinatePatient)wr;
             vp.setStaff(userAccount);
@@ -144,14 +125,19 @@ public class ManagePatientVaccineJPanel extends javax.swing.JPanel {
                }
            }
         txtStaffID.setText(String.valueOf(userAccount.getEmployee().getId()));
+        
         populateTable();
+        JOptionPane.showMessageDialog(this, "All patients vaccinated");
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(this, "No Work request");
+       }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBatch;
     private javax.swing.JLabel lblManageInventory;
@@ -168,9 +154,10 @@ private void populateTable() {
             vp.setStaff(userAccount);
            for(Patient p: vp.getNonVaccPatientList()){
                     
-                    Object[] row = new Object[7];
+                    Object[] row = new Object[3];
                     row[0] = p.getPatientID();
-                    row[1] = vp.getStaff().getEmployee().getId();
+                    row[1] = p.getName();
+                    row[2] = vp.getStaff().getEmployee().getId();
                     
                     dtm.addRow(row);
                 

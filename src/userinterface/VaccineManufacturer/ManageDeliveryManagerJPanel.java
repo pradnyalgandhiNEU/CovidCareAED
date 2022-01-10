@@ -42,6 +42,7 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         this.city=city;
         this.organization=organization;
         this.enterprise=enterprise;
+        populateTable();
     }
 
     /**
@@ -55,18 +56,14 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDeliveryManager = new javax.swing.JTable();
-        btnUpdate = new javax.swing.JButton();
         lblManageAdmin = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
         txtPassword = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
-        btnView = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        txtStaffID = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
@@ -81,17 +78,12 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Username", "Name", "Staff ID", "Password"
+                "Username", "Staff ID", "Name", "Password"
             }
         ));
         jScrollPane1.setViewportView(tblDeliveryManager);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 988, 183));
-
-        btnUpdate.setBackground(new java.awt.Color(0, 0, 0));
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("Update");
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
 
         lblManageAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblManageAdmin.setForeground(new java.awt.Color(0, 0, 0));
@@ -112,7 +104,7 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 600, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 610, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(214, 229, 244));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, 212, -1));
@@ -121,16 +113,6 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         lblUsername.setForeground(new java.awt.Color(0, 0, 0));
         lblUsername.setText("Username:");
         add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, -1, -1));
-
-        btnView.setBackground(new java.awt.Color(0, 0, 0));
-        btnView.setForeground(new java.awt.Color(255, 255, 255));
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 430, -1, -1));
 
         txtUsername.setBackground(new java.awt.Color(214, 229, 244));
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 212, -1));
@@ -142,14 +124,6 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("StaffID");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, -1, -1));
-
-        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
-        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 212, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,14 +145,21 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
                     return;
         }
 
-        if (userName.equals("") || password.equals("")) {
+        else if (userName.equals("") || password.equals("")) {
                JOptionPane.showMessageDialog(null, "Username and password can not be empty");
                     return;
         }
+        else{
         Role role = new DeliveryManagerRole();
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
                      
        populateTable();
+       JOptionPane.showMessageDialog(this,"Delivery Manager Created");
+        }
+        txtName.setText(" ");
+        txtUsername.setText(" ");
+        txtPassword.setText(" ");
+//        txtStaffID.setText(" ");
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -191,17 +172,10 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnView;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManageAdmin;
     private javax.swing.JLabel lblName;
@@ -210,7 +184,6 @@ public class ManageDeliveryManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblDeliveryManager;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 

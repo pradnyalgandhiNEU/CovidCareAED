@@ -15,6 +15,7 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.Order;
 import Business.WorkQueue.VaccinatePatient;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -91,6 +92,7 @@ public class PlaceVaccinationRequest extends javax.swing.JPanel {
     private void btnSendRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestActionPerformed
      //   String vaccineName;
     //int qty;
+    try{
     String message = "Please Vaccinate";
     String status = "Active";
     
@@ -114,7 +116,12 @@ public class PlaceVaccinationRequest extends javax.swing.JPanel {
             }
             
         }
-        }// TODO add your handling code here:
+        }
+    JOptionPane.showMessageDialog(this,"Request sent");
+    }
+catch(Exception e){
+        JOptionPane.showMessageDialog(this,"Vaccination request cannot be sent");// TODO add your handling code here:
+}
     }//GEN-LAST:event_btnSendRequestActionPerformed
 
 

@@ -56,7 +56,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnManageDoctor = new javax.swing.JButton();
-        btnManageCapacity = new javax.swing.JButton();
         btnManagePatient = new javax.swing.JButton();
         btnManageStaff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -74,16 +73,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(btnManageDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 230, 30));
-
-        btnManageCapacity.setBackground(new java.awt.Color(0, 0, 0));
-        btnManageCapacity.setForeground(new java.awt.Color(255, 255, 255));
-        btnManageCapacity.setText("Manage Capacity");
-        btnManageCapacity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageCapacityActionPerformed(evt);
-            }
-        });
-        add(btnManageCapacity, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 230, 30));
 
         btnManagePatient.setBackground(new java.awt.Color(0, 0, 0));
         btnManagePatient.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,7 +108,7 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
                 btnSendVCActionPerformed(evt);
             }
         });
-        add(btnSendVC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 230, 30));
+        add(btnSendVC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDoctorActionPerformed
@@ -129,14 +118,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageDoctorActionPerformed
-
-    private void btnManageCapacityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCapacityActionPerformed
-        // TODO add your handling code here:
-        ManageBedCapacityJPanel manageCapacityJPanel = new ManageBedCapacityJPanel();
-        userProcessContainer.add("manageCapacityJPanel", manageCapacityJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageCapacityActionPerformed
 
     private void btnManagePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePatientActionPerformed
         // TODO add your handling code here:
@@ -163,7 +144,6 @@ public class HospitalAdminJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageCapacity;
     private javax.swing.JButton btnManageDoctor;
     private javax.swing.JButton btnManagePatient;
     private javax.swing.JButton btnManageStaff;
