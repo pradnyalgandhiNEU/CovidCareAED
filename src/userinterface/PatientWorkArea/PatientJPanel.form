@@ -74,6 +74,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtStatus">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f4" green="e5" red="d6" type="rgb"/>
         </Property>
@@ -86,6 +87,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtReport">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f4" green="e5" red="d6" type="rgb"/>
         </Property>

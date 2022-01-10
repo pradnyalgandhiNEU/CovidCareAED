@@ -49,9 +49,7 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         lblCreateTestReport = new javax.swing.JLabel();
         comboReport = new javax.swing.JComboBox<>();
         lblReport = new javax.swing.JLabel();
-        lblDate = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        txtDate = new javax.swing.JTextField();
         lblID = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -71,7 +69,7 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, -1, -1));
 
         lblCreateTestReport.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lblCreateTestReport.setForeground(new java.awt.Color(0, 0, 0));
@@ -82,25 +80,16 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         comboReport.setBackground(new java.awt.Color(214, 229, 244));
         comboReport.setForeground(new java.awt.Color(0, 0, 0));
         comboReport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Detected", "Non-detected" }));
-        add(comboReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, 211, -1));
+        add(comboReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 211, -1));
 
         lblReport.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblReport.setForeground(new java.awt.Color(0, 0, 0));
         lblReport.setText("Report:");
-        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, -1, -1));
-
-        lblDate.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lblDate.setForeground(new java.awt.Color(0, 0, 0));
-        lblDate.setText("Date:");
-        add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, -1));
+        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, 20));
 
         txtName.setBackground(new java.awt.Color(214, 229, 244));
         txtName.setForeground(new java.awt.Color(0, 0, 0));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 212, -1));
-
-        txtDate.setBackground(new java.awt.Color(214, 229, 244));
-        txtDate.setForeground(new java.awt.Color(0, 0, 0));
-        add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 212, -1));
 
         lblID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblID.setForeground(new java.awt.Color(0, 0, 0));
@@ -138,7 +127,7 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, -1, -1));
 
         txtID.setBackground(new java.awt.Color(214, 229, 244));
         txtID.setForeground(new java.awt.Color(0, 0, 0));
@@ -159,7 +148,6 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String personID = txtID.getText();
         String personName = txtName.getText();
-        String date = txtDate.getText();
 //        System.out.println(date);
         Boolean result = false;
         if (comboReport.getSelectedItem().toString().equals("Detected")) {
@@ -171,6 +159,7 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
         for (Person person : system.getPersonDirectory().getPersonList()) {
             if (personName.equals(person.getName())) {
                 person.getTestHistory().newTestReport(result);
+                JOptionPane.showMessageDialog(this, "Report Created");
                 //                System.out.println(date);
 
                 //                System.out.println( person.getTestHistory().getTestReportList().get(0));
@@ -215,12 +204,10 @@ public class ManageScheduledTestsJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboReport;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreateTestReport;
-    private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblReport;
     private javax.swing.JTable scheduledPatientTable;
-    private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables

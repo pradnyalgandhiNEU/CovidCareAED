@@ -261,7 +261,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         else{
             ecosystem.getPersonDirectory().newPerson(ID, name, street, zipcode, age, community, phoneNo, email);
             populatePersonTable();
-            JOptionPane.showMessageDialog(null, "Customer Created");
+            JOptionPane.showMessageDialog(null, "Person Created");
         }
         
 //        System.out.println(ecosystem.getPersonDirectory().getPersonList());

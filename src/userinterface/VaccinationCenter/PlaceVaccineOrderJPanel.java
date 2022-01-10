@@ -14,6 +14,7 @@ import Business.WorkQueue.Order;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -135,7 +136,7 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
     int qty;
     String message = "Order placed";
     String status = "Active";
-    
+    try{
     vaccineName = txtVaccineName.getText();
     qty = Integer.parseInt(txtQty.getText());
     String VaccineManufacturerName = (String) cmbVaccineManufacturer.getSelectedItem();
@@ -151,6 +152,11 @@ public class PlaceVaccineOrderJPanel extends javax.swing.JPanel {
             
         }
         }
+        JOptionPane.showMessageDialog(this,"order placed");
+    }
+    catch(Exception e){
+        JOptionPane.showMessageDialog(this,"order cannot be placed");
+    }
     
     }//GEN-LAST:event_btnSubmitActionPerformed
 

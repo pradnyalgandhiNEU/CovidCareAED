@@ -51,7 +51,6 @@ public class HospitalStaffJPanel extends javax.swing.JPanel {
 
         btnManageVitalSign = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,17 +69,7 @@ public class HospitalStaffJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WELCOME, STAFF MEMBER");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 988, -1));
-
-        btnBack.setBackground(new java.awt.Color(0, 0, 0));
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 70, 630, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageVitalSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVitalSignActionPerformed
@@ -91,20 +80,8 @@ public class HospitalStaffJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageVitalSignActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        HospitalAdminJPanel sysAdminwjp = (HospitalAdminJPanel) component;
-        //        sysAdminwjp.populateTree();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnManageVitalSign;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

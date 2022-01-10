@@ -78,15 +78,21 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        userNameJTextField.setBackground(new java.awt.Color(51, 51, 51));
+        userNameJTextField.setBackground(new java.awt.Color(102, 102, 102));
         userNameJTextField.setForeground(new java.awt.Color(255, 255, 255));
+        userNameJTextField.setActionCommand(null);
         userNameJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        userNameJTextField.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        userNameJTextField.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        userNameJTextField.setSelectedTextColor(new java.awt.Color(51, 51, 51));
+        userNameJTextField.setSelectionColor(new java.awt.Color(153, 153, 153));
 
-        passwordField.setBackground(new java.awt.Color(51, 51, 51));
+        passwordField.setBackground(new java.awt.Color(102, 102, 102));
         passwordField.setForeground(new java.awt.Color(255, 255, 255));
+        passwordField.setActionCommand(null);
         passwordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        passwordField.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        passwordField.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        passwordField.setSelectedTextColor(new java.awt.Color(51, 51, 51));
+        passwordField.setSelectionColor(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -299,7 +305,10 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         if(userAccount==null){
+            userNameJTextField.setText("");
+            passwordField.setText("");
             JOptionPane.showMessageDialog(null, "Invalid credentials");
+            
             return;
         }
         else{

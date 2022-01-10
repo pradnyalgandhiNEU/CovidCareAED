@@ -29,6 +29,7 @@ public class ManageTestReportsJPanel extends javax.swing.JPanel {
         initComponents();
         this.system = system;
         this.userProcessContainer = userProcessContainer;
+        populateTable();
     }
 
     /**
@@ -147,4 +148,26 @@ public class ManageTestReportsJPanel extends javax.swing.JPanel {
     private javax.swing.JTable personReportTable;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+    
+    private void populateTable(){
+        DefaultTableModel dtm = (DefaultTableModel) personReportTable.getModel();
+        dtm.setRowCount(0);
+        Object[] row = new Object[4];
+        for(Person person: system.getPersonDirectory().getPersonList()){
+//            System.out.println(person);
+                ArrayList<TestReport> testReports = person.getTestHistory().getTestReportList();
+            for(TestReport report: testReports){
+                row[0] = person.getPersonID();
+                row[1] = person.getName();
+                row[2] = report.isResult();
+                dtm.addRow(row);
+            }
+            
+            
+            
+            
+           
+        }
+    }
+
 }

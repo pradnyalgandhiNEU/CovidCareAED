@@ -111,7 +111,8 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignOrderActionPerformed
-    int selectedRow = tblDeliveryManager.getSelectedRow();
+    try{
+        int selectedRow = tblDeliveryManager.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
@@ -124,6 +125,11 @@ public class AssignDeliveryManagerJPanel extends javax.swing.JPanel {
                         order.setDeliveryManager(deliveryManager);
                     }
         }
+        JOptionPane.showMessageDialog(this, "Order Assigned");
+    }
+    catch(Exception e){
+        JOptionPane.showMessageDialog(this,"Order NOT Assigned");
+    }
     }//GEN-LAST:event_btnAssignOrderActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

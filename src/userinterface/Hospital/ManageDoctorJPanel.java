@@ -65,7 +65,6 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         lblManageManufacturer = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDoctor = new javax.swing.JTable();
-        btnDelete = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
@@ -73,8 +72,6 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
-        txtStaffID = new javax.swing.JTextField();
-        lblStaffID = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(167, 199, 231));
@@ -85,7 +82,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         lblManageManufacturer.setForeground(new java.awt.Color(0, 0, 0));
         lblManageManufacturer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageManufacturer.setText("MANAGE DOCTORS");
-        add(lblManageManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 870, -1));
+        add(lblManageManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 870, -1));
 
         jScrollPane1.setBackground(new java.awt.Color(214, 229, 244));
 
@@ -104,25 +101,15 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblDoctor);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 960, 183));
-
-        btnDelete.setBackground(new java.awt.Color(0, 0, 0));
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 400, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 960, 183));
 
         txtName.setBackground(new java.awt.Color(214, 229, 244));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, 212, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, 212, -1));
 
         lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblName.setForeground(new java.awt.Color(0, 0, 0));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, -1, -1));
 
         btnCreate.setBackground(new java.awt.Color(0, 0, 0));
         btnCreate.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,31 +119,23 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 680, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 680, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Username:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 610, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 610, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Password:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 650, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, -1, -1));
 
         txtUserName.setBackground(new java.awt.Color(214, 229, 244));
-        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 212, -1));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 600, 212, -1));
 
         txtPassword.setBackground(new java.awt.Color(214, 229, 244));
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 640, 212, -1));
-
-        txtStaffID.setBackground(new java.awt.Color(214, 229, 244));
-        add(txtStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 212, -1));
-
-        lblStaffID.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lblStaffID.setForeground(new java.awt.Color(0, 0, 0));
-        lblStaffID.setText("Doctor ID:");
-        add(lblStaffID, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, -1, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 640, 212, -1));
 
         btnBack.setBackground(new java.awt.Color(0, 0, 0));
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,7 +145,7 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -202,39 +181,18 @@ public class ManageDoctorJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-//         int selectedRow = tblDoctor.getSelectedRow();
-//
-//        if (selectedRow < 0) {
-//            JOptionPane.showMessageDialog(this, "Please select a Doctor");
-//        } else {
-//            btnDelete.setEnabled(false);
-//            
-//            DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
-//            UserAccount account = (UserAccount) model.getValueAt(selectedRow, 0);
-//
-//            userAccountDir.deleteUserAccount(account);
-//
-//            populateTable();
-//        }
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManageManufacturer;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblStaffID;
     private javax.swing.JTable tblDoctor;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 

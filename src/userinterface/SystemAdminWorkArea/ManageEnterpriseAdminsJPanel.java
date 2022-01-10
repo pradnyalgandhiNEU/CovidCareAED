@@ -212,12 +212,12 @@ public class ManageEnterpriseAdminsJPanel extends javax.swing.JPanel {
                         } else if (enterprise.getClass().getName().toString() == "Business.Enterprise.VaccinationCenter") {
                             int count = 0;
                             for(UserAccount userAccount: enterprise.getUserAccountDirectory().getUserAccountList()){
-                                if((userAccount.getRole().getClass().getName()).equals("Business.Role.VaccinationCenterRole")){
+                                if((userAccount.getRole().getClass().getName()).equals("Business.Role.VaccinationCenterAdminRole")){
                                     count = 1;
                                 }
                             }
                             if(count==0){
-                            role = new VaccineManufacturerRole();
+                            role = new VaccinationCenterAdminRole();
                             UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, role);
                             }
                             else{
