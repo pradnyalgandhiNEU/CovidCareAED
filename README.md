@@ -1,6 +1,7 @@
 # Covid-Care
+> A shield of safety to track COVID-19
 
-## About the project:
+## About the project: 
 
 In the time of COVID, it is imminent that we have a system that tracks the records of patients, their vaccination reports, and their health in a city. The purpose of our project is to establish a network that connects a whole city to a hospital, vaccination centers, vaccine manufacturers and its related entities in a managed ecosystem. The ecosystem is capable to managed records of the population in the city, the hospitals in the city wuth the staff and doctors, the vaccination centere and the vaccination providers. Our goal is to provided an efficient solution to managed the records of a city's population.
 
@@ -11,6 +12,8 @@ As of December 12, 2021, the number of both confirmed and presumptive positive c
 
 
 ## Solution:
+
+![image](https://github.com/pradnyalgandhiNEU/CovidCareAED/blob/main/images/ClassDiagram.png?raw=true)
 
 The purpose of our ecosystem is to establish a network of cities that connects a person to an organization and enterprise consisting of Vaccination Center, Vaccine Manufacturer, Hospital and a Testing Lab. We have designed an ecosystem where we manage the entire Vaccine Distribution, Vaccination Status for the citizens, COVID-19 testing, admit Patients for Doctor consultation and tracking their Vital Signs
 We have 4 Enterprises, 9 Organizations and 10 Roles
@@ -26,5 +29,19 @@ This demonstrates the robustness of our Ecosystem. We aim to provide an easy and
 ## Screenshots:
 
 
+![image](https://github.com/pradnyalgandhiNEU/CovidCareAED/blob/main/images/Home.png?raw=true)
+
+![image](https://github.com/pradnyalgandhiNEU/CovidCareAED/blob/main/images/Dashboard.png?raw=true)
+
+![image](https://github.com/pradnyalgandhiNEU/CovidCareAED/blob/main/images/ManageEnterprise.png?raw=true)
+
+![image](https://github.com/pradnyalgandhiNEU/CovidCareAED/blob/main/images/ManagePatients.png?raw=true)
+
+![image](https://github.com/pradnyalgandhiNEU/CovidCareAED/blob/main/images/VaccineInventory.png?raw=true)
+
+## A Project by
+- [Pradnyal Gandhi](https://github.com/pradnyalgandhi)
+- [Ayush Gupta](https://github.com/Ayushkailashgupta)
+- [Shreya Ghate](https://github.com/shreyaghate02)
 
 
